@@ -70,7 +70,7 @@ export default function Projects() {
 
 
     return (
-        <div className="p-10">
+        <div className="p-10 h-96 mb-0 xl:mb-44">
 
 
 

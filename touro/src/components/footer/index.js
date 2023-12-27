@@ -1,3 +1,4 @@
+import Logo from "../../templates/logo";
 
 
 export default function Footer() {
@@ -7,9 +8,9 @@ export default function Footer() {
 
 
             <div className="flex items-center">
-                <img src="/logo.png" alt="Touro Logo" className="h-12 rounded-lg mr-2" />
+                <Logo size="text-lg" />
 
-                <span className="text-xs">© 2023 Todos os direitos reservados</span>
+                <span className="ml-2 text-xs">© 2023 Todos os direitos reservados</span>
             </div>
 
         </div>

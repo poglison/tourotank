@@ -7,20 +7,11 @@ import Projects from '../../components/projects';
 export default function App() {
   return (
     <div>
-
-
       <Header />
-
       <Banner />
-
-
       <Projects />
-
       <FAQ />
-
       <Footer />
-
-
     </div>
   );
 }
