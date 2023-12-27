@@ -19,7 +19,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/*" element={<Erro />} />
-
+      
 
       </Routes>
 
