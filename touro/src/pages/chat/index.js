@@ -174,32 +174,31 @@ export default function Chat() {
                                 </div>
                             </div>
 
-                            <div className="flex items-center">
+                            {/* <div className="flex items-center">
                                 <div className="bg-zinc-200 text-zinc-600 p-2  rounded-lg cursor-pointer hover:bg-zinc-300 hover:text-zinc-700">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
                                     </svg>
                                 </div>
-                            </div>
+                            </div> */}
 
                         </div>
 
                     </div>
 
 
-                    <div className="flex flex-col w-full h-[calc(100%-4rem)] relative rounded-2xl bg-white shadow-2xl overflow-hidden">
+                    <div className="flex flex-col w-full h-[calc(100%-4rem)] relative rounded-2xl bg-white border-primary border-2 shadow-2xl overflow-hidden">
 
-                        <img src="https://img.freepik.com/free-vector/illustration-startup-business_53876-9144.jpg?w=2000" className="filter-image w-full h-full rounded-2xl absolute" />
-                        
-                        <div className="flex flex-col w-full h-full z-10 overflow-auto">
-                        
+                        {/* <img src="https://img.freepik.com/free-vector/illustration-startup-business_53876-9144.jpg?w=2000" className="filter-image w-full h-full rounded-2xl absolute" /> */}
+
+                        <div className="chat flex flex-col w-full h-full z-10 overflow-auto">
+
                             {
                                 messages.map((message) => (
                                     <div className="flex flex-col w-full h-32">
                                         <div className="flex items-center justify-end w-full h-16">
-                                            <div className="flex flex-col mr-5">
-                                                <span className="font-montserrat font-bold text-white text-sm">{message.user.name}</span>
-                                                <span className="font-montserrat font-normal text-white text-xs">{message.message}</span>
+                                            <div className="flex flex-col mr-5 bg-white p-3 rounded-xl">
+                                                <span className="font-normal text-black text-xs">{message.message}</span>
                                             </div>
                                             <div className="w-10 h-10 rounded-full bg-primary mr-3 flex items-center justify-center font-montserrat font-bold text-white text-2xl">t</div>
                                         </div>
