@@ -4,6 +4,7 @@ import Header from "../../components/header";
 
 export default function Chat() {
 
+    const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([
         {
             id: 1,
@@ -42,7 +43,6 @@ export default function Chat() {
             }, 20);
 
 
-            console.log(intervalId)
             return () => clearInterval(intervalId);
 
         } catch (e) {
@@ -82,13 +82,13 @@ export default function Chat() {
 
                         {/* <img src="https://img.freepik.com/free-vector/illustration-startup-business_53876-9144.jpg?w=2000" className="filter-image w-full h-full rounded-2xl absolute" /> */}
 
-                        <div className="flex flex-col w-1/2 h-full z-10 relative mt-20">
+                        <div className="w-1/2 h-full z-10 mt-20">
 
                             {/* <div className="w-1/2 h-20 bg-white fixed"></div> */}
 
                             {
                                 messages.map((message) => (
-                                    <div className="flex flex-col w-full h-32">
+                                    <div className="flex-col w-full">
                                         <div className="flex items-center justify-start w-full h-16">
                                             <div className="w-8 h-8 rounded-full bg-primary mr-2 flex items-center justify-center font-montserrat font-bold text-white text-2xl">t</div>
 
@@ -96,8 +96,9 @@ export default function Chat() {
 
                                             <div className="flex flex-col mr-5 bg-white p-3 rounded-xl">
                                                 <span className="font-bold text-primary text-sm">{message.user.name}</span>
-                                                <span className="font-normal text-black text-xs">{message.content}</span>
-                                                
+                                                <span className="font-normal text-black text-xs">{displayResponse}</span>
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -109,9 +110,10 @@ export default function Chat() {
                         <div className="bottom-0 fixed flex w-1/2 h-20 items-center justify-between p-5 z-10 px-0 ">
 
                             <div className="bg-white border rounded-full z-10 w-full flex items-center px-5 pr-1.5">
-                                <input type="text" className=" w-full h-12 text-sm outline-none" placeholder="Digite sua mensagem" />
+                                <input onChange={(e) => setMessage(e.target.value)} type="text" className=" w-full h-12 text-sm outline-none" placeholder="Digite sua mensagem" />
 
-                                <div className="ml-5 flex items-center bg-primary text-white hover:bg-white hover:text-primary border-2 border-primary rounded-full w-10 h-10 min-h-10 min-w-10 justify-center cursor-pointer hover:bg-primary-600">
+                                <div className="ml-5 flex items-center bg-primary text-white hover:bg-white hover:text-primary border-2 border-primary rounded-full w-10 h-10 min-h-10 min-w-10 justify-center cursor-pointer hover:bg-primary-600"
+                                    onClick={(e) => { setMessage(""); setMessages([...messages, { id: messages.length, content: message, user: { name: 'Tourank', avatar: 'https://www.tourank.com.br/img/logo.png' } }]) }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
                                     </svg>
