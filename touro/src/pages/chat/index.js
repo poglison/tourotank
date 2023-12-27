@@ -8,9 +8,9 @@ export default function Chat() {
     const [messages, setMessages] = useState([
         {
             id: 1,
-            content: 'Olá, tudo bem? Eu sou o tourataank, como eu posso te chamar?',
+            content: 'Olá, tudo bem? Eu sou o tourotank, como eu posso te chamar?',
             user: {
-                name: 'Tourank',
+                name: 'tourotank',
                 avatar: 'https://www.tourank.com.br/img/logo.png'
             }
         }
@@ -96,7 +96,12 @@ export default function Chat() {
 
                                             <div className="flex flex-col mr-5 bg-white p-3 rounded-xl">
                                                 <span className="font-bold text-primary text-sm">{message.user.name}</span>
+
+                                                {message.user.name == 'tourotank' ?
                                                 <span className="font-normal text-black text-xs">{displayResponse}</span>
+                                                :
+                                                <span className="font-normal text-black text-xs">{message.content}</span>
+                                                }
 
 
                                             </div>
@@ -113,7 +118,7 @@ export default function Chat() {
                                 <input onChange={(e) => setMessage(e.target.value)} type="text" className=" w-full h-12 text-sm outline-none" placeholder="Digite sua mensagem" />
 
                                 <div className="ml-5 flex items-center bg-primary text-white hover:bg-white hover:text-primary border-2 border-primary rounded-full w-10 h-10 min-h-10 min-w-10 justify-center cursor-pointer hover:bg-primary-600"
-                                    onClick={(e) => { setMessage(""); setMessages([...messages, { id: messages.length, content: message, user: { name: 'Tourank', avatar: 'https://www.tourank.com.br/img/logo.png' } }]) }}>
+                                    onClick={(e) => { setMessage(""); setMessages([...messages, { id: messages.length, content: message, user: { name: 'null', avatar: 'https://www.tourank.com.br/img/logo.png' } }]) }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
                                     </svg>
