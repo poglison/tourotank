@@ -17,8 +17,8 @@ export default function Header(props) {
             <Button type="primary" className="w-36 h-full mr-5">Investir</Button>
           </Link>
 
-          <Link to="/chat">
-            <Button type="secondary" className="w-36 h-full">Apresentar</Button>
+          <Link to="/login">
+            <Button type="secondary" className="w-36 h-full">Entrar</Button>
           </Link>
 
         </div>

@@ -5,6 +5,7 @@ import './index.css';
 
 
 import App from './pages/home';
+import Login from './pages/login';
 import Chat from './pages/chat';
 import Erro from './pages/erro';
 
@@ -17,6 +18,7 @@ root.render(
       <Routes>
 
         <Route path="/" element={<App />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/*" element={<Erro />} />
       
