@@ -7,7 +7,7 @@ export default function Header(props) {
   return (
     <div className={"w-full h-20 flex items-center justify-between p-10 pr-20 z-10 relative " + props.className}>
 
-      <Logo size="text-xl" />
+      <Logo className="text-xl" />
 
 
       {props.buttons != false &&
