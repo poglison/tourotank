@@ -6,7 +6,7 @@ import Projects from '../../components/projects';
 
 export default function App() {
   return (
-    <div>
+    <div className='overflow-hidden relative'>
       <Header />
       <Banner />
       <Projects />
