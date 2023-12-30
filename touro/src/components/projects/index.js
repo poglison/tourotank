@@ -1,8 +1,8 @@
+import { useEffect, useState, useRef } from "react"
 import Project from "../project"
 
 
-export default function Projects() {
-
+export default function Projects() {    
 
     var projects = [
         {
@@ -47,34 +47,22 @@ export default function Projects() {
             "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
             "price": 7000
         },
-        {
-            "name": "Projeto 8",
-            "description": "Descrição do projeto 8",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 8000
-        },
-        {
-            "name": "Projeto 9",
-            "description": "Descrição do projeto 9",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 9000
-        },
-        {
-            "name": "Projeto 10",
-            "description": "Descrição do projeto 10",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 10000
-        },
+
 
     ]
 
 
     return (
-        <div className="p-10 h-96 z-10 relative">
+        <div className="p-10 h-96 z-10 relative transition-all">
 
 
+            <div className="projects flex overflow-auto transition-all">
+                <div className="absolute left-0 w-10 ml-2 mt-1 h-52 flex items-center justify-center text-primary" onClick={() => { document.querySelector(".projects").scrollLeft += -200 }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                </div>
 
-            <div className="projects flex overflow-auto">
 
                 {
                     projects.map((project, index) => {
@@ -84,11 +72,10 @@ export default function Projects() {
                     })
                 }
 
-                <div className="absolute right-0 w-10 mr-14 mt-1 h-52 flex items-center justify-center text-zinc-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                <div className="absolute right-0 w-10 mr-2 mt-1 h-52 flex items-center justify-center text-primary" onClick={() => { document.querySelector(".projects").scrollLeft += 200 }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
-
                 </div>
 
             </div>

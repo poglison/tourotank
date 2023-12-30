@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Slide } from "react-awesome-reveal";
 import Button from "../../templates/button";
 import Logo from "../../templates/logo";
 
