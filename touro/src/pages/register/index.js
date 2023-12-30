@@ -40,20 +40,25 @@ export default function Login() {
 
                         <div className="mb-10 mt-2 flex items-center justify-center">
 
-                            <span className="font-ibm text-xl font-medium text-primary">Entre agora no </span>
+                            <span className="font-ibm text-xl font-medium text-primary">Registre-se no </span>
 
                             <span className="ml-2 font-montserrat text-2xl font-bold text-primary">tourank</span>
                         </div>
+                        <Input placeholder="Nome" type="text" className="mb-4" />
+
                         <Input placeholder="Email" type="email" className="mb-4" />
 
-                        <Input placeholder="Senha" type="password" />
+                        <Input placeholder="Senha" type="password" className="mb-4" />
 
-                        <Button className="mt-4 w-full" type="primary">Entrar</Button>
+                        <Input placeholder="Repetir a senha" type="password" />
+
+                        <Button className="mt-4 w-full" type="primary">Registrar</Button>
 
                         <div className="w-full mt-2 flex items-center justify-center">
-                            <span className="text-sm text-zinc-500">Ainda não tem uma conta?</span>
-                            <Link to="/register">
-                                <span className="flex items-center justify-center w-20 text-sm text-primary ml-1 underline cursor-pointer hover:font-medium hover:decoration-2">registre-se</span>
+                            <span className="text-sm text-zinc-500">Já tem uma conta?</span>
+
+                            <Link to="/login">
+                                <span className="flex items-center justify-center w-20 text-sm text-primary ml-1 underline cursor-pointer hover:font-medium hover:decoration-2">entre aqui</span>
                             </Link>
 
                         </div>
@@ -133,5 +138,3 @@ export default function Login() {
         </div >
     )
 }
-
-

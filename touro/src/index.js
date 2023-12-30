@@ -6,6 +6,7 @@ import './index.css';
 
 import App from './pages/home';
 import Login from './pages/login';
+import Register from './pages/register';
 import Chat from './pages/chat';
 import Erro from './pages/erro';
 
@@ -19,6 +20,7 @@ root.render(
 
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/*" element={<Erro />} />
       
