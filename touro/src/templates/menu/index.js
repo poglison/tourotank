@@ -8,14 +8,14 @@ export default function Menu() {
     return (
         <div className="relative flex items-center justify-center">
             <div onClick={() => { setOpen(!open) }} className="w-11 h-full flex items-center justify-center rounded-full bg-white text-primary px-4 p-2 border-2 border-primary hover:bg-primary hover:text-white cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 min-w-5 h-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 min-w-5 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </div>
 
             {open &&
-                <div className="mt-72 mr-40 absolute w-52 min-h-52 border bg-white border-zinc-300 rounded-2xl">
-                    <div className="w-full flex items-center h-16 border-b border-zinc-300 rounded-t-2xl hover:bg-zinc-50 p-4 cursor-pointer">
+                <div className="mt-72 mr-40 absolute w-52 min-h-52 border bg-white border-zinc-300 rounded-xl">
+                    <div className="w-full flex items-center h-16 border-b border-zinc-300 rounded-t-xl hover:bg-zinc-50 p-4 cursor-pointer">
                         <div className="w-10 h-10 rounded-full bg-zinc-500 mr-2">
                             {/* <img src="" className="w-full h-full object-cover rounded-full" /> */}
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full object-cover rounded-full text-white fill-white p-2">
@@ -25,9 +25,9 @@ export default function Menu() {
                         </div>
 
                         <div className="flex flex-col">
-                            <span className="text-xs">Olá, touratank!</span>
+                            <span className="text-xs ">Olá, touratank!</span>
 
-                            <span className="text-xs font-medium">Ver perfil</span>
+                            <span className="text-xs font-medium text-zinc-800">Ver perfil</span>
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@ export default function Menu() {
                             <span className="text-sm ml-3 text-zinc-700">Meus favoritos</span>
                         </div>
 
-                        <div className="w-full p-3 hover:bg-zinc-50 flex items-center px-4 cursor-pointer rounded-b-2xl">
+                        <div className="w-full p-3 hover:bg-zinc-50 flex items-center px-4 cursor-pointer rounded-b-xl">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-zinc-500">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
                             </svg>
