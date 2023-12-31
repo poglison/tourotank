@@ -17,18 +17,14 @@ root.render(
     <BrowserRouter>
 
       <Routes>
-
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/*" element={<Erro />} />
-      
-
       </Routes>
 
     </BrowserRouter>
-
 
   </React.StrictMode>
 );
