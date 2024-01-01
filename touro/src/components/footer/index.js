@@ -5,7 +5,7 @@ import Logo from "../../templates/logo";
 export default function Footer() {
 
     return (
-        <div className="w-full mt-10 p-10 bg-stone-100">
+        <div className="w-full mt-10 p-10 bg-zinc-50 border-t">
 
 
             <div className="flex justify-between mb-5">
