@@ -10,6 +10,7 @@ import Register from './pages/register';
 import Chat from './pages/chat';
 import Profile from './pages/profile';
 import Erro from './pages/erro';
+import Project from './pages/project';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +24,7 @@ root.render(
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/project" element={<Project />} />
         <Route path="/*" element={<Erro />} />
       </Routes>
 

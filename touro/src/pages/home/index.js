@@ -8,7 +8,7 @@ import Benefits from '../../components/benefits';
 export default function App() {
   return (
     <div className='overflow-hidden relative'>
-      <Header />
+      <Header className="!pr-20" />
       <Banner />
       <Projects />
       <Benefits />

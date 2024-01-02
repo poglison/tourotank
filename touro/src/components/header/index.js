@@ -7,7 +7,7 @@ import Menu from "../../templates/menu";
 
 export default function Header(props) {
   return (
-    <div className={"w-full h-20 flex items-center justify-between p-10 pr-20 z-20 relative " + props.className}>
+    <div className={"w-full h-20 flex items-center justify-between p-10 z-20 relative " + props.className}>
 
       <Logo className="text-xl" />
 

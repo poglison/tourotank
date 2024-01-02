@@ -18,7 +18,7 @@ export default function Profile() {
     return (
         <div>
 
-            <Header className="!pr-10" />
+            <Header />
 
             <div className='p-10 pt-0'>
                 <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Perfil', path: '/profile' }]} />
