@@ -1,8 +1,9 @@
 import Header from "../../components/header";
 import Breadcrumbs from "../../templates/breadcrumbs";
 import Button from "../../templates/button";
-
 import Image from "../../templates/image";
+
+import { Link } from "react-router-dom";
 
 export default function Project() {
 
@@ -34,17 +35,20 @@ export default function Project() {
 
                             <div className="border border-zinc-300 rounded-lg flex flex-col mt-2">
 
-                                <div className="flex items-center p-2 hover:bg-neutral-100 cursor-pointer rounded-t-lg">
-                                    <div className="w-10 min-w-10 h-10 bg-primary rounded-full">
-                                        <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
-                                    </div>
 
-                                    <span className="ml-2 truncate w-56">Leonardo Heitor Poglia Pogliapp</span>
-                                </div>
+                                <Link to="/profile">
+                                    <div className="flex items-center p-2 hover:bg-neutral-100 cursor-pointer rounded-t-lg">
+                                        <div className="w-10 min-w-10 h-10 bg-primary rounded-full">
+                                            <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
+                                        </div>
+
+                                        <span className="text-sm ml-2 truncate w-56">Leonardo Heitor Poglia Pogliapp</span>
+                                    </div>
+                                </Link>
 
                                 <div className="flex items-center justify-between border-t border-zinc-300 p-2">
 
-                                    <div className="text-sm ml-2">
+                                    <div className="text-[13px] ml-2">
                                         <span >Último acesso:</span>
                                         <span className="font-medium ml-2">Hoje 10:00</span>
                                     </div>
