@@ -1,32 +1,39 @@
 import Header from "../../components/header";
 import Button from "../../templates/button";
 import Input from "../../templates/input";
-
-import UserContext from "../../context/userContext";
-
+import { toast } from "react-toastify";
 import { login } from "../../services";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import UserContext from "../../context/userContext";
 
 export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const [loading, setLoading] = useState(false);
     const { user, setUser } = useContext(UserContext);
     const navigate = useNavigate();
 
+    const notify = (message) => toast(message);
+
+
     const logon = () => {
+        setLoading(true);
 
         login({ username: email, password: password }).then((response) => {
 
-            if(response == true){
+            if (response == true) {
                 setUser({ username: email });
                 navigate("/");
-            } else{
-                alert("Email ou senha incorretos");
+            } else {
                 setUser({ username: "" });
+                notify("Email ou senha incorretos");
             }
+
+            setLoading(false);
 
         });
     }
@@ -72,7 +79,22 @@ export default function Login() {
                         <Input onChange={(e) => { setPassword(e.target.value) }} placeholder="Senha" type="password" />
 
                         <div onClick={() => logon()} >
-                            <Button className="mt-4 w-full" type="primary">Entrar</Button>
+                            <Button className="!px-1.5 !p-1 h-11 mt-4 w-full flex items-center " type="primary">
+
+                                {loading &&
+                                    <button className="flex items-center bg-zinc-400 text-white border-2 border-zinc-400/50 rounded-full w-7 h-7 min-h-7 min-w-7 justify-center cursor-pointer hover:bg-primary-600">
+                                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx={12} cy={12} r={10} stroke="currentColor" strokeWidth={4} />
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                                        </svg>
+                                    </button>
+                                }
+
+
+                                <span className={"w-full flex justify-center " + (loading ? "-ml-7" : "ml-0")} >Entrar</span>
+
+
+                            </Button>
                         </div>
 
                         <div className="w-full mt-2 flex items-center justify-center">

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 
 
@@ -12,6 +14,7 @@ import Profile from './pages/profile';
 import Erro from './pages/erro';
 import Project from './pages/project';
 import UserContext from './context/userContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -44,6 +47,20 @@ function Content() {
             </>
           }
         </Routes>
+
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+
       </BrowserRouter>
     </UserContext.Provider>
   )
