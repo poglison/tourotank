@@ -8,10 +8,10 @@ export default function Footer() {
         <div className="w-full mt-10 p-10 bg-zinc-50 border-t">
 
 
-            <div className="flex justify-between mb-5">
+            <div className="flex flex-col md:flex-row justify-between mb-5">
 
 
-                <div className="flex items-center w-1/2 justify-start space-x-12">
+                <div className="flex items-center w-1/2 justify-start space-x-12 mb-8 md:mb-0">
                     <div className="flex flex-col space-y-1">
                         <span className="text-base font-medium text-primary">Explorar</span>
 
@@ -84,7 +84,7 @@ export default function Footer() {
 
                 <div>
 
-                    <div className="flex items-center justify-end mb-5">
+                    <div className="flex items-center justify-start md:justify-end mt-10 md:mt-0 mb-5">
                         <Logo className="text-lg" />
 
                         <span className="ml-2 text-xs">© 2023 Todos os direitos reservados</span>

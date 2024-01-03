@@ -29,18 +29,18 @@ export default function Benefits() {
     ]
 
     return (
-        <div className="flex flex-col items-center justify-center w-full text-white font-ibm relative p-10">
+        <div className="flex flex-col items-center justify-center w-full text-white font-ibm relative p-5 md:p-10">
             <div className="w-2/3 flex flex-col items-center justify-center rounded-2xl text-primary p-4 pb-0">
                 <span className="text-3xl font-bold">Benefícios</span>
                 <span className="text-xl mt-1 text-zinc-700">Conheça os benefícios de investir no tourank</span>
             </div>
 
-            <div className="w-full flex items-center justify-center">
+            <div className="w-full flex flex-col  md:!flex-row items-center justify-center">
 
                 {benefits.map((benefit) => (
                     <div className="w-72 h-48 flex flex-col justify-start items-start rounded-2xl text-primary p-4 mt-10 m-2 relative">
 
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 min-w-12 h-12 min-h-12 mb-2">
                             <path strokeLinecap="round" strokeLinejoin="round" d={benefit.icon} />
                         </svg>
 
@@ -51,7 +51,7 @@ export default function Benefits() {
 
             </div>
 
-            <div className="flex justify-center w-full mt-4">
+            <div className="flex justify-center w-full mt-10">
                 <Button type="primary" className="w-36 mr-4">Invista</Button>
                 <Button type="secondary" className="w-36">Saiba mais</Button>
             </div>
