@@ -57,9 +57,9 @@ export default function Login() {
             <Header buttons={false} className="!bg-transparent" />
 
             <div className="top-0 absolute flex w-full h-screen">
-                <div className="w-1/2 flex justify-center items-center">
+                <div className="w-full md:w-1/2 flex justify-center items-center">
 
-                    <div className="w-2/3 z-10 p-6">
+                    <div className="md:w-2/3 z-10 p-6">
 
                         <div className="mb-10 mt-2 flex items-center justify-center">
 
@@ -86,7 +86,7 @@ export default function Login() {
 
                 </div>
 
-                <div className="flex flex-col h-screen justify-between items-center w-1/2 bg-primary text-white font-ibm relative">
+                <div className="hidden md:flex flex-col h-screen justify-between items-center w-1/2 bg-primary text-white font-ibm relative">
 
                     <div className="h-full flex flex-col items-center justify-center z-20">
                         <div className="px-10 pt-10">
