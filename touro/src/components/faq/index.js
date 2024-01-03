@@ -23,7 +23,7 @@ export default function FAQ() {
     ]);
 
     return (
-        <div className="w-full p-4 pl-10 mt-10">
+        <div className="w-full p-4 pl-5 md:pl-10 mt-10">
 
             <div className="flex items-center justify-center">
                 <p className="font-ibm text-4xl font-bold text-primary !m-0">FAQ</p>
