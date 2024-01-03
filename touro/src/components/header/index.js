@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
-import { Slide } from "react-awesome-reveal";
 import Button from "../../templates/button";
 import Logo from "../../templates/logo";
 import Menu from "../../templates/menu";
 
 
 export default function Header(props) {
+
+
   return (
-    <div className={"w-full h-20 flex items-center justify-between p-10 z-20 relative " + props.className}>
+    <div className={"w-full h-20 flex items-center justify-between p-5 md:p-10 z-20 relative " + props.className}>
 
-      <Logo className="text-xl" />
-
+      <Logo className="md:text-xl text-sm" />
+      
 
       {props.buttons != false &&
         <div className="flex items-center justify-between">
