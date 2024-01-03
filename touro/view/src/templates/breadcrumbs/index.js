@@ -6,7 +6,6 @@ export default function Breadcrumbs(props) {
     const [history, setHistory] = useState([])
 
     useEffect(() => {
-        console.log(props.history[0])
         setHistory(props.history)
     }, [props.history])
 

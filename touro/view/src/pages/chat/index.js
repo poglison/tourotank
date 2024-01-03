@@ -51,8 +51,6 @@ export default function Chat() {
 
             if (messages[messages.length - 1].user.name != 'tourotank') {
 
-                console.log(botMessages[messages.length - 1]);
-
                 setTimeout(() => {
                     var index = botMessages.findIndex((message) => message.id == messages.length);
 
@@ -68,10 +66,7 @@ export default function Chat() {
                 const stringResponse = messages[messages.length - 1].content;
 
                 const intervalId = setInterval(() => {
-                    console.log('typing')
                     setDisplayResponse(stringResponse.slice(0, i));
-                    console.log(stringResponse.slice(0, i))
-
                     i++;
 
                     if (i > stringResponse.length) {

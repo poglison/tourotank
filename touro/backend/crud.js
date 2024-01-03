@@ -51,7 +51,11 @@ async function save(table, id, data, body) {
 
 async function get(table) {
 
-    console.log("entrou no get")
+
+    if (table == "user") {
+        return;
+    }
+
     const tableRef = collection(db, table);
 
     const q = query(tableRef);
@@ -70,8 +74,6 @@ async function get(table) {
 
 async function getId(table, id) {
 
-    console.log("entrou no getId")
-
     const docRef = doc(db, table, id);
     const docSnap = await getDoc(docRef);
 
@@ -83,8 +85,6 @@ async function getId(table, id) {
 }
 
 async function getCode(table, code) {
-
-    console.log("entrou no code")
 
     const tableRef = collection(db, table);
     const q = query(tableRef, where("code", "==", code));
@@ -106,21 +106,21 @@ async function login(table, data) {
 
     const q = query(tableRef);
     const querySnapshot = await getDocs(q);
-    const list = [];
+    let r = false;
 
     querySnapshot.forEach((doc) => {
-        console.log("doc --> " + JSON.stringify(doc.data()));
+
         if (doc.data().username == data.username && doc.data().password == data.password) {
             const data = {
                 ...doc.data(),
                 id: doc.id
             }
-            list.push(data);
+            r = true;
         }
 
     });
-    
-    return list;
+
+    return r;
 }
 
 async function remove(table, id) {

@@ -79,7 +79,7 @@ export default function Login() {
                         <div className="px-10 pt-10">
                             {faqs.map((faq, index) => {
                                 return (
-                                    <div className="mb-6">
+                                    <div key={index} className="mb-6">
                                         <div className="text-lg font-medium">
                                             {faq.question}
                                         </div>

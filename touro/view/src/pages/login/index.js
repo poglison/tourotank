@@ -1,22 +1,33 @@
 import Header from "../../components/header";
 import Button from "../../templates/button";
 import Input from "../../templates/input";
-import Logo from "../../templates/logo";
+
+import UserContext from "../../context/userContext";
 
 import { login } from "../../services";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
 
 export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const { user, setUser } = useContext(UserContext);
+    const navigate = useNavigate();
 
     const logon = () => {
 
         login({ username: email, password: password }).then((response) => {
-            console.log("response --> " + JSON.stringify(response));
+
+            if(response == true){
+                setUser({ username: email });
+                navigate("/");
+            } else{
+                alert("Email ou senha incorretos");
+                setUser({ username: "" });
+            }
+
         });
     }
 
@@ -81,7 +92,7 @@ export default function Login() {
                         <div className="px-10 pt-10">
                             {faqs.map((faq, index) => {
                                 return (
-                                    <div className="mb-6">
+                                    <div key={index} className="mb-6">
                                         <div className="text-lg font-medium">
                                             {faq.question}
                                         </div>

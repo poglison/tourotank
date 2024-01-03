@@ -3,9 +3,13 @@ import Button from "../../templates/button";
 import Logo from "../../templates/logo";
 import Menu from "../../templates/menu";
 
+import { useContext, useEffect } from "react";
+import UserContext from "../../context/userContext";
+
 
 export default function Header(props) {
 
+  const { user } = useContext(UserContext);
 
   return (
     <div className={"w-full h-20 flex items-center justify-between p-5 md:p-10 z-20 relative " + props.className}>
@@ -22,7 +26,7 @@ export default function Header(props) {
 
 
 
-          {false ?
+          {!user.username ?
             <Link to="/login">
               <Button type="secondary" className="w-36 h-full">Entrar</Button>
             </Link>

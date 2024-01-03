@@ -37,8 +37,8 @@ export default function Benefits() {
 
             <div className="w-full flex flex-col  md:!flex-row items-center justify-center">
 
-                {benefits.map((benefit) => (
-                    <div className="w-72 h-48 flex flex-col justify-start items-start rounded-2xl text-primary p-4 mt-10 m-2 relative">
+                {benefits.map((benefit, index) => (
+                    <div key={index} className="w-72 h-48 flex flex-col justify-start items-start rounded-2xl text-primary p-4 mt-10 m-2 relative">
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 min-w-12 h-12 min-h-12 mb-2">
                             <path strokeLinecap="round" strokeLinejoin="round" d={benefit.icon} />
