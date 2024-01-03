@@ -3,10 +3,22 @@ import Button from "../../templates/button";
 import Input from "../../templates/input";
 import Logo from "../../templates/logo";
 
+import { login } from "../../services";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Login() {
 
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    const logon = () => {
+
+        login({ username: email, password: password }).then((response) => {
+            console.log("response --> " + JSON.stringify(response));
+        });
+    }
 
 
     var faqs = [
@@ -44,11 +56,13 @@ export default function Login() {
 
                             <span className="ml-2 font-montserrat text-2xl font-bold text-primary">tourank</span>
                         </div>
-                        <Input placeholder="Email" type="email" className="mb-4" />
+                        <Input onChange={(e) => { setEmail(e.target.value) }} placeholder="Email" type="email" className="mb-4" />
 
-                        <Input placeholder="Senha" type="password" />
+                        <Input onChange={(e) => { setPassword(e.target.value) }} placeholder="Senha" type="password" />
 
-                        <Button className="mt-4 w-full" type="primary">Entrar</Button>
+                        <div onClick={() => logon()} >
+                            <Button className="mt-4 w-full" type="primary">Entrar</Button>
+                        </div>
 
                         <div className="w-full mt-2 flex items-center justify-center">
                             <span className="text-sm text-zinc-500">Ainda não tem uma conta?</span>
@@ -62,13 +76,6 @@ export default function Login() {
                 </div>
 
                 <div className="flex flex-col h-screen justify-between items-center w-1/2 bg-primary text-white font-ibm relative">
-                    {/* <img src="https://files.123freevectors.com/wp-content/original/128440-abstract-glowing-blue-wave-background-image.jpg" className="absolute top-0 rigth-0 h-screen object-cover grayscale opacity-20" /> */}
-
-                    {/* https://static.vecteezy.com/system/resources/previews/009/749/967/original/wave-background-in-blue-color-with-line-elements-technology-startup-game-suitable-for-websites-mobile-applications-posters-games-printing-and-more-free-vector.jpg */}
-                    {/* https://static.vecteezy.com/system/resources/previews/006/396/524/non_2x/abstract-background-blue-3d-hexagons-mosaic-free-vector.jpg */}
-                    {/* https://images.ctfassets.net/hrltx12pl8hq/5KiKmVEsCQPMNrbOE6w0Ot/341c573752bf35cb969e21fcd279d3f9/hero-img_copy.jpg?fit=fill&w=1200&h=630 */}
-                    {/* https://wallpaperaccess.com/full/187161.jpg */}
-
 
                     <div className="h-full flex flex-col items-center justify-center z-20">
                         <div className="px-10 pt-10">

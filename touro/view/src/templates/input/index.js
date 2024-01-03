@@ -8,7 +8,7 @@ export default function Input(props) {
 
     return (
         <div className={"bg-white border rounded-full z-10 w-full flex items-center px-5 " + props.className}>
-            <input type={props.type == "password" && visible == true ? "text" : props.type} className="w-full h-12 text-sm outline-none" placeholder={props.placeholder} />
+            <input onChange={(e) => props.onChange(e)} type={props.type == "password" && visible == true ? "text" : props.type} className="w-full h-12 text-sm outline-none" placeholder={props.placeholder} />
 
             {(props.type === "password" && !visible) ?
                 <svg onClick={() => setVisible(!visible)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="relative -mr-4 ml-4 text-zinc-400 hover:bg-neutral-100 w-10 min-w-10 h-10 p-2.5 rounded-full">
