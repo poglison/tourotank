@@ -27,15 +27,15 @@ export default function Menu() {
                         <div className="w-full flex items-center h-16 border-b border-zinc-300 rounded-t-xl hover:bg-zinc-50 p-4 cursor-pointer">
                             <div className="w-10 h-10 rounded-full bg-zinc-500 mr-2">
 
-                                <img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' />
-                                {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full object-cover rounded-full text-white fill-white p-2">
+                                {/* <img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' /> */}
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full object-cover rounded-full text-white fill-white p-2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                                </svg> */}
+                                </svg>
 
                             </div>
 
                             <div className="flex flex-col">
-                                <span className="text-xs ">Olá, touratank!</span>
+                                <span className="text-xs ">Olá, {user.name}!</span>
 
                                 <span className="text-xs font-medium text-zinc-800">Ver perfil</span>
                             </div>

@@ -3,7 +3,12 @@ import Footer from '../../components/footer';
 import Breadcrumbs from '../../templates/breadcrumbs';
 import Settings from '../../components/settings';
 
+import { useContext } from 'react';
+import UserContext from '../../context/userContext';
+
 export default function Profile() {
+
+    const { user, setUser } = useContext(UserContext);
 
     var items = [
         { title: "Resumo", icon: "M4.5 3.75a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V6.75a3 3 0 0 0-3-3h-15Zm4.125 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Zm-3.873 8.703a4.126 4.126 0 0 1 7.746 0 .75.75 0 0 1-.351.92 7.47 7.47 0 0 1-3.522.877 7.47 7.47 0 0 1-3.522-.877.75.75 0 0 1-.351-.92ZM15 8.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15ZM14.25 12a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H15a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15Z" },
@@ -32,13 +37,20 @@ export default function Profile() {
 
                         <div className='flex items-center'>
                             <div className='w-24 h-24 rounded-full mr-5'>
-                                <img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' />
+                                {/* <img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' /> */}
+
+                                <div className="w-full h-full object-cover rounded-full bg-zinc-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full object-cover rounded-full text-white fill-white p-4">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                                    </svg>
+
+                                </div>
                             </div>
 
                             <div>
                                 <div className='flex items-center'>
                                     <div className='font-ibm text-xl font-medium text-zinc-600'>
-                                        touratank
+                                        {user.name}
                                     </div>
 
                                     <div className='w-24 h-6 ml-4 border-2 font-medium border-zinc-600 rounded-full text-xs flex items-center justify-center cursor-pointer hover:bg-zinc-600 text-zinc-600 hover:text-white'>

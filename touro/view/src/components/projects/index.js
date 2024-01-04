@@ -56,14 +56,14 @@ export default function Projects() {
         <div className="p-10 h-96 z-10 relative transition-all">
 
 
-            <div className="projects flex overflow-auto transition-all">
-                <div className="absolute left-0 w-10 ml-2 mt-1 h-52 flex items-center justify-center text-primary" onClick={() => { document.querySelector(".projects").scrollLeft += -200 }}>
+            <div className="projects flex overflow-auto transition-all rounded-xl">
+                <div className="absolute left-0 w-10 ml-2 mt-1 h-52 flex items-center justify-center text-zinc-400" onClick={() => { document.querySelector(".projects").scrollLeft += -200 }}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                     </svg>
                 </div>
 
-
+        
                 {
                     projects.map((project, index) => {
                         return (
@@ -72,7 +72,7 @@ export default function Projects() {
                     })
                 }
 
-                <div className="absolute right-0 w-10 mr-2 mt-1 h-52 flex items-center justify-center text-primary" onClick={() => { document.querySelector(".projects").scrollLeft += 200 }}>
+                <div className="absolute right-0 w-10 mr-2 mt-1 h-52 flex items-center justify-center text-zinc-400" onClick={() => { document.querySelector(".projects").scrollLeft += 200 }}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>

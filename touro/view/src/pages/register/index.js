@@ -1,12 +1,33 @@
 import Header from "../../components/header";
 import Button from "../../templates/button";
 import Input from "../../templates/input";
-import Logo from "../../templates/logo";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { save } from "../../services";
+
+
+import { useContext } from "react";
+import UserContext from "../../context/userContext";
 
 export default function Login() {
 
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const { user, setUser } = useContext(UserContext);
+    const navigate = useNavigate();
+
+
+    const saveUser = () => {
+
+        save("user", { name: name, username: email, password: password }).then((response) => {
+            console.log(response);
+            setUser({ username: response.username, name: response.name, id: response.id });
+            navigate("/");
+        });
+    }
 
 
     var faqs = [
@@ -44,15 +65,18 @@ export default function Login() {
 
                             <span className="ml-2 font-montserrat text-xl md:text-2xl font-bold text-primary">tourank</span>
                         </div>
-                        <Input placeholder="Nome" type="text" className="mb-4" />
+                        <Input onChange={(e) => { setName(e.target.value) }} placeholder="Nome" type="text" className="mb-4" />
 
-                        <Input placeholder="Email" type="email" className="mb-4" />
+                        <Input onChange={(e) => { setEmail(e.target.value) }} placeholder="Email" type="email" className="mb-4" />
 
-                        <Input placeholder="Senha" type="password" className="mb-4" />
+                        <Input onChange={(e) => { setPassword(e.target.value) }} placeholder="Senha" type="password" />
 
-                        <Input placeholder="Repetir a senha" type="password" />
+                        {/* <Input placeholder="Repetir a senha" type="password" /> */}
 
-                        <Button className="mt-4 w-full" type="primary">Registrar</Button>
+
+                        <div onClick={() => saveUser()}>
+                            <Button className="mt-4 w-full" type="primary">Registrar</Button>
+                        </div>
 
                         <div className="w-full mt-2 flex items-center justify-center">
                             <span className="text-sm text-zinc-500">Já tem uma conta?</span>
@@ -67,7 +91,7 @@ export default function Login() {
                 </div>
 
                 <div className="hidden md:flex flex-col h-screen justify-between items-center w-1/2 bg-primary text-white font-ibm relative">
-    
+
                     <div className="h-full flex flex-col items-center justify-center z-20">
                         <div className="px-10 pt-10">
                             {faqs.map((faq, index) => {
