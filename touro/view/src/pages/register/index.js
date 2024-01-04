@@ -36,7 +36,7 @@ export default function Login() {
             <div className="top-0 absolute flex w-full h-screen">
                 <div className="w-full md:w-1/2 flex justify-center items-center">
 
-                    <div className="w-2/3 z-10 p-6">
+                    <div className="w-5/6 z-10 p-6">
 
                         <div className="mb-10 mt-2 flex items-center justify-center">
 
