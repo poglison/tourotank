@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "firebase": "^10.7.1"
+    "firebase": "^10.7.1",
+    "react-dragscroll": "^2.0.1"
   }
 }
