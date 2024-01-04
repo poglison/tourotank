@@ -61,16 +61,24 @@ export default function Projects() {
                 }
             }, 1)
 
+            if (document.querySelector(".projects").scrollLeft === 0) {
+                document.querySelector(".projects").scrollLeft = document.querySelector(".projects").scrollWidth - document.querySelector(".projects").clientWidth;
+            }
+
         } else {
             var i = 0;
-
             var interval = setInterval(() => {
                 document.querySelector(".projects").scrollLeft += +10
                 i = i + 10;
                 if (i === 400) {
                     clearInterval(interval)
                 }
-            }, 1)
+            }, 1);
+
+            if (document.querySelector(".projects").scrollLeft === document.querySelector(".projects").scrollWidth - document.querySelector(".projects").clientWidth) {
+                document.querySelector(".projects").scrollLeft = 0;
+            }
+
         }
     }
 
