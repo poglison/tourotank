@@ -34,15 +34,15 @@ export default function Login() {
             <Header buttons={false} className="!bg-transparent" />
 
             <div className="top-0 absolute flex w-full h-screen">
-                <div className="w-1/2 flex justify-center items-center">
+                <div className="w-full md:w-1/2 flex justify-center items-center">
 
                     <div className="w-2/3 z-10 p-6">
 
                         <div className="mb-10 mt-2 flex items-center justify-center">
 
-                            <span className="font-ibm text-xl font-medium text-primary">Registre-se no </span>
+                            <span className="font-ibm text-lg md:text-xl font-medium text-primary">Registre-se no </span>
 
-                            <span className="ml-2 font-montserrat text-2xl font-bold text-primary">tourank</span>
+                            <span className="ml-2 font-montserrat text-xl md:text-2xl font-bold text-primary">tourank</span>
                         </div>
                         <Input placeholder="Nome" type="text" className="mb-4" />
 
@@ -66,15 +66,8 @@ export default function Login() {
 
                 </div>
 
-                <div className="flex flex-col h-screen justify-between items-center w-1/2 bg-primary text-white font-ibm relative">
-                    {/* <img src="https://files.123freevectors.com/wp-content/original/128440-abstract-glowing-blue-wave-background-image.jpg" className="absolute top-0 rigth-0 h-screen object-cover grayscale opacity-20" /> */}
-
-                    {/* https://static.vecteezy.com/system/resources/previews/009/749/967/original/wave-background-in-blue-color-with-line-elements-technology-startup-game-suitable-for-websites-mobile-applications-posters-games-printing-and-more-free-vector.jpg */}
-                    {/* https://static.vecteezy.com/system/resources/previews/006/396/524/non_2x/abstract-background-blue-3d-hexagons-mosaic-free-vector.jpg */}
-                    {/* https://images.ctfassets.net/hrltx12pl8hq/5KiKmVEsCQPMNrbOE6w0Ot/341c573752bf35cb969e21fcd279d3f9/hero-img_copy.jpg?fit=fill&w=1200&h=630 */}
-                    {/* https://wallpaperaccess.com/full/187161.jpg */}
-
-
+                <div className="hidden md:flex flex-col h-screen justify-between items-center w-1/2 bg-primary text-white font-ibm relative">
+    
                     <div className="h-full flex flex-col items-center justify-center z-20">
                         <div className="px-10 pt-10">
                             {faqs.map((faq, index) => {
