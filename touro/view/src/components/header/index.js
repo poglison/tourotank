@@ -21,14 +21,14 @@ export default function Header(props) {
         <div className="flex items-center justify-between">
 
           <Link to="/chat">
-            <Button type="primary" className="w-36 h-full mr-5">Investir</Button>
+            <Button type="primary" className="w-32 md:w-36 h-full mr-5">Investir</Button>
           </Link>
 
 
 
           {!user.username ?
             <Link to="/login">
-              <Button type="secondary" className="w-36 h-full">Entrar</Button>
+              <Button type="secondary" className="w-32 md:w-36 h-full">Entrar</Button>
             </Link>
             :
             <Menu />
