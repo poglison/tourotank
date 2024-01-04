@@ -105,13 +105,13 @@ export default function Chat() {
         <div>
             <Header className="!absolute" buttons={false} />
 
-            <div className="w-full h-[calc(100vh-45px)] flex justify-center items-center p-10 pt-0 pr-0">
+            <div className="w-full h-[calc(100vh-45px)] flex justify-center items-center pb-10">
 
                 <div className="w-full h-full flex flex-col justify-between">
 
                     <div ref={chat} className="chat items-center flex flex-col w-full relative bg-white overflow-auto">
 
-                        <div className="w-1/2 h-full z-10 mt-20">
+                        <div className="w-3/4 md:w-1/2 h-full z-10 mt-20">
 
                             {
                                 messages.map((message) => (
@@ -157,7 +157,7 @@ export default function Chat() {
 
                         </div>
 
-                        <div className="bottom-6 fixed flex w-1/2 h-20 items-center justify-between p-5 z-10 px-0 ">
+                        <div className="bottom-6 fixed flex w-3/4 md:w-1/2 h-20 items-center justify-between p-5 z-10 px-0 ">
 
                             <div className="bg-white border rounded-full z-10 w-full flex items-center px-5 pr-1.5">
                                 <input onChange={(e) => setMessage(e.target.value)} value={message} type="text" className=" w-full h-12 text-sm outline-none" placeholder="Digite sua mensagem" />
