@@ -47,13 +47,6 @@ export default function Project() {
                     <InformationProject />
                 </div>
 
-
-
-                <div className="w-full h-screen"></div>
-                <div className="w-full h-screen"></div>
-                <div className="w-full h-screen"></div>
-                <div className="w-full h-screen"></div>
-
             </div>
         </div>
     )
