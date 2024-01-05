@@ -10,6 +10,7 @@ import { save } from "../../services";
 import { useContext } from "react";
 import UserContext from "../../context/userContext";
 
+
 export default function Login() {
 
     const [name, setName] = useState("");
@@ -51,13 +52,13 @@ export default function Login() {
 
 
     return (
-        <div className="relative">
+        <div className="relative h-screen overflow-hidden">
             <Header buttons={false} className="!bg-transparent" />
 
             <div className="top-0 absolute flex w-full h-screen">
                 <div className="w-full md:w-1/2 flex justify-center items-center">
 
-                    <div className="w-5/6 z-10 p-6">
+                    <div className="w-5/6 md:w-2/3 z-10 p-6">
 
                         <div className="mb-10 mt-2 flex items-center justify-center">
 
@@ -92,7 +93,10 @@ export default function Login() {
 
                 <div className="hidden md:flex flex-col h-screen justify-between items-center w-1/2 bg-primary text-white font-ibm relative">
 
-                    <div className="h-full flex flex-col items-center justify-center z-20">
+                    <img className="h-3/4 hidden xl:flex absolute -bottom-40 -right-44 select-none" src="/bull.png" alt="" />
+
+
+                    <div className="h-full flex flex-col justify-center z-20">
                         <div className="px-10 pt-10">
                             {faqs.map((faq, index) => {
                                 return (
@@ -110,7 +114,7 @@ export default function Login() {
                         </div>
 
 
-                        <div className="mt-6 flex items-center justify-center">
+                        <div className="mt-6 flex px-10">
                             <span className="text-sm text-white mr-2">Ainda tem dúvidas?</span>
                             <span className="w-28 text-sm text-white underline cursor-pointer hover:font-medium hover:decoration-2">entre em contato</span>
                         </div>
