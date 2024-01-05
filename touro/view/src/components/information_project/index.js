@@ -9,7 +9,7 @@ export default function InformationProject() {
 
         <div className="mt-10 md:mt-0 md:fixed md:w-72 md:right-10">
 
-            <div className="w-full h-full rounded-lg mb-2">
+            <div className="bg-white w-full h-full rounded-lg mb-2">
 
                 <div className="border border-zinc-300 rounded-lg flex flex-col">
 
@@ -44,7 +44,7 @@ export default function InformationProject() {
                 </div>
             </div>
 
-            <div className="border border-zinc-300 p-4 rounded-lg">
+            <div className="bg-white border border-zinc-300 p-4 rounded-lg">
                 <div className="w-full h-4 bg-zinc-200 rounded-full mb-4">
                     <div className="w-1/2 h-full bg-primary rounded-full flex items-center justify-center text-xs text-white">50%</div>
                 </div>
