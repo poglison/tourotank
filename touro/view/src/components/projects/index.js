@@ -6,8 +6,8 @@ export default function Projects(props) {
     var projects = [
         {
             "name": "tourotank",
-            "description": "Uma maneira de conectar investidores e ideias de uma forma simples.",
-            "image": "/icone.png",
+            "description": "Um modo de conectar investidores e ideias de uma forma simples.",
+            "image": "/tourotank_banner.png",
             "price": 1000
         },
         {
