@@ -12,7 +12,6 @@ export default function InformationProject() {
     useEffect(() => {
 
         window.addEventListener('scroll', () => {
-            console.log(window.scrollY);
 
             if (window.scrollY >= 100) {
                 setScroll(true);

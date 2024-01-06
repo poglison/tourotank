@@ -21,7 +21,7 @@ export default function Header(props) {
         <div className="flex items-center justify-between">
 
           <Link to="/chat">
-            <Button type="primary" className="w-28 md:w-36 h-full mr-2">Investir</Button>
+            <Button type="primary" className="w-28 md:w-36 h-full mr-4">Investir</Button>
           </Link>
 
 

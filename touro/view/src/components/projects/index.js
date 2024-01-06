@@ -5,9 +5,9 @@ export default function Projects(props) {
 
     var projects = [
         {
-            "name": "WiGL",
-            "description": "WiGL’s Back - Touchless Wireless Power",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
+            "name": "tourotank",
+            "description": "Uma maneira de conectar investidores e ideias de uma forma simples.",
+            "image": "/icone.png",
             "price": 1000
         },
         {

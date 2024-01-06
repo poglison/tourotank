@@ -11,7 +11,7 @@ export default function Image(props) {
 
     return (
         <div>
-            <img onClick={() => { setIsModalVisible(true) }} src={props.src} alt={props.alt} className={"cursor-pointer " + props.className} />
+            <img onClick={() => { setIsModalVisible(true) }} src={props.src} alt={props.alt} className={"rounded-xl cursor-pointer " + props.className} />
 
 
             {isModalVisible ? (
