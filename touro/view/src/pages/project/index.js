@@ -5,6 +5,7 @@ import Projects from "../../components/projects";
 import Breadcrumbs from "../../templates/breadcrumbs";
 import Button from "../../templates/button";
 import Image from "../../templates/image";
+import Images from "../../templates/images";
 
 import { Link } from "react-router-dom";
 
@@ -22,8 +23,10 @@ export default function Project() {
                 <div className="w-full mt-4 flex flex-col md:flex-row justify-between">
 
                     <div className="w-full md:w-[calc(100%-326px)] flex flex-col xl:flex-row">
-                        <Image className="w-full lg:h-56 object-contain" src="https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80"
-                            alt="Project" />
+                        {/* <Image className="w-full lg:h-56 object-contain" src="https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80"
+                            alt="Project" /> */}
+
+                        <Images />
 
                         <div className="xl:w-[calc(100%-384px)] xl:overflow-hidden xl:h-56 mt-4 xl:mt-0 xl:ml-4">
 

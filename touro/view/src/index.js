@@ -5,6 +5,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+
 
 import App from './pages/home';
 import Login from './pages/login';
@@ -31,37 +34,40 @@ function Content() {
 
   return (
     <UserContext.Provider value={{ user: user, setUser: setUser }}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/*" element={<Erro />} />
-          <Route path="/project" element={<Project />} />
+      <PrimeReactProvider>
+
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/*" element={<Erro />} />
+            <Route path="/project" element={<Project />} />
 
 
-          {user.username &&
-            <>
-              <Route path="/profile" element={<Profile />} />
-            </>
-          }
-        </Routes>
+            {user.username &&
+              <>
+                <Route path="/profile" element={<Profile />} />
+              </>
+            }
+          </Routes>
 
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
 
-      </BrowserRouter>
+        </BrowserRouter>
+      </PrimeReactProvider>
     </UserContext.Provider>
   )
 } 

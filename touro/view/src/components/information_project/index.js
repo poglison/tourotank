@@ -1,13 +1,30 @@
+import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 import Button from "../../templates/button";
 
 
 export default function InformationProject() {
 
+    const [scroll, setScroll] = useState(false);
+
+
+    useEffect(() => {
+
+        window.addEventListener('scroll', () => {
+            console.log(window.scrollY);
+
+            if (window.scrollY >= 100) {
+                setScroll(true);
+            } else{
+                setScroll(false);
+            }
+        });
+    }, []);
 
     return (
 
-        <div className="mt-10 md:mt-0 md:fixed md:w-72 md:right-10">
+        <div className={"mt-10 md:mt-0 md:fixed md:w-72 md:right-10 transition " + (scroll ? "top-4" : "")}>
 
             <div className="bg-white w-full h-full rounded-lg mb-2">
 
