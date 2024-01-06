@@ -1,5 +1,7 @@
+import Footer from "../../components/footer";
 import Header from "../../components/header";
 import InformationProject from "../../components/information_project";
+import Projects from "../../components/projects";
 import Breadcrumbs from "../../templates/breadcrumbs";
 import Button from "../../templates/button";
 import Image from "../../templates/image";
@@ -14,7 +16,7 @@ export default function Project() {
             <Header />
 
 
-            <div className="w-full px-10">
+            <div className="w-full min-h-screen px-10">
                 <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Project', path: '/project' }]} />
 
                 <div className="w-full mt-4 flex flex-col md:flex-row justify-between">
@@ -38,16 +40,33 @@ export default function Project() {
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra elit eget enim porttitor dictum. Morbi bibendum, sem et malesuada vestibulum, sem urna pharetra sem, eu pretium mi erat euismod magna. Mauris non sapien nisi. Ut gravida finibus aliquam. Vivamus lobortis, lacus nec iaculis molestie, eros nisi blandit diam, at porta justo ex vel tellus. Maecenas id aliquet libero. Phasellus auctor bibendum augue, accumsan sodales lorem tristique quis. Nulla facilisi. Etiam quis risus id ligula dignissim efficitur id et nibh. Suspendisse potenti. Donec metus quam, tempor eu efficitur volutpat, tincidunt vel purus. Curabitur commodo nulla at cursus eleifend. Nullam felis diam, imperdiet sed vulputate ut, euismod quis augue.</span>
 
                             </div>
+
                         </div>
+
+
                     </div>
-
-
 
 
                     <InformationProject />
                 </div>
 
+
+                <div className="mt-28 w-full md:w-[calc(100%-326px)] flex flex-col xl:flex-row">
+
+
+                    <div className="mt-10 flex flex-col w-full">
+                        <span className="text-zinc-700 text-lg font-ibm mb-5">Você também pode estar interessado em</span>
+
+                        <Projects className="w-full  !p-0" />
+                    </div>
+                </div>
+
             </div>
+
+
+
+            <Footer />
+
         </div>
     )
 }

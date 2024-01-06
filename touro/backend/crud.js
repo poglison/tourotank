@@ -112,10 +112,10 @@ async function login(table, data) {
 
         if (doc.data().username == data.username && doc.data().password == data.password) {
             const data = {
-                ...doc.data(),
+                name: doc.data().name,
                 id: doc.id
             }
-            r = true;
+            r = data;
         }
 
     });

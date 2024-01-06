@@ -25,8 +25,8 @@ export default function Login() {
 
         login({ username: email, password: password }).then((response) => {
 
-            if (response == true) {
-                setUser({ username: email });
+            if (response) {
+                setUser({ id: response.id, username: email, name: response.name });
                 navigate("/");
             } else {
                 setUser({ username: "" });

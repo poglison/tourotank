@@ -2,14 +2,15 @@
   "name": "tourotank",
   "short_name": "tourotank",
   "start_url": "/",
-  "display": "standalone",
+  "display": "standalone"
+  ,
   "icons": [
     {
       "sizes": "57x57",
-      "src": "/apple-touch-icon.png"
+      "src": "/logo.png"
     },
     {
-      "src": "/favicon-mobile.png",
+      "src": "/logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

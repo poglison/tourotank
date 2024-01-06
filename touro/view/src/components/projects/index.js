@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react"
 import Project from "../project"
 
-export default function Projects() {
+export default function Projects(props) {
 
     var projects = [
         {
@@ -83,7 +83,7 @@ export default function Projects() {
     }
 
     return (
-        <div className="p-10 h-96 z-10 relative transition-all select-none">
+        <div className={"p-10 h-96 z-10 relative transition-all select-none " + props.className}>
 
 
             <div className="projects flex overflow-auto transition rounded-xl">

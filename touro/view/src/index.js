@@ -27,7 +27,7 @@ root.render(
 function Content() {
 
 
-  const [user, setUser] = useState({ username: "" });
+  const [user, setUser] = useState({ name: "" });
 
   return (
     <UserContext.Provider value={{ user: user, setUser: setUser }}>
