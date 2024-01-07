@@ -39,7 +39,7 @@ export default function Project() {
 
                             <div className="flex flex-col">
                                 <span className="font-ibm text-xs text-zinc-600">Projeto</span>
-                                <span className="font-ibm text-2xl font-medium text-zinc-800">Netflix Compartilhada Premium Hd 4k</span>
+                                <span className="font-ibm text-2xl font-medium text-zinc-800">Pysionic</span>
                             </div>
 
                             <div className="flex flex-col mt-4 ">
@@ -120,6 +120,14 @@ export default function Project() {
                                             click: false
                                         },
                                     ]} />
+                                </div>
+                            ) : 
+                            selectedInformation == 3 ?
+                            (
+                                <div className="h-screen mt-12 mb-8 flex flex-col">
+                                    <span className="text-ibm text-lg font-medium block text-zinc-800">Chat</span>
+
+
                                 </div>
                             ) : null
                     }
