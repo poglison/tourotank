@@ -5,7 +5,7 @@ export default function Timeline() {
 
     return (
 
-        <div className="w-full h-screen mt-8">
+        <div className="w-full mt-8">
             <span className="text-ibm text-lg font-medium mb-4 block text-zinc-800">Linha do tempo</span>
             <div className="flex w-full">
                 <TimeLineCircle text="Ideia" check={true} />
