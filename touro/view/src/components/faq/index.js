@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function FAQ() {
+export default function FAQ(props) {
 
 
     const [faq, setFaq] = useState([
@@ -22,13 +22,22 @@ export default function FAQ() {
         },
     ]);
 
+    useEffect(() => {
+        if (props.faq) {
+            setFaq(props.faq)
+        }
+    }, [props.faq])
+
     return (
-        <div className="w-full p-4 pl-5 md:pl-10 mt-10">
+        <div className={"w-full p-4 pl-5 md:pl-10 mt-10 " + (props.className)}>
 
-            <div className="flex items-center justify-center">
-                <p className="font-ibm text-4xl font-bold text-primary !m-0">FAQ</p>
-            </div>
 
+            {
+                props.title != false &&
+                <div className="flex items-center justify-center">
+                    <p className="font-ibm text-4xl font-bold text-primary !m-0">FAQ</p>
+                </div>
+            }
 
             <div className="mt-5">
 

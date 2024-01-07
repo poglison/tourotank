@@ -99,8 +99,27 @@ export default function Project() {
                         ) :
                         selectedInformation == 2 ?
                             (
-                                <div className="mt-4 flex flex-col">
-                                    <FAQ />
+                                <div className="mt-12 mb-8 flex flex-col">
+                                    <span className="text-ibm text-lg font-medium block text-zinc-800">Perguntas frequentes</span>
+
+                                    <FAQ className="!p-0 !mt-0" title={false} faq={[
+                                        {
+                                            title: "O que é o Netflix Compartilhada Premium Hd 4k",
+                                            description: "O Touro é uma plataforma de investimentos que conecta investidores a empreendedores de todo o Brasil. Através do Touro, investidores podem investir em empresas de alto potencial de crescimento e retorno financeiro.",
+                                            click: false
+                                        },
+                                        {
+                                            title: "Como funciona o tourotank?",
+                                            description: "O Touro é uma plataforma de investimentos que conecta investidores a empreendedores de todo o Brasil. Através do Touro, investidores podem investir em empresas de alto potencial de crescimento e retorno financeiro.",
+                                            click: false
+                                        },
+
+                                        {
+                                            title: "Quem pode investir no tourotank?",
+                                            description: "O Touro é uma plataforma de investimentos que conecta investidores a empreendedores de todo o Brasil. Através do Touro, investidores podem investir em empresas de alto potencial de crescimento e retorno financeiro.",
+                                            click: false
+                                        },
+                                    ]} />
                                 </div>
                             ) : null
                     }
