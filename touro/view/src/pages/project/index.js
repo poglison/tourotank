@@ -11,6 +11,7 @@ import Timeline from "../../templates/timeline";
 import Buttons from "../../templates/buttons";
 import Team from "../../templates/team";
 import FAQ from "../../components/faq";
+import ButtonFAQ from "../../templates/button_faq";
 
 export default function Project() {
 
@@ -95,6 +96,10 @@ export default function Project() {
                                 <Timeline />
 
                                 <Team />
+
+                                <div onClick={() => {setSelectedInformation(2); document.scrollingElement.scrollTop = 0;}} className="mt-8 flex flex-col">
+                                    <ButtonFAQ />
+                                </div>
                             </div>
                         ) :
                         selectedInformation == 2 ?
@@ -121,15 +126,15 @@ export default function Project() {
                                         },
                                     ]} />
                                 </div>
-                            ) : 
+                            ) :
                             selectedInformation == 3 ?
-                            (
-                                <div className="h-screen mt-12 mb-8 flex flex-col">
-                                    <span className="text-ibm text-lg font-medium block text-zinc-800">Chat</span>
+                                (
+                                    <div className="h-screen mt-12 mb-8 flex flex-col">
+                                        <span className="text-ibm text-lg font-medium block text-zinc-800">Chat</span>
 
 
-                                </div>
-                            ) : null
+                                    </div>
+                                ) : null
                     }
 
 
