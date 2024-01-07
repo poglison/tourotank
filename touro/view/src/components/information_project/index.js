@@ -36,7 +36,7 @@ export default function InformationProject(props) {
                                 <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
                             </div>
 
-                            <span className="text-sm ml-2 truncate w-56">Leonardo Heitor Poglia Pogliapp</span>
+                            <span className="text-sm ml-2 truncate w-56">Alan Hui</span>
                         </div>
                     </Link>
 

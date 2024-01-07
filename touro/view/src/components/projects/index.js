@@ -5,10 +5,10 @@ export default function Projects(props) {
 
     var projects = [
         {
-            "name": "tourotank",
-            "description": "Um modo de conectar investidores e ideias de uma forma simples.",
-            "image": "/tourotank_banner.png",
-            "price": 1000
+            "name": "Projeto 1",
+            "description": "Descrição do projeto 1",
+            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
+            "price": 2000
         },
         {
             "name": "Projeto 2",

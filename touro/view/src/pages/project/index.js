@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
 import InformationProject from "../../components/information_project";
@@ -18,6 +18,10 @@ export default function Project() {
 
     // 1 - Informações // 2 - FAQ // 3 - Chat
     const [selectedInformation, setSelectedInformation] = useState(1);
+
+    useEffect(() => {
+        document.scrollingElement.scrollTop = 0;
+    }, [])
 
 
     return (
@@ -109,19 +113,19 @@ export default function Project() {
 
                                     <FAQ className="!p-0 !mt-0" title={false} faq={[
                                         {
-                                            title: "O que é o Netflix Compartilhada Premium Hd 4k",
-                                            description: "O Touro é uma plataforma de investimentos que conecta investidores a empreendedores de todo o Brasil. Através do Touro, investidores podem investir em empresas de alto potencial de crescimento e retorno financeiro.",
+                                            title: "O que é o Pysionic",
+                                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra elit eget enim porttitor dictum. Morbi bibendum, sem et malesuada vestibulum, sem urna pharetra sem, eu pretium mi erat euismod magna. Mauris non sapien nisi. Ut gravida finibus aliquam. Vivamus lobortis, lacus nec iaculis molestie, eros nisi blandit diam, at porta justo ex vel tellus. Maecenas id aliquet libero. Phasellus auctor bibendum augue, accumsan sodales lorem tristique quis. Nulla facilisi. Etiam quis risus id ligula dignissim efficitur id et nibh. Suspendisse potenti. Donec metus quam, tempor eu efficitur volutpat, tincidunt vel purus. Curabitur commodo nulla at cursus eleifend. Nullam felis diam, imperdiet sed vulputate ut, euismod quis augue.",
                                             click: false
                                         },
                                         {
-                                            title: "Como funciona o tourotank?",
-                                            description: "O Touro é uma plataforma de investimentos que conecta investidores a empreendedores de todo o Brasil. Através do Touro, investidores podem investir em empresas de alto potencial de crescimento e retorno financeiro.",
+                                            title: "Como funciona o Pysionic?",
+                                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra elit eget enim porttitor dictum. Morbi bibendum, sem et malesuada vestibulum, sem urna pharetra sem, eu pretium mi erat euismod magna. Mauris non sapien nisi. Ut gravida finibus aliquam. Vivamus lobortis, lacus nec iaculis molestie, eros nisi blandit diam, at porta justo ex vel tellus. Maecenas id aliquet libero. Phasellus auctor bibendum augue, accumsan sodales lorem tristique quis. Nulla facilisi. Etiam quis risus id ligula dignissim efficitur id et nibh. Suspendisse potenti. Donec metus quam, tempor eu efficitur volutpat, tincidunt vel purus. Curabitur commodo nulla at cursus eleifend. Nullam felis diam, imperdiet sed vulputate ut, euismod quis augue.",
                                             click: false
                                         },
 
                                         {
-                                            title: "Quem pode investir no tourotank?",
-                                            description: "O Touro é uma plataforma de investimentos que conecta investidores a empreendedores de todo o Brasil. Através do Touro, investidores podem investir em empresas de alto potencial de crescimento e retorno financeiro.",
+                                            title: "Quem pode investir no Pysionic?",
+                                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra elit eget enim porttitor dictum. Morbi bibendum, sem et malesuada vestibulum, sem urna pharetra sem, eu pretium mi erat euismod magna. Mauris non sapien nisi. Ut gravida finibus aliquam. Vivamus lobortis, lacus nec iaculis molestie, eros nisi blandit diam, at porta justo ex vel tellus. Maecenas id aliquet libero. Phasellus auctor bibendum augue, accumsan sodales lorem tristique quis. Nulla facilisi. Etiam quis risus id ligula dignissim efficitur id et nibh. Suspendisse potenti. Donec metus quam, tempor eu efficitur volutpat, tincidunt vel purus. Curabitur commodo nulla at cursus eleifend. Nullam felis diam, imperdiet sed vulputate ut, euismod quis augue.",
                                             click: false
                                         },
                                     ]} />
