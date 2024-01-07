@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Button from "../../templates/button";
 
 
-export default function InformationProject() {
+export default function InformationProject(props) {
 
     const [scroll, setScroll] = useState(false);
 
