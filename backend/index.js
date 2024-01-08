@@ -9,27 +9,27 @@ app.use(express.json());
 const crud = require("./crud.js");
 
 
-app.post("/api/login", async (req, res) => {
+app.post("/login", async (req, res) => {
     res.json(await crud.login(req.params.table, req.body));
 });
 
-app.get("/api/:table", async (req, res) => {
+app.get("/:table", async (req, res) => {
     res.json(await crud.get(req.params.table));
 });
 
-app.post("/api/:table", async (req, res) => {
+app.post("/:table", async (req, res) => {
     res.json(await crud.save(req.params.table, req.body.id, req.body));
 });
 
-app.get("/api/:table/:id", async (req, res) => {
+app.get("/:table/:id", async (req, res) => {
     res.json(await crud.getID(req.params.table, req.params.id));
 });
 
-app.get("/api/:table/code/:code", async (req, res) => {
+app.get("/:table/code/:code", async (req, res) => {
     res.json(await crud.getCode(req.params.table, req.params.code));
 });
 
-app.delete("/api/:table/:id", async (req, res) => {
+app.delete("/:table/:id", async (req, res) => {
     res.json(await crud.remove(req.params.table, req.params.id));
 });
 
