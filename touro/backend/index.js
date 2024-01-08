@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8080; // Escolha a porta que desejar
+const port = 8080;
 const cors = require("cors");
 
 app.use(cors());
@@ -8,9 +8,6 @@ app.use(express.json());
 
 const crud = require("./crud.js");
 
-app.get("/", (req, res) => {
-    res.json("Hellow World");
-})
 
 app.post("/api/login", async (req, res) => {
     res.json(await crud.login(req.params.table, req.body));
