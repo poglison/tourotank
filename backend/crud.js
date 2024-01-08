@@ -53,7 +53,7 @@ async function get(table) {
 
 
     if (table == "user") {
-        return;
+        return [];
     }
 
     const tableRef = collection(db, table);
@@ -135,6 +135,5 @@ module.exports = {
     get,
     getId,
     getCode,
-    login,
     remove
 }
