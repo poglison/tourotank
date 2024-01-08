@@ -8,10 +8,9 @@ app.use(express.json());
 
 const crud = require("./crud.js");
 
-
-// app.post("/login", async (req, res) => {
-//     res.json(await crud.login(req.params.table, req.body));
-// });
+app.post("/login", async (req, res) => {
+    res.json(await crud.login(req.params.table, req.body));
+});
 
 app.get("/:table", async (req, res) => {
     res.json(await crud.get(req.params.table));
