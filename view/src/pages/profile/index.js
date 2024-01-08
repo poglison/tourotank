@@ -21,7 +21,7 @@ export default function Profile() {
     ]
 
     return (
-        <div>
+        <div className='overflow-x-hidden'>
 
             <Header />
 
@@ -83,8 +83,8 @@ export default function Profile() {
 
                 </div>
 
-                <div className='mt-32 flex'>
-                    <div className='w-60 border border-zinc-300 rounded-lg'>
+                <div className='mt-32 flex flex-col md:flex-row'>
+                    <div className='flex flex-col w-full md:flex-col md:!w-60 border border-zinc-300 rounded-lg'>
 
                         <span className='block px-4 pt-4 pb-4 mb-0 font-medium text-zinc-700 border-b border-b-zinc-300'>Menu</span>
 
