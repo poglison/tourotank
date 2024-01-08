@@ -101,27 +101,27 @@ async function getCode(table, code) {
     return list;
 }
 
-async function login(table, data) {
-    const tableRef = collection(db, "user");
+// async function login(table, data) {
+//     const tableRef = collection(db, "user");
 
-    const q = query(tableRef);
-    const querySnapshot = await getDocs(q);
-    let r = false;
+//     const q = query(tableRef);
+//     const querySnapshot = await getDocs(q);
+//     let r = false;
 
-    querySnapshot.forEach((doc) => {
+//     querySnapshot.forEach((doc) => {
 
-        if (doc.data().username == data.username && doc.data().password == data.password) {
-            const data = {
-                name: doc.data().name,
-                id: doc.id
-            }
-            r = data;
-        }
+//         if (doc.data().username == data.username && doc.data().password == data.password) {
+//             const data = {
+//                 name: doc.data().name,
+//                 id: doc.id
+//             }
+//             r = data;
+//         }
 
-    });
+//     });
 
-    return r;
-}
+//     return r;
+// }
 
 async function remove(table, id) {
     const dado = await deleteDoc(doc(db, table, id));
