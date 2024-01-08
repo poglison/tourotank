@@ -8,6 +8,10 @@ app.use(express.json());
 
 const crud = require("./crud.js");
 
+app.get("/", (req, res) => {
+    res.json("Hellow World");
+})
+
 app.post("/api/login", async (req, res) => {
     res.json(await crud.login(req.params.table, req.body));
 });
