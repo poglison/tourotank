@@ -15,14 +15,24 @@ export default function Header(props) {
     <div className={"w-full h-20 flex items-center justify-between p-5 md:p-10 z-20 relative " + props.className}>
 
       <Logo className="md:text-xl text-sm" />
-      
+
 
       {props.buttons != false &&
         <div className="flex items-center justify-between">
 
-          <Link to="/login">
-            <Button type="primary" className="w-28 md:w-36 h-full mr-4">Investir</Button>
-          </Link>
+
+          {!user?.username &&
+            <Link to="/login">
+              <Button type="primary" className="w-28 md:w-36 h-full mr-4">Investir</Button>
+            </Link>
+          }
+
+          {user?.username &&
+            <Link to="/login">
+              <Button type="primary" className="w-44 h-full mr-4">Adicionar Projeto</Button>
+            </Link>
+          }
+
 
 
 
