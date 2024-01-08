@@ -37,20 +37,20 @@ export default function Profile() {
 
                         <div className='flex items-center'>
                             <div className='w-24 h-24 rounded-full mr-5'>
-                                {/* <img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' /> */}
+                                <img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' />
 
-                                <div className="w-full h-full object-cover rounded-full bg-zinc-500">
+                                {/* <div className="w-full h-full object-cover rounded-full bg-zinc-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full object-cover rounded-full text-white fill-white p-4">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                                     </svg>
 
-                                </div>
+                                </div> */}
                             </div>
 
                             <div>
                                 <div className='flex items-center'>
                                     <div className='font-ibm text-xl font-medium text-zinc-600'>
-                                        {user.name}
+                                        {user.name ? user.name : "Alan Hui"}
                                     </div>
 
                                     <div className='w-24 h-6 ml-4 border-2 font-medium border-zinc-600 rounded-full text-xs flex items-center justify-center cursor-pointer hover:bg-zinc-600 text-zinc-600 hover:text-white'>

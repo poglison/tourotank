@@ -44,13 +44,9 @@ function Content() {
             <Route path="/chat" element={<Chat />} />
             <Route path="/*" element={<Erro />} />
             <Route path="/project" element={<Project />} />
+            <Route path="/profile" element={<Profile />} />
 
 
-            {user.username &&
-              <>
-                <Route path="/profile" element={<Profile />} />
-              </>
-            }
           </Routes>
 
           <ToastContainer
