@@ -15,7 +15,7 @@ export default function InformationProject(props) {
 
             if (window.scrollY >= 100) {
                 setScroll(true);
-            } else{
+            } else {
                 setScroll(false);
             }
         });
@@ -94,7 +94,9 @@ export default function InformationProject(props) {
                     <span className="text-2xl font-medium font-ibm text-primary">R$ 100M</span>
                 </div>
 
-                <Button type="primary" className="w-full">Investir</Button>
+                <Link to="/login">
+                    <Button type="primary" className="w-full">Investir</Button>
+                </Link>
             </div>
         </div>
     )
