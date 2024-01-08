@@ -23,7 +23,7 @@ export default function InformationProject(props) {
 
     return (
 
-        <div className={"mt-10 md:mt-0 md:fixed md:w-72 md:right-10 transition-all duration-300 " + (scroll ? "!-mt-28" : "")}>
+        <div className={"mt-10 md:mt-0 md:fixed md:w-72 md:right-10 transition-all duration-300 " + (scroll ? "md:!-mt-28" : "")}>
 
             <div className="bg-white w-full h-full rounded-lg mb-2">
 

@@ -7,7 +7,7 @@ export default function Timeline() {
 
         <div className="w-full mt-8">
             <span className="text-ibm text-lg font-medium mb-4 block text-zinc-800">Linha do tempo</span>
-            <div className="flex w-full">
+            <div className="flex flex-col lg:flex-row w-full">
                 <TimeLineCircle text="Ideia" check={true} />
                 <TimelineItem  check={true} />
                 <TimeLineCircle text="Conceito" check={true} />
@@ -40,8 +40,8 @@ const TimeLineCircle = (props) => {
 
 const TimelineItem = (props) => {
     return (
-        <div className="flex flex-row items-center">
-            <div className={"h-px w-10 " + (props.check ? "bg-primary" : "bg-zinc-300")}></div>
+        <div className="flex flex-row items-center justify-center lg:justify-normal">
+            <div className={"h-10 w-px lg:h-px lg:w-10 " + (props.check ? "bg-primary" : "bg-zinc-300")}></div>
         </div>
     )
 }
