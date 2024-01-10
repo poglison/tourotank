@@ -17,6 +17,7 @@ import Profile from './pages/profile';
 import Erro from './pages/erro';
 import Project from './pages/project';
 import UserContext from './context/userContext';
+import NewProject from './pages/new_project';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -45,7 +46,7 @@ function Content() {
             <Route path="/*" element={<Erro />} />
             <Route path="/project" element={<Project />} />
             <Route path="/profile" element={<Profile />} />
-
+            <Route path="/project/new" element={<NewProject />} />
 
           </Routes>
 

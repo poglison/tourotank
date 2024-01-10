@@ -7,7 +7,7 @@ import Benefits from '../../components/benefits';
 
 export default function App() {
   return (
-    <div className='overflow-hidden relative'>
+    <div className='overflow-hidden relative mx-auto max-w-[2000px]'>
       <Header className="md:!pr-20" />
       <Banner />
       <Projects />

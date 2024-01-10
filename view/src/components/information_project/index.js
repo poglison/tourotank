@@ -7,6 +7,7 @@ import Button from "../../templates/button";
 export default function InformationProject(props) {
 
     const [scroll, setScroll] = useState(false);
+    const [percent, setPercent] = useState(10);
 
 
     useEffect(() => {
@@ -40,50 +41,77 @@ export default function InformationProject(props) {
                         </div>
                     </Link>
 
-                    <div className="flex items-center justify-between border-t border-zinc-300 p-2">
 
-                        <div className="text-[13px] ml-2">
-                            <span >Último acesso:</span>
-                            <span className="font-medium ml-2">Hoje 10:00</span>
+                    {props.type != "new" &&
+                        <div className="flex items-center justify-between border-t border-zinc-300 p-2">
+
+                            <div className="text-[13px] ml-2">
+                                <span >Último acesso:</span>
+                                <span className="font-medium ml-2">Hoje 10:00</span>
+                            </div>
+
+
+                            <div className="border border-zinc-300 w-10 h-10 flex items-center justify-center rounded-lg text-zinc-700 hover:text-zinc-900 hover:bg-neutral-100 cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                                    <path fillRule="evenodd" d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z" clipRule="evenodd" />
+                                </svg>
+                            </div>
+
+
                         </div>
-
-
-                        <div className="border border-zinc-300 w-10 h-10 flex items-center justify-center rounded-lg text-zinc-700 hover:text-zinc-900 hover:bg-neutral-100 cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                                <path fillRule="evenodd" d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z" clipRule="evenodd" />
-                            </svg>
-                        </div>
-
-
-                    </div>
-
+                    }
                 </div>
             </div>
 
             <div className="bg-white border border-zinc-300 p-4 rounded-lg">
-                <div className="w-full h-4 bg-zinc-200 rounded-full mb-4">
-                    <div className="w-1/2 h-full bg-primary rounded-full flex items-center justify-center text-xs text-white">50%</div>
-                </div>
+                {props.type != "new" ?
+
+                    <div className="w-full h-4 bg-zinc-200 rounded-full mb-4">
+                        <div className="w-1/2 h-full bg-primary rounded-full flex items-center justify-center text-xs text-white">50%</div>
+                    </div>
+                    :
+                    <div>
+                        <span>% que será para investimento</span>
+
+                        <div className="w-full h-4 mt-2 bg-zinc-200 rounded-full mb-4">
+                            <div className="w-1/2 h-full bg-primary rounded-full flex items-center justify-center text-xs text-white">
+                                <input onChange={(e) => setPercent(e.target.value + (!e.target.value.includes("%") ? "%" : ""))} value={percent} maxLength={4} className="w-8 text-white placeholder:text-zinc-50 placeholder:text-xs bg-transparent outline-none" placeholder="10%" />
+                            </div>
+                        </div>
+                    </div>
+                }
 
 
 
                 <div className="flex flex-col mb-4">
                     <span>Investimento minimo</span>
 
-                    <span className="text-2xl font-medium font-ibm text-primary">R$ 1.000.000,00</span>
+                    {props.type != "new" ?
+                        <span className="text-2xl font-medium font-ibm text-primary">R$ 1.000.000,00</span>
+                        :
+                        <input className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o minimo que se pode investir" />
+                    }
                 </div>
 
-                <div className="flex justify-between mb-4">
+                <div className={"flex justify-between mb-4 " + (props.type == "new" ? "flex-col" : "")}>
                     <div className="flex flex-col">
                         <span>Investido</span>
 
-                        <span className="text-2xl font-medium font-ibm text-primary">R$ 100,00</span>
+                        {props.type != "new" ?
+                            <span className="text-2xl font-medium font-ibm text-primary">R$ 1.000</span>
+                            :
+                            <input className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto já foi investido" />
+                        }
                     </div>
 
-                    <div className="flex flex-col">
+                    <div className={"flex flex-col " + (props.type == "new" ? "mt-4" : "")}>
                         <span>Investidores</span>
 
-                        <span className="text-2xl font-medium font-ibm text-primary">100</span>
+                        {props.type != "new" ?
+                            <span className="text-2xl font-medium font-ibm text-primary">100</span>
+                            :
+                            <input className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite quantos investidores teve" />
+                        }
                     </div>
                 </div>
 
@@ -91,12 +119,22 @@ export default function InformationProject(props) {
                 <div className="flex flex-col mb-4">
                     <span>Valuation</span>
 
-                    <span className="text-2xl font-medium font-ibm text-primary">R$ 100M</span>
+                    {props.type != "new" ?
+                        <span className="text-2xl font-medium font-ibm text-primary">R$ 100M</span>
+                        :
+                        <input className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto que vale o projeto" />
+                    }
                 </div>
 
-                <Link to="/login">
-                    <Button type="primary" className="w-full">Investir</Button>
-                </Link>
+
+                {props.type == "new" ?
+                    (<Link to="/login">
+                        <Button type="primary" className="w-full">Cadastrar</Button>
+                    </Link>) :
+                    <Link to="/login">
+                        <Button type="primary" className="w-full">Investir</Button>
+                    </Link>
+                }
             </div>
         </div>
     )

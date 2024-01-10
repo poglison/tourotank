@@ -28,8 +28,8 @@ export default function Header(props) {
           }
 
           {user?.username &&
-            <Link to="/login">
-              <Button type="primary" className="w-44 h-full mr-4">Adicionar Projeto</Button>
+            <Link to="/project/new">
+              <Button type="primary" className="w-44 h-full mr-4">Adicionar projeto</Button>
             </Link>
           }
 

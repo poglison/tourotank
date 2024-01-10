@@ -1,22 +1,22 @@
 
 
-export default function Timeline() {
+export default function Timeline(props) {
 
 
     return (
 
         <div className="w-full mt-8">
-            <span className="text-ibm text-lg font-medium mb-4 block text-zinc-800">Linha do tempo</span>
+            <span className="text-ibm text-lg font-medium mb-4 block text-zinc-800">{props.title ? props.title : "Linha do tempo"}</span>
             <div className="flex flex-col lg:flex-row w-full">
-                <TimeLineCircle text="Ideia" check={true} />
-                <TimelineItem  check={true} />
-                <TimeLineCircle text="Conceito" check={true} />
-                <TimelineItem />
-                <TimeLineCircle text="Protótipo" />
-                <TimelineItem />
-                <TimeLineCircle text="Desenvolvimento" />
-                <TimelineItem />
-                <TimeLineCircle text="Produção" />
+                <TimeLineCircle text="Ideia" check={props.check > 0 ? true : false} setCheck={props?.setCheck ? props.setCheck : null} index={1} />
+                <TimelineItem check={props.check > 1 ? true : false} />
+                <TimeLineCircle text="Conceito" check={props.check > 1 ? true : false} setCheck={props?.setCheck ? props.setCheck : null} index={2} />
+                <TimelineItem check={props.check > 2 ? true : false} />
+                <TimeLineCircle text="Protótipo" check={props.check > 2 ? true : false} setCheck={props?.setCheck ? props.setCheck : null} index={3} />
+                <TimelineItem check={props.check > 3 ? true : false} />
+                <TimeLineCircle text="Desenvolvimento" check={props.check > 3 ? true : false} setCheck={props?.setCheck ? props.setCheck : null} index={4} />
+                <TimelineItem check={props.check > 4 ? true : false} />
+                <TimeLineCircle text="Produção" check={props.check > 4 ? true : false} setCheck={props?.setCheck ? props.setCheck : null} index={5} />
             </div>
         </div>
     )
@@ -25,7 +25,7 @@ export default function Timeline() {
 
 const TimeLineCircle = (props) => {
     return (
-        <div className={"flex flex-col items-center justify-center border w-full h-32 rounded " + (props.check ? "border-primary bg-primary/5 hover:bg-primary/10" : "border-zinc-300 hover:bg-zinc-50")}>
+        <div onClick={() => props.setCheck ? props.setCheck(props.index) : null} className={"flex flex-col cursor-pointer items-center justify-center border w-full h-32 rounded " + (props.check ? "border-primary bg-primary/5 hover:bg-primary/10" : "border-zinc-300 hover:bg-zinc-50")}>
             <div className={"flex items-center justify-center w-10 h-10 rounded-full " + (props.check ? "bg-primary" : "bg-zinc-300 border border-zinc-400")}>
                 {props.check && <span className="text-white text-center font-ibm text-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
