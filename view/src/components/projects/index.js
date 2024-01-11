@@ -111,7 +111,7 @@ export default function Projects(props) {
 
             </div>
 
-            <div className="w-full flex flex-row justify-center items-center mt-5">
+            <div className="w-full flex flex-col md:flex-row justify-center items-center mt-5">
                 <span className="text-lg text-zinc-700 font-ibm mr-1">Para ver mais projetos, você pode entrar no nosso</span>
                 {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.6} stroke="currentColor" className="w-8 h-8 ml-4 mr-4 text-primary">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
