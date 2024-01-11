@@ -29,7 +29,7 @@ export default function Benefits() {
     ]
 
     return (
-        <div className="h-screen flex flex-col items-center justify-center w-full text-white font-ibm relative p-5 md:p-10">
+        <div className="md:h-screen flex flex-col items-center justify-center w-full text-white font-ibm relative p-5 md:p-10">
             <div className="w-2/3 flex flex-col items-center justify-center rounded-2xl text-primary p-4 pb-0">
                 <span className="text-3xl font-bold">Benefícios</span>
                 <span className="text-xl mt-1 text-zinc-700">Conheça os benefícios de investir no tourank</span>
