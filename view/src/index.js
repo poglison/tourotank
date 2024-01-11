@@ -18,7 +18,7 @@ import Erro from './pages/erro';
 import Project from './pages/project';
 import UserContext from './context/userContext';
 import NewProject from './pages/new_project';
-
+import Hub from './pages/hub';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -47,7 +47,7 @@ function Content() {
             <Route path="/project" element={<Project />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/project/new" element={<NewProject />} />
-
+            <Route path="/hub" element={<Hub />} />
           </Routes>
 
           <ToastContainer

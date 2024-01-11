@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react"
 import Project from "../project"
+import Button from "../../templates/button";
+import { Link } from "react-router-dom";
 
 export default function Projects(props) {
 
@@ -83,8 +85,7 @@ export default function Projects(props) {
     }
 
     return (
-        <div className={"p-10 h-96 z-10 relative transition-all select-none " + props.className}>
-
+        <div className={"p-10 z-10 relative transition-all select-none " + props.className}>
 
             <div className="projects flex overflow-auto transition rounded-xl">
                 <div className="absolute left-0 w-10 ml-2 mt-1 h-52 flex items-center justify-center text-zinc-400 cursor-pointer" onClick={() => moveScroll("left")}>
@@ -108,6 +109,23 @@ export default function Projects(props) {
                     </svg>
                 </div>
 
+            </div>
+
+            <div className="w-full flex flex-row justify-center items-center mt-5">
+                <span className="text-lg text-zinc-700 font-ibm mr-1">Para ver mais projetos, você pode entrar no nosso</span>
+                {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.6} stroke="currentColor" className="w-8 h-8 ml-4 mr-4 text-primary">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg> */}
+
+                <Link to="/hub">
+                    <div className="flex p-3 rounded-full border-white border-2 ease-in-out cursor-pointer font-ibm font-medium transition-all text-zinc-800 hover:text-black hover:underline hover:decoration-wavy decoration-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m21 7.5-2.25-1.313M21 7.5v2.25m0-2.25-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3 2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75 2.25-1.313M12 21.75V19.5m0 2.25-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />
+                        </svg>
+                        <span className="ml-2">Hub de Projetos</span>
+
+                    </div>
+                </Link>
             </div>
         </div>
     )
