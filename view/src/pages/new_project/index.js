@@ -41,7 +41,7 @@ export default function NewProject() {
 
                     <div className="w-full md:w-[calc(100%-326px)] flex flex-col xl:flex-row">
 
-                        <div src="https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80" className="border border-zinc-300 w-1/2 xl:h-56 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-zinc-50 text-zinc-500 text-lg relative">
+                        <div src="https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80" className="border-[1.5px] border-zinc-300 w-1/2 xl:h-56 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-zinc-50 text-zinc-500 text-lg relative">
                             <input id="file" type="file" className="absolute w-full h-full hidden" />
                             <label for="file" className="cursor-pointer absolute w-full h-full flex items-center justify-center" />
 

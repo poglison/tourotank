@@ -159,18 +159,18 @@ export default function Chat() {
 
                         <div className="bottom-6 fixed flex w-11/12 md:w-1/2 h-20 items-center justify-between p-5 z-10 px-0 ">
 
-                            <div className="bg-white border rounded-full z-10 w-full flex items-center px-5 pr-1.5">
+                            <div className="bg-white border-[1.5px] rounded-full z-10 w-full flex items-center px-5 pr-1.5">
                                 <input onChange={(e) => setMessage(e.target.value)} value={message} type="text" className=" w-full h-12 text-sm outline-none" placeholder="Digite sua mensagem" />
 
                                 {completedTyping ?
-                                    <button className="ml-5 flex items-center bg-primary text-white hover:bg-white hover:text-primary border-2 border-primary rounded-full w-10 h-10 min-h-10 min-w-10 justify-center cursor-pointer hover:bg-primary-600"
+                                    <button className="ml-5 flex items-center bg-primary text-white hover:bg-white hover:text-primary border-[1.5px] border-primary rounded-full w-10 h-10 min-h-10 min-w-10 justify-center cursor-pointer hover:bg-primary-600"
                                         onClick={(e) => { sendMessage() }}>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
                                         </svg>
                                     </button>
                                     :
-                                    <button className="ml-5 flex items-center bg-zinc-400 text-white border-2 border-zinc-400 rounded-full w-10 h-10 min-h-10 min-w-10 justify-center cursor-pointer hover:bg-primary-600">
+                                    <button className="ml-5 flex items-center bg-zinc-400 text-white border-[1.5px] border-zinc-400 rounded-full w-10 h-10 min-h-10 min-w-10 justify-center cursor-pointer hover:bg-primary-600">
                                         <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <circle className="opacity-25" cx={12} cy={12} r={10} stroke="currentColor" strokeWidth={4} />
                                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />

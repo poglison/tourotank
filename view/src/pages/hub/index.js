@@ -96,7 +96,7 @@ export default function Hub() {
                 </div>
             </div>
 
-            <div className="overflow-hidden flex justify-center items-center w-full bg-zinc-50 border-t border-b mt-8 pb-10 relative">
+            <div className="overflow-hidden flex justify-center items-center w-full bg-zinc-50 border-t-[1.5px] border-b-[1.5px] mt-8 pb-10 relative">
 
                 <div className="flex flex-wrap justify-start mt-20 w-5/6 px-auto z-10">
 
@@ -104,7 +104,7 @@ export default function Hub() {
                     {projects.map((project, index) => {
                         return (
                             <div className="w-[calc(33%-29px)] rounded-xl m-4  transition-all duration-300" key={index}>
-                                <div className="w-full h-70 border-zinc-300 border transition-all duration-300 rounded-xl overflow-hidden bg-white">
+                                <div className="w-full h-70 border-zinc-300 border-[1.5px] transition-all duration-300 rounded-xl overflow-hidden bg-white">
                                     <img src={project.image} className="w-full h-full object-cover" />
 
                                     <div className="p-2 pb-4 px-4">

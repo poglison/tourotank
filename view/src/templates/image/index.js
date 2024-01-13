@@ -49,7 +49,7 @@ export default function Image(props) {
                                     </button> */}
 
                                     <button
-                                        className="p-2 bg-white ml-2 mr-2.5 rounded-full border text-zinc-700 hover:text-zinc-900 hover:bg-zinc-300 text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                        className="p-2 bg-white ml-2 mr-2.5 rounded-full border-[1.5px] text-zinc-700 hover:text-zinc-900 hover:bg-zinc-300 text-3xl leading-none font-semibold outline-none focus:outline-none"
                                         onClick={() => { setIsModalVisible(false) }}>
                                         <span className="bg-transparent text-zinc-700 h-6 w-6 text-2xl block outline-none focus:outline-none">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
