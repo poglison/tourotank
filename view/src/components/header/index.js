@@ -14,7 +14,13 @@ export default function Header(props) {
   return (
     <div className={"w-full h-20 flex items-center justify-between p-5 md:p-10 z-20 relative " + props.className}>
 
-      <Logo className="md:text-xl text-sm" />
+
+      <div className="flex items-center">
+        <Logo className="md:text-xl text-sm" />
+        <div className="cursor-pointer ml-4 px-2 border-[1.5px] text-primary hover:bg-primary hover:text-white border-primary rounded-full hidden md:flex items-center justify-center">
+          <span className="text-xs font-ibm">beta 0.1</span>
+        </div>
+      </div>
 
       {props.search &&
         <div className="flex items-center justify-between w-1/2 md:w-1/4  rounded-full bg-white hover:bg-zinc-50  border-[1.5px] h-11 px-4 pl-3">

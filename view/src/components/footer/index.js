@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="w-full h-full flex flex-col justify-between">
 
 
-                <div className="flex h-full w-full justify-between space-x-12">
+                <div className="flex flex-col md:flex-row h-full w-full justify-between space-x-12">
 
                     <div className="flex w-1/2 justify-between items-center flex-row space-x-5">
                         <div className="flex flex-col space-y-1">
@@ -83,9 +83,9 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div>
-                        <div className="flex">
-                            <div className="flex space-x-2">
+                    <div className="w-full md:w-auto !m-0 !p-0">
+                        <div className="flex md:items-start items-center flex-col md:flex-row mt-8 md:mt-0">
+                            <div className="flex space-x-4 mb-4 md:mb-0">
                                 <Link to="/sobre">
                                     <span className="text-xs hover:underline">Termos de uso</span>
                                 </Link>
