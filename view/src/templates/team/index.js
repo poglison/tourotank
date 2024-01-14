@@ -10,7 +10,7 @@ export default function Team(props) {
 
 
             <div className="w-full h-44 border-[1.5px] border-zinc-300 rounded-lg p-6 flex items-center">
-                <div className="bg-zinc-300 w-28 min-w-28 h-28 rounded-full" />
+                <div className="bg-zinc-300 w-10 min-w-10 h-10 md:w-28 md:min-w-28 md:h-28 rounded-full" />
 
                 <div className="w-full h-full ml-6 flex flex-col justify-center">
 
@@ -38,11 +38,11 @@ export default function Team(props) {
             </div>
 
 
-            <div className="flex lg:flex-wrap mt-4">
+            <div className="flex flex-col xl:flex-row xl:flex-wrap mt-4">
 
                 {props.team.map((person, index) => {
                     return (
-                        <div className={"mt-4 h-48 lg:w-[calc(33%-8px)] mb-4 lg:mb-0 w-full border-[1.5px] border-zinc-300 rounded-lg p-4 flex flex-col items-center " + ((index % 3 != 2) ? "mr-4" : "")}>
+                        <div className={"mt-4 h-48 xl:w-[calc(33%-8px)] mb-0 w-full border-[1.5px] border-zinc-300 rounded-lg p-4 flex flex-col items-center " + ((index % 3 != 2) ? "mr-4" : "")}>
                             <div className="w-full flex items-center justify-between mb-2">
                                 {props.type == "new" ?
                                     <div className="w-full h-4 flex">
@@ -63,7 +63,7 @@ export default function Team(props) {
                 }
 
                 {props.type == "new" &&
-                    <div onClick={() => props.setTeam([...props.team, { name: "Nome", rule: "CARGO" }])} className="mt-4 h-48 lg:w-[calc(33%-8px)] mb-4 lg:mb-0 w-full border-[1.5px] border-zinc-300 rounded-lg p-4 flex flex-col items-center justify-center hover:bg-zinc-50 text-zinc-500 cursor-pointer">
+                    <div onClick={() => props.setTeam([...props.team, { name: "Nome", rule: "CARGO" }])} className="mt-4 h-48 xl:w-[calc(33%-8px)] mb-4 xl:mb-0 w-full border-[1.5px] border-zinc-300 rounded-lg p-4 flex flex-col items-center justify-center hover:bg-zinc-50 text-zinc-500 cursor-pointer">
 
                         <div className="bg-zinc-300 w-28 min-w-28 h-28 min-h-28 rounded-full flex justify-center text-7xl pt-3.5 select-none">
                             +
