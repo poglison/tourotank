@@ -6,9 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { save } from "../../services";
 
+import { toast } from "react-toastify";
 
 import { useContext } from "react";
-import UserContext from "../../context/userContext";
+import UserContext from "../../context";
 
 
 export default function Login() {
@@ -20,12 +21,18 @@ export default function Login() {
     const { user, setUser } = useContext(UserContext);
     const navigate = useNavigate();
 
+    const notify = (message) => toast(message);
 
     const saveUser = () => {
 
-        save("user", { name: name, username: email, password: password }).then((response) => {
-            console.log(response);
-            setUser({ username: response.username, name: response.name, id: response.id });
+        save("user", { name: name, email: email, password: password }).then((response) => {
+
+            if (response.status == "404") {
+                notify(response.message);
+                return;
+            }
+
+            setUser({ email: response.email, name: response.name, id: response.id });
             navigate("/");
         });
     }
@@ -64,7 +71,7 @@ export default function Login() {
 
                             <span className="font-ibm text-lg md:text-xl font-medium text-primary">Registre-se no </span>
 
-                            <span className="ml-2 font-montserrat text-xl md:text-2xl font-bold text-primary">tourank</span>
+                            <span className="ml-2 font-montserrat text-xl md:text-2xl font-bold text-primary">tourotank</span>
                         </div>
                         <Input onChange={(e) => { setName(e.target.value) }} placeholder="Nome" type="text" className="mb-4" />
 

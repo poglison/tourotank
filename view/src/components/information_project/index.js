@@ -138,7 +138,7 @@ export default function InformationProject(props) {
 
 
                 {props.type == "new" ?
-                    (<div onClick={() => save("projects", {project: props.project, infos: infos})} className="mt-4">
+                    (<div onClick={() => save("project", {project: props.project, infos: infos, creator: user})} className="mt-4">
                         <Button type="primary" className="w-full">Cadastrar</Button>
                     </div>) :
                     <Link to="/login">

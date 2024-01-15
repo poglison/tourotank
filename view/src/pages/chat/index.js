@@ -18,7 +18,7 @@ export default function Chat() {
             content: 'Olá, tudo bem? Eu sou o tourotank, como eu posso te chamar?',
             user: {
                 name: 'tourotank',
-                avatar: 'https://www.tourank.com.br/img/logo.png'
+                avatar: 'https://www.tourotank.com.br/img/logo.png'
             }
         },
         {
@@ -26,7 +26,7 @@ export default function Chat() {
             content: 'Obrigado, qual é o nome do seu projeto?',
             user: {
                 name: 'tourotank',
-                avatar: 'https://www.tourank.com.br/img/logo.png'
+                avatar: 'https://www.tourotank.com.br/img/logo.png'
             }
         },
         {
@@ -35,7 +35,7 @@ export default function Chat() {
             input: 'image',
             user: {
                 name: 'tourotank',
-                avatar: 'https://www.tourank.com.br/img/logo.png'
+                avatar: 'https://www.tourotank.com.br/img/logo.png'
             }
         }
     ])

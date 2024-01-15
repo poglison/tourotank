@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
 import InformationProject from "../../components/information_project";
@@ -9,7 +9,11 @@ import Buttons from "../../templates/buttons";
 import Team from "../../templates/team";
 import FAQ from "../../components/faq";
 
+import UserContext from "../../context";
+
 export default function NewProject() {
+
+    const { user } = useContext(UserContext);
 
 
     const [project, setProject] = useState({});
@@ -83,7 +87,7 @@ export default function NewProject() {
 
 
                     </div>
-                    <InformationProject type="new" project={project} setProject={setProject} />
+                    <InformationProject type="new" project={project} setProject={setProject} user={user} />
                 </div>
 
 

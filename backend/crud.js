@@ -51,11 +51,6 @@ async function save(table, id, data, body) {
 
 async function get(table) {
 
-
-    if (table == "user") {
-        return [];
-    }
-
     const tableRef = collection(db, table);
 
     const q = query(tableRef);
@@ -72,7 +67,7 @@ async function get(table) {
     return list;
 }
 
-async function getId(table, id) {
+async function getID(table, id) {
 
     const docRef = doc(db, table, id);
     const docSnap = await getDoc(docRef);
@@ -82,45 +77,6 @@ async function getId(table, id) {
     } else {
         return new Error("Não funcionou!");
     }
-}
-
-async function getCode(table, code) {
-
-    const tableRef = collection(db, table);
-    const q = query(tableRef, where("code", "==", code));
-    const querySnapshot = await getDocs(q);
-    const list = [];
-
-    querySnapshot.forEach((doc) => {
-        const data = {
-            ...doc.data(),
-            id: doc.id
-        }
-        list.push(data);
-    });
-    return list;
-}
-
-async function login(table, data) {
-    const tableRef = collection(db, "user");
-
-    const q = query(tableRef);
-    const querySnapshot = await getDocs(q);
-    let r = false;
-
-    querySnapshot.forEach((doc) => {
-
-        if (doc.data().username == data.username && doc.data().password == data.password) {
-            const data = {
-                name: doc.data().name,
-                id: doc.id
-            }
-            r = data;
-        }
-
-    });
-
-    return r;
 }
 
 async function remove(table, id) {
@@ -133,8 +89,6 @@ async function remove(table, id) {
 module.exports = {
     save,
     get,
-    getId,
-    getCode,
-    login,
+    getID,
     remove
 }

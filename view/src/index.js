@@ -16,7 +16,7 @@ import Chat from './pages/chat';
 import Profile from './pages/profile';
 import Erro from './pages/erro';
 import Project from './pages/project';
-import UserContext from './context/userContext';
+import UserContext from './context';
 import NewProject from './pages/new_project';
 import Hub from './pages/hub';
 
@@ -44,8 +44,8 @@ function Content() {
             <Route path="/register" element={<Register />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/*" element={<Erro />} />
-            <Route path="/project" element={<Project />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/project/:id" element={<Project />} />
+            <Route path="/profile/:id" element={<Profile />} />
             <Route path="/project/new" element={<NewProject />} />
             <Route path="/hub" element={<Hub />} />
           </Routes>

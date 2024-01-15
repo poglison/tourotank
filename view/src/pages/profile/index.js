@@ -3,12 +3,33 @@ import Footer from '../../components/footer';
 import Breadcrumbs from '../../templates/breadcrumbs';
 import Settings from '../../components/settings';
 
-import { useContext } from 'react';
-import UserContext from '../../context/userContext';
+import { useContext, useEffect } from 'react';
+import UserContext from '../../context';
+
+import { getByID } from '../../services';
+
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function Profile() {
 
     const { user, setUser } = useContext(UserContext);
+    const id = useParams().id;
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (user) {
+            getByID('user', id).then((response) => {
+
+                if (response.status == 404) {
+                    navigate('/404');
+                } else {
+                    setUser(response);
+                }
+            })
+        }
+    }, [])
+
+
 
     var items = [
         { title: "Resumo", icon: "M4.5 3.75a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V6.75a3 3 0 0 0-3-3h-15Zm4.125 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Zm-3.873 8.703a4.126 4.126 0 0 1 7.746 0 .75.75 0 0 1-.351.92 7.47 7.47 0 0 1-3.522.877 7.47 7.47 0 0 1-3.522-.877.75.75 0 0 1-.351-.92ZM15 8.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15ZM14.25 12a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H15a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15Z" },
@@ -49,8 +70,8 @@ export default function Profile() {
 
                             <div>
                                 <div className='flex items-center'>
-                                    <div className='font-ibm text-xl font-medium text-zinc-600'>
-                                        {user.name ? user.name : "Alan Hui"}
+                                    <div className='font-ibm text-xl font-medium text-zinc-600 min-h-7 min-w-10'>
+                                        {user.name}
                                     </div>
 
                                     <div className='w-24 h-6 ml-4 border-[1.5px] font-medium border-zinc-600 rounded-full text-xs flex items-center justify-center cursor-pointer hover:bg-zinc-600 text-zinc-600 hover:text-white'>
@@ -73,7 +94,7 @@ export default function Profile() {
                                         <path fillRule="evenodd" d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z" clipRule="evenodd" />
                                     </svg>
 
-                                    <span className='ml-2 text-sm'>Membro desde  23 de mai. de 2023</span>
+                                    <span className='ml-2 text-sm'>Membro desde  {user?.created?.split(",")[0]}</span>
                                 </div>
 
                             </div>

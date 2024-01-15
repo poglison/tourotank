@@ -88,11 +88,13 @@ export default function Hub() {
 
                         <p className="text-4xl text-center text-primary font-bold font-montserrat">touratank</p>
                         <div className="mt-8">
-                            <Button className="!px-6">Criar novo projeto</Button>
+                            <Link to="/project/new">
+                                <Button className="!px-6">Criar novo projeto</Button>
+                            </Link>
                         </div>
                     </div>
 
-            
+
                 </div>
             </div>
 

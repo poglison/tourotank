@@ -2,11 +2,11 @@ import Header from "../../components/header";
 import Button from "../../templates/button";
 import Input from "../../templates/input";
 import { toast } from "react-toastify";
-import { login } from "../../services";
+import { auth } from "../../services";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import UserContext from "../../context/userContext";
+import UserContext from "../../context";
 
 export default function Login() {
 
@@ -20,20 +20,22 @@ export default function Login() {
     const notify = (message) => toast(message);
 
 
-    const logon = () => {
+    const login = () => {
         setLoading(true);
 
-        login({ username: email, password: password }).then((response) => {
+        auth({ email: email, password: password }).then((response) => {
+            setLoading(false);
 
-            if (response) {
-                setUser({ id: response.id, username: email, name: response.name });
-                navigate("/");
-            } else {
-                setUser({ username: "" });
-                notify("Email ou senha incorretos");
+            if (response.status == "404") {
+                notify(response.message);
+                return;
             }
 
-            setLoading(false);
+            if (response) {
+                setUser({ id: response.id, email: email, name: response.name });
+                navigate("/");
+            }
+
 
         });
     }
@@ -72,13 +74,13 @@ export default function Login() {
 
                             <span className="font-ibm text-xl font-medium text-primary">Entre agora no </span>
 
-                            <span className="ml-2 font-montserrat text-2xl font-bold text-primary">tourank</span>
+                            <span className="ml-2 font-montserrat text-2xl font-bold text-primary">tourotank</span>
                         </div>
                         <Input onChange={(e) => { setEmail(e.target.value) }} placeholder="Email" type="email" className="mb-4" />
 
                         <Input onChange={(e) => { setPassword(e.target.value) }} placeholder="Senha" type="password" />
 
-                        <div onClick={() => logon()} >
+                        <div onClick={() => login()} >
                             <Button className="!px-1.5 !p-1 h-11 mt-4 w-full flex items-center " type="primary">
 
                                 {loading &&

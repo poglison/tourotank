@@ -1,11 +1,11 @@
 import axios from 'axios';
-// const url = 'http://localhost:8080/';
+const url = 'http://localhost:8080/api/';
 
-const url = 'https://tourotankdb.vercel.app/';
+// const url = 'https://tourotankdb.vercel.app/';
 
-export const login = (data) => {
+export const auth = (data) => {
 
-    return axios.post(url + 'login', data)
+    return axios.post(url + 'user/auth', data)
         .then(response => {
             return response.data;
         })
@@ -25,8 +25,10 @@ export const get = (table) => {
         });
 };
 
-export const getByCode = (table, id) => {
-    return axios.get(url + table + '/code/' + id)
+export const getByID = (table, id) => {
+    console.log(url + table + '/' + id);
+
+    return axios.get(url + table + '/' + id)
         .then(response => {
             return response.data;
         })
@@ -34,6 +36,7 @@ export const getByCode = (table, id) => {
             console.log(error);
         });
 }
+
 
 export const save = (table, data) => {
     return axios.post(url + table, data)

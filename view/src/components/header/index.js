@@ -4,7 +4,7 @@ import Logo from "../../templates/logo";
 import Menu from "../../templates/menu";
 
 import { useContext, useEffect } from "react";
-import UserContext from "../../context/userContext";
+import UserContext from "../../context";
 
 
 export default function Header(props) {
@@ -42,13 +42,13 @@ export default function Header(props) {
 
 
 
-          {!user?.username &&
+          {!user?.name &&
             <Link to="/login">
               <Button type="primary" className="w-28 md:w-36 h-full mr-4">Investir</Button>
             </Link>
           }
 
-          {user?.username &&
+          {user?.name &&
             <Link to="/project/new">
               <Button type="primary" className="w-44 h-full mr-4">Adicionar projeto</Button>
             </Link>
@@ -57,7 +57,7 @@ export default function Header(props) {
 
 
 
-          {!user.username ?
+          {!user.name ?
             <Link to="/login">
               <Button type="secondary" className="w-28 md:w-36 h-full">Entrar</Button>
             </Link>

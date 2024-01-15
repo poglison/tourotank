@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
 
-import UserContext from "../../context/userContext";
+import UserContext from "../../context";
 import { useContext } from "react";
 
 export default function Menu() {
@@ -23,9 +23,9 @@ export default function Menu() {
                 <div className="mt-72 mr-40 absolute w-52 min-h-52 border-[1.5px] bg-white border-zinc-300 rounded-xl">
 
 
-                    <Link to="/profile">
+                    <Link to={"/profile/" + user.id}>
                         <div className="w-full flex items-center h-16 border-b-[1.5px] border-zinc-300 rounded-t-xl hover:bg-zinc-50 p-4 cursor-pointer">
-                            <div className="w-10 h-10 rounded-full bg-zinc-500 mr-2">
+                            <div className="w-10 min-w-10 h-10 rounded-full bg-zinc-500 mr-2">
 
                                 {/* <img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' /> */}
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full object-cover rounded-full text-white fill-white p-2">
@@ -35,7 +35,7 @@ export default function Menu() {
                             </div>
 
                             <div className="flex flex-col">
-                                <span className="text-xs ">Olá, {user.name}!</span>
+                                <span className="text-xs w-32 truncate">Olá, {user?.name?.split(" ")[0]}!</span>
 
                                 <span className="text-xs font-medium text-zinc-800">Ver perfil</span>
                             </div>
