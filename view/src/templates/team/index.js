@@ -1,15 +1,24 @@
+import { useEffect } from "react"
 
 
 export default function Team(props) {
 
-    console.log(props.team)
+    useEffect(() => {
+        if (props.type == "new") {
+            props.setTeam([
+                { name: "Nome", rule: "CEO", description: "" },
+            ])
+        }
+    }, [])
+
+
     return (
         <div className="mt-10">
 
             <span className="text-ibm text-lg font-medium mb-4 block text-zinc-800">Team</span>
 
 
-            <div className="w-full h-44 border-[1.5px] border-zinc-300 rounded-lg p-6 flex items-center">
+            {/* <div className="w-full h-44 border-[1.5px] border-zinc-300 rounded-lg p-6 flex items-center">
                 <div className="bg-zinc-300 w-10 min-w-10 h-10 md:w-28 md:min-w-28 md:h-28 rounded-full" />
 
                 <div className="w-full h-full ml-6 flex flex-col justify-center">
@@ -35,7 +44,7 @@ export default function Team(props) {
                         </span>
                     }
                 </div>
-            </div>
+            </div> */}
 
 
             <div className="flex flex-col xl:flex-row xl:flex-wrap mt-4">

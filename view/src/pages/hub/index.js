@@ -103,7 +103,7 @@ export default function Hub() {
 
                     {projects.map((project, index) => {
                         return (
-                            <div className="w-[calc(33%-29px)] rounded-xl m-4  transition-all duration-300" key={index}>
+                            <div className="sm:w-[calc(50%-40px)] lg:w-[calc(33%-29px)] rounded-xl m-4  transition-all duration-300" key={index}>
                                 <div className="w-full h-70 border-zinc-300 border-[1.5px] transition-all duration-300 rounded-xl overflow-hidden bg-white">
                                     <img src={project.image} className="w-full h-full object-cover" />
 

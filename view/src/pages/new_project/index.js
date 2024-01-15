@@ -2,20 +2,17 @@ import { useEffect, useState } from "react";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
 import InformationProject from "../../components/information_project";
-import Projects from "../../components/projects";
 import Breadcrumbs from "../../templates/breadcrumbs";
-import Button from "../../templates/button";
-import Image from "../../templates/image";
 
 import Timeline from "../../templates/timeline";
 import Buttons from "../../templates/buttons";
 import Team from "../../templates/team";
 import FAQ from "../../components/faq";
-import ButtonFAQ from "../../templates/button_faq";
 
 export default function NewProject() {
 
 
+    const [project, setProject] = useState({});
     const [check, setCheck] = useState(0);
 
     const [team, setTeam] = useState([]);
@@ -26,6 +23,20 @@ export default function NewProject() {
     useEffect(() => {
         document.scrollingElement.scrollTop = 0;
     }, [])
+
+
+    useEffect(() => {
+        console.log(project)
+    }, [project])
+
+    useEffect(() => {
+        setProject({ ...project, step: check })
+    }, [check])
+
+    useEffect(() => {
+        setProject({ ...project, team: team })
+    }, [team])
+
 
 
     return (
@@ -42,7 +53,7 @@ export default function NewProject() {
                     <div className="w-full md:w-[calc(100%-326px)] flex flex-col xl:flex-row">
 
                         <div src="https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80" className="border-[1.5px] border-zinc-300 w-1/2 xl:h-56 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-zinc-50 text-zinc-500 text-lg relative">
-                            <input id="file" type="file" className="absolute w-full h-full hidden" />
+                            <input id="file" type="file" className="absolute w-full h-full hidden" onChange={(e) => { setProject({ ...project, image: e.target.files[0] }) }} />
                             <label for="file" className="cursor-pointer absolute w-full h-full flex items-center justify-center" />
 
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 mr-4">
@@ -59,12 +70,12 @@ export default function NewProject() {
                             <div className="flex flex-col">
                                 <span className="font-ibm text-xs text-zinc-600">Projeto</span>
 
-                                <input placeholder="Digite o nome do projeto" className="outline-none font-ibm text-2xl font-medium text-zinc-800" />
+                                <input onChange={(e) => { setProject({ ...project, title: e.target.value }) }} placeholder="Digite o nome do projeto" className="outline-none font-ibm text-2xl font-medium text-zinc-800" />
                             </div>
 
                             <div className="flex flex-col mt-4 ">
                                 <span className="font-ibm text-xs text-zinc-600">Descrição</span>
-                                <textarea placeholder="Digite uma descrição do projeto" className="xl:h-36 xl:overflow-auto font-ibm text-base text-zinc-700 outline-none resize-none" />
+                                <textarea onChange={(e) => { setProject({ ...project, description: e.target.value }) }}  placeholder="Digite uma descrição do projeto" className="xl:h-36 xl:overflow-auto font-ibm text-base text-zinc-700 outline-none resize-none" />
 
                             </div>
 
@@ -72,7 +83,7 @@ export default function NewProject() {
 
 
                     </div>
-                    <InformationProject type="new" />
+                    <InformationProject type="new" project={project} setProject={setProject} />
                 </div>
 
 
