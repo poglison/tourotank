@@ -5,9 +5,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 
-import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
-import "primereact/resources/themes/lara-light-cyan/theme.css";
-
 
 import App from './pages/home';
 import Login from './pages/login';
@@ -35,8 +32,6 @@ function Content() {
 
   return (
     <UserContext.Provider value={{ user: user, setUser: setUser }}>
-      <PrimeReactProvider>
-
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<App />} />
@@ -64,7 +59,6 @@ function Content() {
           />
 
         </BrowserRouter>
-      </PrimeReactProvider>
     </UserContext.Provider>
   )
 } 
