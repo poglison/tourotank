@@ -122,7 +122,7 @@ export default function Hub() {
                                 key={index}>
 
                                 <Skeleton loading={loading} className="w-full min-w-full min-h-72 h-96 rounded-xl overflow-hidden bg-white">
-                                    <div className="relative w-full min-w-full min-h-72 h-96 border-zinc-300 border-[1.5px] rounded-xl overflow-hidden bg-white">
+                                    <div className="relative w-full min-w-full min-h-72 h-96   border-[1.5px] rounded-xl overflow-hidden bg-white">
                                         <img src={project.image} className="relative w-full h-[calc(100%-112px)] object-cover" />
 
                                         <div className="bg-white min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-20">

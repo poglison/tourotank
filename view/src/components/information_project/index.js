@@ -61,7 +61,7 @@ export default function InformationProject(props) {
 
             <div className="bg-white w-full h-full rounded-lg mb-2">
 
-                <div className="border-[1.5px] border-zinc-300 rounded-lg flex flex-col">
+                <div className="border-[1.5px]   rounded-lg flex flex-col">
 
 
                     {props.type == "new" &&
@@ -91,7 +91,7 @@ export default function InformationProject(props) {
                     }
 
                     {props.type != "new" &&
-                        <div className="flex items-center justify-between border-t-[1.5px] border-zinc-300 p-2">
+                        <div className="flex items-center justify-between border-t-[1.5px]   p-2">
 
                             <div className="text-[13px] ml-2">
                                 <span >Último acesso:</span>
@@ -99,7 +99,7 @@ export default function InformationProject(props) {
                             </div>
 
 
-                            <div className="border-[1.5px] border-zinc-300 w-10 h-10 flex items-center justify-center rounded-lg text-zinc-700 hover:text-zinc-900 hover:bg-neutral-100 cursor-pointer">
+                            <div className="border-[1.5px]   w-10 h-10 flex items-center justify-center rounded-lg text-zinc-700 hover:text-zinc-900 hover:bg-neutral-100 cursor-pointer">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                                     <path fillRule="evenodd" d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z" clipRule="evenodd" />
                                 </svg>
@@ -111,7 +111,7 @@ export default function InformationProject(props) {
                 </div>
             </div>
 
-            <div className="bg-white border-[1.5px] border-zinc-300 p-4 rounded-lg">
+            <div className="bg-white border-[1.5px]   p-4 rounded-lg">
                 {props.type != "new" ?
 
                     <div className="w-full h-4 bg-zinc-200 rounded-full mb-4">
