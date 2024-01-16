@@ -15,7 +15,6 @@ import ButtonFAQ from "../../templates/button_faq";
 
 import { get, getByID } from "../../services";
 import { useParams } from "react-router-dom";
-import Load from "../../templates/load";
 
 export default function Project() {
 
@@ -41,7 +40,6 @@ export default function Project() {
     return (
         <div className="overflow-x-hidden">
 
-            {loading && <Load />}
 
             <Header />
 

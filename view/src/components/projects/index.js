@@ -6,10 +6,12 @@ import { get } from "../../services"
 
 export default function Projects(props) {
 
-    const [projects, setProjects] = useState([]);
+    const [projects, setProjects] = useState([1,2,3,4,5]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         get("project").then(res => {
+            setLoading(false);
             setProjects(res);
         })
     }, [])
@@ -65,7 +67,7 @@ export default function Projects(props) {
                 {
                     projects.map((project, index) => {
                         return (
-                            <Project key={index} id={project.id} name={project.title} description={project.description} image={project.image} price={project.price} />
+                            <Project key={index} id={project.id} name={project.title} description={project.description} image={project.image} price={project.price} loading={loading} />
                         )
                     })
                 }

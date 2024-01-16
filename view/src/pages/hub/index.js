@@ -6,7 +6,7 @@ import Button from "../../templates/button";
 import FAQ from "../../components/faq";
 
 import { get } from "../../services";
-import Load from "../../templates/load";
+import Skeleton from "../../templates/skeleton";
 
 export default function Hub() {
 
@@ -19,7 +19,7 @@ export default function Hub() {
         })
     }, [])
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [projects, setProjects] = useState([
         {
             "title": "Projeto 1",
@@ -81,7 +81,6 @@ export default function Hub() {
 
     return (
         <div className="h-screen relative">
-            {loading && <Loadks />}
 
             <Header className="top-0 bg-white !fixed" search={true} buttons={false} />
 
@@ -119,16 +118,19 @@ export default function Hub() {
 
                     {projects.map((project, index) => {
                         return (
-                            <Link to={"/project/" + project.id} className="sm:w-[calc(50%-40px)] lg:w-[calc(33%-29px)] rounded-xl m-4  transition-all hover:scale-105 cursor-pointer"
+                            <Link to={"/project/" + project.id} className="w-full lg:w-[calc(33%-29px)] rounded-xl m-4  hover:scale-105 cursor-pointer"
                                 key={index}>
-                                <div className="w-full h-70 border-zinc-300 border-[1.5px] transition-all rounded-xl overflow-hidden bg-white">
-                                    <img src={project.image} className="w-full h-full object-cover" />
 
-                                    <div className="p-2 pb-4 px-4">
-                                        <h1 className="text-ibm text-lg font-medium mt-2">{project.title}</h1>
-                                        <p className="text-ibm text-sm mt-1">{project.description}</p>
+                                <Skeleton loading={loading} className="w-full min-w-full min-h-72 h-96 rounded-xl overflow-hidden bg-white">
+                                    <div className="relative w-full min-w-full min-h-72 h-96 border-zinc-300 border-[1.5px] rounded-xl overflow-hidden bg-white">
+                                        <img src={project.image} className="relative w-full h-[calc(100%-112px)] object-cover" />
+
+                                        <div className="bg-white min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-20">
+                                            <h1 className="text-ibm text-lg font-medium mt-2">{project.title}</h1>
+                                            <p className="text-ibm text-sm mt-1">{project.description}</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </Skeleton>
                             </Link>
                         )
                     })}
@@ -139,6 +141,6 @@ export default function Hub() {
             <FAQ className="!py-40" />
 
             <Footer />
-        </div>
+        </div >
     )
 }
