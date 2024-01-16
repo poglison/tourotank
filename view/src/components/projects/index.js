@@ -65,7 +65,7 @@ export default function Projects(props) {
 
 
                 {
-                    projects.map((project, index) => {
+                    projects?.map((project, index) => {
                         return (
                             <Project key={index} id={project.id} name={project.title} description={project.description} image={project.image} price={project.price} loading={loading} />
                         )

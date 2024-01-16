@@ -140,7 +140,7 @@ export default function Profile() {
 
                         <div>
                             {
-                                items.map((item, index) => {
+                                items?.map((item, index) => {
                                     if (items.length - 1 == index) {
                                         return (
                                             <div key={index} className='w-full h-12 p-2 px-4 hover:bg-zinc-50 rounded-b-lg flex items-center cursor-pointer'>

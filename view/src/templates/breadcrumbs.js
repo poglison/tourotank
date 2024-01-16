@@ -15,7 +15,7 @@ export default function Breadcrumbs(props) {
 
 
             {
-                history.map((item, index) => {
+                history?.map((item, index) => {
                     return (
                         <div key={index} className='flex items-center'>
                             <div className='text-zinc-700 text-sm mr-3 cursor-pointer hover:text-primary'>

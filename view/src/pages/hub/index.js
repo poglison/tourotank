@@ -116,7 +116,7 @@ export default function Hub() {
                 <div className="flex flex-wrap justify-start mt-20 w-5/6 px-auto z-10">
 
 
-                    {projects.map((project, index) => {
+                    {projects?.map((project, index) => {
                         return (
                             <Link to={"/project/" + project.id} className="w-full lg:w-[calc(33%-29px)] rounded-xl m-4  hover:scale-105 cursor-pointer"
                                 key={index}>
