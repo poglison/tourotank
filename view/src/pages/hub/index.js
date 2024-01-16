@@ -6,13 +6,20 @@ import Button from "../../templates/button";
 import FAQ from "../../components/faq";
 
 import { get } from "../../services";
+import Load from "../../templates/load";
 
 export default function Hub() {
 
+
+
     useEffect(() => {
-        get("project").then(response => setProjects(response))
+        get("project").then((response) => {
+            setLoading(false);
+            setProjects(response);
+        })
     }, [])
 
+    const [loading, setLoading] = useState(false);
     const [projects, setProjects] = useState([
         {
             "title": "Projeto 1",
@@ -74,6 +81,7 @@ export default function Hub() {
 
     return (
         <div className="h-screen relative">
+            {loading && <Loadks />}
 
             <Header className="top-0 bg-white !fixed" search={true} buttons={false} />
 

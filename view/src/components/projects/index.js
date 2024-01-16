@@ -6,9 +6,7 @@ import { get } from "../../services"
 
 export default function Projects(props) {
 
-    const [projects, setProjects] = useState([
-        
-    ]);
+    const [projects, setProjects] = useState([]);
 
     useEffect(() => {
         get("project").then(res => {

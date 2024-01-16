@@ -15,6 +15,7 @@ import ButtonFAQ from "../../templates/button_faq";
 
 import { get, getByID } from "../../services";
 import { useParams } from "react-router-dom";
+import Load from "../../templates/load";
 
 export default function Project() {
 
@@ -22,19 +23,25 @@ export default function Project() {
     // 1 - Informações // 2 - FAQ // 3 - Chat
     const [selectedInformation, setSelectedInformation] = useState(1);
     const [project, setProject] = useState({});
+    const [loading, setLoading] = useState(true);
     const { id } = useParams();
 
     useEffect(() => {
         document.scrollingElement.scrollTop = 0;
 
-        getByID("project", id).then(response => setProject(response))
+        getByID("project", id).then((response) => {
+            setProject(response);
+            setLoading(false);
+        })
 
-    
+
     }, [id])
 
 
     return (
         <div className="overflow-x-hidden">
+
+            {loading && <Load />}
 
             <Header />
 
