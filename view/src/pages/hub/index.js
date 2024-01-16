@@ -5,65 +5,71 @@ import { Link } from "react-router-dom";
 import Button from "../../templates/button";
 import FAQ from "../../components/faq";
 
+import { get } from "../../services";
+
 export default function Hub() {
 
-    var projects = [
+    useEffect(() => {
+        get("project").then(response => setProjects(response))
+    }, [])
+
+    const [projects, setProjects] = useState([
         {
-            "name": "Projeto 1",
+            "title": "Projeto 1",
             "description": "Descrição do projeto 1",
             "owner": "Robin Spielmann",
             "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
             "price": 2000
         },
         {
-            "name": "Projeto 2",
+            "title": "Projeto 2",
             "description": "Descrição do projeto 2",
             "owner": "Robin Spielmann",
             "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
             "price": 2000
         },
         {
-            "name": "Projeto 3",
+            "title": "Projeto 3",
             "description": "Descrição do projeto 3",
             "owner": "Robin Spielmann",
             "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
             "price": 3000
         },
         {
-            "name": "Projeto 4",
+            "title": "Projeto 4",
             "description": "Descrição do projeto 4",
             "owner": "Robin Spielmann",
             "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
             "price": 4000
         },
         {
-            "name": "Projeto 5",
+            "title": "Projeto 5",
             "description": "Descrição do projeto 5",
             "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
             "price": 5000
         },
         {
-            "name": "Projeto 6",
+            "title": "Projeto 6",
             "description": "Descrição do projeto 6",
             "owner": "Robin Spielmann",
             "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
             "price": 6000
         },
         {
-            "name": "Projeto 7",
+            "title": "Projeto 7",
             "description": "Descrição do projeto 7",
             "owner": "Robin Spielmann",
             "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
             "price": 7000
         },
         {
-            "name": "Projeto 8",
+            "title": "Projeto 8",
             "description": "Descrição do projeto 8",
             "owner": "Robin Spielmann",
             "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
             "price": 8000
         }
-    ]
+    ]);
 
 
     return (
@@ -105,16 +111,17 @@ export default function Hub() {
 
                     {projects.map((project, index) => {
                         return (
-                            <div className="sm:w-[calc(50%-40px)] lg:w-[calc(33%-29px)] rounded-xl m-4  transition-all duration-300" key={index}>
-                                <div className="w-full h-70 border-zinc-300 border-[1.5px] transition-all duration-300 rounded-xl overflow-hidden bg-white">
+                            <Link to={"/project/" + project.id} className="sm:w-[calc(50%-40px)] lg:w-[calc(33%-29px)] rounded-xl m-4  transition-all hover:scale-105 cursor-pointer"
+                                key={index}>
+                                <div className="w-full h-70 border-zinc-300 border-[1.5px] transition-all rounded-xl overflow-hidden bg-white">
                                     <img src={project.image} className="w-full h-full object-cover" />
 
                                     <div className="p-2 pb-4 px-4">
-                                        <h1 className="text-ibm text-lg font-medium mt-2">{project.name}</h1>
+                                        <h1 className="text-ibm text-lg font-medium mt-2">{project.title}</h1>
                                         <p className="text-ibm text-sm mt-1">{project.description}</p>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })}
 

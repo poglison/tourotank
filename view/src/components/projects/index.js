@@ -1,54 +1,20 @@
 import { useEffect, useState, useRef } from "react"
 import Project from "../project"
-import Button from "../../templates/button";
 import { Link } from "react-router-dom";
+
+import { get } from "../../services"
 
 export default function Projects(props) {
 
-    var projects = [
-        {
-            "name": "Projeto 1",
-            "description": "Descrição do projeto 1",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 2000
-        },
-        {
-            "name": "Projeto 2",
-            "description": "Descrição do projeto 2",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 2000
-        },
-        {
-            "name": "Projeto 3",
-            "description": "Descrição do projeto 3",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 3000
-        },
-        {
-            "name": "Projeto 4",
-            "description": "Descrição do projeto 4",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 4000
-        },
-        {
-            "name": "Projeto 5",
-            "description": "Descrição do projeto 5",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 5000
-        },
-        {
-            "name": "Projeto 6",
-            "description": "Descrição do projeto 6",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 6000
-        },
-        {
-            "name": "Projeto 7",
-            "description": "Descrição do projeto 7",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 7000
-        },
-    ]
+    const [projects, setProjects] = useState([
+        
+    ]);
+
+    useEffect(() => {
+        get("project").then(res => {
+            setProjects(res);
+        })
+    }, [])
 
 
     const moveScroll = (direction) => {
@@ -90,7 +56,7 @@ export default function Projects(props) {
             {props.title && <span className="text-ibm text-lg font-medium mb-1 block text-zinc-800">{props.title}</span>}
 
 
-            <div className="projects flex overflow-auto transition rounded-xl">
+            <div className="projects flex overflow-auto transition rounded-t-xl min-h-72">
                 <div className="absolute left-0 w-10 ml-2 mt-1 h-52 flex items-center justify-center text-zinc-400 cursor-pointer" onClick={() => moveScroll("left")}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -101,7 +67,7 @@ export default function Projects(props) {
                 {
                     projects.map((project, index) => {
                         return (
-                            <Project key={index} name={project.name} description={project.description} image={project.image} price={project.price} />
+                            <Project key={index} id={project.id} name={project.title} description={project.description} image={project.image} price={project.price} />
                         )
                     })
                 }

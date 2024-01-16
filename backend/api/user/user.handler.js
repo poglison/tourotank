@@ -22,7 +22,6 @@ async function getUserID(id) {
 
 async function saveUser(req, res) {
     const users = await crud.get("user");
-    var index = users.length + 1;
 
     const email = req.body.email;
     const verify = users.findIndex(u => u.email == email);
@@ -47,18 +46,19 @@ async function saveUser(req, res) {
         created: new Date().toLocaleString(),
         updated: new Date().toLocaleString(),
         blocked: false,
-        admin: false
+        admin: false,
+        beta: 0.1
     }
 
     return await crud.save("user", 0, user);
 }
 
 async function editUser(req, id) {
-    return await crud.salvar("user", id, req.body);
+    return await crud.save("user", id, req.body);
 }
 
 async function deleteUser(id) {
-    return await crud.remover("user", id);
+    return await crud.remove("user", id);
 }
 
 async function auth(req, res) {

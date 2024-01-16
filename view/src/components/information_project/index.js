@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../templates/button";
 import { save } from "../../services";
+
 
 
 export default function InformationProject(props) {
@@ -11,9 +12,19 @@ export default function InformationProject(props) {
     const [percent, setPercent] = useState(10);
     const [infos, setInfos] = useState({});
 
+    const navigate = useNavigate();
+
     useEffect(() => {
-        setInfos({...props.infos, percent: percent })
+        setInfos({ ...infos, percent: percent })
     }, [percent])
+
+
+    useEffect(() => {
+        if (props.type != "new") {
+            setInfos(props.project.infos);
+        }
+    }, [props.project])
+
 
 
     useEffect(() => {
@@ -28,6 +39,22 @@ export default function InformationProject(props) {
         });
     }, []);
 
+
+    const register = async () => {
+
+        save("project", { ...props.project, infos: infos, user: props.user }
+        ).then((response) => {
+
+            if (response.status == "404") {
+                return;
+            }
+
+            navigate("/project/" + response.id)
+        })
+    }
+
+
+
     return (
 
         <div className={"mt-10 md:mt-0 md:fixed md:w-72 md:right-10 transition-all duration-300 " + (scroll ? "md:!-mt-28" : "")}>
@@ -37,16 +64,31 @@ export default function InformationProject(props) {
                 <div className="border-[1.5px] border-zinc-300 rounded-lg flex flex-col">
 
 
-                    <Link to="/profile">
-                        <div className="flex items-center p-2 hover:bg-neutral-100 cursor-pointer rounded-t-lg">
-                            <div className="w-10 min-w-10 h-10 bg-primary rounded-full">
-                                <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
+                    {props.type == "new" &&
+                        <Link to={"/profile/" + props?.user?.id}>
+                            <div className="flex items-center p-2 hover:bg-neutral-100 cursor-pointer rounded-t-lg">
+                                <div className="w-10 min-w-10 h-10 bg-primary rounded-full">
+                                    <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
+                                </div>
+
+                                <span className="text-sm ml-2 truncate w-56">{props?.user?.name}</span>
                             </div>
+                        </Link>
+                    }
 
-                            <span className="text-sm ml-2 truncate w-56">Alan Hui</span>
-                        </div>
-                    </Link>
 
+
+                    {props.type != "new" &&
+                        <Link to={"/profile/" + props.project.user?.id}>
+                            <div className="flex items-center p-2 hover:bg-neutral-100 cursor-pointer rounded-t-lg">
+                                <div className="w-10 min-w-10 h-10 bg-primary rounded-full">
+                                    <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
+                                </div>
+
+                                <span className="text-sm ml-2 truncate w-56">{props.project.user?.name}</span>
+                            </div>
+                        </Link>
+                    }
 
                     {props.type != "new" &&
                         <div className="flex items-center justify-between border-t-[1.5px] border-zinc-300 p-2">
@@ -73,7 +115,7 @@ export default function InformationProject(props) {
                 {props.type != "new" ?
 
                     <div className="w-full h-4 bg-zinc-200 rounded-full mb-4">
-                        <div className="w-1/2 h-full bg-primary rounded-full flex items-center justify-center text-xs text-white">50%</div>
+                        <div className="w-1/2 h-full bg-primary rounded-full flex items-center justify-center text-xs text-white">{infos?.percent}</div>
                     </div>
                     :
                     <div>
@@ -93,10 +135,10 @@ export default function InformationProject(props) {
                     <span>Investimento minimo</span>
 
                     {props.type != "new" ?
-                        <span className="text-2xl font-medium font-ibm text-primary">R$ 1.000.000,00</span>
+                        <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.min}</span>
                         :
-                        <input onChange={(e) => setInfos({...infos, min: e.target.value})} value={infos.min}
-                         className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o minimo que se pode investir" />
+                        <input onChange={(e) => setInfos({ ...infos, min: e.target.value })} value={infos.min}
+                            className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o minimo que se pode investir" />
                     }
                 </div>
 
@@ -105,10 +147,10 @@ export default function InformationProject(props) {
                         <span>Investido</span>
 
                         {props.type != "new" ?
-                            <span className="text-2xl font-medium font-ibm text-primary">R$ 1.000</span>
+                            <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.invested}</span>
                             :
-                            <input onChange={(e) => setInfos({...infos, invested: e.target.value})} value={infos.invested}
-                             className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto já foi investido" />
+                            <input onChange={(e) => setInfos({ ...infos, invested: e.target.value })} value={infos.invested}
+                                className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto já foi investido" />
                         }
                     </div>
 
@@ -116,10 +158,10 @@ export default function InformationProject(props) {
                         <span>Investidores</span>
 
                         {props.type != "new" ?
-                            <span className="text-2xl font-medium font-ibm text-primary">100</span>
+                            <span className="text-2xl font-medium font-ibm text-primary">{infos?.investors}</span>
                             :
-                            <input onChange={(e) => setInfos({...infos, investors: e.target.value})} value={infos.investors}
-                            className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite quantos investidores teve" />
+                            <input onChange={(e) => setInfos({ ...infos, investors: e.target.value })} value={infos.investors}
+                                className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite quantos investidores teve" />
                         }
                     </div>
                 </div>
@@ -129,16 +171,16 @@ export default function InformationProject(props) {
                     <span>Valuation</span>
 
                     {props.type != "new" ?
-                        <span className="text-2xl font-medium font-ibm text-primary">R$ 100M</span>
+                        <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.valuation}</span>
                         :
-                        <input onChange={(e) => setInfos({...infos, valuation: e.target.value})} value={infos.valuation}
-                         className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto que vale o projeto" />
+                        <input onChange={(e) => setInfos({ ...infos, valuation: e.target.value })} value={infos.valuation}
+                            className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto que vale o projeto" />
                     }
                 </div>
 
 
                 {props.type == "new" ?
-                    (<div onClick={() => save("project", {project: props.project, infos: infos, creator: user})} className="mt-4">
+                    (<div onClick={() => register()} className="mt-4">
                         <Button type="primary" className="w-full">Cadastrar</Button>
                     </div>) :
                     <Link to="/login">
@@ -146,6 +188,6 @@ export default function InformationProject(props) {
                     </Link>
                 }
             </div>
-        </div>
+        </div >
     )
 }

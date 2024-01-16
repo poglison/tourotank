@@ -13,15 +13,24 @@ import Team from "../../templates/team";
 import FAQ from "../../components/faq";
 import ButtonFAQ from "../../templates/button_faq";
 
+import { get, getByID } from "../../services";
+import { useParams } from "react-router-dom";
+
 export default function Project() {
 
 
     // 1 - Informações // 2 - FAQ // 3 - Chat
     const [selectedInformation, setSelectedInformation] = useState(1);
+    const [project, setProject] = useState({});
+    const { id } = useParams();
 
     useEffect(() => {
         document.scrollingElement.scrollTop = 0;
-    }, [])
+
+        getByID("project", id).then(response => setProject(response))
+
+    
+    }, [id])
 
 
     return (
@@ -38,29 +47,27 @@ export default function Project() {
                     <div className="w-full md:w-[calc(100%-326px)] flex flex-col xl:flex-row">
 
 
-                        <Image src="https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80" />
+                        <Image src={project.image} className="object-cover xl:h-80" />
 
                         <div className="xl:w-[calc(100%-384px)] xl:overflow-hidden xl:h-56 mt-4 xl:mt-0 xl:ml-4">
 
                             <div className="flex flex-col">
                                 <span className="font-ibm text-xs text-zinc-600">Projeto</span>
-                                <span className="font-ibm text-2xl font-medium text-zinc-800">Pysionic</span>
+                                <span className="font-ibm text-2xl font-medium text-zinc-800">{project.title}</span>
                             </div>
 
                             <div className="flex flex-col mt-4 ">
                                 <span className="font-ibm text-xs text-zinc-600">Descrição</span>
-                                <span className="xl:h-36 xl:overflow-auto font-ibm text-base text-zinc-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra elit eget enim porttitor dictum. Morbi bibendum, sem et malesuada vestibulum, sem urna pharetra sem, eu pretium mi erat euismod magna. Mauris non sapien nisi. Ut gravida finibus aliquam. Vivamus lobortis, lacus nec iaculis molestie, eros nisi blandit diam, at porta justo ex vel tellus. Maecenas id aliquet libero. Phasellus auctor bibendum augue, accumsan sodales lorem tristique quis. Nulla facilisi. Etiam quis risus id ligula dignissim efficitur id et nibh. Suspendisse potenti. Donec metus quam, tempor eu efficitur volutpat, tincidunt vel purus. Curabitur commodo nulla at cursus eleifend. Nullam felis diam, imperdiet sed vulputate ut, euismod quis augue.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra elit eget enim porttitor dictum. Morbi bibendum, sem et malesuada vestibulum, sem urna pharetra sem, eu pretium mi erat euismod magna. Mauris non sapien nisi. Ut gravida finibus aliquam. Vivamus lobortis, lacus nec iaculis molestie, eros nisi blandit diam, at porta justo ex vel tellus. Maecenas id aliquet libero. Phasellus auctor bibendum augue, accumsan sodales lorem tristique quis. Nulla facilisi. Etiam quis risus id ligula dignissim efficitur id et nibh. Suspendisse potenti. Donec metus quam, tempor eu efficitur volutpat, tincidunt vel purus. Curabitur commodo nulla at cursus eleifend. Nullam felis diam, imperdiet sed vulputate ut, euismod quis augue.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra elit eget enim porttitor dictum. Morbi bibendum, sem et malesuada vestibulum, sem urna pharetra sem, eu pretium mi erat euismod magna. Mauris non sapien nisi. Ut gravida finibus aliquam. Vivamus lobortis, lacus nec iaculis molestie, eros nisi blandit diam, at porta justo ex vel tellus. Maecenas id aliquet libero. Phasellus auctor bibendum augue, accumsan sodales lorem tristique quis. Nulla facilisi. Etiam quis risus id ligula dignissim efficitur id et nibh. Suspendisse potenti. Donec metus quam, tempor eu efficitur volutpat, tincidunt vel purus. Curabitur commodo nulla at cursus eleifend. Nullam felis diam, imperdiet sed vulputate ut, euismod quis augue.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra elit eget enim porttitor dictum. Morbi bibendum, sem et malesuada vestibulum, sem urna pharetra sem, eu pretium mi erat euismod magna. Mauris non sapien nisi. Ut gravida finibus aliquam. Vivamus lobortis, lacus nec iaculis molestie, eros nisi blandit diam, at porta justo ex vel tellus. Maecenas id aliquet libero. Phasellus auctor bibendum augue, accumsan sodales lorem tristique quis. Nulla facilisi. Etiam quis risus id ligula dignissim efficitur id et nibh. Suspendisse potenti. Donec metus quam, tempor eu efficitur volutpat, tincidunt vel purus. Curabitur commodo nulla at cursus eleifend. Nullam felis diam, imperdiet sed vulputate ut, euismod quis augue.</span>
-
+                                <span className="xl:h-36 xl:overflow-auto font-ibm text-base text-zinc-700">
+                                    {project.description}
+                                </span>
                             </div>
 
                         </div>
 
 
                     </div>
-                    <InformationProject />
+                    <InformationProject project={project} />
                 </div>
 
 
@@ -97,11 +104,11 @@ export default function Project() {
                     {selectedInformation == 1 ?
                         (
                             <div className="mt-4 flex flex-col">
-                                <Timeline />
+                                <Timeline check={project.step} />
 
-                                <Team team={[{name: "Surie Hange", rule: "DEV"}, {name: "Surie Hange", rule: "DEV"}, {name: "Surie Hange", rule: "DEV"}]}/>
+                                <Team team={project?.team} />
 
-                                <div onClick={() => {setSelectedInformation(2); document.scrollingElement.scrollTop = 0;}} className="mt-8 flex flex-col">
+                                <div onClick={() => { setSelectedInformation(2); document.scrollingElement.scrollTop = 0; }} className="mt-8 flex flex-col">
                                     <ButtonFAQ />
                                 </div>
                             </div>

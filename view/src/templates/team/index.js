@@ -49,7 +49,7 @@ export default function Team(props) {
 
             <div className="flex flex-col xl:flex-row xl:flex-wrap mt-4">
 
-                {props.team.map((person, index) => {
+                {props?.team?.map((person, index) => {
                     return (
                         <div className={"mt-4 h-48 xl:w-[calc(33%-8px)] mb-0 w-full border-[1.5px] border-zinc-300 rounded-lg p-4 flex flex-col items-center " + ((index % 3 != 2) ? "mr-4" : "")}>
                             <div className="w-full flex items-center justify-between mb-2">

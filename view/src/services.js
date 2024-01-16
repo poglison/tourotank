@@ -26,7 +26,6 @@ export const get = (table) => {
 };
 
 export const getByID = (table, id) => {
-    console.log(url + table + '/' + id);
 
     return axios.get(url + table + '/' + id)
         .then(response => {
