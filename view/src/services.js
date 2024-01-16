@@ -1,7 +1,7 @@
 import axios from 'axios';
-const url = 'http://localhost:8080/api/';
+// const url = 'http://localhost:8080/api/';
 
-// const url = 'https://tourotankdb.vercel.app/';
+const url = 'https://tourotankdb.vercel.app/api/';
 
 export const auth = (data) => {
 
