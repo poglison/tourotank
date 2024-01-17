@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../context";
+import Google from "../../templates/google";
+
 
 export default function Login() {
 
@@ -64,6 +66,7 @@ export default function Login() {
     return (
         <div className="relative h-screen overflow-hidden">
             <Header buttons={false} className="!bg-transparent" />
+            <Google />
 
             <div className="top-0 absolute flex w-full h-screen">
                 <div className="w-full md:w-1/2 flex justify-center items-center">
