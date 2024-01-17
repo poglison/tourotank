@@ -1,5 +1,5 @@
 const crud = require("../../crud");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
 async function getUser() {
