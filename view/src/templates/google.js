@@ -24,25 +24,27 @@ export default function Login() {
     function signInGoogle() {
         signInWithPopup(auth, provider)
             .then((result) => {
+                console.log(result);
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
                 setUser(user);
                 sessionStorage.setItem("@AuthFirebase:token", token);
                 sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
+                console.log("logado com sucesso");
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 const email = error.email;
                 const credential = GoogleAuthProvider.credentialFromError(error);
+                console.log("erro ao logar")
             });
     }
 
 
 
     async function handleLoginFromGoogle() {
-        console.log("Login");
         await signInGoogle();
     }
     if (true) {
