@@ -1,36 +1,52 @@
-import { GoogleOAuthProvider, GoogleLogin, useGoogleLogin } from '@react-oauth/google';
+import { useState, createContext, useEffect } from "react";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { app } from "../services";
+import { Navigate } from "react-router-dom";
+const provider = new GoogleAuthProvider();
+
+export default function Login() {
 
 
-export default function Google() {
+    const auth = getAuth(app);
+    const [user, setUser] = useState(null);
 
-    return (
-
-        <GoogleOAuthProvider clientId="891917401405-jjrpoleqa1b3bu52gmpe73mhsmmu0dqn.apps.googleusercontent.com">
-            <Login />
-        </GoogleOAuthProvider>
-    )
-}
-
-
-function Login() {
-
-
-    const auth = useGoogleLogin({
-        onSuccess: tokenResponse => console.log("tokenResponse"),
-        onError: error => console.log("error"),
+    useEffect(() => {
+        const loadStorageData = () => {
+            const storageUser = sessionStorage.getItem("@AuthFirebase:user");
+            const storageToken = sessionStorage.getItem("@AuthFirebase:token");
+            if (storageToken && storageUser) {
+                setUser(storageUser);
+            }
+        };
+        loadStorageData();
     });
 
+    function signInGoogle() {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                const user = result.user;
+                setUser(user);
+                sessionStorage.setItem("@AuthFirebase:token", token);
+                sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const email = error.email;
+                const credential = GoogleAuthProvider.credentialFromError(error);
+            });
+    }
 
-    return (
-        <div className=' bg-primary cursor-pointer' onClick={() => auth()} >
-            <GoogleLogin onSuccess={credentialResponse => {
-                console.log(credentialResponse);
-            }}
-                onError={() => {
-                    console.log('Login Failed');
-                }}>
-            </GoogleLogin>
-        </div>
-    )
 
-}
+
+    async function handleLoginFromGoogle() {
+        await signInGoogle();
+    }
+    if (true) {
+        return <button onClick={handleLoginFromGoogle}>Logar com o Google</button>;
+    } else {
+        return <div></div>
+    }
+};

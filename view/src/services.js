@@ -1,5 +1,4 @@
 import axios from 'axios';
-// const url = 'http://localhost:8080/api/';
 
 const url = 'https://tankdb.vercel.app/api/';
 
@@ -46,3 +45,19 @@ export const save = (table, data) => {
             console.log(error);
         });
 };
+
+
+
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD6w_OryDk93dIgfinmeOhLjisqIJS5HpY",
+  authDomain: "/",
+  projectId: "891917401405-jjrpoleqa1b3bu52gmpe73mhsmmu0dqn.apps.googleusercontent.com",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: "",
+};
+
+export const app = initializeApp(firebaseConfig);
