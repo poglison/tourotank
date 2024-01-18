@@ -1,14 +1,15 @@
 import { useState, createContext, useEffect } from "react";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth, app } from "../services";
-import { Navigate } from "react-router-dom";
+import { auth, save, app } from "../services";
+import { useNavigate } from "react-router-dom";
 const provider = new GoogleAuthProvider();
 
 export default function Login() {
 
 
-    const auth = getAuth(app);
+    const authGoogle = getAuth(app);
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const loadStorageData = () => {
@@ -22,17 +23,15 @@ export default function Login() {
     });
 
     function signInGoogle() {
-        signInWithPopup(auth, provider)
+        signInWithPopup(authGoogle, provider)
             .then((result) => {
-
-
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
                 sessionStorage.setItem("@AuthFirebase:token", token);
                 sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
+                setUser(user);
 
-                authTourotank(user);
                 console.log("logado com sucesso");
             })
             .catch((error) => {
@@ -44,27 +43,42 @@ export default function Login() {
             });
     }
 
+    useEffect(() => {
+        console.log(user);
+        if (user) {
+            authTourotank(user);
+        }
+    }, [user]);
+
     function authTourotank(user) {
-        auth('user', { email: user.email, password: user.oauthAccessToken }).then((response) => {
-            console.log(response);
+        auth({ email: user.email, password: user.oauthAccessToken }).then((response) => {
+
+            console.log(response.status == "404");
+
             if (response.status == "404") {
-                notify(response.message);
+                registerTourotank(user);
                 return;
             }
-        }).catch((error) => {
-            console.log(error);
+
+            if (response) {
+                setUser({ id: response.id, email: response.email, name: response.name });
+                console.log("entrou wtf");
+                navigate("/");
+            }
+
+
         });
     }
 
-    function registerTourotank() {
+    function registerTourotank(user) {
         save('user', { name: user.displayName, email: user.email, password: user.oauthAccessToken }).then((response) => {
-            console.log(response);
+            console.log(response.status == "404");
             if (response.status == "404") {
-                notify(response.message);
-                return;
+                return false;
             }
 
             setUser({ email: response.email, name: response.name, id: response.id });
+            console.log("entrou wtf 2");
             navigate("/");
         }).catch((error) => {
             console.log(error);
