@@ -45,7 +45,7 @@ export default function Login() {
         await signInGoogle();
     }
     if (true) {
-        return <button onClick={handleLoginFromGoogle}>Logar com o Google</button>;
+        return <button onClick={() => handleLoginFromGoogle}>Logar com o Google</button>;
     } else {
         return <div></div>
     }
