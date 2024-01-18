@@ -27,20 +27,23 @@ root.render(
 
 function Content() {
 
+  const [user, setUser] = useState({});
+  console.log(user);
+
   useEffect(() => {
     const loadStorageData = () => {
       const storageUser = sessionStorage.getItem("@AuthFirebase:user");
       const storageToken = sessionStorage.getItem("@AuthFirebase:token");
-      if (storageToken && storageUser) {
-        setUser(JSON.parse(storageUser));
+
+
+      if (storageToken && storageUser && user == {}) {
+
+        setUser(...user, JSON.parse(storageUser));
       }
     };
     loadStorageData();
-  }, []);
+  }, [user]);
 
-
-  const [user, setUser] = useState({ name: "" });
-  console.log(user);
 
   return (
     <UserContext.Provider value={{ user: user, setUser: setUser }}>

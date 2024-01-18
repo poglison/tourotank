@@ -32,7 +32,7 @@ export default function Login() {
                 return;
             }
 
-            setUser({ email: response.email, name: response.displayName, id: response.id });
+            setUser({ email: response.email, displayName: response.displayName, id: response.id });
             navigate("/");
         });
     }

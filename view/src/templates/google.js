@@ -85,7 +85,7 @@ export default function Login() {
                 }
 
                 setLoged(true);
-                setUser({ email: response.email, name: response.displayName, id: response.id });
+                setUser({ email: response.email, displayName: response.displayName, id: response.id });
                 navigate("/");
             }).catch((error) => {
                 console.log(error);
