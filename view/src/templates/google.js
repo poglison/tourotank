@@ -1,6 +1,6 @@
 import { useState, createContext, useEffect } from "react";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { app } from "../services";
+import { auth, app } from "../services";
 import { Navigate } from "react-router-dom";
 const provider = new GoogleAuthProvider();
 
@@ -24,13 +24,15 @@ export default function Login() {
     function signInGoogle() {
         signInWithPopup(auth, provider)
             .then((result) => {
-                console.log(result);
+
+
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
-                setUser(user);
                 sessionStorage.setItem("@AuthFirebase:token", token);
                 sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
+
+                authTourotank(user);
                 console.log("logado com sucesso");
             })
             .catch((error) => {
@@ -42,17 +44,32 @@ export default function Login() {
             });
     }
 
-    function signOut() {
-        auth.signOut().then(() => {
-            setUser(null);
-            sessionStorage.removeItem("@AuthFirebase:token");
-            sessionStorage.removeItem("@AuthFirebase:user");
+    function authTourotank(user) {
+        auth('user', { email: user.email, password: user.oauthAccessToken }).then((response) => {
+            console.log(response);
+            if (response.status == "404") {
+                notify(response.message);
+                return;
+            }
         }).catch((error) => {
             console.log(error);
         });
     }
 
+    function registerTourotank() {
+        save('user', { name: user.displayName, email: user.email, password: user.oauthAccessToken }).then((response) => {
+            console.log(response);
+            if (response.status == "404") {
+                notify(response.message);
+                return;
+            }
 
+            setUser({ email: response.email, name: response.name, id: response.id });
+            navigate("/");
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
 
 
     async function handleLoginFromGoogle() {
