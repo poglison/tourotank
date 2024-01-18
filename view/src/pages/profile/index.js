@@ -2,8 +2,9 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Breadcrumbs from '../../templates/breadcrumbs';
 import Settings from '../../components/settings';
+import Skeleton from '../../templates/skeleton';
 
-import { useContext, useEffect } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import UserContext from '../../context';
 
 import { getByID } from '../../services';
@@ -13,13 +14,16 @@ import { useNavigate, useParams } from 'react-router-dom';
 export default function Profile() {
 
     const { user, setUser } = useContext(UserContext);
+    const [loading, setLoading] = useState(false);
     const id = useParams().id;
     const navigate = useNavigate();
 
     useEffect(() => {
+        setLoading(true);
+
         if (user) {
             getByID('user', id).then((response) => {
-
+                setLoading(false);
                 if (response.status == 404) {
                     navigate('/404');
                 } else {
@@ -58,25 +62,25 @@ export default function Profile() {
 
                         <div className='flex items-center'>
                             <div className='w-24 h-24 rounded-full mr-5'>
-                                {user.image ?
+                                {(!loading && user.image) ?
                                     (<img src={user.image} className='w-full h-full object-cover rounded-full' />)
                                     :
-                                    (<img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' />
+                                    (
+                                        <Skeleton loading={loading} rounded={"rounded-full"} className='w-24 h-24 object-cover rounded-full bg-gray-200'>
+                                            <div>
+
+                                            </div>
+                                        </Skeleton>
                                     )}
-
-                                {/* <div className="w-full h-full object-cover rounded-full bg-zinc-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full object-cover rounded-full text-white fill-white p-4">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                                    </svg>
-
-                                </div> */}
                             </div>
 
                             <div>
                                 <div className='flex items-center'>
-                                    <div className='font-ibm text-xl font-medium text-zinc-600 min-h-7 min-w-10'>
-                                        {user.name}
-                                    </div>
+                                    <Skeleton loading={loading} className='font-ibm text-xl font-medium text-zinc-600 min-h-7 min-w-60'>
+                                        <div className='font-ibm text-xl font-medium text-zinc-600 min-h-7 min-w-10'>
+                                            {user.name}
+                                        </div>
+                                    </Skeleton>
 
 
                                     {user.beta > 0 && (
@@ -113,21 +117,24 @@ export default function Profile() {
                                 </div>
 
 
-                                <div className='flex items-center mt-2'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-zinc-700">
+                                <div className='flex items-center mt-2 h-6'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="mr-2 w-5 h-5 text-zinc-700">
                                         <path fillRule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clipRule="evenodd" />
                                     </svg>
 
-                                    <span className='ml-2 text-sm'>Brasil</span>
+                                    <Skeleton loading={loading} className='w-40 h-5 object-cover rounded-full bg-gray-200'>
+                                        <span className='h-6 text-sm'>Brasil</span>
+                                    </Skeleton>
                                 </div>
 
-                                <div className='flex items-center mt-2'>
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-zinc-700">
+                                <div className='flex items-center mt-2 h-6'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-zinc-700 mr-2">
                                         <path fillRule="evenodd" d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z" clipRule="evenodd" />
                                     </svg>
 
-                                    <span className='ml-2 text-sm'>Membro desde  {user?.created?.split(",")[0]}</span>
+                                    <Skeleton loading={loading} className='w-40 h-5 object-cover rounded-full bg-gray-200'>
+                                        <span className='h-6 text-sm'>Membro desde  {user?.created?.split(",")[0]}</span>
+                                    </Skeleton>
                                 </div>
 
                             </div>
