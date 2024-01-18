@@ -49,7 +49,7 @@ export default function Chat() {
             setCompletedTyping(false);
 
 
-            if (messages[messages.length - 1].user.name != 'tourotank') {
+            if (messages[messages.length - 1].user.displayName != 'tourotank') {
 
                 setTimeout(() => {
                     var index = botMessages.findIndex((message) => message.id == messages.length);
@@ -116,11 +116,11 @@ export default function Chat() {
                             {
                                 messages.map((message) => (
                                     <div className="flex-col w-full" key={message?.id}>
-                                        {message?.user && message?.user.name &&
+                                        {message?.user && message?.user.displayName &&
 
                                             <div className="flex items-start justify-start w-full">
 
-                                                {message.user.name == 'tourotank' ?
+                                                {message.user.displayName == 'tourotank' ?
 
                                                     <div className="w-8 h-8 min-w-8 rounded-full bg-primary mr-2 mt-4 flex items-start justify-center font-montserrat font-bold text-white text-2xl">t</div>
                                                     :
@@ -134,9 +134,9 @@ export default function Chat() {
 
 
                                                 <div className="flex flex-col mr-5 bg-white p-3 rounded-xl relative w-full">
-                                                    <span className="font-bold text-primary text-sm w-full truncate">{message.user.name}</span>
+                                                    <span className="font-bold text-primary text-sm w-full truncate">{message.user.displayName}</span>
 
-                                                    {message.user.name == 'tourotank' && message.id == messages.length - 1 ?
+                                                    {message.user.displayName == 'tourotank' && message.id == messages.length - 1 ?
                                                         <span className="font-normal text-black text-xs break-all min-h-4">{displayResponse}</span>
                                                         :
                                                         <span className="font-normal text-black text-xs break-all min-h-4">{message.content}</span>

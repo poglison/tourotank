@@ -42,13 +42,13 @@ export default function Header(props) {
 
 
 
-          {!user?.name &&
+          {!user?.email &&
             <Link to="/login">
               <Button type="primary" className="w-28 md:w-36 h-full mr-4">Investir</Button>
             </Link>
           }
 
-          {user?.name &&
+          {user?.email &&
             <Link to="/project/new">
               <Button type="primary" className="w-44 h-full mr-4">Adicionar projeto</Button>
             </Link>
@@ -57,7 +57,7 @@ export default function Header(props) {
 
 
 
-          {!user.name ?
+          {!user.email ?
             <Link to="/login">
               <Button type="secondary" className="w-28 md:w-36 h-full">Entrar</Button>
             </Link>

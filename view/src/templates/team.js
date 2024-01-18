@@ -55,12 +55,12 @@ export default function Team(props) {
                             <div className="w-full flex items-center justify-between mb-2">
                                 {props.type == "new" ?
                                     <div className="w-full h-4 flex">
-                                        <input className="text-zinc-700 text-base font-normal w-1/2 outline-none" placeholder={person.name} />
+                                        <input className="text-zinc-700 text-base font-normal w-1/2 outline-none" placeholder={person.displayName} />
                                         <input className="text-zinc-400 text-sm font-normal w-1/2 ml-4 outline-none text-end" placeholder={person.rule} />
                                     </div>
                                     :
                                     <div className="w-full h-4 flex justify-between">
-                                        <span className="text-zinc-700 text-base font-medium">{person.name}</span>
+                                        <span className="text-zinc-700 text-base font-medium">{person.displayName}</span>
                                         <span className="text-zinc-400 text-sm font-bold ml-4">{person.rule}</span>
                                     </div>
                                 }

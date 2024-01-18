@@ -66,7 +66,7 @@ export default function Login() {
 
                 if (response) {
                     setLoged(true);
-                    setUser({ id: response.id, email: response.email, name: response.name });
+                    setUser({ id: response.id, email: response.email, name: response.displayName });
                     console.log("entrou wtf");
                     navigate("/");
                 }
@@ -85,7 +85,7 @@ export default function Login() {
                 }
 
                 setLoged(true);
-                setUser({ email: response.email, name: response.name, id: response.id });
+                setUser({ email: response.email, name: response.displayName, id: response.id });
                 navigate("/");
             }).catch((error) => {
                 console.log(error);

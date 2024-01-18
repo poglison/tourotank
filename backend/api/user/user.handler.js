@@ -27,7 +27,7 @@ async function saveUser(req, res) {
     const verify = users.findIndex(u => u.email == email);
 
 
-    if (!req.body.name && !req.body.email && !req.body.password) {
+    if (!req.body.displayName && !req.body.email && !req.body.password) {
         return { status: "404", error: "001", message: "Você precisa preencher todos os campos..." }
     }
 
@@ -40,7 +40,7 @@ async function saveUser(req, res) {
     const hash = bcrypt.hashSync(req.body.password, salt);
 
     const user = {
-        name: req.body.name,
+        name: req.body.displayName,
         email: req.body.email,
         image: req.body.image,
         password: hash,

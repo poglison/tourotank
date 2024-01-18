@@ -78,7 +78,7 @@ export default function Profile() {
                                 <div className='flex items-center'>
                                     <Skeleton loading={loading} className='font-ibm text-xl font-medium text-zinc-600 min-h-7 min-w-60'>
                                         <div className='font-ibm text-xl font-medium text-zinc-600 min-h-7 min-w-10'>
-                                            {user.name}
+                                            {user.displayName}
                                         </div>
                                     </Skeleton>
 

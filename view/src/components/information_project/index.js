@@ -71,7 +71,7 @@ export default function InformationProject(props) {
                                     <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
                                 </div>
 
-                                <span className="text-sm ml-2 truncate w-56">{props?.user?.name}</span>
+                                <span className="text-sm ml-2 truncate w-56">{props?.user?.displayName}</span>
                             </div>
                         </Link>
                     }
@@ -85,7 +85,7 @@ export default function InformationProject(props) {
                                     <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
                                 </div>
 
-                                <span className="text-sm ml-2 truncate w-56">{props.project.user?.name}</span>
+                                <span className="text-sm ml-2 truncate w-56">{props.project.user?.displayName}</span>
                             </div>
                         </Link>
                     }

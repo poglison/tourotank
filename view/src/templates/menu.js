@@ -35,7 +35,7 @@ export default function Menu() {
                             </div>
 
                             <div className="flex flex-col">
-                                <span className="text-xs w-32 truncate">Olá, {user?.name?.split(" ")[0]}!</span>
+                                <span className="text-xs w-32 truncate">Olá, {user?.displayName?.split(" ")[0]}!</span>
 
                                 <span className="text-xs font-medium text-zinc-800">Ver perfil</span>
                             </div>
