@@ -1,14 +1,16 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth, save, app } from "../services";
 import { useNavigate } from "react-router-dom";
+import UserContext from "../context";
+
 const provider = new GoogleAuthProvider();
 
 export default function Login() {
 
-
+    const { user, setUser } = useContext(UserContext);
     const authGoogle = getAuth(app);
-    const [user, setUser] = useState(null);
+    const [loged, setLoged] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -25,6 +27,7 @@ export default function Login() {
     function signInGoogle() {
         signInWithPopup(authGoogle, provider)
             .then((result) => {
+                console.log(result);
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
@@ -45,44 +48,49 @@ export default function Login() {
 
     useEffect(() => {
         console.log(user);
-        if (user) {
+        if (user && loged == false) {
             authTourotank(user);
         }
     }, [user]);
 
     function authTourotank(user) {
-        auth({ email: user.email, password: user.oauthAccessToken }).then((response) => {
+        if (user.email && user.uid) {
+            auth({ email: user.email, password: user.uid }).then((response) => {
 
-            console.log(response.status == "404");
+                console.log(response.status == "404");
 
-            if (response.status == "404") {
-                registerTourotank(user);
-                return;
-            }
+                if (response.status == "404") {
+                    registerTourotank(user);
+                    return;
+                }
 
-            if (response) {
-                setUser({ id: response.id, email: response.email, name: response.name });
-                console.log("entrou wtf");
-                navigate("/");
-            }
+                if (response) {
+                    setLoged(true);
+                    setUser({ id: response.id, email: response.email, name: response.name });
+                    console.log("entrou wtf");
+                    navigate("/");
+                }
 
 
-        });
+            });
+        }
     }
 
     function registerTourotank(user) {
-        save('user', { name: user.displayName, email: user.email, password: user.oauthAccessToken }).then((response) => {
-            console.log(response.status == "404");
-            if (response.status == "404") {
-                return false;
-            }
+        if (user.displayName && user.email && user.uid) {
+            save('user', { name: user.displayName, email: user.email, password: user.uid, image: user.photoURL }).then((response) => {
+                console.log(response.status == "404");
+                if (response.status == "404") {
+                    return false;
+                }
 
-            setUser({ email: response.email, name: response.name, id: response.id });
-            console.log("entrou wtf 2");
-            navigate("/");
-        }).catch((error) => {
-            console.log(error);
-        });
+                setLoged(true);
+                setUser({ email: response.email, name: response.name, id: response.id });
+                navigate("/");
+            }).catch((error) => {
+                console.log(error);
+            });
+        }
     }
 
 

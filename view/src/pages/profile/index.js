@@ -58,7 +58,11 @@ export default function Profile() {
 
                         <div className='flex items-center'>
                             <div className='w-24 h-24 rounded-full mr-5'>
-                                <img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' />
+                                {user.image ?
+                                    (<img src={user.image} className='w-full h-full object-cover rounded-full' />)
+                                    :
+                                    (<img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' />
+                                    )}
 
                                 {/* <div className="w-full h-full object-cover rounded-full bg-zinc-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full object-cover rounded-full text-white fill-white p-4">

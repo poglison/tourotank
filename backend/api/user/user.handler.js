@@ -42,6 +42,7 @@ async function saveUser(req, res) {
     const user = {
         name: req.body.name,
         email: req.body.email,
+        image: req.body.image,
         password: hash,
         created: new Date().toLocaleString(),
         updated: new Date().toLocaleString(),

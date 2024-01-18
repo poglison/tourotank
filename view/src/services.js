@@ -3,7 +3,7 @@ import axios from 'axios';
 const url = 'https://tankdb.vercel.app/api/';
 
 export const auth = (data) => {
-
+    console.log(data);
     return axios.post(url + 'user/auth', data)
         .then(response => {
             return response.data;
@@ -37,6 +37,7 @@ export const getByID = (table, id) => {
 
 
 export const save = (table, data) => {
+    console.log(data);
     return axios.post(url + table, data)
         .then(response => {
             return response.data;
