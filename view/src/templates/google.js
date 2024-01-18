@@ -42,10 +42,11 @@ export default function Login() {
 
 
     async function handleLoginFromGoogle() {
+        console.log("Login");
         await signInGoogle();
     }
     if (true) {
-        return <button onClick={() => handleLoginFromGoogle}>Logar com o Google</button>;
+        return <button className="px-4 p-2 rounded border cursor-pointer relative z-10" onClick={handleLoginFromGoogle}>Logar com o Google</button>;
     } else {
         return <div></div>
     }
