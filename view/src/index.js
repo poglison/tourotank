@@ -35,10 +35,13 @@ function Content() {
       const storageUser = sessionStorage.getItem("@AuthFirebase:user");
       const storageToken = sessionStorage.getItem("@AuthFirebase:token");
 
+      if (user != {}) {
+        sessionStorage.setItem("user", JSON.stringify(user));
+      }
+
 
       if (storageToken && storageUser && user == {}) {
-
-        setUser(...user, JSON.parse(storageUser));
+        setUser(...user, sessionStorage.getItem("user"));
       }
     };
     loadStorageData();
@@ -47,33 +50,33 @@ function Content() {
 
   return (
     <UserContext.Provider value={{ user: user, setUser: setUser }}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/*" element={<Erro />} />
-            <Route path="/project/:id" element={<Project />} />
-            <Route path="/profile/:id" element={<Profile />} />
-            <Route path="/project/new" element={<NewProject />} />
-            <Route path="/hub" element={<Hub />} />
-          </Routes>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/*" element={<Erro />} />
+          <Route path="/project/:id" element={<Project />} />
+          <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/project/new" element={<NewProject />} />
+          <Route path="/hub" element={<Hub />} />
+        </Routes>
 
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
 
-        </BrowserRouter>
+      </BrowserRouter>
     </UserContext.Provider>
   )
 } 
