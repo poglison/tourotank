@@ -27,7 +27,6 @@ export default function Login() {
     function signInGoogle() {
         signInWithPopup(authGoogle, provider)
             .then((result) => {
-                console.log(result);
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
@@ -35,19 +34,16 @@ export default function Login() {
                 sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
                 setUser(user);
 
-                console.log("logado com sucesso");
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 const email = error.email;
                 const credential = GoogleAuthProvider.credentialFromError(error);
-                console.log("erro ao logar")
             });
     }
 
     useEffect(() => {
-        console.log(user);
         if (user && loged == false) {
             authTourotank(user);
         }
@@ -57,8 +53,6 @@ export default function Login() {
         if (user.email && user.uid) {
             auth({ email: user.email, password: user.uid }).then((response) => {
 
-                console.log(response.status == "404");
-
                 if (response.status == "404") {
                     registerTourotank(user);
                     return;
@@ -66,8 +60,7 @@ export default function Login() {
 
                 if (response) {
                     setLoged(true);
-                    setUser({ id: response.id, email: response.email, name: response.displayName });
-                    console.log("entrou wtf");
+                    setUser({ id: response.id, email: response.email, displayName: response.displayName });
                     navigate("/");
                 }
 
@@ -78,8 +71,8 @@ export default function Login() {
 
     function registerTourotank(user) {
         if (user.displayName && user.email && user.uid) {
-            save('user', { name: user.displayName, email: user.email, password: user.uid, image: user.photoURL }).then((response) => {
-                console.log(response.status == "404");
+            save('user', { displayName: user.displayName, email: user.email, password: user.uid, image: user.photoURL }).then((response) => {
+
                 if (response.status == "404") {
                     return false;
                 }

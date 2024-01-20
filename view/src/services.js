@@ -37,7 +37,6 @@ export const getByID = (table, id) => {
 
 
 export const save = (table, data) => {
-    console.log(data);
     return axios.post(url + table, data)
         .then(response => {
             return response.data;

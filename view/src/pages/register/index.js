@@ -25,7 +25,7 @@ export default function Login() {
 
     const saveUser = () => {
 
-        save("user", { name: name, email: email, password: password }).then((response) => {
+        save("user", { displayName: name, email: email, password: password }).then((response) => {
 
             if (response.status == "404") {
                 notify(response.message);

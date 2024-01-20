@@ -5,15 +5,13 @@ import Settings from '../../components/settings';
 import Skeleton from '../../templates/skeleton';
 
 import { useState, useContext, useEffect } from 'react';
-import UserContext from '../../context';
-
 import { getByID } from '../../services';
 
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function Profile() {
 
-    const { user, setUser } = useContext(UserContext);
+    const [ user, setUser ] = useState({});
     const [loading, setLoading] = useState(false);
     const id = useParams().id;
     const navigate = useNavigate();
@@ -21,16 +19,14 @@ export default function Profile() {
     useEffect(() => {
         setLoading(true);
 
-        if (user) {
-            getByID('user', id).then((response) => {
-                setLoading(false);
-                if (response.status == 404) {
-                    navigate('/404');
-                } else {
-                    setUser(response);
-                }
-            })
-        }
+        getByID('user', id).then((response) => {
+            setLoading(false);
+            if (response.status == 404) {
+                navigate('/404');
+            } else {
+                setUser(response);
+            }
+        })
     }, [])
 
 
@@ -62,8 +58,8 @@ export default function Profile() {
 
                         <div className='flex items-center'>
                             <div className='w-24 h-24 rounded-full mr-5'>
-                                {(!loading && user.image) ?
-                                    (<img src={user.image} className='w-full h-full object-cover rounded-full' />)
+                                {(!loading && user?.image) ?
+                                    (<img src={user?.image} className='w-full h-full object-cover rounded-full' />)
                                     :
                                     (
                                         <Skeleton loading={loading} rounded={"rounded-full"} className='w-24 h-24 object-cover rounded-full bg-gray-200'>
@@ -78,12 +74,12 @@ export default function Profile() {
                                 <div className='flex items-center'>
                                     <Skeleton loading={loading} className='font-ibm text-xl font-medium text-zinc-600 min-h-7 min-w-60'>
                                         <div className='font-ibm text-xl font-medium text-zinc-600 min-h-7 min-w-10'>
-                                            {user.displayName}
+                                            {user?.displayName}
                                         </div>
                                     </Skeleton>
 
 
-                                    {user.beta > 0 && (
+                                    {user?.beta > 0 && (
                                         <svg className='ml-4 fill-primary hover:fill-zinc-700' xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                                             <g clip-path="url(#clip0_57_4)">
                                                 <rect width="25" height="25" rx="5" />
@@ -97,7 +93,7 @@ export default function Profile() {
                                         </svg>
                                     )}
 
-                                    {user.admin && (
+                                    {user?.admin && (
                                         <svg className='ml-2 fill-primary hover:fill-zinc-700' xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                                             <g clip-path="url(#clip0_57_11)">
                                                 <rect width="25" height="25" rx="5" />
