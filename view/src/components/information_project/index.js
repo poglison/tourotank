@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../templates/button";
 import { save } from "../../services";
+import Skeleton from "../../templates/skeleton";
 
 
 
@@ -70,22 +71,26 @@ export default function InformationProject(props) {
                                 <div className="w-10 min-w-10 h-10 bg-primary rounded-full">
                                     <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
                                 </div>
-
-                                <span className="text-sm ml-2 truncate w-56">{props?.user?.displayName}</span>
                             </div>
                         </Link>
                     }
 
 
-
                     {props.type != "new" &&
                         <Link to={"/profile/" + props.project.user?.id}>
                             <div className="flex items-center p-2 hover:bg-neutral-100 cursor-pointer rounded-t-lg">
-                                <div className="w-10 min-w-10 h-10 bg-primary rounded-full">
-                                    <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
+
+                                <div className="mr-2">
+                                    <Skeleton className="!w-10 !h-10 !rounded-full" loading={props.loading}>
+                                        <div className="w-10 min-w-10 h-10 bg-primary rounded-full mr-2">
+                                            <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
+                                        </div>
+                                    </Skeleton>
                                 </div>
 
-                                <span className="text-sm ml-2 truncate w-56">{props.project.user?.displayName}</span>
+                                <Skeleton className="h-6 truncate w-56" loading={props.loading}>
+                                    <span className="text-sm truncate w-56">{infos?.user?.displayName}</span>
+                                </Skeleton>
                             </div>
                         </Link>
                     }
@@ -94,8 +99,11 @@ export default function InformationProject(props) {
                         <div className="flex items-center justify-between border-t-[1.5px]   p-2">
 
                             <div className="text-[13px] ml-2">
-                                <span >Último acesso:</span>
-                                <span className="font-medium ml-2">Hoje 10:00</span>
+                                <Skeleton className="w-40 h-4" loading={props.loading}>
+                                    <span >Último acesso:</span>
+
+                                    <span className="font-medium ml-2">Hoje 10:00</span>
+                                </Skeleton>
                             </div>
 
 

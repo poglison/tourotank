@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Skeleton from "./skeleton";
 
 export default function Image(props) {
 
@@ -11,8 +12,9 @@ export default function Image(props) {
 
     return (
         <div>
-            <img onClick={() => { setIsModalVisible(true) }} src={props.src} alt={props.alt} className={"rounded-xl cursor-pointer " + props.className} />
-
+            <Skeleton className={"rounded-xl cursor-pointer " + props.className} loading={props.loading}>
+                <img onClick={() => { setIsModalVisible(true) }} src={props.src} alt={props.alt} className={"rounded-xl cursor-pointer " + props.className} />
+            </Skeleton>
 
             {isModalVisible ? (
                 <>

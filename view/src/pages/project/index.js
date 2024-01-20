@@ -15,6 +15,7 @@ import ButtonFAQ from "../../templates/button_faq";
 
 import { get, getByID } from "../../services";
 import { useParams } from "react-router-dom";
+import Skeleton from "../../templates/skeleton";
 
 export default function Project() {
 
@@ -51,28 +52,32 @@ export default function Project() {
 
                     <div className="w-full md:w-[calc(100%-326px)] flex flex-col xl:flex-row">
 
-
-                        <Image src={project.image} className="object-cover xl:h-80" />
-
+                        <div className="w-full xl:w-1/2">
+                            <Image loading={loading} src={project.image} className="object-cover xl:h-80" />
+                        </div>
                         <div className="xl:w-[calc(100%-384px)] xl:overflow-hidden xl:h-56 mt-4 xl:mt-0 xl:ml-4">
 
                             <div className="flex flex-col">
                                 <span className="font-ibm text-xs text-zinc-600">Projeto</span>
-                                <span className="font-ibm text-2xl font-medium text-zinc-800">{project.title}</span>
+                                <Skeleton className="w-1/2 h-8" loading={loading}>
+                                    <span className="font-ibm text-2xl font-medium text-zinc-800">{project.title}</span>
+                                </Skeleton>
                             </div>
 
                             <div className="flex flex-col mt-4 ">
                                 <span className="font-ibm text-xs text-zinc-600">Descrição</span>
-                                <span className="xl:h-36 xl:overflow-auto font-ibm text-base text-zinc-700">
-                                    {project.description}
-                                </span>
+                                <Skeleton className="xl:h-36 xl:overflow-auto font-ibm text-base text-zinc-700" loading={loading}>
+                                    <span className="xl:h-36 xl:overflow-auto font-ibm text-base text-zinc-700">
+                                        {project.description}
+                                    </span>
+                                </Skeleton>
                             </div>
 
                         </div>
 
 
                     </div>
-                    <InformationProject project={project} />
+                    <InformationProject project={project} loading={loading} />
                 </div>
 
 

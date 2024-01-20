@@ -6,13 +6,21 @@ import { get } from "../../services"
 
 export default function Projects(props) {
 
-    const [projects, setProjects] = useState([1,2,3,4,5]);
+    const [projects, setProjects] = useState([1, 2, 3, 4, 5]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         get("project").then(res => {
             setLoading(false);
-            setProjects(res);
+            console.log(res)
+
+            if (res.length < 10) {
+                res = res.concat(res);
+                setProjects(res);
+
+            } else{
+                setProjects(res);
+            }
         })
     }, [])
 

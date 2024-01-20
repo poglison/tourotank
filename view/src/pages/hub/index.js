@@ -118,7 +118,7 @@ export default function Hub() {
 
                     {projects?.map((project, index) => {
                         return (
-                            <Link to={"/project/" + project.id} className="w-full lg:w-[calc(33%-29px)] rounded-xl m-4  hover:scale-105 cursor-pointer"
+                            <Link to={"/project/" + project.id} className="w-full lg:w-[calc(33%-29px)] rounded-xl m-4 cursor-pointer"
                                 key={index}>
 
                                 <Skeleton loading={loading} className="w-full min-w-full min-h-72 h-96 rounded-xl overflow-hidden bg-white">
