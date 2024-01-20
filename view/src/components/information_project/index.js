@@ -75,7 +75,6 @@ export default function InformationProject(props) {
                         </Link>
                     }
 
-
                     {props.type != "new" &&
                         <Link to={"/profile/" + props.project.user?.id}>
                             <div className="flex items-center p-2 hover:bg-neutral-100 cursor-pointer rounded-t-lg">
@@ -89,7 +88,7 @@ export default function InformationProject(props) {
                                 </div>
 
                                 <Skeleton className="h-6 truncate w-56" loading={props.loading}>
-                                    <span className="text-sm truncate w-56">{infos?.user?.displayName}</span>
+                                    <span className="text-sm truncate w-56">{props.project?.user?.displayName}</span>
                                 </Skeleton>
                             </div>
                         </Link>
