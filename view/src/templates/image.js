@@ -12,7 +12,7 @@ export default function Image(props) {
 
     return (
         <div>
-            <Skeleton className={"rounded-xl cursor-pointer " + props.className} loading={props.loading}>
+            <Skeleton className={"min-h-56 rounded-xl cursor-pointer " + props.className} loading={props.loading}>
                 <img onClick={() => { setIsModalVisible(true) }} src={props.src} alt={props.alt} className={"rounded-xl cursor-pointer " + props.className} />
             </Skeleton>
 

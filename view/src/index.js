@@ -47,7 +47,6 @@ function Content() {
       if (storageToken && storageUser && JSON.stringify(user) == "{}") {
 
         setUser(JSON.parse(sessionStorage.getItem("user")));
-        navigate("/")
       }
     };
     loadStorageData();
