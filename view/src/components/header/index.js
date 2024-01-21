@@ -16,7 +16,7 @@ export default function Header(props) {
 
 
       <div className="flex items-center">
-        <Logo className="md:text-xl text-sm" />
+        <Logo className="text-xl" />
         <div className="cursor-pointer ml-4 px-2 border-[1.5px] text-primary hover:bg-primary hover:text-white border-primary rounded-full hidden md:flex items-center justify-center">
           <span className="text-xs font-ibm">beta 0.1</span>
         </div>
