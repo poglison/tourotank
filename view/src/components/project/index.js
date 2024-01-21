@@ -17,7 +17,7 @@ export default function Project(props) {
                             <p className="font-ibm text-xl font-bold text-black !m-0">{props.name}</p>
                         </Skeleton>
 
-                        <p className="text-ibm text-xs font-normal text-zinc-100 !m-0">{props.description}</p>
+                        <p className="text-ibm text-xs font-normal text-zinc-600 !m-0">{props.description}</p>
                     </div>
                 </div>
             </Link>
