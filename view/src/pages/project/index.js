@@ -116,7 +116,7 @@ export default function Project() {
                             <div className="mt-4 flex flex-col">
                                 <Timeline check={project.step} />
 
-                                <Team team={project?.team} />
+                                {/* <Team team={project?.team} /> */}
 
                                 <div onClick={() => { setSelectedInformation(2); document.scrollingElement.scrollTop = 0; }} className="mt-8 flex flex-col">
                                     <ButtonFAQ />

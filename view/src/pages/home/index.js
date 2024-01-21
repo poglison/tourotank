@@ -9,7 +9,7 @@ import Video from '../../components/video';
 
 export default function App() {
   return (
-    <div className='overflow-hidden relative mx-auto max-w-[2000px]'>
+    <div className='overflow-hidden relative'>
       <Header className="md:!pr-20" />
       <Skeleton />
       <Banner />

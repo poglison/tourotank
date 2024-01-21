@@ -142,7 +142,9 @@ export default function InformationProject(props) {
                     <span>Investimento minimo</span>
 
                     {props.type != "new" ?
-                        <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.min}</span>
+                        <Skeleton className="w-40 h-8" loading={props.loading}>
+                            <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.min}</span>
+                        </Skeleton>
                         :
                         <input onChange={(e) => setInfos({ ...infos, min: e.target.value })} value={infos.min}
                             className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o minimo que se pode investir" />
@@ -154,7 +156,9 @@ export default function InformationProject(props) {
                         <span>Investido</span>
 
                         {props.type != "new" ?
-                            <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.invested}</span>
+                            <Skeleton className="w-32 h-8" loading={props.loading}>
+                                <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.invested}</span>
+                            </Skeleton>
                             :
                             <input onChange={(e) => setInfos({ ...infos, invested: e.target.value })} value={infos.invested}
                                 className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto já foi investido" />
@@ -165,7 +169,9 @@ export default function InformationProject(props) {
                         <span>Investidores</span>
 
                         {props.type != "new" ?
-                            <span className="text-2xl font-medium font-ibm text-primary">{infos?.investors}</span>
+                            <Skeleton className="w-20 h-8" loading={props.loading}>
+                                <span className="text-2xl font-medium font-ibm text-primary">{infos?.investors}</span>
+                            </Skeleton>
                             :
                             <input onChange={(e) => setInfos({ ...infos, investors: e.target.value })} value={infos.investors}
                                 className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite quantos investidores teve" />
@@ -178,7 +184,9 @@ export default function InformationProject(props) {
                     <span>Valuation</span>
 
                     {props.type != "new" ?
-                        <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.valuation}</span>
+                        <Skeleton className="w-40 h-8" loading={props.loading}>
+                            <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.valuation}</span>
+                        </Skeleton>
                         :
                         <input onChange={(e) => setInfos({ ...infos, valuation: e.target.value })} value={infos.valuation}
                             className="text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto que vale o projeto" />

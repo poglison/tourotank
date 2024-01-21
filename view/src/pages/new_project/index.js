@@ -118,7 +118,7 @@ export default function NewProject(props) {
                             <div className="mt-4 flex flex-col">
                                 <Timeline title="Em qual etapa está o projeto?" check={check} setCheck={setCheck} />
 
-                                <Team type="new" team={team} setTeam={setTeam} />
+                                {/* <Team type="new" team={team} setTeam={setTeam} /> */}
 
 
                             </div>
