@@ -139,7 +139,7 @@ export default function Profile() {
                 <div className='mt-52 flex flex-col md:flex-row'>
                     <div className='flex flex-col w-full md:flex-col md:!w-60 border-[1.5px]   rounded-lg'>
 
-                        <span className='block px-4 pt-4 pb-4 mb-0 font-medium text-zinc-700 border-b-[1.5px] border-b-zinc-300'>Menu</span>
+                        <span className='block px-4 pt-4 pb-4 mb-0 font-medium text-zinc-700 border-b-[1.5px]'>Menu</span>
 
                         <div>
                             {
@@ -157,7 +157,8 @@ export default function Profile() {
                                         )
                                     } else {
                                         return (
-                                            <div key={index} className='w-full h-12 p-2 px-4 border-b-[1.5px]   hover:bg-zinc-50 flex items-center cursor-pointer'>
+                                            <div key={index} className='w-full h-12 p-2 px-4 border-b-[1.5px] hover:bg-zinc-50 flex items-center cursor-pointer'>
+                                                
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-zinc-600">
                                                     <path fillRule="evenodd" d={item.icon} />
                                                 </svg>
