@@ -60,14 +60,14 @@ export default function InformationProject(props) {
 
         <div className={"mt-10 md:mt-0 md:fixed md:w-72 md:right-10 transition-all duration-300 " + (scroll ? "md:!-mt-28" : "")}>
 
-            <div className="bg-white w-full h-full rounded-lg mb-2">
+            <div className="w-full h-full rounded-lg mb-2">
 
-                <div className="border-[1.5px]   rounded-lg flex flex-col">
+                <div className="border-[1.5px] dark:border-stone-800 bg-white dark:bg-stone-950 rounded-lg flex flex-col">
 
 
                     {props.type == "new" &&
                         <Link to={"/profile/" + props?.user?.id}>
-                            <div className="flex items-center p-2 hover:bg-neutral-100 cursor-pointer rounded-t-lg">
+                            <div className="flex items-center p-2 hover:bg-stone-100 dark:hover:bg-stone-900 cursor-pointer rounded-t-lg">
                                 <div className="w-10 min-w-10 h-10 bg-primary rounded-full">
                                     <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
                                 </div>
@@ -77,7 +77,7 @@ export default function InformationProject(props) {
 
                     {props.type != "new" &&
                         <Link to={"/profile/" + props.project.user?.id}>
-                            <div className="flex items-center p-2 hover:bg-neutral-100 cursor-pointer rounded-t-lg">
+                            <div className="flex items-center p-2 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-900 cursor-pointer rounded-t-lg">
 
                                 <div className="mr-2">
                                     <Skeleton className="!w-10 !h-10 !rounded-full" loading={props.loading}>
@@ -95,7 +95,7 @@ export default function InformationProject(props) {
                     }
 
                     {props.type != "new" &&
-                        <div className="flex items-center justify-between border-t-[1.5px]   p-2">
+                        <div className="flex items-center justify-between border-t-[1.5px] dark:border-t-stone-800 bg-white dark:bg-stone-950 dark:text-stone-300 p-2 rounded-b-lg">
 
                             <div className="text-[13px] ml-2">
                                 <Skeleton className="w-40 h-4" loading={props.loading}>
@@ -106,7 +106,7 @@ export default function InformationProject(props) {
                             </div>
 
 
-                            <div className="border-[1.5px]   w-10 h-10 flex items-center justify-center rounded-lg text-zinc-700 hover:text-zinc-900 hover:bg-neutral-100 cursor-pointer">
+                            <div className="border-[1.5px] dark:border-stone-800  w-10 h-10 flex items-center justify-center rounded-lg text-stone-700 dark:text-stone-500 hover:text-stone-900 hover:bg-stone-100 dark:hover:bg-stone-900 dark:hover:text-stone-300 cursor-pointer">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                                     <path fillRule="evenodd" d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z" clipRule="evenodd" />
                                 </svg>
@@ -118,19 +118,19 @@ export default function InformationProject(props) {
                 </div>
             </div>
 
-            <div className="bg-white border-[1.5px]   p-4 rounded-lg">
+            <div className="bg-white dark:bg-stone-950 border-[1.5px] dark:border-stone-800  p-4 rounded-lg">
                 {props.type != "new" ?
 
-                    <div className="w-full h-4 bg-zinc-200 rounded-full mb-4">
+                    <div className="w-full h-4 bg-stone-200 dark:bg-stone-800 rounded-full mb-4">
                         <div className="w-1/2 h-full bg-primary rounded-full flex items-center justify-center text-xs text-white">{infos?.percent}</div>
                     </div>
                     :
                     <div>
                         <span>% que será para investimento</span>
 
-                        <div className="w-full h-4 mt-2 bg-zinc-200 rounded-full mb-4">
+                        <div className="w-full h-4 mt-2 bg-stone-200 dark:bg-stone-800 rounded-full mb-4">
                             <div className={"h-full bg-primary rounded-full flex items-center justify-center text-xs text-white min-w-[15%]" + (percent == 0 ? " w-0" : " w-[" + percent + "%]")}>
-                                <input onChange={(e) => setPercent(e.target.value > 100 ? 100 : e.target.value)} value={percent} maxLength={3} className="w-8 text-white placeholder:text-zinc-50 placeholder:text-xs bg-transparent outline-none" placeholder="10%" />
+                                <input onChange={(e) => setPercent(e.target.value > 100 ? 100 : e.target.value)} value={percent} maxLength={3} className="w-8 text-white placeholder:text-stone-50 placeholder:text-xs bg-transparent outline-none" placeholder="10%" />
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ export default function InformationProject(props) {
 
 
                 <div className="flex flex-col mb-4">
-                    <span>Investimento minimo</span>
+                    <span className="dark:text-stone-300">Investimento minimo</span>
 
                     {props.type != "new" ?
                         <Skeleton className="w-40 h-8" loading={props.loading}>
@@ -153,7 +153,7 @@ export default function InformationProject(props) {
 
                 <div className={"flex justify-between mb-4 " + (props.type == "new" ? "flex-col" : "")}>
                     <div className="flex flex-col">
-                        <span>Investido</span>
+                        <span className="dark:text-stone-300">Investido</span>
 
                         {props.type != "new" ?
                             <Skeleton className="w-32 h-8" loading={props.loading}>
@@ -166,7 +166,7 @@ export default function InformationProject(props) {
                     </div>
 
                     <div className={"flex flex-col " + (props.type == "new" ? "mt-4" : "")}>
-                        <span>Investidores</span>
+                        <span className="dark:text-stone-300">Investidores</span>
 
                         {props.type != "new" ?
                             <Skeleton className="w-20 h-8" loading={props.loading}>
@@ -181,7 +181,7 @@ export default function InformationProject(props) {
 
 
                 <div className="flex flex-col mb-4">
-                    <span>Valuation</span>
+                    <span className="dark:text-stone-300">Valuation</span>
 
                     {props.type != "new" ?
                         <Skeleton className="w-40 h-8" loading={props.loading}>

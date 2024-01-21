@@ -124,7 +124,7 @@ export default function Chat() {
 
                                                     <div className="w-8 h-8 min-w-8 rounded-full bg-primary mr-2 mt-4 flex items-start justify-center font-montserrat font-bold text-white text-2xl">t</div>
                                                     :
-                                                    <div className="w-8 h-8 min-w-8 rounded-full bg-zinc-500 mr-2 mt-4 flex items-center justify-center font-montserrat relative font-bold text-white text-2xl">
+                                                    <div className="w-8 h-8 min-w-8 rounded-full bg-stone-500 mr-2 mt-4 flex items-center justify-center font-montserrat relative font-bold text-white text-2xl">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                                                             <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clipRule="evenodd" />
                                                         </svg>
@@ -170,7 +170,7 @@ export default function Chat() {
                                         </svg>
                                     </button>
                                     :
-                                    <button className="ml-5 flex items-center bg-zinc-400 text-white border-[1.5px] border-zinc-400 rounded-full w-10 h-10 min-h-10 min-w-10 justify-center cursor-pointer hover:bg-primary-600">
+                                    <button className="ml-5 flex items-center bg-stone-400 text-white border-[1.5px] border-stone-400 rounded-full w-10 h-10 min-h-10 min-w-10 justify-center cursor-pointer hover:bg-primary-600">
                                         <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <circle className="opacity-25" cx={12} cy={12} r={10} stroke="currentColor" strokeWidth={4} />
                                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />

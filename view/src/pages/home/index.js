@@ -15,7 +15,7 @@ export default function App() {
       <Container>
         <Projects />
         <Benefits />
-        <Video />
+        {/* <Video /> */}
         <FAQ />
       </Container>
       <Footer />

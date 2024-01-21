@@ -62,7 +62,7 @@ export default function NewProject(props) {
 
                         <div className="w-full md:w-[calc(100%-326px)] flex flex-col xl:flex-row">
 
-                            <div className="border-[1.5px] xl:w-1/2 h-56 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-zinc-50 text-zinc-500 text-lg relative">
+                            <div className="border-[1.5px] xl:w-1/2 h-56 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-stone-50 text-stone-500 text-lg relative">
                                 <input id="file" type="file" className="absolute w-full h-full hidden" onChange={(e) => { convertBase64(e) }} />
                                 <label for="file" className="cursor-pointer absolute w-full h-full flex items-center justify-center" />
 
@@ -78,14 +78,14 @@ export default function NewProject(props) {
                             <div className="xl:w-[calc(100%-384px)] xl:overflow-hidden xl:h-56 mt-4 xl:mt-0 xl:ml-4">
 
                                 <div className="flex flex-col">
-                                    <span className="font-ibm text-xs text-zinc-600">Projeto</span>
+                                    <span className="font-ibm text-xs text-stone-600">Projeto</span>
 
-                                    <input onChange={(e) => { setProject({ ...project, title: e.target.value }) }} placeholder="Digite o nome do projeto" className="outline-none font-ibm text-2xl font-medium text-zinc-800" />
+                                    <input onChange={(e) => { setProject({ ...project, title: e.target.value }) }} placeholder="Digite o nome do projeto" className="outline-none font-ibm text-2xl font-medium text-stone-800" />
                                 </div>
 
                                 <div className="flex flex-col mt-4 ">
-                                    <span className="font-ibm text-xs text-zinc-600">Descrição</span>
-                                    <textarea onChange={(e) => { setProject({ ...project, description: e.target.value }) }} placeholder="Digite uma descrição do projeto" className="xl:h-36 xl:overflow-auto font-ibm text-base text-zinc-700 outline-none resize-none" />
+                                    <span className="font-ibm text-xs text-stone-600">Descrição</span>
+                                    <textarea onChange={(e) => { setProject({ ...project, description: e.target.value }) }} placeholder="Digite uma descrição do projeto" className="xl:h-36 xl:overflow-auto font-ibm text-base text-stone-700 outline-none resize-none" />
 
                                 </div>
 
@@ -127,7 +127,7 @@ export default function NewProject(props) {
                             selectedInformation == 2 ?
                                 (
                                     <div className="mt-12 mb-8 flex flex-col">
-                                        <span className="text-ibm text-lg font-medium block text-zinc-800">Perguntas frequentes</span>
+                                        <span className="text-ibm text-lg font-medium block text-stone-800">Perguntas frequentes</span>
 
                                         <FAQ className="!p-0 !mt-0" title={false} faq={[
                                             {
@@ -152,7 +152,7 @@ export default function NewProject(props) {
                                 selectedInformation == 3 ?
                                     (
                                         <div className="h-screen mt-12 mb-8 flex flex-col">
-                                            <span className="text-ibm text-lg font-medium block text-zinc-800">Chat</span>
+                                            <span className="text-ibm text-lg font-medium block text-stone-800">Chat</span>
 
 
                                         </div>

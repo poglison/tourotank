@@ -32,7 +32,7 @@ export default function Benefits() {
         <div className="mt-10 md:mt-0 md:h-screen flex flex-col items-center justify-center w-full text-white font-ibm relative">
             <div className="w-2/3 flex flex-col items-center justify-center rounded-2xl text-primary p-4 pb-0">
                 <span className="text-3xl font-bold">Benefícios</span>
-                <span className="text-xl mt-1 text-zinc-700 text-center">Conheça os benefícios de investir no tourotank</span>
+                <span className="text-xl mt-1 text-stone-700 dark:text-stone-300 text-center">Conheça os benefícios de investir no tourotank</span>
             </div>
 
             <div className="w-full flex flex-col  md:!flex-row items-center justify-center">
@@ -45,7 +45,7 @@ export default function Benefits() {
                         </svg>
 
                         <span className="text-xl font-bold">{benefit.title}</span>
-                        <span className="text-sm mt-4 text-zinc-700">{benefit.description}</span>
+                        <span className="text-sm mt-4 text-stone-700 dark:text-stone-300">{benefit.description}</span>
                     </div>
                 ))}
 

@@ -86,7 +86,7 @@ export default function Hub() {
             <Header className="top-0 bg-white !fixed" search={true} buttons={false} />
 
 
-            <Container className="flex flex-col items-center justify-center mt-40 mb-20 text-zinc-700">
+            <Container className="flex flex-col items-center justify-center mt-40 mb-20 text-stone-700">
                 <div className="w-full flex flex-col justify-center items-center">
                     <div className="flex items-center justify-center">
                         <h1 className="text-ibm text-4xl font-medium text-center mb-2 mr-3">Hub de projetos</h1>
@@ -107,7 +107,7 @@ export default function Hub() {
             </Container>
 
 
-            <div className="overflow-hidden flex justify-center items-center w-full bg-zinc-50 border-t-[1.5px] border-b-[1.5px] mt-8 pb-10 relative">
+            <div className="overflow-hidden flex justify-center items-center w-full bg-stone-50 border-t-[1.5px] border-b-[1.5px] mt-8 pb-10 relative">
 
                 <div className="flex flex-wrap justify-start mt-20 w-5/6 z-10">
 

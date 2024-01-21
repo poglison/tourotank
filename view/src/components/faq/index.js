@@ -42,11 +42,11 @@ export default function FAQ(props) {
             <div className="mt-5">
 
                 {faq?.map((item, index) => (
-                    <div key={index} className="bg-zinc-100  mb-2 md:mr-6 hover:bg-zinc-200" onClick={() => { setFaq(faq.map((item, i) => { if (i == index) { item.click = !item.click } return item })) }}>
+                    <div key={index} className="bg-stone-100 dark:bg-stone-900  mb-2 md:mr-6 hover:bg-stone-200 hover:dark:bg-stone-800" onClick={() => { setFaq(faq.map((item, i) => { if (i == index) { item.click = !item.click } return item })) }}>
                         <div key={index} className="w-full mt-1 p-4 flex justify-between cursor-pointer">
-                            <p className="font-ibm text-xl font-medium text-zinc-700 !m-0">{item.title}</p>
+                            <p className="font-ibm text-xl font-medium text-stone-700 dark:text-stone-300 !m-0">{item.title}</p>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-zinc-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-stone-700">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                             </svg>
 
@@ -54,7 +54,7 @@ export default function FAQ(props) {
 
                         {item.click && (
                             <div className="w-ful p-4 flex justify-between cursor-pointer">
-                                <p className="font-ibm text-lg font-normal text-zinc-500 !m-0">{item.description}</p>
+                                <p className="font-ibm text-lg font-normal text-stone-500 dark:text-stone-400 !m-0">{item.description}</p>
                             </div>
                         )}
                     </div>

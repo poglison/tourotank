@@ -13,7 +13,7 @@ export default function Button(props){
         )
     } else if(props.type == "tertiary"){
         return(
-            <button className={"bg-transparent dark:bg-stone-950 text-zinc-800  px-4 py-2 rounded-full transition-all " + props.className}>{props.children}</button>
+            <button className={"bg-transparent dark:bg-stone-950 text-stone-800  px-4 py-2 rounded-full transition-all " + props.className}>{props.children}</button>
         )
     } else{
         return(
