@@ -38,13 +38,15 @@ function Content() {
       const storageUser = sessionStorage.getItem("@AuthFirebase:user");
       const storageToken = sessionStorage.getItem("@AuthFirebase:token");
 
-      if (user != {}) {
+
+      
+      if (JSON.stringify(user) != "{}") {
         sessionStorage.setItem("user", JSON.stringify(user));
       }
 
+      if (storageToken && storageUser && JSON.stringify(user) == "{}") {
 
-      if (storageToken && storageUser && user == {}) {
-        setUser(...user, sessionStorage.getItem("user"));
+        setUser(JSON.parse(sessionStorage.getItem("user")));
         navigate("/")
       }
     };
