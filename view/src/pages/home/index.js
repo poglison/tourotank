@@ -4,20 +4,22 @@ import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Projects from '../../components/projects';
 import Benefits from '../../components/benefits';
-import Skeleton from '../../templates/skeleton';
 import Video from '../../components/video';
+import Container from '../../templates/container';
 
 export default function App() {
   return (
-    <div className='overflow-hidden relative'>
-      <Header className="md:!pr-20" />
-      <Skeleton />
-      <Banner />
-      <Projects />
-      <Benefits />
-      <Video />
-      <FAQ />
+    <div>
+      <Header />
+      <Container>
+        <Banner />
+        <Projects />
+        <Benefits />
+        <Video />
+        <FAQ />
+      </Container>
       <Footer />
+
     </div>
   );
 }

@@ -26,7 +26,7 @@ export default function Banner() {
 
 
     return (
-        <div className="h-96 p-5 md:p-10 pr-20 md:pr-10 pt-20 font-montserrat">
+        <div className="h-96 pr-20 md:pr-10 pt-20 font-montserrat">
 
             <div className="h-full flex flex-col justify-center">
                 <p className="text-xl md:text-5xl font-bold text-zinc-700 z-10 relative">uma nova maneira de</p>

@@ -25,8 +25,8 @@ export default function Video() {
 
     return (
         <div>
-            <div className="w-full h-[calc(100vh/2)] md:h-screen px-auto flex items-center justify-center">
-                <div onClick={playVideo} className="relative px-6 md:px-0 md:w-1/2 bg-white md:rounded-3xl cursor-pointer">
+            <div className="h-[calc(100vh/2)] md:h-screen flex items-center justify-center">
+                <div onClick={playVideo} className="relative md:px-0 md:w-1/2 bg-white md:rounded-3xl cursor-pointer">
                     <video ref={videoRef} className="w-full h-full rounded-xl md:rounded-[30px] outline-none z-20 relative">
                         <source src="/tourotank.mp4" type="video/mp4" />
                     </video>

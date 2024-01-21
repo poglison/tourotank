@@ -29,7 +29,7 @@ export default function FAQ(props) {
     }, [props.faq])
 
     return (
-        <div className={"w-full p-4 pl-5 md:pl-10 mt-10 " + (props.className)}>
+        <div className={"w-full mt-10 " + (props.className)}>
 
 
             {

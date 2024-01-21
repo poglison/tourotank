@@ -58,7 +58,7 @@ export default function Projects(props) {
     }
 
     return (
-        <div className={"p-10 z-10 relative transition-all select-none " + props.className}>
+        <div className={"z-10 relative transition-all select-none " + props.className}>
 
             {props.title && <span className="text-ibm text-lg font-medium mb-1 block text-zinc-800">{props.title}</span>}
 
