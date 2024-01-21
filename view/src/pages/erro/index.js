@@ -1,5 +1,6 @@
 import Header from "../../components/header";
 import Button from "../../templates/button";
+import Container from "../../templates/container";
 
 
 export default function Erro() {
@@ -8,8 +9,8 @@ export default function Erro() {
     return (
         <div>
             <Header />
-            <div className="flex justify-center items-center h-[calc(100vh-150px)]">
 
+            <Container className="flex justify-center items-center h-[calc(100vh-150px)]">
                 <div className="flex flex-col items-center justify-center">
                     <div className="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-14 h-14 text-primary mr-5">
@@ -30,7 +31,7 @@ export default function Erro() {
                     <Button className="text-sm mt-5 w-full">Voltar</Button>
 
                 </div>
-            </div>
+            </Container>
         </div>
     )
 }

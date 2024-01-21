@@ -64,10 +64,10 @@ export default function Login() {
 
 
     return (
-        <div className="relative h-screen overflow-hidden">
+        <div className="relative md:h-screen md:overflow-hidden">
             <Header buttons={false} className="!bg-transparent" />
 
-            <div className="top-0 absolute flex w-full h-screen">
+            <div className="top-0 absolute flex w-full md:h-screen mt-40 md:mt-0">
                 <div className="w-full md:w-1/2 flex justify-center items-center">
 
                     <div className="w-5/6 md:w-2/3 z-10 p-6">

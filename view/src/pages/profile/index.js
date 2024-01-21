@@ -8,10 +8,11 @@ import { useState, useContext, useEffect } from 'react';
 import { getByID } from '../../services';
 
 import { useNavigate, useParams } from 'react-router-dom';
+import Container from '../../templates/container';
 
 export default function Profile() {
 
-    const [ user, setUser ] = useState({});
+    const [user, setUser] = useState({});
     const [loading, setLoading] = useState(false);
     const id = useParams().id;
     const navigate = useNavigate();
@@ -46,12 +47,7 @@ export default function Profile() {
 
             <Header />
 
-            <div className='p-10 pt-0'>
-                <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Perfil', path: '/profile' }]} />
-
-                <div className='text-2xl font-medium mt-5 mb-5'>
-                    Perfil
-                </div>
+            <Container className='pt-0'>
 
                 <div className='pt-20 absolute left-0 top-0 w-full h-64 bg-zinc-50 rounded border-b'>
                     <div className='p-10 flex items-center'>
@@ -140,7 +136,7 @@ export default function Profile() {
 
                 </div>
 
-                <div className='mt-32 flex flex-col md:flex-row'>
+                <div className='mt-52 flex flex-col md:flex-row'>
                     <div className='flex flex-col w-full md:flex-col md:!w-60 border-[1.5px]   rounded-lg'>
 
                         <span className='block px-4 pt-4 pb-4 mb-0 font-medium text-zinc-700 border-b-[1.5px] border-b-zinc-300'>Menu</span>
@@ -180,7 +176,7 @@ export default function Profile() {
                     <Settings />
 
                 </div>
-            </div>
+            </Container>
 
 
             <Footer />
