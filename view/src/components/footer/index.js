@@ -5,16 +5,17 @@ import Logo from "../../templates/logo";
 export default function Footer() {
 
     return (
-        <div className="w-full mt-10 p-10 bg-zinc-50 border-t-[1.5px]">
+        <div className="w-full mt-10 p-10 px-5 lg:p-10 bg-zinc-50 border-t-[1.5px]">
 
 
             <div className="w-full h-full flex flex-col justify-between">
 
 
-                <div className="flex flex-col md:flex-row h-full w-full justify-between space-x-12">
+                <div className="flex flex-col lg:flex-row h-full w-full justify-between space-x-12">
 
-                    <div className="flex w-1/2 justify-between items-center flex-row space-x-5">
-                        <div className="flex flex-col space-y-1">
+                    <div className="flex lg:w-1/2 justify-between lg:justify-start items-start lg:flex-row flex-wrap lg:space-x-10">
+
+                        <div className="flex flex-col space-y-1 items-start min-w-36 lg:min-w-max mb-4 mr-4">
                             <span className="text-base font-medium text-primary">Explorar</span>
 
                             <Link to="/sobre">
@@ -30,7 +31,7 @@ export default function Footer() {
                             </Link>
                         </div>
 
-                        <div className="flex flex-col items-center space-y-1">
+                        <div className="flex flex-col space-y-1 items-start min-w-36 lg:min-w-max mb-4 mr-4">
                             <div className="flex flex-col space-y-1">
 
                                 <span className="text-base font-medium text-primary">Ajuda</span>
@@ -49,7 +50,7 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        <div className="flex flex-col space-y-1">
+                        <div className="flex flex-col space-y-1 items-start min-w-36 lg:min-w-max mb-4 mr-4">
                             <span className="text-base font-medium text-primary">Empreendendores</span>
 
                             <Link to="/sobre">
@@ -66,7 +67,7 @@ export default function Footer() {
                         </div>
 
 
-                        <div className="flex flex-col space-y-1">
+                        <div className="flex flex-col space-y-1 items-start min-w-36 lg:min-w-max mb-4 mr-4">
                             <span className="text-base font-medium text-primary">Investidores</span>
 
                             <Link to="/sobre">
@@ -83,9 +84,9 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="w-full md:w-auto !m-0 !p-0">
-                        <div className="flex md:items-start items-center flex-col md:flex-row mt-8 md:mt-0">
-                            <div className="flex space-x-4 mb-4 md:mb-0">
+                    <div className="w-full lg:w-auto !m-0 !p-0">
+                        <div className="flex lg:items-start items-center flex-col lg:flex-row mt-14 lg:mt-0">
+                            <div className="flex space-x-4 mb-4 lg:mb-0">
                                 <Link to="/sobre">
                                     <span className="text-xs hover:underline">Termos de uso</span>
                                 </Link>
@@ -108,7 +109,7 @@ export default function Footer() {
 
                                 <svg className="fill-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
 
-                                <div className="bg-primary rounded-md ">
+                                <div className="bg-primary rounded-lg ">
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
                                         <g transform="translate(32,32) scale(0.75,0.75)"><g fill="#fff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"><g transform="scale(5.12,5.12)"><path d="M41.625,10.76953c-3.98047,-3.20313 -10.27734,-3.74609 -10.54687,-3.76563c-0.41797,-0.03516 -0.81641,0.19922 -0.98828,0.58594c-0.01562,0.02344 -0.15234,0.33984 -0.30469,0.83203c2.63281,0.44531 5.86719,1.33984 8.79297,3.15625c0.46875,0.28906 0.61328,0.90625 0.32422,1.375c-0.19141,0.30859 -0.51562,0.47656 -0.85156,0.47656c-0.17969,0 -0.36328,-0.05078 -0.52734,-0.15234c-5.03125,-3.12109 -11.3125,-3.27734 -12.52344,-3.27734c-1.21094,0 -7.49609,0.15625 -12.52344,3.27734c-0.46875,0.29297 -1.08594,0.14844 -1.375,-0.32031c-0.29297,-0.47266 -0.14844,-1.08594 0.32031,-1.37891c2.92578,-1.8125 6.16016,-2.71094 8.79297,-3.15234c-0.15234,-0.49609 -0.28906,-0.80859 -0.30078,-0.83594c-0.17578,-0.38672 -0.57031,-0.62891 -0.99219,-0.58594c-0.26953,0.01953 -6.56641,0.5625 -10.60156,3.80859c-2.10547,1.94922 -6.32031,13.33984 -6.32031,23.1875c0,0.17578 0.04688,0.34375 0.13281,0.49609c2.90625,5.10938 10.83984,6.44531 12.64844,6.50391c0.00781,0 0.01953,0 0.03125,0c0.32031,0 0.62109,-0.15234 0.80859,-0.41016l1.82813,-2.51562c-4.93359,-1.27344 -7.45312,-3.4375 -7.59766,-3.56641c-0.41406,-0.36328 -0.45312,-0.99609 -0.08594,-1.41016c0.36328,-0.41406 0.99609,-0.45312 1.41016,-0.08984c0.05859,0.05469 4.69922,3.99219 13.82422,3.99219c9.14063,0 13.78125,-3.95312 13.82813,-3.99219c0.41406,-0.35937 1.04297,-0.32422 1.41016,0.09375c0.36328,0.41406 0.32422,1.04297 -0.08984,1.40625c-0.14453,0.12891 -2.66406,2.29297 -7.59766,3.56641l1.82813,2.51563c0.1875,0.25781 0.48828,0.41016 0.80859,0.41016c0.01172,0 0.02344,0 0.03125,0c1.80859,-0.05859 9.74219,-1.39453 12.64844,-6.50391c0.08594,-0.15234 0.13281,-0.32031 0.13281,-0.49609c0,-9.84766 -4.21484,-21.23828 -6.375,-23.23047zM18.5,30c-1.93359,0 -3.5,-1.78906 -3.5,-4c0,-2.21094 1.56641,-4 3.5,-4c1.93359,0 3.5,1.78906 3.5,4c0,2.21094 -1.56641,4 -3.5,4zM31.5,30c-1.93359,0 -3.5,-1.78906 -3.5,-4c0,-2.21094 1.56641,-4 3.5,-4c1.93359,0 3.5,1.78906 3.5,4c0,2.21094 -1.56641,4 -3.5,4z"></path></g></g></g>
                                     </svg>
