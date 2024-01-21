@@ -9,7 +9,7 @@ import Container from '../../templates/container';
 
 export default function App() {
   return (
-    <div>
+    <div className='bg-white dark:bg-stone-950'>
       <Header />
       <Banner />
       <Container>

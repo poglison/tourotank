@@ -34,12 +34,22 @@ function Content() {
   const navigate = useNavigate();
 
   useEffect(() => {
+
+
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+
+
+
     const loadStorageData = () => {
       const storageUser = sessionStorage.getItem("@AuthFirebase:user");
       const storageToken = sessionStorage.getItem("@AuthFirebase:token");
 
 
-      
+
       if (JSON.stringify(user) != "{}") {
         sessionStorage.setItem("user", JSON.stringify(user));
       }
