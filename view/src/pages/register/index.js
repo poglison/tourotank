@@ -145,7 +145,7 @@ export default function Login() {
 
                             <div className="flex items-center">
 
-                                <span className="ml-4 text-xs">© 2023 Todos os direitos reservados</span>
+                                <span className="ml-4 text-xs">Copyright © 2024 Todos os direitos reservados</span>
                             </div>
 
                             <div className="flex space-x-2 mt-2">

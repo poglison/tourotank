@@ -159,7 +159,7 @@ export default function Login() {
 
                             <div className="flex items-center">
 
-                                <span className="text-zinc-50 ml-4 text-xs">Copyright © 2024 tourotank</span>
+                                <span className="text-zinc-50 ml-4 text-xs">Copyright © 2024 Todos os direitos reservados</span>
                             </div>
 
                             <div className="flex space-x-2 mt-2">
