@@ -12,7 +12,6 @@ export default function Projects(props) {
     useEffect(() => {
         get("project").then(res => {
             setLoading(false);
-            console.log(res)
 
             if (res.length < 10) {
                 res = res.concat(res);

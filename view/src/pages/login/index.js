@@ -34,7 +34,7 @@ export default function Login() {
             }
 
             if (response) {
-                setUser({ id: response.id, email: email, displayName: response.displayName });
+                setUser({ id: response.id, email: email, displayName: response.displayName, image: response.image });
                 navigate("/");
             }
 

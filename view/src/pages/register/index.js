@@ -33,7 +33,7 @@ export default function Login() {
                 return;
             }
 
-            setUser({ email: response.email, displayName: response.displayName, id: response.id });
+            setUser({ email: response.email, displayName: response.displayName, id: response.id, image: response.image });
             navigate("/");
         });
     }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
@@ -20,7 +20,10 @@ import Hub from './pages/hub';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Content />
+    <BrowserRouter>
+      <Content />
+    </BrowserRouter>
+
   </React.StrictMode>
 );
 
@@ -28,7 +31,7 @@ root.render(
 function Content() {
 
   const [user, setUser] = useState({});
-  console.log(user);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadStorageData = () => {
@@ -42,6 +45,7 @@ function Content() {
 
       if (storageToken && storageUser && user == {}) {
         setUser(...user, sessionStorage.getItem("user"));
+        navigate("/")
       }
     };
     loadStorageData();
@@ -50,33 +54,31 @@ function Content() {
 
   return (
     <UserContext.Provider value={{ user: user, setUser: setUser }}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/*" element={<Erro />} />
-          <Route path="/project/:id" element={<Project />} />
-          <Route path="/profile/:id" element={<Profile />} />
-          <Route path="/project/new" element={<NewProject />} />
-          <Route path="/hub" element={<Hub />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/*" element={<Erro />} />
+        <Route path="/project/:id" element={<Project />} />
+        <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/project/new" element={<NewProject />} />
+        <Route path="/hub" element={<Hub />} />
+      </Routes>
 
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
 
-      </BrowserRouter>
     </UserContext.Provider>
   )
 } 

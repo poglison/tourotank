@@ -60,7 +60,7 @@ export default function Login() {
 
                 if (response) {
                     setLoged(true);
-                    setUser({ id: response.id, email: response.email, displayName: response.displayName });
+                    setUser({ id: response.id, email: response.email, displayName: response.displayName, image: response.image });
                     navigate("/");
                 }
 
@@ -78,7 +78,7 @@ export default function Login() {
                 }
 
                 setLoged(true);
-                setUser({ email: response.email, displayName: response.displayName, id: response.id });
+                setUser({ email: response.email, displayName: response.displayName, id: response.id, image: response.image });
                 navigate("/");
             }).catch((error) => {
                 console.log(error);

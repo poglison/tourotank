@@ -10,7 +10,6 @@ export default function Menu() {
     const { user, setUser } = useContext(UserContext);
     const [open, setOpen] = useState(false);
 
-
     return (
         <div className="relative flex items-center justify-center">
             <div onClick={() => { setOpen(!open) }} className="w-11 h-full flex items-center justify-center rounded-full bg-white text-primary px-4 p-2 border-[1.5px] border-primary hover:bg-primary hover:text-white cursor-pointer">
@@ -28,9 +27,13 @@ export default function Menu() {
                             <div className="w-10 min-w-10 h-10 rounded-full bg-zinc-500 mr-2">
 
                                 {/* <img src='https://avatars.githubusercontent.com/u/7' className='w-full h-full object-cover rounded-full' /> */}
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full object-cover rounded-full text-white fill-white p-2">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                                </svg>
+
+
+                                {user?.image ?
+                                    <img src={user.image} className='w-full h-full object-cover rounded-full' />
+                                    :
+                                    <div></div>
+                                }
 
                             </div>
 
@@ -62,7 +65,7 @@ export default function Menu() {
                             <span className="text-sm ml-3 text-zinc-600">Meus favoritos</span>
                         </div>
 
-                        <div onClick={() => {setUser({}); navigate("/login")}} className="w-full h-12 p-3 hover:bg-zinc-50 flex items-center px-4 cursor-pointer rounded-b-xl">
+                        <div onClick={() => { setUser({}); sessionStorage.clear(); navigate("/login") }} className="w-full h-12 p-3 hover:bg-zinc-50 flex items-center px-4 cursor-pointer rounded-b-xl">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-zinc-600">
                                 <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z" clipRule="evenodd" />
                             </svg>
