@@ -11,8 +11,8 @@ export default function App() {
   return (
     <div>
       <Header />
+      <Banner />
       <Container>
-        <Banner />
         <Projects />
         <Benefits />
         <Video />

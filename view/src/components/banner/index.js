@@ -26,14 +26,14 @@ export default function Banner() {
 
 
     return (
-        <div className="w-full overflow-x-hidden h-96 pr-20 md:pr-10 pt-20 font-montserrat">
+        <div className="px-5 md:px-10 overflow-hidden h-96 pr-20 md:pr-10 pt-20 font-montserrat relative">
 
             <div className="h-full flex flex-col justify-center">
                 <p className="text-xl md:text-5xl font-bold text-zinc-700 z-10 relative">uma nova maneira de</p>
                 <p className="text-5xl md:text-8xl font-bold text-primary z-10 relative">{text}</p>
             </div>
 
-            <img className="w-72 md:w-96 absolute top-0 -right-40 mt-16 md:-right-48 select-none -rotate-45" src="/bull.png" alt="" />
+            <img className="w-72 md:w-96 absolute top-0 -right-40  md:-right-48 select-none -rotate-45" src="/bull.png" alt="" />
         </div >
     )
 }
