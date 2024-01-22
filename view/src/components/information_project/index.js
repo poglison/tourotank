@@ -85,7 +85,7 @@ export default function InformationProject(props) {
                                     <Skeleton className="!w-10 !h-10 !rounded-full" loading={props.loading}>
                                         <div className="w-10 min-w-10 h-10 bg-primary rounded-full mr-2">
 
-                                            <img src={props.user?.image} alt="User" className="w-full h-full rounded-full" />
+                                            <img src={props.project.user?.image} alt="User" className="w-full h-full rounded-full" />
                                         </div>
                                     </Skeleton>
                                 </div>
