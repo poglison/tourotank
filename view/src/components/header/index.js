@@ -22,51 +22,47 @@ export default function Header(props) {
         </div>
       </div>
 
-      {props.search &&
-        <div className="flex items-center justify-between w-1/2 md:w-1/4  rounded-full bg-white hover:bg-stone-50  border-[1.5px] h-11 px-4 pl-3">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-stone-300 mr-3">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-          </svg>
+      <div className="flex items-center justify-between">
 
-          <input type="text" className="w-full outline-none text-ibm text-stone-700 bg-transparent" placeholder="Pesquisar" />
-        </div>
-      }
+        {props.search &&
+          <div className="flex items-center justify-between mr-4  rounded-full bg-white dark:bg-stone-950 hover:bg-stone-50 dark:hover:bg-stone-900 border-[1.5px] dark:border-stone-800 h-11 px-4 pl-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-stone-300 mr-3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
 
-
-      {props.buttons != false &&
-        <div className="flex items-center justify-between">
+            <input type="text" className="w-full outline-none text-ibm text-stone-700 bg-transparent dark:text-stone-400 dark:placeholder:text-stone-600" placeholder="Pesquisar" />
+          </div>
+        }
 
 
-
-
-
-
-
-          {/* {!user?.email &&
+        {props.buttons != false &&
+          <>
+            {/* {!user?.email &&
             <Link to="/login">
               <Button type="primary" className="w-28 md:w-36 h-full mr-4">Investir</Button>
             </Link>
           } */}
 
-          {user?.email &&
-            <Link to="/project/new">
-              <Button type="primary" className="w-44 h-full mr-4">Adicionar projeto</Button>
-            </Link>
-          }
+            {user?.email &&
+              <Link to="/project/new">
+                <Button type="primary" className="w-44 h-full mr-4">Adicionar projeto</Button>
+              </Link>
+            }
 
 
 
 
-          {!user.email ?
-            <Link to="/login">
-              <Button type="secondary" className="w-36 h-full">Entrar</Button>
-            </Link>
-            :
-            <Menu />
-          }
+            {!user.email ?
+              <Link to="/login">
+                <Button type="secondary" className="w-36 h-full">Entrar</Button>
+              </Link>
+              :
+              <Menu />
+            }
+          </>
+        }
 
-        </div>
-      }
+      </div>
 
     </div>
   );

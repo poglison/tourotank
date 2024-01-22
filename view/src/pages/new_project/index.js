@@ -50,7 +50,7 @@ export default function NewProject(props) {
 
 
     return (
-        <div className="overflow-x-hidden">
+        <div className="bg-white dark:bg-stone-950 overflow-x-hidden">
 
             <Header />
 
@@ -62,7 +62,7 @@ export default function NewProject(props) {
 
                         <div className="w-full md:w-[calc(100%-326px)] flex flex-col xl:flex-row">
 
-                            <div className="border-[1.5px] xl:w-1/2 h-56 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-stone-50 text-stone-500 text-lg relative">
+                            <div className="border-[1.5px] dark:border-stone-800 xl:w-1/2 h-56 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-stone-50 dark:hover:bg-stone-900 text-stone-500 text-lg relative">
                                 <input id="file" type="file" className="absolute w-full h-full hidden" onChange={(e) => { convertBase64(e) }} />
                                 <label for="file" className="cursor-pointer absolute w-full h-full flex items-center justify-center" />
 
@@ -80,12 +80,12 @@ export default function NewProject(props) {
                                 <div className="flex flex-col">
                                     <span className="font-ibm text-xs text-stone-600">Projeto</span>
 
-                                    <input onChange={(e) => { setProject({ ...project, title: e.target.value }) }} placeholder="Digite o nome do projeto" className="outline-none font-ibm text-2xl font-medium text-stone-800" />
+                                    <input onChange={(e) => { setProject({ ...project, title: e.target.value }) }} placeholder="Digite o nome do projeto" className="dark:bg-stone-950 outline-none font-ibm text-2xl font-medium text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
                                 </div>
 
                                 <div className="flex flex-col mt-4 ">
                                     <span className="font-ibm text-xs text-stone-600">Descrição</span>
-                                    <textarea onChange={(e) => { setProject({ ...project, description: e.target.value }) }} placeholder="Digite uma descrição do projeto" className="xl:h-36 xl:overflow-auto font-ibm text-base text-stone-700 outline-none resize-none" />
+                                    <textarea onChange={(e) => { setProject({ ...project, description: e.target.value }) }} placeholder="Digite uma descrição do projeto" className="dark:bg-stone-950 xl:h-36 xl:overflow-auto font-ibm text-base text-stone-700 dark:text-stone-400 outline-none resize-none dark:placeholder:text-stone-600" />
 
                                 </div>
 

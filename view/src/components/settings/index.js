@@ -9,7 +9,7 @@ export default function Settings() {
             <div className="w-full h-full flex items-center justify-center mb-4">
 
 
-                <span className="font-ibm font-medium text-xl text-stone-700">Em desenvolvimento</span>
+                <span className="font-ibm font-medium text-xl text-stone-700 dark:text-stone-300">Em desenvolvimento</span>
 
 
                 {/* <div className="w-1/3 h-40 border-[1.5px]   rounded-lg mr-4 bg-stone-50">

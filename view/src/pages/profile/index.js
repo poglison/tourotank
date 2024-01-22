@@ -146,7 +146,7 @@ export default function Profile() {
                                 items?.map((item, index) => {
                                     if (items.length - 1 == index) {
                                         return (
-                                            <div key={index} className='w-full h-12 p-2 px-4 hover:bg-stone-50 rounded-b-lg flex items-center cursor-pointer'>
+                                            <div key={index} className='w-full h-12 p-2 px-4 hover:bg-stone-50 dark:hover:bg-stone-800 rounded-b-lg flex items-center cursor-pointer'>
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-stone-600 dark:text-stone-400">
                                                     <path fillRule="evenodd" d={item.icon} />
                                                 </svg>
@@ -157,7 +157,7 @@ export default function Profile() {
                                         )
                                     } else {
                                         return (
-                                            <div key={index} className='w-full h-12 p-2 px-4 border-b-[1.5px] dark:border-stone-800 dark:text-stone-400 hover:bg-stone-50 flex items-center cursor-pointer'>
+                                            <div key={index} className='w-full h-12 p-2 px-4 border-b-[1.5px] dark:border-stone-800 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 flex items-center cursor-pointer'>
                                                 
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-stone-600 dark:text-stone-400">
                                                     <path fillRule="evenodd" d={item.icon} />

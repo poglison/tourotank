@@ -17,6 +17,10 @@ body {
   margin: 0 auto;
 }
 
+.dark{
+  background-color: #0C0A09;
+}
+
 .projects::-webkit-scrollbar {
   width: 0px !important;
 }
