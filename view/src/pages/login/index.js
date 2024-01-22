@@ -102,7 +102,7 @@ export default function Login() {
                         </div>
 
                         <div className="w-full mt-2 flex items-center justify-center">
-                            <span className="text-sm text-stone-500">Ainda não tem uma conta?</span>
+                            <span className="text-sm text-stone-500 dark:text-stone-300">Ainda não tem uma conta?</span>
                             <Link to="/register">
                                 <span className="flex items-center justify-center w-20 text-sm text-primary ml-1 underline cursor-pointer hover:font-medium hover:decoration-2">registre-se</span>
                             </Link>

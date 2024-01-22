@@ -17,7 +17,7 @@ export default function Button(props){
         )
     } else{
         return(
-            <button className={"bg-white text-primary hover:bg-primary hover:text-white border-[1.5px] border-primary px-4 py-2 rounded-full transition-all " + props.className}>{props.children}</button>
+            <button className={"bg-white dark:bg-stone-950 text-primary hover:bg-primary hover:text-white border-[1.5px] border-primary px-4 py-2 rounded-full transition-all " + props.className}>{props.children}</button>
         )
     }
   

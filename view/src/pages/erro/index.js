@@ -21,7 +21,7 @@ export default function Erro() {
 
                     </div>
 
-                    <span className="text-sm font-normal text-stone-600">Volte para onde voce estava clicando aqui</span>
+                    <span className="text-sm font-normal text-stone-600 dark:text-stone-300">Volte para onde voce estava clicando aqui</span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="text-primary w-6 h-6 absolute ml-72 rotate-45">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
