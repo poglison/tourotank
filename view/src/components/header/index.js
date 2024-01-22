@@ -12,7 +12,7 @@ export default function Header(props) {
   const { user } = useContext(UserContext);
 
   return (
-    <div className={"w-full px-5 dark:bg-stone-950 md:px-10 h-20 flex items-center justify-between z-20 relative " + props.className}>
+    <div className={"w-full px-5 md:px-10 h-20 flex items-center justify-between z-20 relative " + props.className}>
 
 
       <div className="flex items-center">

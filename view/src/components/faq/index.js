@@ -42,7 +42,7 @@ export default function FAQ(props) {
             <div className="mt-5">
 
                 {faq?.map((item, index) => (
-                    <div key={index} className="bg-stone-100 dark:bg-stone-900  mb-2 md:mr-6 hover:bg-stone-200 hover:dark:bg-stone-800" onClick={() => { setFaq(faq.map((item, i) => { if (i == index) { item.click = !item.click } return item })) }}>
+                    <div key={index} className="rounded-xl bg-stone-100 dark:bg-stone-900  mb-2 md:mr-6 hover:bg-stone-200 hover:dark:bg-stone-800" onClick={() => { setFaq(faq.map((item, i) => { if (i == index) { item.click = !item.click } return item })) }}>
                         <div key={index} className="w-full mt-1 p-4 flex justify-between cursor-pointer">
                             <p className="font-ibm text-xl font-medium text-stone-700 dark:text-stone-300 !m-0">{item.title}</p>
 
