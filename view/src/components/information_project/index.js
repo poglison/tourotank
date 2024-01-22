@@ -16,7 +16,7 @@ export default function InformationProject(props) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setInfos({ ...infos, percent: percent })
+        setInfos({ ...infos, percent: percent });
     }, [percent])
 
 
@@ -78,19 +78,20 @@ export default function InformationProject(props) {
                     }
 
                     {props.type != "new" &&
-                        <Link to={"/profile/" + props.user?.id}>
+                        <Link to={"/profile/" + props.project.user?.id}>
                             <div className="flex items-center p-2 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-900 cursor-pointer rounded-t-lg">
 
                                 <div className="mr-2">
                                     <Skeleton className="!w-10 !h-10 !rounded-full" loading={props.loading}>
                                         <div className="w-10 min-w-10 h-10 bg-primary rounded-full mr-2">
-                                            <img src="https://avatars.githubusercontent.com/u/7" alt="User" className="w-full h-full rounded-full" />
+
+                                            <img src={props.user?.image} alt="User" className="w-full h-full rounded-full" />
                                         </div>
                                     </Skeleton>
                                 </div>
 
                                 <Skeleton className="h-6 truncate w-56" loading={props.loading}>
-                                    <span className="text-sm truncate w-56">{props.project?.user?.displayName}</span>
+                                    <span className="text-sm truncate w-56">{props.project.user?.displayName ? props.project.user?.displayName : props.project.user?.email}</span>
                                 </Skeleton>
                             </div>
                         </Link>

@@ -40,7 +40,7 @@ async function saveUser(req, res) {
     const hash = bcrypt.hashSync(req.body.password, salt);
 
     const user = {
-        name: req.body.displayName,
+        displayName: req.body.displayName,
         email: req.body.email,
         image: req.body.image,
         password: hash,
