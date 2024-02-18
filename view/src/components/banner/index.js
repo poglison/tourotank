@@ -19,7 +19,8 @@ export default function Banner() {
         // "conquistar",
         // "negociar",
         // "startar",
-        "investir em ideias"
+        // "investir em ideias",
+        "comprar, vender e trocar",
     ];
 
     var text = texts[Math.floor(Math.random() * texts.length)];
