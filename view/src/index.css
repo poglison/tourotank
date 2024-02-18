@@ -43,8 +43,16 @@ body {
   background: #f1f1f1;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #0C0A09;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #888;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #2e2e2e;
 }
 
 ::-webkit-scrollbar-thumb:hover {

@@ -37,20 +37,13 @@ export default function Header(props) {
 
         {props.buttons != false &&
           <>
-            {/* {!user?.email &&
-            <Link to="/login">
-              <Button type="primary" className="w-28 md:w-36 h-full mr-4">Investir</Button>
-            </Link>
-          } */}
+         
 
             {user?.email &&
               <Link to="/project/new">
-                <Button type="primary" className="w-44 h-full mr-4">Adicionar projeto</Button>
+                <Button type="primary" className="w-36 h-full mr-4">Anunciar</Button>
               </Link>
             }
-
-
-
 
             {!user.email ?
               <Link to="/login">
