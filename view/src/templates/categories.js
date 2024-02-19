@@ -14,13 +14,13 @@ export default function Categories() {
         { "name": "8 Ball Pool", "image": "https://th.bing.com/th/id/R.f7afadf49e069466d3821f5f8091206e?rik=GRBrQbmY48ajWQ&pid=ImgRaw&r=0" },
         { "name": "A3: Still Alive", "image": "https://th.bing.com/th/id/OIP.CooINcpv01yz-PCETqy9VQAAAA?rs=1&pid=ImgDetMain" },
         { "name": "Adventure Quest World", "image": "https://scontent.fbnu8-1.fna.fbcdn.net/v/t39.30808-6/271957355_4907477452642508_5126041113747893677_n.png?_nc_cat=110&ccb=1-7&_nc_sid=b50f6c&_nc_ohc=RCF4X1HIQIUAX_vNJY7&_nc_ht=scontent.fbnu8-1.fna&oh=00_AfDw3OdhlmJwrKWv2faJG_8d7ARV7sO8uJS0yT40qN3i_g&oe=65D74DAD" },
-        { "name": "Aika", "image": "url imagem do jogo" },
-        { "name": "Aion", "image": "url imagem do jogo" },
-        { "name": "Albion Online", "image": "url imagem do jogo" },
+        { "name": "Aika", "image": "https://3.bp.blogspot.com/-ACMGNZeMLzQ/UAVxz51WEuI/AAAAAAAADmY/turmrtIhOjk/s1600/00.jpg" },
+        { "name": "Aion", "image": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/092011/aion_logo_special_for_designerstudio.ru_.png?itok=uK-U5BMF" },
+        { "name": "Albion Online", "image": "https://assets.albiononline.com/uploads/media/default/media/91e735d16e33d81abc0efd175ab9a7921d0f3f71.png" },
         { "name": "Apex Legends", "image": "https://th.bing.com/th/id/R.68817bdf3fbd5fb0f423bda5631812fb?rik=jX%2bbcx2m6285wQ&pid=ImgRaw&r=0" },
-        { "name": "Avakin Life", "image": "url imagem do jogo" },
-        { "name": "Black Clover Mobile", "image": "url imagem do jogo" },
-        { "name": "Black Desert", "image": "url imagem do jogo" },
+        { "name": "Avakin Life", "image": "https://archive.org/download/avakin/avakin.png" },
+        { "name": "Black Clover Mobile", "image": "https://cdn6.aptoide.com/imgs/5/7/8/578f1305869d3383c1972d602cc611f6_icon.png" },
+        { "name": "Black Desert", "image": "https://www.seekpng.com/png/full/160-1600886_cube.png" },
         { "name": "Blade and Soul", "image": "url imagem do jogo" },
         { "name": "Brawl Stars", "image": "url imagem do jogo" },
         { "name": "Brawlhalla", "image": "https://th.bing.com/th/id/OIP.GCWs0KUpRtpk-_sgmxqfUAHaFo?rs=1&pid=ImgDetMain" },
@@ -160,7 +160,7 @@ export default function Categories() {
                         {games.map((game, index) => {
                             return (
                                 <div className="w-72 relative h-14 p-3 border-b-[1.5px] dark:border-b-stone-800 hover:bg-stone-50 dark:hover:bg-stone-900 flex items-center px-4 cursor-pointer">
-                                    <img src={game.image} viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-stone-600 dark:text-stone-400 rounded-full">
+                                    <img src={game.image} viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-stone-600 dark:text-stone-400 rounded-full object-cover">
                                     </img>
 
                                     <span className="text-sm ml-3 text-stone-600 dark:text-stone-400">{game.name}</span>
