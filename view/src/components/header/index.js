@@ -5,6 +5,7 @@ import Menu from "../../templates/menu";
 
 import { useContext, useEffect } from "react";
 import UserContext from "../../context";
+import Categories from "../../templates/categories";
 
 
 export default function Header(props) {
@@ -12,11 +13,11 @@ export default function Header(props) {
   const { user } = useContext(UserContext);
 
   return (
-    <div className={"w-full px-5 md:px-10 h-20 flex items-center justify-between z-20 relative " + props.className}>
+    <div className={"w-full px-5 md:px-10 h-20 flex items-center justify-between z-20 fixed bg-white dark:bg-stone-950 " + props.className}>
 
 
       <div className="flex items-center">
-        <Logo className="text-xl" />
+        <Logo  />
         <div className="cursor-pointer ml-4 px-2 border-[1.5px] text-primary hover:bg-primary hover:text-white border-primary dark:bg-primary dark:text-white dark:hover:bg-stone-900 rounded-full hidden md:flex items-center justify-center">
           <span className="text-xs font-ibm">beta 0.1</span>
         </div>
@@ -25,8 +26,8 @@ export default function Header(props) {
       <div className="flex items-center justify-between">
 
         {props.search &&
-          <div className="flex items-center justify-between mr-4  rounded-full bg-white dark:bg-stone-950 hover:bg-stone-50 dark:hover:bg-stone-900 border-[1.5px] dark:border-stone-800 h-11 px-4 pl-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-stone-300 mr-3">
+          <div className="hidden md:flex items-center justify-between mr-4  rounded-full bg-white dark:bg-stone-950 border-[1.5px] dark:border-stone-800 h-11 px-4 pl-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-stone-300 dark:text-stone-800 mr-3">
               <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
 
@@ -37,7 +38,8 @@ export default function Header(props) {
 
         {props.buttons != false &&
           <>
-         
+
+            <Categories />
 
             {user?.email &&
               <Link to="/project/new">

@@ -5,7 +5,7 @@ export default function Logo(props) {
 
     return (
         <Link to="/">
-            <p className={"font-bold text-primary font-montserrat " + props.className}>tourotank</p>
+            <p className={"text-md font-bold text-primary font-montserrat " + props.className}>tourotank</p>
         </Link>
     )
 }
