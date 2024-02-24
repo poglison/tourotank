@@ -143,7 +143,7 @@ export default function Categories() {
         { "name": "Softwares e Licenças", "image": "https://th.bing.com/th/id/R.ed1aa28ec335a733d495632cbd226002?rik=RvC0SaGesLtmFg&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f06%2fMicrosoft-Windows-1.png&ehk=KvT3P1qZWZZrInQJD0YZBT4hzUOzrSXm8qCAwai9BaM%3d&risl=&pid=ImgRaw&r=0" },
         { "name": "Apostas", "image": "https://th.bing.com/th/id/R.1766fe9dbd7d016d03bff30f8ffdd154?rik=1LD%2ftaV0C96w2g&pid=ImgRaw&r=0" },
         { "name": "eBooks", "image": "https://icon-library.com/images/ebook-icon-png/ebook-icon-png-6.jpg" },
-        { "name": "Doações", "image": "https://th.bing.com/th/id/R.512e9d9c9f8053701b53519934c2f0f3?rik=diNKAd8cxQR7nA&pid=ImgRaw&r=0" },
+        { "name": "Doações", "image": "https://www.iagua.es/sites/default/files/msf.png" },
         { "name": "Outros", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
     ]
 
