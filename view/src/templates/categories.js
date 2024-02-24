@@ -134,16 +134,16 @@ export default function Categories() {
 
     const others = [
         { "name": "Criptomoedas e NFT", "image": "https://logodownload.org/wp-content/uploads/2017/06/bitcoin-logo-1-1.png" },
-        { "name": "Assinaturas e Premium", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
-        { "name": "Emails", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
-        { "name": "Discord", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
-        { "name": "Gift Cards", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
-        { "name": "Redes Sociais", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
+        { "name": "Assinaturas e Premium", "image": "https://vignette2.wikia.nocookie.net/logopedia/images/b/b2/NetflixIcon2016.jpg/revision/latest/scale-to-width-down/2000?cb=20160620223003" },
+        { "name": "Emails", "image": "https://th.bing.com/th/id/R.5325dd3e2e9e014060752a1dc40f7027?rik=anVZXWRbZbY6JA&pid=ImgRaw&r=0" },
+        { "name": "Discord", "image": "https://logodownload.org/wp-content/uploads/2017/11/discord-logo-1-1-2048x2048.png" },
+        { "name": "Gift Cards", "image": "https://static.vecteezy.com/system/resources/previews/022/484/501/original/google-play-store-icon-logo-symbol-free-png.png" },
+        { "name": "Redes Sociais", "image": "https://i2.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/logo-instagram-png-fundo-transparente13.png?fit=2400,2400&ssl=1" },
         { "name": "Serviços Digitais", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
-        { "name": "Softwares e Licenças", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
-        { "name": "Apostas", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
-        { "name": "eBooks", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
-        { "name": "Doações", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
+        { "name": "Softwares e Licenças", "image": "https://th.bing.com/th/id/R.ed1aa28ec335a733d495632cbd226002?rik=RvC0SaGesLtmFg&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f06%2fMicrosoft-Windows-1.png&ehk=KvT3P1qZWZZrInQJD0YZBT4hzUOzrSXm8qCAwai9BaM%3d&risl=&pid=ImgRaw&r=0" },
+        { "name": "Apostas", "image": "https://th.bing.com/th/id/R.1766fe9dbd7d016d03bff30f8ffdd154?rik=1LD%2ftaV0C96w2g&pid=ImgRaw&r=0" },
+        { "name": "eBooks", "image": "https://icon-library.com/images/ebook-icon-png/ebook-icon-png-6.jpg" },
+        { "name": "Doações", "image": "https://th.bing.com/th/id/R.512e9d9c9f8053701b53519934c2f0f3?rik=diNKAd8cxQR7nA&pid=ImgRaw&r=0" },
         { "name": "Outros", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
     ]
 
