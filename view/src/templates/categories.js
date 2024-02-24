@@ -152,7 +152,7 @@ export default function Categories() {
         <div className="relative flex items-center justify-center">
             <div onClick={() => { setOpen(!open) }} className="h-full flex items-center justify-center text-stone-800 dark:text-stone-400 hover:dark:text-stone-100 px-6 cursor-pointer">
                 <span>
-                    Categories
+                    Categorias
                 </span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-2 w-4 h-4">
