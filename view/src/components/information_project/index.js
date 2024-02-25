@@ -9,7 +9,6 @@ import Skeleton from "../../templates/skeleton";
 
 export default function InformationProject(props) {
 
-    const [scroll, setScroll] = useState(false);
     const [percent, setPercent] = useState(10);
     const [infos, setInfos] = useState({});
 
@@ -25,20 +24,6 @@ export default function InformationProject(props) {
             setInfos(props.project.infos);
         }
     }, [props.project])
-
-
-
-    useEffect(() => {
-
-        window.addEventListener('scroll', () => {
-
-            if (window.scrollY >= 100) {
-                setScroll(true);
-            } else {
-                setScroll(false);
-            }
-        });
-    }, []);
 
 
     const register = async () => {
@@ -58,7 +43,7 @@ export default function InformationProject(props) {
 
     return (
 
-        <div className={"mt-10 md:mt-0 md:fixed md:w-72 md:right-10 transition-all duration-300 " + (scroll ? "md:!-mt-28" : "")}>
+        <div className={"mt-10 md:mt-0 md:fixed md:w-72 md:right-10 transition-all duration-300"}>
 
             <div className="w-full h-full rounded-lg mb-2">
 

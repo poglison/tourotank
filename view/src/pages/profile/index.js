@@ -45,7 +45,7 @@ export default function Profile() {
     return (
         <div className='dark:bg-stone-950 overflow-x-hidden relative'>
 
-            <Header />
+            <Header className="!bg-transparent"/>
 
             <div className='w-full pt-20 absolute top-0 h-64 bg-stone-50 dark:bg-stone-900 border-b dark:border-stone-800'>
                 <div className='px-5 md:px-10 mt-10 flex items-center'>
