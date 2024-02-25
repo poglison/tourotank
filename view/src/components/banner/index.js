@@ -34,7 +34,7 @@ export default function Banner() {
                 <p className="text-5xl md:text-8xl font-bold text-primary z-10 relative">{text}</p>
             </div>
 
-            <img className="w-72 md:w-96 absolute top-20 -right-40  md:-right-48 select-none -rotate-45" src="/bull.png" alt="" />
+            <img className="w-72 md:w-96 absolute top-20 -right-40  md:-right-48 select-none -rotate-45" src="imgs/bull/bull.png" alt="" />
         </div >
     )
 }

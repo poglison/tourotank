@@ -11,66 +11,67 @@ export default function Categories() {
     const [open, setOpen] = useState(false);
 
     const games = [
-        { "name": "8 Ball Pool", "image": "https://th.bing.com/th/id/R.f7afadf49e069466d3821f5f8091206e?rik=GRBrQbmY48ajWQ&pid=ImgRaw&r=0" },
-        { "name": "A3: Still Alive", "image": "https://th.bing.com/th/id/OIP.CooINcpv01yz-PCETqy9VQAAAA?rs=1&pid=ImgDetMain" },
-        { "name": "Adventure Quest World", "image": "https://assets-prd.ignimgs.com/2023/03/07/adventurequest-worlds-infinity-button-1678214843352.jpg" },
-        { "name": "Aika", "image": "https://3.bp.blogspot.com/-ACMGNZeMLzQ/UAVxz51WEuI/AAAAAAAADmY/turmrtIhOjk/s1600/00.jpg" },
-        { "name": "Aion", "image": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/092011/aion_logo_special_for_designerstudio.ru_.png?itok=uK-U5BMF" },
-        { "name": "Albion Online", "image": "https://assets.albiononline.com/uploads/media/default/media/91e735d16e33d81abc0efd175ab9a7921d0f3f71.png" },
-        { "name": "Apex Legends", "image": "https://th.bing.com/th/id/R.68817bdf3fbd5fb0f423bda5631812fb?rik=jX%2bbcx2m6285wQ&pid=ImgRaw&r=0" },
-        { "name": "Avakin Life", "image": "https://archive.org/download/avakin/avakin.png" },
-        { "name": "Black Clover Mobile", "image": "https://cdn6.aptoide.com/imgs/5/7/8/578f1305869d3383c1972d602cc611f6_icon.png" },
-        { "name": "Black Desert", "image": "https://yt3.googleusercontent.com/9fzD67GPsi79imLo4ktnUGUqFxcP0MY-MibB-NiFWdLuXZXLyYl9pR1X_ZKJEeonyXMu3VJoug=s900-c-k-c0x00ffffff-no-rj" },
-        { "name": "Blade and Soul", "image": "https://www.freeiconspng.com/thumbs/blade-and-soul-icon/bs-blade-and-soul-red-icon-3.png" },
-        { "name": "Brawl Stars", "image": "https://media.vandal.net/m/69040/brawl-stars-201812201015749_1.jpg" },
-        { "name": "Brawlhalla", "image": "https://th.bing.com/th/id/OIP.GCWs0KUpRtpk-_sgmxqfUAHaFo?rs=1&pid=ImgDetMain" },
-        { "name": "Cabal Online", "image": "https://play-lh.googleusercontent.com/SScJRTM8OBd7owU9rnUJM3zRTQAukjojj0TQqjQpVRsRF-BYxGQMZ479uJCrwiyfDXo" },
-        { "name": "Call of Duty", "image": "https://seeklogo.com/images/C/call-of-duty-2023-logo-918F9E426C-seeklogo.com.png" },
-        { "name": "Clash of Clans", "image": "https://play-lh.googleusercontent.com/LByrur1mTmPeNr0ljI-uAUcct1rzmTve5Esau1SwoAzjBXQUby6uHIfHbF9TAT51mgHm" },
-        { "name": "Clash Royale", "image": "https://th.bing.com/th/id/R.cb6769fb1aedef85ab18b16d01fd4d05?rik=PAcoilhQ4yAU%2fQ&riu=http%3a%2f%2fvignette2.wikia.nocookie.net%2fclashroyale%2fimages%2f2%2f24%2fClash_Royale_Square_Icon.png%2frevision%2flatest%3fcb%3d20160116184427&ehk=4S6hGasXDeXDidFi2ak37z%2bnleLUY5HXpR8GS0bLbAM%3d&risl=&pid=ImgRaw&r=0" },
-        { "name": "Coin Master", "image": "https://th.bing.com/th/id/R.fd10bff29fbcc3701fea5c0cbc430faf?rik=fTaUssskO0WX9Q&pid=ImgRaw&r=0" },
-        { "name": "Combat Arms", "image": "https://2.bp.blogspot.com/-GGWQunHsmTA/Tz4op7uBJEI/AAAAAAAAATU/AxhQDxW2_kQ/s1600/combatarms-02.jpg" },
-        { "name": "Counter Strike", "image": "https://th.bing.com/th/id/OIP.8o4AzrLmNu_nkwEC3CraTQHaHa?rs=1&pid=ImgDetMain" },
-        { "name": "Crossfire", "image": "https://i.pinimg.com/originals/a1/a2/92/a1a292c181e1b2b6b4484b621f161d13.jpg" },
-        { "name": "Dark and Darker", "image": "https://cdn.icon-icons.com/icons2/3884/PNG/256/dark_and_darker_icon_245648.png" },
-        { "name": "DDTank", "image": "https://th.bing.com/th/id/OIP.vilJ9Bqza7PcyRsUe7cD3gHaHa?rs=1&pid=ImgDetMain" },
-        { "name": "Dead by Daylight", "image": "https://cutewallpaper.org/24/dead-by-daylight-logo-png/414329833.jpg" },
-        { "name": "Diablo Immortal", "image": "https://th.bing.com/th/id/R.0f027f4cd3433fee163a1f357c15aa4b?rik=J4Q6tkjaKyh6kA&pid=ImgRaw&r=0" },
-        { "name": "Diablo IV", "image": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/90918c5b8c17f80e32d5b155a7bf6197/32/256x256.png" },
-        { "name": "Digimon Masters Online", "image": "https://pbs.twimg.com/profile_images/705650368605106176/GmAuD9SN_400x400.jpg" },
-        { "name": "Dofus", "image": "https://th.bing.com/th/id/OIP.VVda1hW52NPfMgn_uLViywAAAA?rs=1&pid=ImgDetMain" },
-        { "name": "DOTA 2", "image": "https://th.bing.com/th/id/R.4cb6bcc61397b0aa81645f4ed5599673?rik=OOf%2bfC9EaTBvFw&pid=ImgRaw&r=0" },
-        { "name": "Dragon Ball Legends", "image": "https://i.pinimg.com/736x/a9/4a/e0/a94ae09b1ae1691d89baa43289950632.jpg" },
-        { "name": "Dragon City Mobile", "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/1d/71/0f/1d710f4f-9833-f4e9-5bd5-e041eacd0c90/source/1280x1280bb.jpg" },
-        { "name": "Epic Games", "image": "https://static-00.iconduck.com/assets.00/epic-games-icon-512x512-7qpmojcd.png" },
-        { "name": "Epic Seven", "image": "https://gamepress.gg/epicseven/sites/epicseven/files/e7-icon.png" },
-        { "name": "Escape from Tarkov", "image": "https://riotpixels.net/wp/wp-content/uploads/2016/08/Escape-from-Tarkov__09-08-16.jpg" },
-        { "name": "Farlight 84", "image": "https://th.bing.com/th/id/R.8228a67b73cc4dca43ac5c57b150a804?rik=SU7yST8kPPiTYQ&pid=ImgRaw&r=0" },
-        { "name": "FIFA", "image": "https://th.bing.com/th/id/R.a80f87d5211f0939fbf34e75a317d457?rik=DP9V6zL5ycHsFA&riu=http%3a%2f%2fimages1.wikia.nocookie.net%2f__cb20121225170158%2flogopedia%2fimages%2f8%2f8d%2f2000px-Ea_Sports_logo_svg.png&ehk=VM2j%2f%2fdpfvI7n4QsCvwpWatjUJzl8S1TWvrFcVY63y4%3d&risl=&pid=ImgRaw&r=0" },
-        { "name": "For Honor", "image": "https://i.ytimg.com/vi/itlHgIdGki8/maxresdefault.jpg" },
-        { "name": "Fortnite", "image": "https://th.bing.com/th/id/OIP.QOFo-vYrr5zIZwhISoBqtgAAAA?rs=1&pid=ImgDetMain" },
-        { "name": "Forza Horizon", "image": "https://preview.redd.it/9qjkgtbndos81.png?width=256&format=png&auto=webp&s=3a0f74f2f703a40725f2ae906f671353e7fa6152" },
-        { "name": "Free Fire", "image": "https://logospng.org/download/garena/logo-escudo-garena-1024.png" },
-        { "name": "Genshin Impact", "image": "https://www.destockjapan.com/wp-content/uploads/2021/08/genshin-impact-logo.jpg" },
-        { "name": "GOG", "image": "https://www.gogalaxy.com/favicons/android-icon-192x192.png" },
-        { "name": "Grand Chase", "image": "https://th.bing.com/th/id/R.c40d036915b12ea8c65b4acd46f2a1e0?rik=WNo2T1OMUs2vqg&pid=ImgRaw&r=0" },
-        { "name": "Grand Fantasia", "image": "https://pbs.twimg.com/profile_images/805565287/sprietava_400x400.jpg" },
-        { "name": "GTA", "image": "https://yt3.googleusercontent.com/ytc/AGIKgqPPTEjRVg98FI1JEYF9ubwQ6JqeyHYR-ucMDxvg=s900-c-k-c0x00ffffff-no-rj" },
-        { "name": "Guild Wars 2", "image": "https://th.bing.com/th/id/R.7488c48499f41de941747f91bc7a47ae?rik=rbLijUNmWjx%2b1A&pid=ImgRaw&r=0" },
-        { "name": "Habbo", "image": "https://th.bing.com/th/id/OIP.6L0Yj9OX3Z8xalQ3Pi60mQAAAA?rs=1&pid=ImgDetMain" },
-        { "name": "Hay Day", "image": "https://th.bing.com/th/id/R.25912b52848f592de77ccc7ebdab452c?rik=Dc58fT6EcanTBg&riu=http%3a%2f%2fvignette4.wikia.nocookie.net%2fhayday%2fimages%2f6%2f6a%2fHay-Day-Icon.png%2frevision%2flatest%3fcb%3d20140920172358&ehk=3y6BKuX57yIy6YJQbs2QMUAnGyi2kXbX00mKVacOgDo%3d&risl=&pid=ImgRaw&r=0" },
-        { "name": "Hearthstone", "image": "https://th.bing.com/th/id/R.7ec9453aeaeabf23dde154e0fdc28bfb?rik=pV5j%2b0A7huPz7Q&pid=ImgRaw&r=0" },
-        { "name": "Heartwood Online", "image": "https://th.bing.com/th/id/OIP.9djRxXBP6jLxp3kBzd8R-QAAAA?rs=1&pid=ImgDetMain" },
-        { "name": "Honkai Impact", "image": "https://freeappsforme.com/wp-content/uploads/2020/12/Honkai-Impact-3rd-logo-768x768.jpg" },
-        { "name": "Honkai: Star Rail", "image": "https://th.bing.com/th/id/OIP.HrwRqp2QydmqNaPybnVH8QAAAA?rs=1&pid=ImgDetMain" },
-        { "name": "Honor of Kings", "image": "https://play-lh.googleusercontent.com/73i1fY0ewi9PojudqwPzmGKxmhJ-MWaQR3UZvJxttIoVV4OwyK_wg-EG2q-c_JHZ50s" },
-        { "name": "Icarus Online", "image": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/926e263363c82458a9ae48883b7dc655/32/256x256.png" },
-        { "name": "IMVU", "image": "https://th.bing.com/th/id/OIP.wx70YDfppvVzP9o2vPJJOAHaHa?rs=1&pid=ImgDetMain" },
-        { "name": "Kakele Online", "image": "https://cdna.artstation.com/p/assets/images/images/056/275/144/large/caio-lucas-iconecapi512x512.jpg?1668856907" },
-        { "name": "League of Legends", "image": "https://th.bing.com/th/id/R.100ceb3360e2449ec1898ba7c51c1c38?rik=ntoCi5r1kd81SQ&riu=http%3a%2f%2fwww.rw-designer.com%2ficon-image%2f21516-256x256x32.png&ehk=6ix06t6g2dgQwqXE1Pzv%2bAEnzkeYyqRc7YUh35FP%2beY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" },
-        { "name": "League of Legends: Wild Rift", "image": "https://vsimse.ru/wp-content/uploads/2020/12/League-of-Legends-Wild-Rift.png" },
-        { "name": "Legend Online", "image": "https://media.cdnandroid.com/item_images/736496/imagen-legend-online-classic-ultimate-0ori.jpg" },
-        { "name": "Legends of Runeterra", "image": "https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/16/46/7a/16467aaa-e95c-2ed9-ab11-5aa54ef31fe8/source/512x512bb.jpg" },
+        { "name": "8 Ball Pool", "image": "imgs/categories/8 Ball Pool.png" },
+        { "name": "A3: Still Alive", "image": "imgs/categories/A3 Still Alive.png" },
+        { "name": "Adventure Quest World", "image": "imgs/categories/Adventure Quest World.png" },
+        { "name": "Aika", "image": "imgs/categories/Aika.png" },
+        { "name": "Aion", "image": "imgs/categories/Aion.png" },
+        { "name": "Albion Online", "image": "imgs/categories/Albion Online.png" },
+        { "name": "Apex Legends", "image": "imgs/categories/Apex Legends.png" },
+        { "name": "Avakin Life", "image": "imgs/categories/Avakin Life.png" },
+        { "name": "Black Clover Mobile", "image": "imgs/categories/Black Clover Mobile.png" },
+        { "name": "Black Desert", "image": "imgs/categories/Black Desert.png" },
+        { "name": "Blade and Soul", "image": "imgs/categories/Blade and Soul.png" },
+        { "name": "Brawl Stars", "image": "imgs/categories/Brawl Stars.png" },
+        { "name": "Brawlhalla", "image": "imgs/categories/Brawlhalla.png" },
+        { "name": "Cabal Online", "image": "imgs/categories/Cabal Online.png" },
+        { "name": "Call of Duty", "image": "imgs/categories/Call of Duty.png" },
+        { "name": "Clash of Clans", "image": "imgs/categories/Clash of Clans.png" },
+        { "name": "Clash Royale", "image": "imgs/categories/Clash Royale.png" },
+        { "name": "Coin Master", "image": "imgs/categories/Coin Master.png" },
+        { "name": "Combat Arms", "image": "imgs/categories/Combat Arms.png" },
+        { "name": "Counter Strike", "image": "imgs/categories/Counter Strike.png" },
+        { "name": "Crossfire", "image": "imgs/categories/Crossfire.png" },
+        { "name": "Dark and Darker", "image": "imgs/categories/Dark and Darker.png" },
+        { "name": "DDTank", "image": "imgs/categories/DDTank.png" },
+        { "name": "Dead by Daylight", "image": "imgs/categories/Dead by Daylight.png" },
+        { "name": "Diablo Immortal", "image": "imgs/categories/Diablo Immortal.png" },
+        { "name": "Diablo IV", "image": "imgs/categories/Diablo IV.png" },
+        { "name": "Digimon Masters Online", "image": "imgs/categories/Digimon Masters Online.png" },
+        { "name": "Dofus", "image": "imgs/categories/Dofus.png" },
+        { "name": "DOTA 2", "image": "imgs/categories/DOTA 2.png" },
+        { "name": "Dragon Ball Legends", "image": "imgs/categories/Dragon Ball Legends.png" },
+
+        { "name": "Dragon City Mobile", "image": "imgs/categories/Dragon City Mobile.png" },
+        { "name": "Epic Games", "image": "imgs/categories/Epic Games.png" },
+        { "name": "Epic Seven", "image": "imgs/categories/Epic Seven.png" },
+        { "name": "Escape from Tarkov", "image": "imgs/categories/Escape from Tarkov.png" },
+        { "name": "Farlight 84", "image": "imgs/categories/Farlight 84.png" },
+        { "name": "FIFA", "image": "imgs/categories/FIFA.png" },
+        { "name": "For Honor", "image": "imgs/categories/For Honor.png" },
+        { "name": "Fortnite", "image": "imgs/categories/Fortnite.png" },
+        { "name": "Forza Horizon", "image": "imgs/categories/Forza Horizon.png" },
+        { "name": "Free Fire", "image": "imgs/categories/Free Fire.png" },
+        { "name": "Genshin Impact", "image": "imgs/categories/Genshin Impact.png" },
+        { "name": "GOG", "image": "imgs/categories/GOG.png" },
+        { "name": "Grand Chase", "image": "imgs/categories/Grand Chase.png" },
+        { "name": "Grand Fantasia", "image": "imgs/categories/Grand Fantasia.png" },
+        { "name": "GTA", "image": "imgs/categories/GTA.png" },
+        { "name": "Guild Wars 2", "image": "imgs/categories/Guild Wars 2.png" },
+        { "name": "Habbo", "image": "imgs/categories/Habbo.png" },
+        { "name": "Hay Day", "image": "imgs/categories/Hay Day.png" },
+        { "name": "Heartwood Online", "image": "imgs/categories/Heartwood Online.png" },
+        { "name": "Honkai Impact", "image": "imgs/categories/Honkai Impact.png" },
+        { "name": "Honkai: Star Rail", "image": "imgs/categories/Honkai Star Rail.png" },
+        { "name": "Honor of Kings", "image": "imgs/categories/Honor of Kings.png" },
+        { "name": "Icarus Online", "image": "imgs/categories/Icarus Online.png" },
+        { "name": "IMVU", "image": "imgs/categories/IMVU.png" },
+        { "name": "Kakele Online", "image": "imgs/categories/Kakele Online.png" },
+        { "name": "League of Legends", "image": "imgs/categories/League of Legends.png" },
+        { "name": "League of Legends: Wild Rift", "image": "imgs/categories/League of Legends Wild Rift.png" },
+        { "name": "Legend Online", "image": "imgs/categories/Legend Online.png" },
+        { "name": "Legends of Runeterra", "image": "imgs/categories/Legends of Runeterra.png" },
+
         { "name": "Lords Mobile", "image": "https://lh3.googleusercontent.com/Wu1r-8NOJB30zU8z8iga33irXFFLnyEFmDgjYLPTfrE1yVaLLNnxgWUqMRk7SjK8fupM=w300" },
         { "name": "Lost Ark", "image": "https://th.bing.com/th/id/OIP.7cTHAcEsAGkUsmYtXZCjZwHaHa?rs=1&pid=ImgDetMain" },
         { "name": "Magic The Gathering", "image": "https://cdn11.bigcommerce.com/s-fg272t4iw0/images/stencil/500x659/products/5186/5439/C-15233__84973.1557817126.jpg?c=2" },
@@ -133,18 +134,18 @@ export default function Categories() {
     ]
 
     const others = [
-        { "name": "Criptomoedas e NFT", "image": "https://logodownload.org/wp-content/uploads/2017/06/bitcoin-logo-1-1.png" },
+        { "name": "Criptomoedas e NFT", "image": "https://th.bing.com/th/id/R.46afadddcc08be483a971581981f2b04?rik=5zZqzokQPvp5Ww&riu=http%3a%2f%2fstore-images.s-microsoft.com%2fimage%2fapps.17518.9007199266525906.711fe06b-31fe-48b3-85b2-9147c65d66ce.8e1c2c26-16e6-413b-926e-b785d38b915a&ehk=FJgCYuMHrIquhx9LbTCEvce5QbFloAQ8SsjBlH0T1ys%3d&risl=&pid=ImgRaw&r=0" },
         { "name": "Assinaturas e Premium", "image": "https://vignette2.wikia.nocookie.net/logopedia/images/b/b2/NetflixIcon2016.jpg/revision/latest/scale-to-width-down/2000?cb=20160620223003" },
         { "name": "Emails", "image": "https://th.bing.com/th/id/R.5325dd3e2e9e014060752a1dc40f7027?rik=anVZXWRbZbY6JA&pid=ImgRaw&r=0" },
-        { "name": "Discord", "image": "https://logodownload.org/wp-content/uploads/2017/11/discord-logo-1-1-2048x2048.png" },
+        { "name": "Discord", "image": "https://static.vecteezy.com/system/resources/previews/006/892/625/non_2x/discord-logo-icon-editorial-free-vector.jpg" },
         { "name": "Gift Cards", "image": "https://static.vecteezy.com/system/resources/previews/022/484/501/original/google-play-store-icon-logo-symbol-free-png.png" },
-        { "name": "Redes Sociais", "image": "https://i2.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/logo-instagram-png-fundo-transparente13.png?fit=2400,2400&ssl=1" },
-        { "name": "Serviços Digitais", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
-        { "name": "Softwares e Licenças", "image": "https://th.bing.com/th/id/R.ed1aa28ec335a733d495632cbd226002?rik=RvC0SaGesLtmFg&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f06%2fMicrosoft-Windows-1.png&ehk=KvT3P1qZWZZrInQJD0YZBT4hzUOzrSXm8qCAwai9BaM%3d&risl=&pid=ImgRaw&r=0" },
+        { "name": "Redes Sociais", "image": "https://th.bing.com/th/id/R.cc86a3353385063cc55b2675261f87d8?rik=yktDKaDmO08LXg&pid=ImgRaw&r=0" },
+        { "name": "Serviços Digitais", "image": "" },
+        { "name": "Softwares e Licenças", "image": "https://th.bing.com/th/id/R.5d11a8c34d6896da7660200637fccc76?rik=OsrU52SK1JpTQg&pid=ImgRaw&r=0" },
         { "name": "Apostas", "image": "https://th.bing.com/th/id/R.1766fe9dbd7d016d03bff30f8ffdd154?rik=1LD%2ftaV0C96w2g&pid=ImgRaw&r=0" },
-        { "name": "eBooks", "image": "https://icon-library.com/images/ebook-icon-png/ebook-icon-png-6.jpg" },
-        { "name": "Doações", "image": "https://www.iagua.es/sites/default/files/msf.png" },
-        { "name": "Outros", "image": "https://th.bing.com/th/id/R.6f6a0b3e0b6e3f6d0f8e7e4e0b0b3e0b?rik=7p6%2bWl%2b5pW8G8w&riu=http%3a%2f%2fwww.aulasdeinglesgratis.net%2fwp-content%2fuploads%2f2016%2f08%2faulas-de-ingles-gratis.png&ehk=6g2%2f3U2dZ%2b6v0W%2f%2b5l%2f7g6%2f5" },
+        { "name": "eBooks", "image": "" },
+        { "name": "Doações", "image": "" },
+        { "name": "Outros", "image": "" },
     ]
 
 
@@ -171,9 +172,15 @@ export default function Categories() {
                     <div className="font-ibm flex flex-wrap pb-6 pt-6 items-center justify-center">
                         {others.map((other, index) => {
                             return (
-                                <div className="w-72 relative h-14 p-3 hover:bg-stone-50 border border-transparent hover:border-stone-300 dark:hover:bg-stone-900 flex items-center px-4 cursor-pointer rounded-lg">
-                                    <img src={other.image} viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-stone-600 dark:text-stone-400 rounded-md object-cover">
-                                    </img>
+                                <div className="w-72 relative h-14 p-3 hover:bg-stone-50 border border-transparent dark:hover:border-stone-800 hover:border-stone-300 dark:hover:bg-stone-900 flex items-center px-4 cursor-pointer rounded-lg">
+
+                                    <div className="w-10 h-10 rounded-lg">
+                                        {other.image ?
+                                            < img src={other.image} viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-stone-600 dark:text-stone-400 rounded-md object-cover" />
+                                            :
+                                            null
+                                        }
+                                    </div>
 
                                     <span className="text-sm ml-3 text-stone-600 dark:text-stone-400">{other.name}</span>
                                 </div>
@@ -190,7 +197,7 @@ export default function Categories() {
 
                         {games.map((game, index) => {
                             return (
-                                <div className="w-72 relative h-14 p-3 hover:bg-stone-50 border border-transparent hover:border-stone-300 dark:hover:bg-stone-900 flex items-center px-4 cursor-pointer rounded-lg">
+                                <div className="w-72 relative h-14 p-3 hover:bg-stone-50 border border-transparent dark:hover:border-stone-800 hover:border-stone-300 dark:hover:bg-stone-900 flex items-center px-4 cursor-pointer rounded-lg">
                                     <img src={game.image} viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-stone-600 dark:text-stone-400 rounded-md object-cover">
                                     </img>
 
