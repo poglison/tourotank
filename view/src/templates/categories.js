@@ -16,7 +16,7 @@ export default function Categories() {
         { "name": "Adventure Quest World", "image": "imgs/categories/Adventure Quest World.png" },
         { "name": "Aika", "image": "imgs/categories/Aika.png" },
         { "name": "Aion", "image": "imgs/categories/Aion.png" },
-        { "name": "Albion Online", "image": "https://yt3.ggpht.com/a/AGF-l795rWaoR-P8UFI0dDzUtwRUFewFlzFck8txPQ=s900-mo-c-c0xffffffff-rj-k-no" },
+        { "name": "Albion Online", "image": "imgs/categories/Albion Online.png" },
         { "name": "Apex Legends", "image": "imgs/categories/Apex Legends.png" },
         { "name": "Avakin Life", "image": "imgs/categories/Avakin Life.png" },
         { "name": "Black Clover Mobile", "image": "imgs/categories/Black Clover Mobile.png" },
