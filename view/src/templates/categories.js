@@ -43,6 +43,7 @@ export default function Categories() {
         { "name": "Dragon Ball Legends", "image": "imgs/categories/Dragon Ball Legends.png" },
 
         { "name": "Dragon City Mobile", "image": "imgs/categories/Dragon City Mobile.png" },
+        { "name": "Elden Ring", "image": "imgs/categories/Elden Ring.png" },
         { "name": "Epic Games", "image": "imgs/categories/Epic Games.png" },
         { "name": "Epic Seven", "image": "imgs/categories/Epic Seven.png" },
         { "name": "Escape from Tarkov", "image": "imgs/categories/Escape from Tarkov.png" },
