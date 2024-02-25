@@ -133,6 +133,8 @@ export default function Categories() {
         { "name": "World of Warcraft", "image": "imgs/categories/World of Warcraft.png" },
         { "name": "Xbox", "image": "imgs/categories/Xbox.png" },
         { "name": "Outros Jogos", "image": "imgs/categories/Outros Jogos.png" },
+        { "name": "Sugerir Jogo", "image": "imgs/bull/icone.png" },
+
     ]
 
     const others = [
