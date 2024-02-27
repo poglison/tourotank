@@ -127,7 +127,7 @@ export default function InformationProject(props) {
 
 
                 <div className="flex flex-col mb-4">
-                    <span className="dark:text-stone-300">Investimento minimo</span>
+                    <span className="dark:text-stone-300">Preço</span>
 
                     {props.type != "new" ?
                         <Skeleton className="w-40 h-8" loading={props.loading}>
@@ -140,12 +140,12 @@ export default function InformationProject(props) {
                 </div>
 
                 <div className={"flex justify-between mb-4 " + (props.type == "new" ? "flex-col" : "")}>
-                    <div className="flex flex-col">
-                        <span className="dark:text-stone-300">Investido</span>
+                    <div className="w-1/2 flex flex-col">
+                        <span className="dark:text-stone-300">Disponível</span>
 
                         {props.type != "new" ?
                             <Skeleton className="w-32 h-8" loading={props.loading}>
-                                <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.invested}</span>
+                                <span className="text-2xl font-medium font-ibm text-primary">{infos?.invested}</span>
                             </Skeleton>
                             :
                             <input onChange={(e) => setInfos({ ...infos, invested: e.target.value })} value={infos.invested}
@@ -153,15 +153,15 @@ export default function InformationProject(props) {
                         }
                     </div>
 
-                    <div className={"flex flex-col " + (props.type == "new" ? "mt-4" : "")}>
-                        <span className="dark:text-stone-300">Investidores</span>
+                    <div className={"w-1/2 flex flex-col " + (props.type == "new" ? "mt-4" : "")}>
+                        <span className="dark:text-stone-300">Vendido</span>
 
                         {props.type != "new" ?
                             <Skeleton className="w-20 h-8" loading={props.loading}>
                                 <span className="text-2xl font-medium font-ibm text-primary">{infos?.investors}</span>
                             </Skeleton>
                             :
-                            <input onChange={(e) => setInfos({ ...infos, investors: e.target.value })} value={infos.investors}
+                            <input disabled onChange={(e) => setInfos({ ...infos, investors: e.target.value })} value={infos.investors ? infos.investors : 0}
                                 className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite quantos investidores teve" />
                         }
                     </div>
@@ -169,15 +169,15 @@ export default function InformationProject(props) {
 
 
                 <div className="flex flex-col mb-4">
-                    <span className="dark:text-stone-300">Valuation</span>
+                    <span className="dark:text-stone-300">Touropontos</span>
 
                     {props.type != "new" ?
                         <Skeleton className="w-40 h-8" loading={props.loading}>
-                            <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.valuation}</span>
+                            <span className="text-2xl font-medium font-ibm text-primary">{infos?.valuation}</span>
                         </Skeleton>
                         :
-                        <input onChange={(e) => setInfos({ ...infos, valuation: e.target.value })} value={infos.valuation}
-                            className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto que vale o projeto" />
+                        <input disabled onChange={(e) => setInfos({ ...infos, valuation: e.target.value })} value={infos.valuation ? infos.valuation : 0}
+                            className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
                     }
                 </div>
 
