@@ -119,9 +119,11 @@ export default function Footer() {
 
                         </div>
 
-                        {/* <div className="flex items-center justify-center mt-4 mb-4">
-                            <span className="text-xs">touratank © 2023 Todos os direitos reservados</span>
-                        </div> */}
+                        <div className="flex items-center justify-end mt-4 mb-4 h-full">
+                            <span className="text-xs dark:text-stone-600">Developed by poglison</span>
+
+                            <img src="/imgs/bull/poglison.png" alt="Poglison" className="h-6 w-6 ml-2 rounded" />
+                        </div>
                     </div>
                 </div>
 

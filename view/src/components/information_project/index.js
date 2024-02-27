@@ -107,7 +107,7 @@ export default function InformationProject(props) {
             </div>
 
             <div className="bg-white dark:bg-stone-950 border-[1.5px] dark:border-stone-800  p-4 rounded-lg">
-                {props.type != "new" ?
+                {/* {props.type != "new" ?
 
                     <div className="w-full h-4 bg-stone-200 dark:bg-stone-800 rounded-full mb-4">
                         <div className="w-1/2 h-full bg-primary rounded-full flex items-center justify-center text-xs text-white">{infos?.percent}</div>
@@ -122,7 +122,7 @@ export default function InformationProject(props) {
                             </div>
                         </div>
                     </div>
-                }
+                } */}
 
 
 
@@ -134,8 +134,8 @@ export default function InformationProject(props) {
                             <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.min}</span>
                         </Skeleton>
                         :
-                        <input onChange={(e) => setInfos({ ...infos, min: e.target.value })} value={infos.min}
-                            className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o minimo que se pode investir" />
+                        <input disabled onChange={(e) => setInfos({ ...infos, min: e.target.value })} value={infos.min ? infos.min : 0}
+                            className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
                     }
                 </div>
 
@@ -148,7 +148,7 @@ export default function InformationProject(props) {
                                 <span className="text-2xl font-medium font-ibm text-primary">{infos?.invested}</span>
                             </Skeleton>
                             :
-                            <input onChange={(e) => setInfos({ ...infos, invested: e.target.value })} value={infos.invested}
+                            <input disabled onChange={(e) => setInfos({ ...infos, invested: e.target.value })} value={infos.invested ? infos.invested : 0}
                                 className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto já foi investido" />
                         }
                     </div>
@@ -169,7 +169,14 @@ export default function InformationProject(props) {
 
 
                 <div className="flex flex-col mb-4">
-                    <span className="dark:text-stone-300">Touropontos</span>
+                    <span className="flex items-center dark:text-stone-300">Receba
+
+                        <span className="ml-1 mb-0.5 font-ibm text-lg font-medium text-primary">tanks</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="ml-1 w-5 h-5 text-primary">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+
+                    </span>
 
                     {props.type != "new" ?
                         <Skeleton className="w-40 h-8" loading={props.loading}>
