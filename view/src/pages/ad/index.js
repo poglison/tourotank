@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
-import InformationProject from "../../components/information_project";
-import Projects from "../../components/projects";
+import InformationAd from "../../components/info_ad";
+import Ads from "../../components/ads";
 import Breadcrumbs from "../../templates/breadcrumbs";
 import Button from "../../templates/button";
 import Image from "../../templates/image";
@@ -18,20 +18,20 @@ import { useParams } from "react-router-dom";
 import Skeleton from "../../templates/skeleton";
 import Container from "../../templates/container";
 
-export default function Project() {
+export default function Ad() {
 
 
     // 1 - Informações // 2 - FAQ // 3 - Chat
     const [selectedInformation, setSelectedInformation] = useState(1);
-    const [project, setProject] = useState({});
+    const [ad, setAd] = useState({});
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
 
     useEffect(() => {
         document.scrollingElement.scrollTop = 0;
 
-        getByID("project", id).then((response) => {
-            setProject(response);
+        getByID("ad", id).then((response) => {
+            setAd(response);
             setLoading(false);
         })
 
@@ -54,14 +54,14 @@ export default function Project() {
                         <div className="w-full md:w-[calc(100%-326px)] flex flex-col xl:flex-row">
 
                             <div className="w-full xl:w-1/2">
-                                <Image loading={loading} src={project.image} className="object-cover xl:h-80" />
+                                <Image loading={loading} src={ad?.image} className="object-cover xl:h-80" />
                             </div>
                             <div className="xl:w-[calc(100%-384px)] xl:overflow-hidden xl:h-56 mt-4 xl:mt-0 xl:ml-4">
 
                                 <div className="flex flex-col">
                                     <span className="font-ibm text-xs text-stone-600 dark:text-stone-400">Projeto</span>
                                     <Skeleton className="w-1/2 h-8" loading={loading}>
-                                        <span className="font-ibm text-2xl font-medium text-stone-800 dark:text-stone-200">{project.title}</span>
+                                        <span className="font-ibm text-2xl font-medium text-stone-800 dark:text-stone-200">{ad?.title}</span>
                                     </Skeleton>
                                 </div>
 
@@ -69,7 +69,7 @@ export default function Project() {
                                     <span className="font-ibm text-xs text-stone-600 dark:text-stone-400">Descrição</span>
                                     <Skeleton className="xl:h-36 xl:overflow-auto" loading={loading}>
                                         <span className="xl:h-36 xl:overflow-auto font-ibm text-base text-stone-700 dark:text-stone-200">
-                                            {project.description}
+                                            {ad?.description}
                                         </span>
                                     </Skeleton>
                                 </div>
@@ -78,7 +78,7 @@ export default function Project() {
 
 
                         </div>
-                        <InformationProject project={project} loading={loading} />
+                        <InformationAd ad={ad} loading={loading} />
                     </div>
 
 
@@ -115,9 +115,7 @@ export default function Project() {
                         {selectedInformation == 1 ?
                             (
                                 <div className="mt-4 flex flex-col">
-                                    <Timeline check={project.step} />
-
-                                    {/* <Team team={project?.team} /> */}
+                                    <Timeline check={ad?.step} />
 
                                     <div onClick={() => { setSelectedInformation(2); document.scrollingElement.scrollTop = 0; }} className="mt-8 flex flex-col">
                                         <ButtonFAQ />
@@ -163,7 +161,7 @@ export default function Project() {
                         <div className="mt-10 flex flex-col w-full">
                             <span className="text-stone-700 dark:text-stone-200  text-lg font-ibm mb-5">Você também pode estar interessado em</span>
 
-                            <Projects className="w-full !h-full !p-0" />
+                            <Ads className="w-full !h-full !p-0" />
                         </div>
                     </div>
 

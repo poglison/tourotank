@@ -12,9 +12,9 @@ import Register from './pages/register';
 import Chat from './pages/chat';
 import Profile from './pages/profile';
 import Erro from './pages/erro';
-import Project from './pages/project';
+import Ad from './pages/ad';
 import UserContext from './context';
-import NewProject from './pages/new_project';
+import NewAd from './pages/new_ad';
 import Hub from './pages/hub';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -73,9 +73,9 @@ function Content() {
         <Route path="/register" element={<Register />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/*" element={<Erro />} />
-        <Route path="/ad/:id" element={<Project />} />
+        <Route path="/ad/:id" element={<Ad />} />
         <Route path="/ad/:id" element={<Profile />} />
-        <Route path="/ad/new" element={<NewProject />} />
+        <Route path="/ad/new" element={<NewAd />} />
         <Route path="/hub" element={<Hub />} />
       </Routes>
 

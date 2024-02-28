@@ -14,9 +14,9 @@ async function getAdID(id) {
 
 async function saveAd(req, res) {
 
-    if (!req.body.title && !req.body.description && !req.team) {
-        return { status: "404", error: "001", message: "Você precisa preencher todos os campos..." }
-    }
+    // if (!req.body.title && !req.body.description && !req.team) {
+    //     return { status: "404", error: "001", message: "Você precisa preencher todos os campos..." }
+    // }
 
    
     const ad = {

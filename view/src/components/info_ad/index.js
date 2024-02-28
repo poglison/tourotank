@@ -7,28 +7,23 @@ import Skeleton from "../../templates/skeleton";
 
 
 
-export default function InformationProject(props) {
+export default function InformationAd(props) {
 
-    const [percent, setPercent] = useState(10);
     const [infos, setInfos] = useState({});
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        setInfos({ ...infos, percent: percent });
-    }, [percent])
-
 
     useEffect(() => {
         if (props.type != "new") {
-            setInfos(props.project.infos);
+            setInfos(props.ad?.infos);
         }
-    }, [props.project])
+    }, [props.ad])
 
 
     const register = async () => {
 
-        save("ad", { ...props.project, infos: infos, user: props.user }
+        save("ad", { ...props.ad, infos: infos, user: props?.user }
         ).then((response) => {
 
             if (response.status == "404") {
@@ -63,20 +58,20 @@ export default function InformationProject(props) {
                     }
 
                     {props.type != "new" &&
-                        <Link to={"/profile/" + props.project.user?.id}>
+                        <Link to={"/profile/" + props.ad?.user?.id}>
                             <div className="flex items-center p-2 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-900 cursor-pointer rounded-t-lg">
 
                                 <div className="mr-2">
                                     <Skeleton className="!w-10 !h-10 !rounded-full" loading={props.loading}>
                                         <div className="w-10 min-w-10 h-10 bg-primary rounded-full mr-2">
 
-                                            <img src={props.project.user?.image} alt="User" className="w-full h-full rounded-full" />
+                                            <img src={props.ad?.user?.image} alt="User" className="w-full h-full rounded-full" />
                                         </div>
                                     </Skeleton>
                                 </div>
 
                                 <Skeleton className="h-6 truncate w-56" loading={props.loading}>
-                                    <span className="text-sm truncate w-56">{props.project.user?.displayName ? props.project.user?.displayName : props.project.user?.email}</span>
+                                    <span className="text-sm truncate w-56">{props.ad?.user?.displayName ? props.ad?.user?.displayName : props.ad?.user?.email}</span>
                                 </Skeleton>
                             </div>
                         </Link>

@@ -16,12 +16,12 @@ export default function Hub() {
     useEffect(() => {
         get("ad").then((response) => {
             setLoading(false);
-            setProjects(response);
+            setAds(response);
         })
     }, [])
 
     const [loading, setLoading] = useState(true);
-    const [projects, setProjects] = useState([
+    const [ads, setAds] = useState([
         {
             "title": "Projeto 1",
             "description": "Descrição do projeto 1",
@@ -108,18 +108,18 @@ export default function Hub() {
                 <div className="flex flex-wrap justify-start mt-20 w-5/6 z-10">
 
 
-                    {projects?.map((project, index) => {
+                    {ads?.map((ad, index) => {
                         return (
-                            <Link to={"/ad/" + project.id} className="w-full lg:w-[calc(33%-29px)] rounded-xl m-4 cursor-pointer"
+                            <Link to={"/ad/" + ad.id} className="w-full lg:w-[calc(33%-29px)] rounded-xl m-4 cursor-pointer"
                                 key={index}>
 
                                 <Skeleton loading={loading} className="w-full min-w-full min-h-72 h-96 rounded-xl overflow-hidden bg-white dark:bg-stone-950">
                                     <div className="relative w-full min-w-full min-h-72 h-96   border-[1.5px] dark:border-stone-800 rounded-xl overflow-hidden">
-                                        <img src={project.image} className="relative w-full h-[calc(100%-112px)] object-cover" />
+                                        <img src={ad.image} className="relative w-full h-[calc(100%-112px)] object-cover" />
 
                                         <div className="bg-white dark:bg-stone-950 min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-20">
-                                            <h1 className="text-ibm dark:text-stone-300 text-lg font-medium mt-2">{project.title}</h1>
-                                            <p className="text-ibm dark:text-stone-400 text-sm mt-1">{project.description}</p>
+                                            <h1 className="text-ibm dark:text-stone-300 text-lg font-medium mt-2">{ad.title}</h1>
+                                            <p className="text-ibm dark:text-stone-400 text-sm mt-1">{ad.description}</p>
                                         </div>
                                     </div>
                                 </Skeleton>

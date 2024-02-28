@@ -1,25 +1,18 @@
 import { useEffect, useState, useRef } from "react"
-import Project from "../project"
+import Ad from "../ad"
 import { Link } from "react-router-dom";
 
 import { get } from "../../services"
 
-export default function Projects(props) {
+export default function Ads(props) {
 
-    const [projects, setProjects] = useState([1, 2, 3, 4, 5]);
+    const [ads, setAds] = useState([1, 2, 3, 4, 5]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         get("ad").then(res => {
             setLoading(false);
-
-            if (res.length < 10) {
-                res = res.concat(res);
-                setProjects(res);
-
-            } else{
-                setProjects(res);
-            }
+            setAds(res);
         })
     }, [])
 
@@ -29,29 +22,29 @@ export default function Projects(props) {
             var i = 0;
 
             var interval = setInterval(() => {
-                document.querySelector(".projects").scrollLeft += -10
+                document.querySelector(".ads").scrollLeft += -10
                 i = i + 10;
                 if (i === 400) {
                     clearInterval(interval)
                 }
             }, 1)
 
-            if (document.querySelector(".projects").scrollLeft === 0) {
-                document.querySelector(".projects").scrollLeft = document.querySelector(".projects").scrollWidth - document.querySelector(".projects").clientWidth;
+            if (document.querySelector(".ads").scrollLeft === 0) {
+                document.querySelector(".ads").scrollLeft = document.querySelector(".ads").scrollWidth - document.querySelector(".ads").clientWidth;
             }
 
         } else {
             var i = 0;
             var interval = setInterval(() => {
-                document.querySelector(".projects").scrollLeft += +10
+                document.querySelector(".ads").scrollLeft += +10
                 i = i + 10;
                 if (i === 400) {
                     clearInterval(interval)
                 }
             }, 1);
 
-            if (document.querySelector(".projects").scrollLeft === document.querySelector(".projects").scrollWidth - document.querySelector(".projects").clientWidth) {
-                document.querySelector(".projects").scrollLeft = 0;
+            if (document.querySelector(".ads").scrollLeft === document.querySelector(".ads").scrollWidth - document.querySelector(".ads").clientWidth) {
+                document.querySelector(".ads").scrollLeft = 0;
             }
 
         }
@@ -63,7 +56,7 @@ export default function Projects(props) {
             {props.title && <span className="text-ibm text-lg font-medium mb-1 block text-stone-800">{props.title}</span>}
 
 
-            <div className="projects flex overflow-auto transition rounded-t-xl min-h-72">
+            <div className="ads flex overflow-auto transition rounded-t-xl min-h-72">
                 <div className="absolute left-0 w-10 ml-2 mt-1 h-52 flex items-center justify-center text-stone-400 cursor-pointer" onClick={() => moveScroll("left")}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -72,9 +65,9 @@ export default function Projects(props) {
 
 
                 {
-                    projects?.map((project, index) => {
+                    ads?.map((ads, index) => {
                         return (
-                            <Project key={index} id={project.id} name={project.title} description={project.description} image={project.image} price={project.price} loading={loading} />
+                            <Ad key={index} id={ads.id} name={ads.title} description={ads.description} image={ads.image} price={ads.price} loading={loading} />
                         )
                     })
                 }

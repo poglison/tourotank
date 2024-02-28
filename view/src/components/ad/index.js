@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import Skeleton from "../../templates/skeleton"
 
-export default function Project(props) {
+export default function Ad(props) {
 
 
     return (
