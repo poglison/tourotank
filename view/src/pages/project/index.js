@@ -47,7 +47,7 @@ export default function Project() {
 
             <Container>
                 <div className="w-full min-h-screen">
-                    <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Projeto', path: '/project' }]} />
+                    <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Projeto', path: '/ad' }]} />
 
                     <div className="w-full mt-4 flex flex-col md:flex-row justify-between">
 

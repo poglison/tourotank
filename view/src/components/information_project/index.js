@@ -35,7 +35,7 @@ export default function InformationProject(props) {
                 return;
             }
 
-            navigate("/project/" + response.id)
+            navigate("/ad/" + response.id)
         })
     }
 

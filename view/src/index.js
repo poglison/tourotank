@@ -73,9 +73,9 @@ function Content() {
         <Route path="/register" element={<Register />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/*" element={<Erro />} />
-        <Route path="/project/:id" element={<Project />} />
-        <Route path="/profile/:id" element={<Profile />} />
-        <Route path="/project/new" element={<NewProject />} />
+        <Route path="/ad/:id" element={<Project />} />
+        <Route path="/ad/:id" element={<Profile />} />
+        <Route path="/ad/new" element={<NewProject />} />
         <Route path="/hub" element={<Hub />} />
       </Routes>
 

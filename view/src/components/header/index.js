@@ -42,7 +42,7 @@ export default function Header(props) {
             <Categories />
 
             {user?.email &&
-              <Link to="/project/new">
+              <Link to="/ad/new">
                 <Button type="primary" className="w-36 h-full mr-4">Anunciar</Button>
               </Link>
             }

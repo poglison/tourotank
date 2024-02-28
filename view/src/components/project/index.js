@@ -6,7 +6,7 @@ export default function Project(props) {
 
     return (
         <div className="mr-4">
-            <Link to={"/project/" + props.id} className="w-full h-full bg-stone-800">
+            <Link to={"/ad/" + props.id} className="w-full h-full bg-stone-800">
                 <div key={props.index} className="w-96 min-w-96 transition-all ease-in-out delay-300 select-none">
 
                     <Skeleton props={props} loading={props.loading} className="w-96 h-52 rounded-2xl select-none border-transparent border-[1.5px] hover: ">

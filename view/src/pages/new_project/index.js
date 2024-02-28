@@ -46,7 +46,7 @@ export default function NewProject(props) {
 
             <Container className="w-full md:w-[calc(100%-326px)] min-h-screen">
 
-                <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Projeto', path: '/project' }, { title: 'Novo Projeto', path: '/project/new' }]} />
+                <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Projeto', path: '/ad' }, { title: 'Novo Projeto', path: '/ad/new' }]} />
                 <InformationProject type="new" project={project} setProject={setProject} user={user} />
 
 
