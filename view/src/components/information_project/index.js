@@ -28,7 +28,7 @@ export default function InformationProject(props) {
 
     const register = async () => {
 
-        save("project", { ...props.project, infos: infos, user: props.user }
+        save("ad", { ...props.project, infos: infos, user: props.user }
         ).then((response) => {
 
             if (response.status == "404") {

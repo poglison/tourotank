@@ -10,7 +10,7 @@ export default function Projects(props) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        get("project").then(res => {
+        get("ad").then(res => {
             setLoading(false);
 
             if (res.length < 10) {

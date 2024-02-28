@@ -14,7 +14,7 @@ export default function Hub() {
 
 
     useEffect(() => {
-        get("project").then((response) => {
+        get("ad").then((response) => {
             setLoading(false);
             setProjects(response);
         })
