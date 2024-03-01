@@ -30,8 +30,8 @@ export default function Banner() {
         <div className="px-5 md:px-10 overflow-hidden h-96 pr-20 md:pr-10 pt-20 font-montserrat relative">
           
             <div className="h-full flex flex-col justify-center">
-                <p className="text-xl md:text-5xl font-bold text-stone-700 dark:text-stone-300 z-10 relative">uma nova maneira de</p>
-                <p className="text-5xl md:text-8xl font-bold text-primary z-10 relative">{text}</p>
+                <h2 className="text-xl md:text-5xl font-bold text-stone-700 dark:text-stone-300 z-10 relative">uma nova maneira de</h2>
+                <h1 className="text-5xl md:text-8xl font-bold text-primary z-10 relative">{text}</h1>
             </div>
 
             <img className="w-72 md:w-96 absolute top-20 -right-40  md:-right-48 select-none -rotate-45" src="imgs/bull/bull.png" alt="" />
