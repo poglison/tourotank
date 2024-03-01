@@ -74,7 +74,7 @@ function Content() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/*" element={<Erro />} />
         <Route path="/ad/:id" element={<Ad />} />
-        <Route path="/ad/:id" element={<Profile />} />
+        <Route path="/profile/:id" element={<Profile />} />
         <Route path="/ad/new" element={<NewAd />} />
         <Route path="/hub" element={<Hub />} />
       </Routes>

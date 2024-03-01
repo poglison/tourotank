@@ -134,7 +134,7 @@ export default function Profile() {
 
             </div>
 
-            <Container className='pt-0 dark:bg-stone-950'>
+            <Container className='mt-10 pt-0 dark:bg-stone-950'>
 
                 <div className='mt-52 flex flex-col md:flex-row'>
                     <div className='flex flex-col w-full md:flex-col md:!w-60 border-[1.5px] dark:border-stone-800  rounded-lg'>
