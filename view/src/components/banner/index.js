@@ -20,7 +20,7 @@ export default function Banner() {
         // "negociar",
         // "startar",
         // "investir em ideias",
-        "comprar, vender e trocar",
+        "negociar na internet",
     ];
 
     var text = texts[Math.floor(Math.random() * texts.length)];
