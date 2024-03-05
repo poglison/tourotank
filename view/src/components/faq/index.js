@@ -6,18 +6,18 @@ export default function FAQ(props) {
     const [faq, setFaq] = useState([
         {
             title: "O que é o tourotank?",
-            description: "O Touro é uma plataforma de investimentos que conecta investidores a empreendedores de todo o Brasil. Através do Touro, investidores podem investir em empresas de alto potencial de crescimento e retorno financeiro.",
+            description: "O tourotank é uma plataforma de compras e vendas de jogos, onde você pode comprar jogos de diversas plataformas, como Steam, Epic Games, Origin, Uplay, Battle.net, Xbox, PSN, e muito mais!",
             click: false
         },
         {
             title: "Como funciona o tourotank?",
-            description: "O Touro é uma plataforma de investimentos que conecta investidores a empreendedores de todo o Brasil. Através do Touro, investidores podem investir em empresas de alto potencial de crescimento e retorno financeiro.",
+            description: "O tourotank é uma plataforma de compras e vendas de jogos, onde você pode comprar jogos de diversas plataformas, como Steam, Epic Games, Origin, Uplay, Battle.net, Xbox, PSN, e muito mais!",
             click: false
         },
 
         {
             title: "Quem pode investir no tourotank?",
-            description: "O Touro é uma plataforma de investimentos que conecta investidores a empreendedores de todo o Brasil. Através do Touro, investidores podem investir em empresas de alto potencial de crescimento e retorno financeiro.",
+            description: "O tourotank é uma plataforma de compras e vendas de jogos, onde você pode comprar jogos de diversas plataformas, como Steam, Epic Games, Origin, Uplay, Battle.net, Xbox, PSN, e muito mais!",
             click: false
         },
     ]);

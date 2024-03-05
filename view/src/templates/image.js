@@ -7,18 +7,29 @@ export default function Image(props) {
 
     const [zoom, setZoom] = useState(0);
     const [rotate, setRotate] = useState(0);
+    const [serach, setSerach] = useState(false);
 
 
 
     return (
         <div>
-            <Skeleton className={"min-h-56 rounded-xl cursor-pointer " + props.className} loading={props.loading}>
-                <img onClick={() => { setIsModalVisible(true) }} src={props.src} alt={props.alt} className={"rounded-xl cursor-pointer " + props.className} />
+            <Skeleton className={"relative min-h-56 rounded-xl cursor-pointer " + props.className} loading={props.loading}>
+                <img onMouseEnter={() => setSerach(true)} onMouseLeave={() => setSerach(false)} onClick={() => { setIsModalVisible(true) }} src={props.src} alt={props.alt} className={"rounded-xl transition-all ease-in hover:opacity-95 hover:grayscale cursor-pointer " + props.className} />
+
+                {serach ? (
+                    <div className="absolute w-20 h-20 bg-primary -mt-48 ml-48 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+
+                    </div>
+                ) : null}
+
             </Skeleton>
 
             {isModalVisible ? (
                 <>
-                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-black bg-opacity-50">
+                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                         <div className="relative w-3/5 my-6 mx-auto">
                             {/*content*/}
                             <div className="border-0 relative flex flex-col w-full outline-none focus:outline-none">

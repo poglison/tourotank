@@ -50,7 +50,7 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        <div className="flex flex-col space-y-1 items-start min-w-36 lg:min-w-max mb-4 mr-4">
+                        {/* <div className="flex flex-col space-y-1 items-start min-w-36 lg:min-w-max mb-4 mr-4">
                             <span className="text-base font-medium text-primary">Empreendendores</span>
 
                             <Link to="/sobre">
@@ -81,7 +81,7 @@ export default function Footer() {
                             <Link to="/sobre">
                                 <span className="text-xs hover:underline">Investimento</span>
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className="w-full lg:w-auto !m-0 !p-0">
