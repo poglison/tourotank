@@ -14,10 +14,11 @@ export default function Ad(props) {
                     </Skeleton>
                     <div className="mt-2">
                         <Skeleton props={props} loading={props.loading} className="w-full h-14 font-ibm text-xl font-bold text-black !m-0">
-                            <p className="font-ibm text-xl font-bold text-black dark:text-stone-300 !m-0">{props.name}</p>
+                            <p className="font-ibm text-xl font-bold text-black dark:text-stone-300 !m-0 overflow-hidden overflow-ellipsis whitespace-nowrap">{props.name}</p>
                         </Skeleton>
 
-                        <p className="text-ibm text-xs font-normal text-stone-600 dark:text-stone-500 !m-0">{props.description}</p>
+                        <p className="text-ibm text-xs font-normal text-stone-600 dark:text-stone-500 !m-0 h-7 overflow-hidden overflow-ellipsis"
+                        >{props.description}</p>
                     </div>
                 </div>
             </Link>
