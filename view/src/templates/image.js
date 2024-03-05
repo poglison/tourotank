@@ -18,7 +18,7 @@ export default function Image(props) {
 
                 {serach ? (
                     <div className="absolute w-20 h-20 bg-primary -mt-48 ml-48 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
 
@@ -75,8 +75,8 @@ export default function Image(props) {
 
                                 </div>
                                 {/*body*/}
-                                <div className="relative p-6 pt-2 flex-auto">
-                                    <img src={props.src} alt={props.alt} className={"w-full transform scale-[" + zoom + "px] rotate-[" + rotate + "]"} />
+                                <div className="relative flex-auto rounded-lg">
+                                    <img src={props.src} alt={props.alt} className={"w-full transform rounded-lgk"} />
                                 </div>
 
                             </div>

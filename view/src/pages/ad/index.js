@@ -57,7 +57,7 @@ export default function Ad() {
                             <div className="w-full xl:w-1/2">
                                 <Image loading={loading} src={ad?.image} className="w-full object-cover xl:h-80" />
                             </div>
-                            <div className="xl:w-[calc(100%-384px)] xl:overflow-hidden xl:h-56 mt-4 xl:mt-0 xl:ml-4">
+                            <div className="xl:w-[calc(100%-384px)] xl:overflow-hidden xl:h-80 h-full mt-4 xl:mt-0 xl:ml-4">
 
                                 <div className="flex flex-col">
                                     <span className="font-ibm text-xs text-stone-600 dark:text-stone-400">Projeto</span>
@@ -68,8 +68,8 @@ export default function Ad() {
 
                                 <div className="flex flex-col mt-4 ">
                                     <span className="font-ibm text-xs text-stone-600 dark:text-stone-400">Descrição</span>
-                                    <Skeleton className="xl:h-36 xl:overflow-auto" loading={loading}>
-                                        <span className="xl:h-36 xl:overflow-auto font-ibm text-base text-stone-700 dark:text-stone-200">
+                                    <Skeleton className="xl:h-52 h-64 overflow-auto" loading={loading}>
+                                        <span className="xl:h-52 h-64 overflow-auto font-ibm text-base text-stone-700 dark:text-stone-200">
                                             {ad?.description}
                                         </span>
                                     </Skeleton>
