@@ -16,7 +16,7 @@ export default function InformationAd(props) {
 
     useEffect(() => {
         if (props.type != "new") {
-            setInfos(props.ad?.infos);
+            setInfos(props.ad);
         }
     }, [props.ad])
 
@@ -126,10 +126,10 @@ export default function InformationAd(props) {
 
                     {props.type != "new" ?
                         <Skeleton className="w-40 h-8" loading={props.loading}>
-                            <span className="text-2xl font-medium font-ibm text-primary">R$ {infos?.min}</span>
+                            <span className="text-2xl font-medium font-ibm text-primary">{infos?.price}</span>
                         </Skeleton>
                         :
-                        <input disabled onChange={(e) => setInfos({ ...infos, min: e.target.value })} value={infos.min ? infos.min : 0}
+                        <input disabled onChange={(e) => setInfos({ ...infos, price: e.target.value })} value={infos.price ? infos.price : 0}
                             className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
                     }
                 </div>
@@ -140,10 +140,10 @@ export default function InformationAd(props) {
 
                         {props.type != "new" ?
                             <Skeleton className="w-32 h-8" loading={props.loading}>
-                                <span className="text-2xl font-medium font-ibm text-primary">{infos?.invested}</span>
+                                <span className="text-2xl font-medium font-ibm text-primary">{infos?.qtd}</span>
                             </Skeleton>
                             :
-                            <input disabled onChange={(e) => setInfos({ ...infos, invested: e.target.value })} value={infos.invested ? infos.invested : 0}
+                            <input disabled onChange={(e) => setInfos({ ...infos, qtd: e.target.value })} value={infos.qtd ? infos.qtd : 0}
                                 className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto já foi investido" />
                         }
                     </div>
@@ -153,10 +153,10 @@ export default function InformationAd(props) {
 
                         {props.type != "new" ?
                             <Skeleton className="w-20 h-8" loading={props.loading}>
-                                <span className="text-2xl font-medium font-ibm text-primary">{infos?.investors}</span>
+                                <span className="text-2xl font-medium font-ibm text-primary">{infos?.sales ? infos.sales : 0}</span>
                             </Skeleton>
                             :
-                            <input disabled onChange={(e) => setInfos({ ...infos, investors: e.target.value })} value={infos.investors ? infos.investors : 0}
+                            <input disabled onChange={(e) => setInfos({ ...infos, sales: e.target.value })} value={infos.sales ? infos.sales : 0}
                                 className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite quantos investidores teve" />
                         }
                     </div>
@@ -175,10 +175,10 @@ export default function InformationAd(props) {
 
                     {props.type != "new" ?
                         <Skeleton className="w-40 h-8" loading={props.loading}>
-                            <span className="text-2xl font-medium font-ibm text-primary">{infos?.valuation}</span>
+                            <span className="text-2xl font-medium font-ibm text-primary">{infos?.tanks ? infos.tanks : 0}</span>
                         </Skeleton>
                         :
-                        <input disabled onChange={(e) => setInfos({ ...infos, valuation: e.target.value })} value={infos.valuation ? infos.valuation : 0}
+                        <input disabled onChange={(e) => setInfos({ ...infos, tanks: e.target.value })} value={infos.tanks ? infos.tanks : 0}
                             className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
                     }
                 </div>
@@ -189,7 +189,7 @@ export default function InformationAd(props) {
                         <Button type="primary" className="w-full">Cadastrar</Button>
                     </div>) :
                     <Link to="/login">
-                        <Button type="primary" className="w-full">Investir</Button>
+                        <Button type="primary" className="w-full">Comprar</Button>
                     </Link>
                 }
             </div>

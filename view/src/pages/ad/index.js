@@ -33,6 +33,7 @@ export default function Ad() {
         getByID("ad", id).then((response) => {
             setAd(response);
             setLoading(false);
+            console.log(response);
         })
 
 
@@ -54,7 +55,7 @@ export default function Ad() {
                         <div className="w-full md:w-[calc(100%-326px)] flex flex-col xl:flex-row">
 
                             <div className="w-full xl:w-1/2">
-                                <Image loading={loading} src={ad?.image} className="object-cover xl:h-80" />
+                                <Image loading={loading} src={ad?.image} className="w-full object-cover xl:h-80" />
                             </div>
                             <div className="xl:w-[calc(100%-384px)] xl:overflow-hidden xl:h-56 mt-4 xl:mt-0 xl:ml-4">
 
@@ -115,7 +116,7 @@ export default function Ad() {
                         {selectedInformation == 1 ?
                             (
                                 <div className="mt-4 flex flex-col">
-                                    <Timeline check={ad?.step} />
+                                    {/* <Timeline check={ad?.step} /> */}
 
                                     <div onClick={() => { setSelectedInformation(2); document.scrollingElement.scrollTop = 0; }} className="mt-8 flex flex-col">
                                         <ButtonFAQ />

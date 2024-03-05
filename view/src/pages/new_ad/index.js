@@ -37,7 +37,22 @@ export default function NewAd(props) {
     };
 
 
+    const mascaraMoeda = (event) => {
+        const onlyDigits = event.target.value
+            .split("")
+            .filter(s => /\d/.test(s))
+            .join("")
+            .padStart(3, "0")
+        const digitsFloat = onlyDigits.slice(0, -2) + "." + onlyDigits.slice(-2)
+        return maskCurrency(digitsFloat);
+    }
 
+    const maskCurrency = (valor, locale = 'pt-BR', currency = 'BRL') => {
+        return new Intl.NumberFormat(locale, {
+            style: 'currency',
+            currency
+        }).format(valor)
+    }
 
     return (
         <div className="bg-white dark:bg-stone-950 overflow-x-hidden">
@@ -83,19 +98,22 @@ export default function NewAd(props) {
                     <div className="flex flex-col">
                         <span className="font-ibm text-xs text-stone-600">Valor do anúncio</span>
 
-                        <input onChange={(e) => { setAd({ ...ad, title: e.target.value }) }} className="border-[1.5px] dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
+                        <input value={ad?.price} onChange={(e) => {
+                            var value = mascaraMoeda(e)
+                            setAd({ ...ad, price: value })
+                        }} className="border-[1.5px] dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
                     </div>
 
                     <div className="flex flex-col mt-5">
                         <span className="font-ibm text-xs text-stone-600">Quantidade em estoque</span>
 
-                        <input onChange={(e) => { setAd({ ...ad, title: e.target.value }) }} className="border-[1.5px] dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
+                        <input onChange={(e) => { setAd({ ...ad, qtd: e.target.value }) }} className="border-[1.5px] dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
                     </div>
 
                     <div className="flex flex-col mt-5">
                         <span className="font-ibm text-xs text-stone-600">Categoria</span>
 
-                        <Select options={[{ label: 'Categoria 1', value: '1' }, { label: 'Categoria 2', value: '2' }, { label: 'Categoria 3', value: '3' }]} />
+                        <Select onChange={(e) => { setAd({ ...ad, category }) }} options={[{ label: 'Categoria 1', value: '1' }, { label: 'Categoria 2', value: '2' }, { label: 'Categoria 3', value: '3' }]} />
                     </div>
 
                     <div className="mt-10 border-[1.5px] dark:border-stone-800 h-56 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-stone-50 dark:hover:bg-stone-900 text-stone-500 text-lg relative">
