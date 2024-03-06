@@ -15,9 +15,7 @@ export default function InformationAd(props) {
 
 
     useEffect(() => {
-        if (props.type != "new") {
-            setInfos(props.ad);
-        }
+        setInfos(props.ad);
     }, [props.ad])
 
 
@@ -175,10 +173,10 @@ export default function InformationAd(props) {
 
                     {props.type != "new" ?
                         <Skeleton className="w-40 h-8" loading={props.loading}>
-                            <span className="text-2xl font-medium font-ibm text-primary">{infos?.tanks ? infos.tanks : 0}</span>
+                            <span className="text-2xl font-medium font-ibm text-primary">{infos?.unprice ? infos.unprice : 0}</span>
                         </Skeleton>
                         :
-                        <input disabled onChange={(e) => setInfos({ ...infos, tanks: e.target.value })} value={infos.tanks ? infos.tanks : 0}
+                        <input disabled onChange={(e) => setInfos({ ...infos, unprice: e.target.value })} value={infos.unprice ? infos.unprice : 0}
                             className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
                     }
                 </div>
