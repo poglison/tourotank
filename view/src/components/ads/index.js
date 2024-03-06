@@ -57,7 +57,7 @@ export default function Ads(props) {
 
 
             <div className="ads flex overflow-auto transition rounded-t-xl min-h-72">
-                <div className="absolute left-0 w-10 ml-2 mt-1 h-52 flex items-center justify-center text-stone-400 cursor-pointer" onClick={() => moveScroll("left")}>
+                <div className="absolute left-0 w-10 ml-2 mt-1 h-52 flex items-center justify-center text-white cursor-pointer" onClick={() => moveScroll("left")}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                     </svg>
@@ -72,7 +72,7 @@ export default function Ads(props) {
                     })
                 }
 
-                <div className="absolute right-0 w-10 mr-2 mt-1 h-52 flex items-center justify-center text-stone-400 cursor-pointer" onClick={() => moveScroll("right")}>
+                <div className="absolute right-0 w-10 mr-2 mt-1 h-52 flex items-center justify-center text-white cursor-pointer" onClick={() => moveScroll("right")}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
