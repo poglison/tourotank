@@ -14,7 +14,7 @@ export default function Image(props) {
     return (
         <div>
             <Skeleton className={"relative min-h-56 rounded-xl cursor-pointer " + props.className} loading={props.loading}>
-                <img onMouseEnter={() => setSerach(true)} onMouseLeave={() => setSerach(false)} onClick={() => { setIsModalVisible(true) }} src={props.src} alt={props.alt} className={"rounded-xl transition-all ease-in hover:opacity-95 hover:grayscale cursor-pointer " + props.className} />
+                <img onMouseEnter={() => setSerach(true)} onMouseLeave={() => setSerach(false)} onClick={() => { setIsModalVisible(true) }} src={props.src} alt={props.alt} className={"rounded-xl transition-all ease-in hover:opacity-95 cursor-pointer " + props.className} />
 
                 {serach ? (
                     <div className="absolute w-20 h-20 bg-primary -mt-48 ml-48 rounded-full flex items-center justify-center">
