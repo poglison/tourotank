@@ -37,7 +37,7 @@ export default function NewAd(props) {
     };
 
 
-    const mascaraMoeda = (event) => {
+    const maskCoin = (event) => {
         const onlyDigits = event.target.value
             .split("")
             .filter(s => /\d/.test(s))
@@ -72,12 +72,12 @@ export default function NewAd(props) {
                     <div className="flex flex-col">
                         <span className="font-ibm text-xs text-stone-600">Titulo do anúncio</span>
 
-                        <input onChange={(e) => { setAd({ ...ad, title: e.target.value }) }} placeholder="Digite o titulo do anúncio" className="border-[1.5px] dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
+                        <input onChange={(e) => { setAd({ ...ad, title: e.target.value }) }} placeholder="Digite o titulo do anúncio" className="border dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
                     </div>
 
                     <div className="flex flex-col mt-4 ">
                         <span className="font-ibm text-xs text-stone-600">Descrição</span>
-                        <textarea onChange={(e) => { setAd({ ...ad, description: e.target.value }) }} placeholder="Digite a descrição do anúncio" className="border-[1.5px] dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 xl:h-36 xl:overflow-auto font-ibm text-lg text-stone-700 dark:text-stone-400 outline-none resize-none dark:placeholder:text-stone-600" />
+                        <textarea onChange={(e) => { setAd({ ...ad, description: e.target.value }) }} placeholder="Digite a descrição do anúncio" className="border dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 xl:h-36 xl:overflow-auto font-ibm text-lg text-stone-700 dark:text-stone-400 outline-none resize-none dark:placeholder:text-stone-600" />
 
                     </div>
 
@@ -99,15 +99,16 @@ export default function NewAd(props) {
                         <span className="font-ibm text-xs text-stone-600">Valor do anúncio</span>
 
                         <input value={ad?.price} onChange={(e) => {
-                            var value = mascaraMoeda(e)
+                            setAd({ ...ad, unprice: e.target.value })
+                            var value = maskCoin(e)
                             setAd({ ...ad, price: value })
-                        }} className="border-[1.5px] dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
+                        }} className="border dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
                     </div>
 
                     <div className="flex flex-col mt-5">
                         <span className="font-ibm text-xs text-stone-600">Quantidade em estoque</span>
 
-                        <input onChange={(e) => { setAd({ ...ad, qtd: e.target.value }) }} className="border-[1.5px] dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
+                        <input onChange={(e) => { setAd({ ...ad, qtd: e.target.value }) }} className="border dark:border-stone-900 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
                     </div>
 
                     <div className="flex flex-col mt-5">
@@ -116,7 +117,7 @@ export default function NewAd(props) {
                         <Select onChange={(e) => { setAd({ ...ad, category }) }} options={[{ label: 'Categoria 1', value: '1' }, { label: 'Categoria 2', value: '2' }, { label: 'Categoria 3', value: '3' }]} />
                     </div>
 
-                    <div className="mt-10 border-[1.5px] dark:border-stone-800 h-56 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-stone-50 dark:hover:bg-stone-900 text-stone-500 text-lg relative">
+                    <div className="mt-10 border dark:border-stone-800 h-56 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-stone-50 dark:hover:bg-stone-900 text-stone-500 text-lg relative">
                         <input id="file" type="file" className="absolute w-full h-full hidden" onChange={(e) => { convertBase64(e) }} />
                         <label for="file" className="cursor-pointer absolute w-full h-full flex items-center justify-center" />
 

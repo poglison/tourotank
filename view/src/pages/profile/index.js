@@ -101,7 +101,7 @@ export default function Profile() {
                                     </svg>
                                 )}
 
-                                {/* <div className='w-24 h-6 ml-4 border-[1.5px] font-medium border-stone-400 rounded-full text-xs flex items-center justify-center cursor-pointer hover:bg-stone-600 text-stone-600 hover:text-white'>
+                                {/* <div className='w-24 h-6 ml-4 border font-medium border-stone-400 rounded-full text-xs flex items-center justify-center cursor-pointer hover:bg-stone-600 text-stone-600 hover:text-white'>
                                         Editar perfil
                                     </div> */}
                             </div>
@@ -137,9 +137,9 @@ export default function Profile() {
             <Container className='mt-10 pt-0 dark:bg-stone-950'>
 
                 <div className='mt-52 flex flex-col md:flex-row'>
-                    <div className='flex flex-col w-full md:flex-col md:!w-60 border-[1.5px] dark:border-stone-800  rounded-lg'>
+                    <div className='flex flex-col w-full md:flex-col md:!w-60 border dark:border-stone-800  rounded-lg'>
 
-                        <span className='block px-4 pt-4 pb-4 mb-0 font-medium text-stone-700 dark:text-stone-300 border-b-[1.5px] dark:border-b-stone-800'>Menu</span>
+                        <span className='block px-4 pt-4 pb-4 mb-0 font-medium text-stone-700 dark:text-stone-300 border-b dark:border-b-stone-800'>Menu</span>
 
                         <div>
                             {
@@ -157,7 +157,7 @@ export default function Profile() {
                                         )
                                     } else {
                                         return (
-                                            <div key={index} className='w-full h-12 p-2 px-4 border-b-[1.5px] dark:border-stone-800 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 flex items-center cursor-pointer'>
+                                            <div key={index} className='w-full h-12 p-2 px-4 border-b dark:border-stone-800 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 flex items-center cursor-pointer'>
                                                 
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-stone-600 dark:text-stone-400">
                                                     <path fillRule="evenodd" d={item.icon} />

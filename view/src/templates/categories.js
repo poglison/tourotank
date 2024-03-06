@@ -167,9 +167,9 @@ export default function Categories() {
             </div>
 
             {open &&
-                <div className="overflow-auto h-[calc(100%-120px)] left-5 md:left-10 top-20 mr-40 fixed w-[calc(100%-40px)] md:w-[calc(100%-80px)] border-[1.5px] dark:border-stone-800 bg-white dark:bg-stone-950 rounded-xl">
+                <div className="overflow-auto h-[calc(100%-120px)] left-5 md:left-10 top-20 mr-40 fixed w-[calc(100%-40px)] md:w-[calc(100%-80px)] border dark:border-stone-800 bg-white dark:bg-stone-950 rounded-xl">
 
-                    <div className="w-full flex items-center h-16 border-b-[1.5px] dark:border-b-stone-800 rounded-t-xl hover:bg-stone-50 dark:hover:bg-stone-900 p-4 cursor-pointer">
+                    <div className="w-full flex items-center h-16 border-b dark:border-b-stone-800 rounded-t-xl hover:bg-stone-50 dark:hover:bg-stone-900 p-4 cursor-pointer">
                         <span className="text-sm font-medium text-stone-800 dark:text-stone-400">Outros</span>
                     </div>
 
@@ -193,7 +193,7 @@ export default function Categories() {
                     </div>
 
 
-                    <div className="w-full flex items-center h-16 border-b-[1.5px] border-t-[1.5px] dark:border-stone-800 hover:bg-stone-50 dark:hover:bg-stone-900 p-4 cursor-pointer">
+                    <div className="w-full flex items-center h-16 border-b border-t dark:border-stone-800 hover:bg-stone-50 dark:hover:bg-stone-900 p-4 cursor-pointer">
                         <span className="text-sm font-medium text-stone-800 dark:text-stone-400">Jogos</span>
                     </div>
 

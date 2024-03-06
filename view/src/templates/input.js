@@ -5,7 +5,7 @@ export default function Input(props) {
     const [visible, setVisible] = useState(false);
 
     return (
-        <div className={"select-none bg-white dark:bg-stone-950 border-[1.5px] dark:border-stone-800 rounded-full z-10 w-full flex items-center px-5 " + props.className}>
+        <div className={"select-none bg-white dark:bg-stone-950 border dark:border-stone-800 rounded-full z-10 w-full flex items-center px-5 " + props.className}>
             <input onChange={(e) => { props.onChange ? props.onChange(e) : null }} type={props.type == "password" && visible == true ? "text" : props.type} className="w-full dark:bg-stone-950 h-12 text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" placeholder={props.placeholder} />
 
             {(props.type === "password" && !visible) ?

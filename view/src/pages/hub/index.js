@@ -103,7 +103,7 @@ export default function Hub() {
             </Container>
 
 
-            <div className="overflow-hidden flex justify-center items-center w-full bg-stone-50 dark:bg-stone-900 border-t-[1.5px] dark:border-stone-800 border-b-[1.5px] mt-8 pb-10 relative">
+            <div className="overflow-hidden flex justify-center items-center w-full bg-stone-50 dark:bg-stone-900 border-t dark:border-stone-800 border-b mt-8 pb-10 relative">
 
                 <div className="flex flex-wrap justify-start mt-20 w-5/6 z-10">
 
@@ -114,7 +114,7 @@ export default function Hub() {
                                 key={index}>
 
                                 <Skeleton loading={loading} className="w-full min-w-full min-h-72 h-96 rounded-xl overflow-hidden bg-white dark:bg-stone-950">
-                                    <div className="relative w-full min-w-full min-h-72 h-96   border-[1.5px] dark:border-stone-800 rounded-xl overflow-hidden">
+                                    <div className="relative w-full min-w-full min-h-72 h-96   border dark:border-stone-800 rounded-xl overflow-hidden">
                                         <img src={ad.image} className="relative w-full h-[calc(100%-112px)] object-cover" />
 
                                         <div className="bg-white dark:bg-stone-950 min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-20">

@@ -40,7 +40,7 @@ export default function InformationAd(props) {
 
             <div className="w-full h-full rounded-lg mb-2">
 
-                <div className="border-[1.5px] dark:border-stone-800 bg-white dark:bg-stone-950 rounded-lg flex flex-col">
+                <div className="border dark:border-stone-800 bg-white dark:bg-stone-950 rounded-lg flex flex-col">
 
 
                     {props.type == "new" &&
@@ -76,7 +76,7 @@ export default function InformationAd(props) {
                     }
 
                     {props.type != "new" &&
-                        <div className="flex items-center justify-between border-t-[1.5px] dark:border-t-stone-800 bg-white dark:bg-stone-950 dark:text-stone-300 p-2 rounded-b-lg">
+                        <div className="flex items-center justify-between border-t dark:border-t-stone-800 bg-white dark:bg-stone-950 dark:text-stone-300 p-2 rounded-b-lg">
 
                             <div className="text-[13px] ml-2">
                                 <Skeleton className="w-40 h-4" loading={props.loading}>
@@ -87,7 +87,7 @@ export default function InformationAd(props) {
                             </div>
 
 
-                            <div className="border-[1.5px] dark:border-stone-800  w-10 h-10 flex items-center justify-center rounded-lg text-stone-700 dark:text-stone-500 hover:text-stone-900 hover:bg-stone-100 dark:hover:bg-stone-900 dark:hover:text-stone-300 cursor-pointer">
+                            <div className="border dark:border-stone-800  w-10 h-10 flex items-center justify-center rounded-lg text-stone-700 dark:text-stone-500 hover:text-stone-900 hover:bg-stone-100 dark:hover:bg-stone-900 dark:hover:text-stone-300 cursor-pointer">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                                     <path fillRule="evenodd" d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z" clipRule="evenodd" />
                                 </svg>
@@ -99,7 +99,7 @@ export default function InformationAd(props) {
                 </div>
             </div>
 
-            <div className="bg-white dark:bg-stone-950 border-[1.5px] dark:border-stone-800  p-4 rounded-lg">
+            <div className="bg-white dark:bg-stone-950 border dark:border-stone-800  p-4 rounded-lg">
                 {/* {props.type != "new" ?
 
                     <div className="w-full h-4 bg-stone-200 dark:bg-stone-800 rounded-full mb-4">
@@ -128,7 +128,7 @@ export default function InformationAd(props) {
                         </Skeleton>
                         :
                         <input disabled onChange={(e) => setInfos({ ...infos, price: e.target.value })} value={infos.price ? infos.price : 0}
-                            className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
+                            className="bg-transparent dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
                     }
                 </div>
 
@@ -142,7 +142,7 @@ export default function InformationAd(props) {
                             </Skeleton>
                             :
                             <input disabled onChange={(e) => setInfos({ ...infos, qtd: e.target.value })} value={infos.qtd ? infos.qtd : 0}
-                                className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto já foi investido" />
+                                className="bg-transparent dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto já foi investido" />
                         }
                     </div>
 
@@ -155,7 +155,7 @@ export default function InformationAd(props) {
                             </Skeleton>
                             :
                             <input disabled onChange={(e) => setInfos({ ...infos, sales: e.target.value })} value={infos.sales ? infos.sales : 0}
-                                className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite quantos investidores teve" />
+                                className="bg-transparent dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite quantos investidores teve" />
                         }
                     </div>
                 </div>
@@ -177,7 +177,7 @@ export default function InformationAd(props) {
                         </Skeleton>
                         :
                         <input disabled onChange={(e) => setInfos({ ...infos, unprice: e.target.value })} value={infos.unprice ? infos.unprice : 0}
-                            className="dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
+                            className="bg-transparent dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
                     }
                 </div>
 
