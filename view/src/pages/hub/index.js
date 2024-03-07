@@ -86,7 +86,7 @@ export default function Hub() {
             <Header className="top-0 bg-white dark:bg-stone-950 !fixed" search={true} />
 
 
-            <Container className="flex flex-col items-center justify-center mt-40 mb-20 text-stone-700 dark:text-stone-300">
+            <Container className="flex flex-col items-center justify-center mt-40 mb-5 text-stone-700 dark:text-stone-300">
                 <div className="w-full flex flex-col justify-center items-center">
                     <div className="flex items-center justify-center">
                         <h1 className="text-ibm text-4xl font-medium text-center mb-2 mr-3 ">Hub de Anúncios</h1>
@@ -98,10 +98,24 @@ export default function Hub() {
 
 
                     <p className="text-4xl text-center text-primary font-bold font-montserrat">touratank</p>
-                   
+
                 </div>
             </Container>
 
+            <div className="w-full h-14 flex items-center justify-center">
+
+                <div className="flex items-center justify-center w-36 text-stone-700 dark:text-stone-200 bg-stone-200 p-2 px-4 rounded-full dark:bg-stone-800 hover:bg-primary hover:!text-white cursor-pointer mr-4">
+                    Recentes
+                </div>
+
+                <div className="flex items-center justify-center w-36 text-stone-700 dark:text-stone-200 bg-stone-200 p-2 px-4 rounded-full dark:bg-stone-800 hover:bg-primary hover:!text-white cursor-pointer mr-4">
+                    Populares
+                </div>
+
+                <div className="flex items-center justify-center w-36 text-stone-700 dark:text-stone-200 bg-stone-200 p-2 px-4 rounded-full dark:bg-stone-800 hover:bg-primary hover:!text-white cursor-pointer">
+                    Mais vendidos
+                </div>
+            </div>
 
             <div className="overflow-hidden flex justify-center items-center w-full bg-stone-50 dark:bg-stone-900 border-t dark:border-stone-700 border-b mt-8 pb-10 relative">
 
@@ -131,7 +145,7 @@ export default function Hub() {
             </div>
 
             <Container>
-                <FAQ/>
+                <FAQ />
             </Container>
 
             <Footer />

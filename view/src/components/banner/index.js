@@ -45,7 +45,7 @@ export default function Banner() {
                         <Link to="/ad/new" onMouseEnter={() => { setSelect("anunciar") }}>
                             <p className={"transition-all ml-4 font-montserkrat text-4xl text-stone-300 hover:text-primary font-bold " + (select == "anunciar" ? "!text-primary" : "")}>anunciar</p>
                         </Link>
-                        <Link to="/ad/new" onMouseEnter={() => { setSelect("comprar") }}>
+                        <Link to="/hub" onMouseEnter={() => { setSelect("comprar") }}>
                             <p className={"transition-all ml-4 font-montserkrat text-4xl text-stone-300 hover:text-primary font-bold " + (select == "comprar" ? "!text-primary" : "")}>comprar</p>
                         </Link>
                     </div>
