@@ -29,7 +29,7 @@ export default function Menu() {
             </div>
 
             {open &&
-                <div className="mt-72 mr-40 absolute w-52 min-h-52 border dark:border-stone-800 bg-white dark:bg-stone-950 rounded-xl">
+                <div className="mt-72 mr-40 absolute w-52 min-h-52 border dark:border-stone-700 bg-white dark:bg-stone-950 rounded-xl">
 
 
                     <Link to={"/profile/" + user.id}>

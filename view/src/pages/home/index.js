@@ -8,10 +8,11 @@ import Container from '../../templates/container';
 
 export default function App() {
   return (
-    <div className='bg-white dark:bg-stone-950'>
+    <div className='relative overflow-hidden bg-white dark:bg-stone-950'>
       <Header search={true} />
       <Banner />
       <Container>
+        <img className="w-72 md:w-96 absolute top-16 -right-40  md:-right-48 select-none -rotate-45" src="imgs/bull/bull.png" alt="" />
         <Ads />
         <Benefits />
         <FAQ />

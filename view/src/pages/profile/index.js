@@ -47,7 +47,7 @@ export default function Profile() {
 
             <Header className="!bg-transparent relative"/>
 
-            <div className='w-full pt-20 absolute top-0 h-64 bg-stone-50 dark:bg-stone-900 border-b dark:border-stone-800'>
+            <div className='w-full pt-20 absolute top-0 h-64 bg-stone-50 dark:bg-stone-900 border-b dark:border-stone-700'>
                 <div className='px-5 md:px-10 mt-10 flex items-center'>
 
                     <div className='flex items-center'>
@@ -137,7 +137,7 @@ export default function Profile() {
             <Container className='mt-10 pt-0 dark:bg-stone-950'>
 
                 <div className='mt-52 flex flex-col md:flex-row'>
-                    <div className='flex flex-col w-full md:flex-col md:!w-60 border dark:border-stone-800  rounded-lg'>
+                    <div className='flex flex-col w-full md:flex-col md:!w-60 border dark:border-stone-700  rounded-lg'>
 
                         <span className='block px-4 pt-4 pb-4 mb-0 font-medium text-stone-700 dark:text-stone-300 border-b dark:border-b-stone-800'>Menu</span>
 
@@ -157,7 +157,7 @@ export default function Profile() {
                                         )
                                     } else {
                                         return (
-                                            <div key={index} className='w-full h-12 p-2 px-4 border-b dark:border-stone-800 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 flex items-center cursor-pointer'>
+                                            <div key={index} className='w-full h-12 p-2 px-4 border-b dark:border-stone-700 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 flex items-center cursor-pointer'>
                                                 
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-stone-600 dark:text-stone-400">
                                                     <path fillRule="evenodd" d={item.icon} />

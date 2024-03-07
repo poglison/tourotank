@@ -6,6 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+
+      rotate: {
+        '24': '24deg',
+        '30': '30deg',
+      },
+
       colors: {
         'primary': '#FF4F00',
         // 'primary': '#444',

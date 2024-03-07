@@ -5,7 +5,7 @@ export default function Buttons(props) {
 
 
     return (
-        <div className="w-full flex items-center border dark:border-stone-800 h-12 rounded-full">
+        <div className="w-full flex items-center border dark:border-stone-700 h-12 rounded-full">
 
 
             {props.buttons?.map((button, index) => {
