@@ -16,14 +16,14 @@ export default function Image(props) {
             <Skeleton className={"relative min-h-56 rounded-xl cursor-pointer " + props.className} loading={props.loading}>
                 <img onMouseEnter={() => setSerach(true)} onMouseLeave={() => setSerach(false)} onClick={() => { setIsModalVisible(true) }} src={props.src} alt={props.alt} className={"rounded-xl transition-all ease-in hover:opacity-95 cursor-pointer " + props.className} />
 
-                {serach ? (
+                {/* {serach ? (
                     <div className="absolute w-20 h-20 bg-primary -mt-48 ml-48 rounded-full flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
 
                     </div>
-                ) : null}
+                ) : null} */}
 
             </Skeleton>
 
