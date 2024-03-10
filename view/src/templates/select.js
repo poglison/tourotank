@@ -41,7 +41,7 @@ export default function Select(props) {
 
             </input>
             {isOpen && (
-                <div className="absolute h-56 overflow-auto z-10 w-full mt-1 bg-white dark:text-stone-300 dark:bg-stone-950 border dark:border-stone-700 rounded-lg shadow-lg">
+                <div className={"absolute overflow-auto z-10 w-full mt-1 bg-white dark:text-stone-300 dark:bg-stone-950 border dark:border-stone-700 rounded-lg shadow-lg " + (options.length > 5 ? "h-56" : "h-auto")}>
                     {options.map((option, index) => (
 
                         <div

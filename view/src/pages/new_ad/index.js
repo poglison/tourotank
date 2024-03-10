@@ -192,7 +192,7 @@ export default function NewAd(props) {
 
 
     const [isOpen, setIsOpen] = useState(false);
-    
+
 
 
     return (
@@ -243,20 +243,26 @@ export default function NewAd(props) {
                     <div className="w-full flex flex-col mt-6">
                         <span className="text-ibm text-lg font-medium mb-4 block text-stone-800 dark:text-stone-200">Informações do Anúncio</span>
 
-                        <div className="flex flex-col">
-                            <span className="font-ibm text-xs text-stone-600">Valor do anúncio</span>
 
-                            <input value={ad?.price} onChange={(e) => {
-                                setAd({ ...ad, unprice: e.target.value })
-                                var value = maskCoin(e);
-                                console.log((value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000))
-                                var tanks = (value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000).toFixed(0) > 0 ? (value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000).toFixed(0) : 1;
+                        {type == 1 ?
+                            <div className="flex flex-col">
+                                <span className="font-ibm text-xs text-stone-600">Valor do anúncio</span>
+
+                                <input value={ad?.price} onChange={(e) => {
+                                    setAd({ ...ad, unprice: e.target.value })
+                                    var value = maskCoin(e);
+                                    console.log((value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000))
+                                    var tanks = (value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000).toFixed(0) > 0 ? (value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000).toFixed(0) : 1;
 
 
 
-                                setAd({ ...ad, price: value, tanks: tanks })
-                            }} className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
-                        </div>
+                                    setAd({ ...ad, price: value, tanks: tanks })
+                                }} className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
+                            </div>
+                            :
+                            null
+                        }
+
 
                         <div className="flex flex-col mt-5">
                             <span className="font-ibm text-xs text-stone-600">Quantidade em estoque</span>

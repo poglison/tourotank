@@ -146,18 +146,17 @@ export default function InformationAd(props) {
                         }
                     </div>
 
-                    <div className={"w-1/2 flex flex-col " + (props.type == "new" ? "mt-4" : "")}>
-                        <span className="dark:text-stone-300">Vendido</span>
 
-                        {props.type != "new" ?
+                    {props.type != "new" &&
+                        <div className={"w-1/2 flex flex-col " + (props.type == "new" ? "mt-4" : "")}>
+                            <span className="dark:text-stone-300">Vendido</span>
+
                             <Skeleton className="w-20 h-8" loading={props.loading}>
                                 <span className="text-2xl font-medium font-ibm text-primary">{infos?.sales ? infos.sales : 0}</span>
                             </Skeleton>
-                            :
-                            <input disabled onChange={(e) => setInfos({ ...infos, sales: e.target.value })} value={infos.sales ? infos.sales : 0}
-                                className="bg-transparent dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite quantos investidores teve" />
-                        }
-                    </div>
+
+                        </div>
+                    }
                 </div>
 
 
