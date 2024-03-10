@@ -20,7 +20,7 @@ export default function NewAd(props) {
 
     const [ad, setAd] = useState({});
     const [type, setType] = useState(1);
-    const [close, setClose] = useState(false);
+    const [files, setFiles] = useState([]);
 
     useEffect(() => {
         document.scrollingElement.scrollTop = 0;
@@ -28,12 +28,22 @@ export default function NewAd(props) {
 
 
     const convertBase64 = (e) => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-            setAd({ ...ad, image: reader.result })
-        };
+
+
+        const filesArray = Array.from(e.target.files);
+        
+
+        filesArray.forEach(file => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                files.push(reader.result);
+            }
+
+        })
+
+        setFiles(files);
+        setAd({ ...ad, image: files });
     };
 
 

@@ -10,7 +10,7 @@ export default function Ad(props) {
                 <div key={props.index} className="w-96 min-w-96 transition-all ease-in-out delay-300 select-none">
 
                     <Skeleton props={props} loading={props.loading} className="w-96 h-52 rounded-2xl select-none border-transparent border hover: ">
-                        <img src={props.image} alt={props.name} className="object-cover w-96 h-52 rounded-2xl select-none border-white dark:border-stone-700 border" />
+                        <img src={props.image ? props.image[0] : null} alt={props.name} className="object-cover w-96 h-52 rounded-2xl select-none border-white dark:border-stone-700 border" />
                     </Skeleton>
                     <div className="mt-2">
                         <Skeleton props={props} loading={props.loading} className="w-full h-14 font-ibm text-xl font-bold text-black !m-0">
