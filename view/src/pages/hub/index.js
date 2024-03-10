@@ -11,8 +11,6 @@ import Skeleton from "../../templates/skeleton";
 
 export default function Hub() {
 
-
-
     useEffect(() => {
         get("ad").then((response) => {
             setLoading(false);
@@ -21,64 +19,7 @@ export default function Hub() {
     }, [])
 
     const [loading, setLoading] = useState(true);
-    const [ads, setAds] = useState([
-        {
-            "title": "Projeto 1",
-            "description": "Descrição do projeto 1",
-            "owner": "Robin Spielmann",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 2000
-        },
-        {
-            "title": "Projeto 2",
-            "description": "Descrição do projeto 2",
-            "owner": "Robin Spielmann",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 2000
-        },
-        {
-            "title": "Projeto 3",
-            "description": "Descrição do projeto 3",
-            "owner": "Robin Spielmann",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 3000
-        },
-        {
-            "title": "Projeto 4",
-            "description": "Descrição do projeto 4",
-            "owner": "Robin Spielmann",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 4000
-        },
-        {
-            "title": "Projeto 5",
-            "description": "Descrição do projeto 5",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 5000
-        },
-        {
-            "title": "Projeto 6",
-            "description": "Descrição do projeto 6",
-            "owner": "Robin Spielmann",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 6000
-        },
-        {
-            "title": "Projeto 7",
-            "description": "Descrição do projeto 7",
-            "owner": "Robin Spielmann",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 7000
-        },
-        {
-            "title": "Projeto 8",
-            "description": "Descrição do projeto 8",
-            "owner": "Robin Spielmann",
-            "image": "https://www.startengine.com/discover/_next/image?url=https%3A%2F%2Fd19j0qt0x55bap.cloudfront.net%2Fproduction%2Fstartups%2F629aaf114ce5a82d86f2883f%2Fimages%2Fstartup_cover%2Ftombstone_psyonic-se-hero-image.jpg&w=2048&q=80",
-            "price": 8000
-        }
-    ]);
-
+    const [ads, setAds] = useState([{}, {}, {}, {}, {}, {}]);
 
     return (
         <div className="dark:bg-stone-950 h-screen relative">
@@ -124,16 +65,16 @@ export default function Hub() {
 
                     {ads?.map((ad, index) => {
                         return (
-                            <Link to={"/ad/" + ad.id} className="w-full lg:w-[calc(33%-29px)] rounded-xl m-4 cursor-pointer"
+                            <Link to={"/ad/" + ad?.id} className="w-full lg:w-[calc(33%-29px)] rounded-xl m-4 cursor-pointer"
                                 key={index}>
 
                                 <Skeleton loading={loading} className="w-full min-w-full min-h-72 h-96 rounded-xl overflow-hidden bg-white dark:bg-stone-950">
                                     <div className="relative w-full min-w-full min-h-72 h-96   border dark:border-stone-700 rounded-xl overflow-hidden">
-                                        <img src={ad.image} className="relative w-full h-[calc(100%-112px)] object-cover" />
+                                        <img src={ad?.image ? ad?.image[0] : null} className="relative w-full h-[calc(100%-112px)] object-cover" />
 
                                         <div className="bg-white dark:bg-stone-950 min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-20">
-                                            <h1 className="text-ibm dark:text-stone-300 text-lg font-medium mt-2">{ad.title}</h1>
-                                            <p className="text-ibm dark:text-stone-400 text-sm mt-1">{ad.description}</p>
+                                            <h1 className="text-ibm dark:text-stone-300 text-lg font-medium mt-2 truncate">{ad?.title}</h1>
+                                            <p className="overflow-hidden h-10 text-ibm dark:text-stone-400 text-sm mt-1">{ad?.description}</p>
                                         </div>
                                     </div>
                                 </Skeleton>
