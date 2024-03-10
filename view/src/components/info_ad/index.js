@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { categories } from "../../utils/jsons";
 
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../templates/button";
-import { save } from "../../services";
+import { save } from "../../utils/services";
 import Skeleton from "../../templates/skeleton";
 
 
@@ -21,7 +22,7 @@ export default function InformationAd(props) {
 
     const register = async () => {
 
-        save("ad", { ...props.ad, infos: infos, user: props?.user }
+        save("ad", { ...props.ad, user: props?.user }
         ).then((response) => {
 
             if (response.status == "404") {

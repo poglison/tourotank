@@ -6,7 +6,7 @@ import Button from "../../templates/button";
 import FAQ from "../../components/faq";
 import Container from "../../templates/container";
 
-import { get } from "../../services";
+import { get } from "../../utils/services";
 import Skeleton from "../../templates/skeleton";
 
 export default function Hub() {

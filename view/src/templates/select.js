@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function Select(props) {
     const [options, setOptions] = useState(props.options);
-    const [selectedValue, setSelectedValue] = useState("Não selecionado");
+    const [selectedValue, setSelectedValue] = useState("");
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -33,6 +33,7 @@ export default function Select(props) {
     return (
         <div className="relative">
             <input
+                placeholder="Não selecionado"
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex w-full border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600"
                 onChange={(e) => handle(e)}
@@ -40,7 +41,7 @@ export default function Select(props) {
             >
 
             </input>
-            {isOpen && (
+            {(isOpen && options.length > 0) && (
                 <div className={"absolute overflow-auto z-10 w-full mt-1 bg-white dark:text-stone-300 dark:bg-stone-950 border dark:border-stone-700 rounded-lg shadow-lg " + (options.length > 5 ? "h-56" : "h-auto")}>
                     {options.map((option, index) => (
 

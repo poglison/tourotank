@@ -13,7 +13,7 @@ import Team from "../../templates/team";
 import FAQ from "../../components/faq";
 import ButtonFAQ from "../../templates/button_faq";
 
-import { get, getByID } from "../../services";
+import { get, getByID } from "../../utils/services";
 import { useParams } from "react-router-dom";
 import Skeleton from "../../templates/skeleton";
 import Container from "../../templates/container";

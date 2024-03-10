@@ -13,7 +13,7 @@ import Chat from './pages/chat';
 import Profile from './pages/profile';
 import Erro from './pages/erro';
 import Ad from './pages/ad';
-import UserContext from './context';
+import UserContext from './utils/context';
 import NewAd from './pages/new_ad';
 import Hub from './pages/hub';
 

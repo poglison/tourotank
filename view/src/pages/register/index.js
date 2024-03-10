@@ -5,12 +5,12 @@ import Google from "../../templates/google";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { save } from "../../services";
+import { save } from "../../utils/services";
 
 import { toast } from "react-toastify";
 
 import { useContext } from "react";
-import UserContext from "../../context";
+import UserContext from "../../utils/context";
 
 
 export default function Login() {

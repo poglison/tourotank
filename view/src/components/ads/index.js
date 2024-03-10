@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react"
 import Ad from "../ad"
 import { Link } from "react-router-dom";
 
-import { get } from "../../services"
+import { get } from "../../utils/services"
 
 export default function Ads(props) {
 

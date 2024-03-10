@@ -2,11 +2,11 @@ import Header from "../../components/header";
 import Button from "../../templates/button";
 import Input from "../../templates/input";
 import { toast } from "react-toastify";
-import { auth } from "../../services";
+import { auth } from "../../utils/services";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import UserContext from "../../context";
+import UserContext from "../../utils/context";
 import Google from "../../templates/google";
 
 

@@ -5,7 +5,7 @@ import Settings from '../../components/settings';
 import Skeleton from '../../templates/skeleton';
 
 import { useState, useContext, useEffect } from 'react';
-import { getByID } from '../../services';
+import { getByID } from '../../utils/services';
 
 import { useNavigate, useParams } from 'react-router-dom';
 import Container from '../../templates/container';

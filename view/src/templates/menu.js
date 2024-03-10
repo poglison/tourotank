@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
 
-import UserContext from "../context";
+import UserContext from "../utils/context";
 import { useContext } from "react";
 
 export default function Menu() {

@@ -4,7 +4,7 @@ import Logo from "../../templates/logo";
 import Menu from "../../templates/menu";
 
 import { useContext, useEffect } from "react";
-import UserContext from "../../context";
+import UserContext from "../../utils/context";
 import Categories from "../../templates/categories";
 
 
