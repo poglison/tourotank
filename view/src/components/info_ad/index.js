@@ -16,7 +16,7 @@ export default function InformationAd(props) {
 
 
     useEffect(() => {
-        setInfos(props.ad);
+        setInfos(props.ad)
     }, [props.ad])
 
 

@@ -21,31 +21,31 @@ export default function NewAd(props) {
     const [ad, setAd] = useState({});
     const [type, setType] = useState(1);
     const [files, setFiles] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         document.scrollingElement.scrollTop = 0;
     }, [])
 
 
-    const convertBase64 = (e) => {
+    const convertBase64 = async (e) => {
 
 
         const filesArray = Array.from(e.target.files);
-        
+        var filesAux = [];
 
-        filesArray.forEach(file => {
+        for (let i = 0; i < filesArray.length; i++) {
+            const file = filesArray[i];
             const reader = new FileReader();
-            reader.readAsDataURL(file);
             reader.onload = () => {
-                files.push(reader.result);
+                filesAux.push(reader.result);
+                if (filesAux.length == filesArray.length) {
+                    setFiles(filesAux);
+                }
             }
-
-        })
-
-        setFiles(files);
-        setAd({ ...ad, image: files });
+            reader.readAsDataURL(file);
+        }
     };
-
 
     const maskCoin = (event) => {
         const onlyDigits = event.target.value
@@ -65,10 +65,6 @@ export default function NewAd(props) {
     }
 
 
-    const [isOpen, setIsOpen] = useState(false);
-
-
-
     return (
         <div className="bg-white dark:bg-stone-950 overflow-x-hidden" onClick={() => { setIsOpen(false) }}>
 
@@ -77,7 +73,7 @@ export default function NewAd(props) {
             <Container className="w-full md:w-[calc(100%-326px)] min-h-screen">
 
                 <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Projeto', path: '/ad' }, { title: 'Novo Projeto', path: '/ad/new' }]} />
-                <InformationAd type="new" ad={ad} setAd={setAd} user={user} />
+                <InformationAd type="new" ad={{...ad, image: files}} setAd={setAd} user={user} />
 
 
                 <div className="w-full mt-4 flex flex-col">
@@ -152,6 +148,28 @@ export default function NewAd(props) {
                             </svg>
                             <span>Adicionar imagem</span>
                         </div>
+
+                        <div className="flex">
+
+                            {files?.length > 0 ?
+                                files.map((file, i) => {
+                                    return (
+                                        <div key={i} className="w-20 h-20 bg-stone-900 rounded-xl mt-4 mr-4 relative">
+                                            <img src={file} alt
+                                                className="w-full h-full object-cover rounded-xl" />
+                                            <div onClick={() => { setFiles(files.filter((item, index) => index != i)) }}
+                                                className="absolute top-0 right-0 w-6 h-6 bg-stone-900 rounded-full flex items-center justify-center cursor-pointer hover:bg-stone-800">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="text-white w-4 h-4">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                                : null
+                            }
+                        </div>
+
                     </div>
                     :
                     null
