@@ -236,8 +236,13 @@ export default function NewAd(props) {
 
                         <input value={ad?.price} onChange={(e) => {
                             setAd({ ...ad, unprice: e.target.value })
-                            var value = maskCoin(e)
-                            setAd({ ...ad, price: value })
+                            var value = maskCoin(e);
+                            console.log((value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000))
+                            var tanks = (value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000).toFixed(0) > 0 ? (value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000).toFixed(0) : 1;
+
+
+
+                            setAd({ ...ad, price: value, tanks: tanks })
                         }} className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
                     </div>
 
