@@ -5,22 +5,22 @@ const cors = require("cors");
 const router = require("./router");
 const bodyParser = require('body-parser');
 
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+// app.use(bodyParser.json({ limit: '50mb' }));
+// app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 
 app.use(cors(
 
-    {
-        origin: 'https://tourotank.com.br',
-        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-        allowedHeaders: 'Content-Type,Authorization',
-    },
-    {
-        origin: 'http://localhost:3000',
-        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-        allowedHeaders: 'Content-Type,Authorization',
-    }
+    // {
+    //     origin: 'https://tourotank.com.br',
+    //     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    //     allowedHeaders: 'Content-Type,Authorization',
+    // },
+    // {
+    //     origin: 'http://localhost:3000',
+    //     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    //     allowedHeaders: 'Content-Type,Authorization',
+    // }
 ));
 app.use(express.json());
 
