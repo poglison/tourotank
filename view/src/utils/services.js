@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const url = 'https://tankdb.vercel.app/api/';
-//const url = 'http://localhost:8080/api/';
+//const url = 'https://tankdb.vercel.app/api/';
+const url = 'http://localhost:8080/api/';
 
 
 export const auth = (data) => {
