@@ -34,15 +34,14 @@ async function saveAd(req, res) {
                 }
 
                 return await crud.save("ad", 0, ad);
+            } else{
+                return { status: "404", error: "001", message: "Você precisa preencher todos os campos" }
             }
         } else {
             return { status: "404", error: "004", message: "Você precisa esperar 1 minuto para anunciar novamente!" }
         }
 
     });
-
-
-
 
     return { status: "404", error: "001", message: "Você precisa preencher todos os campos" }
 
