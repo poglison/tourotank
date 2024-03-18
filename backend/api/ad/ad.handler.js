@@ -18,7 +18,10 @@ async function saveAd(req, res) {
     //     return { status: "404", error: "001", message: "Você precisa preencher todos os campos..." }
     // }
 
-   
+    if (req.body.title && req.body.description && req.body.price && req.body.qtd) {
+        return { status: "404", error: "002", message: "Não é possível cadastra" }
+    }
+
     const ad = {
         ...req.body,
         created: new Date().toLocaleString(),
