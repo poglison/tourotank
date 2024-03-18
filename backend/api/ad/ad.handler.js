@@ -13,10 +13,9 @@ async function getAdID(id) {
 }
 
 async function saveAd(req, res) {
+    
 
-
-
-    if (req.body.title && req.body.description && req.body.price && req.body.qtd) {
+    if (req.body.title && req.body.description && req.body.price && req.body.qtd && req.body.image && req.body.user) {
         const ad = {
             ...req.body,
             created: new Date().toLocaleString(),
