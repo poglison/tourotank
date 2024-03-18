@@ -25,6 +25,8 @@ export default function InformationAd(props) {
         save("ad", { ...props.ad, user: props?.user }
         ).then((response) => {
 
+            console.log("response >>>  " + response);
+
             if (response.status == "404") {
                 return;
             }
