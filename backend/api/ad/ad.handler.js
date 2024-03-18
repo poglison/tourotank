@@ -14,22 +14,21 @@ async function getAdID(id) {
 
 async function saveAd(req, res) {
 
-    // if (!req.body.title && !req.body.description && !req.team) {
-    //     return { status: "404", error: "001", message: "Você precisa preencher todos os campos..." }
-    // }
+
 
     if (req.body.title && req.body.description && req.body.price && req.body.qtd) {
-        return { status: "404", error: "002", message: "Não é possível cadastra" }
+        const ad = {
+            ...req.body,
+            created: new Date().toLocaleString(),
+            updated: new Date().toLocaleString(),
+            blocked: false,
+        }
+
+        return await crud.save("ad", 0, ad);
     }
 
-    const ad = {
-        ...req.body,
-        created: new Date().toLocaleString(),
-        updated: new Date().toLocaleString(),
-        blocked: false,
-    }
+    return { status: "404", error: "001", message: "Você precisa preencher todos os campos" }
 
-    return await crud.save("ad", 0, ad);
 }
 
 async function editAd(req, id) {
