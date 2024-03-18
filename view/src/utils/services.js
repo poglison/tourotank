@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://tankdb.vercel.app/api/';
+const url = 'https://tourotank-swuf.vercel.app/api';
 //const url = 'http://localhost:8080/api/';
 
 
