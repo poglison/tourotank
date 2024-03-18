@@ -19,7 +19,7 @@ export default function Header(props) {
       <div className="flex items-center">
         <Logo  />
         <div className="cursor-pointer ml-4 px-2 border text-primary hover:bg-primary hover:text-white border-primary dark:bg-primary dark:text-white dark:hover:bg-stone-900 rounded-full hidden md:flex items-center justify-center">
-          <span className="text-xs font-ibm">pre-alpha 0.2</span>
+          <span className="text-xs font-ibm">alpha 0.2</span>
         </div>
       </div>
 
