@@ -15,36 +15,21 @@ async function getAdID(id) {
 
 async function saveAd(req, res) {
 
-    users.getUserID(req.body.user.id).then(async (user) => {
-        if (user.blocked) {
-            return { status: "404", error: "003", message: "Você está bloqueado!" }
+
+    if (req.body.title && req.body.description && req.body.price && req.body.qtd && req.body.image && req.body.user) {
+        const ad = {
+            ...req.body,
+            created: new Date().toLocaleString(),
+            updated: new Date().toLocaleString(),
+            blocked: false,
         }
 
-        if (user.latestAd && new Date(user.latestAd).getTime() > new Date().getTime() - 60000) {
-            user.latestAd = new Date().toLocaleString();
-            users.editUser(user, user.id);
+        return await crud.save("ad", 0, ad);
+    } else {
+        return { status: "404", error: "001", message: "Você precisa preencher todos os campos", body: req.body }
+    }
 
-
-            if (req.body.title && req.body.description && req.body.price && req.body.qtd && req.body.image && req.body.user) {
-                const ad = {
-                    ...req.body,
-                    created: new Date().toLocaleString(),
-                    updated: new Date().toLocaleString(),
-                    blocked: false,
-                }
-
-                return await crud.save("ad", 0, ad);
-            } else{
-                return { status: "404", error: "001", message: "Você precisa preencher todos os campos" }
-            }
-        } else {
-            return { status: "404", error: "004", message: "Você precisa esperar 1 minuto para anunciar novamente!" }
-        }
-
-    });
-
-    return { status: "404", error: "001", message: "Você precisa preencher todos os campos" }
-
+    return { status: "404", error: "005", message: "Você precisa preencher todos os campos", body: req.body }
 }
 
 async function editAd(req, id) {

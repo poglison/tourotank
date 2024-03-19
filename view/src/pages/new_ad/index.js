@@ -95,7 +95,7 @@ export default function NewAd(props) {
                     <div className="flex flex-col mt-5">
                         <span className="font-ibm text-xs text-stone-600">Categoria</span>
 
-                        <Select isOpen={isOpen} setIsOpen={setIsOpen} onChange={(e) => { setAd({ ...ad, category }) }} options={categories} />
+                        <Select isOpen={isOpen} setIsOpen={setIsOpen} onChange={(option) => { setAd({ ...ad, category: option }); }} options={categories} />
                     </div>
 
                 </div>
@@ -121,7 +121,6 @@ export default function NewAd(props) {
                                 <input value={ad?.price} onChange={(e) => {
                                     setAd({ ...ad, unprice: e.target.value })
                                     var value = maskCoin(e);
-                                    console.log((value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000))
                                     var tanks = (value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000).toFixed(0) > 0 ? (value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '') / 1000).toFixed(0) : 1;
 
 

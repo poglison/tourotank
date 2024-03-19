@@ -11,6 +11,7 @@ import Skeleton from "../../templates/skeleton";
 export default function InformationAd(props) {
 
     const [infos, setInfos] = useState({});
+    const [position, setPosition] = useState("md:mt-0");
 
     const navigate = useNavigate();
 
@@ -36,10 +37,21 @@ export default function InformationAd(props) {
     }
 
 
+    useEffect(() => {
+        addEventListener("scroll", () => {
+            if (document.scrollingElement.scrollTop > 50) {
+                setPosition("md:-mt-14");
+            } else {
+                setPosition("md:mt-0");
+            }
+        })
+    }, [])
+
+
 
     return (
 
-        <div className={"mt-10 md:mt-0 md:fixed md:w-72 md:right-10 transition-all duration-300"}>
+        <div className={"mt-10 md:fixed md:w-72 md:right-10 transition-all duration-300 " + position}>
 
             <div className="w-full h-full rounded-lg mb-2">
 

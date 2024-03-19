@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 
 export default function Select(props) {
     const [options, setOptions] = useState(props.options);
+    const [selectedLabel, setSelectedLabel] = useState("");
     const [selectedValue, setSelectedValue] = useState("");
+
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -14,21 +16,29 @@ export default function Select(props) {
         props.setIsOpen(isOpen);
     }, [isOpen]);
 
+    useEffect(() => {
+        props.onChange(selectedValue);
+    }, [selectedValue]);
+
     const handleClick = (option) => {
-        setSelectedValue(option.label);
+        setSelectedLabel(option.label);
+        setSelectedValue(option.value);
         setIsOpen(false);
     };
 
 
     const handle = (e) => {
         setIsOpen(true);
-        setSelectedValue(e.target.value);
+        setSelectedLabel(e.target.value);
+
         if (e.target.value !== "") {
+
             setOptions(props.options.filter(option => option.label.toLowerCase().includes(e.target.value.toLowerCase())));
         } else {
             setOptions(props.options);
         }
     }
+
 
     return (
         <div className="relative">
@@ -37,7 +47,7 @@ export default function Select(props) {
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex w-full border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600"
                 onChange={(e) => handle(e)}
-                value={selectedValue}
+                value={selectedLabel}
             >
 
             </input>

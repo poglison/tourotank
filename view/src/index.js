@@ -16,6 +16,7 @@ import Ad from './pages/ad';
 import UserContext from './utils/context';
 import NewAd from './pages/new_ad';
 import Hub from './pages/hub';
+import Category from './pages/category';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -77,6 +78,7 @@ function Content() {
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/ad/new" element={<NewAd />} />
         <Route path="/hub" element={<Hub />} />
+        <Route path="/category/:id" element={<Category />} />
       </Routes>
 
       <ToastContainer

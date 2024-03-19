@@ -67,7 +67,7 @@ export default function Ads(props) {
                 {
                     ads?.map((ads, index) => {
                         return (
-                            <Ad key={index} id={ads.id} name={ads.title} description={ads.description} image={ads.image} price={ads.price} loading={loading} />
+                            <Ad key={index} id={ads.id} name={ads.title} description={ads.description} image={ads.image} price={ads.price} user={ads.user} loading={loading} />
                         )
                     })
                 }
