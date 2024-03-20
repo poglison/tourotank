@@ -62,14 +62,18 @@ export default function Category(props) {
 
                             if (ad.category == id) {
                                 return (
-                                    <Link to={"/ad/" + ad?.id} className="hover:box-shadow-sm w-full sm:w-[calc(50%-16px)] md:w-[calc(33.3%-16px)] xl:w-[calc(25%-16px)] 2xl:w-[calc(20%-16px)] mr-4 mb-4 min-w-40 min-h-64 rounded-xl cursor-pointer"
+                                    <Link to={"/ad/" + ad?.id} className="relative hover:box-shadow-sm w-full sm:w-[calc(50%-16px)] md:w-[calc(33.3%-16px)] xl:w-[calc(25%-16px)] 2xl:w-[calc(20%-16px)] mr-4 mb-4 min-w-40 min-h-64 rounded-xl cursor-pointer"
                                         key={index}>
 
                                         <Skeleton loading={loading} className="w-full min-w-full min-h-64 rounded-xl overflow-hidden bg-white dark:bg-stone-900">
-                                            <div className="relative w-full min-w-full min-h-64 h-64 border dark:border-stone-700 rounded-xl overflow-hidden">
+                                            <div className="relative w-full min-w-full min-h-64 h-64 border dark:border-stone-700 rounded-xl overflow-hidden hover:shadow-stone-800">
                                                 <img src={ad?.image ? ad?.image[0] : null} className="relative w-full h-[calc(100%-112px)] object-cover" />
 
-                                                <div className="bg-white dark:bg-stone-950 min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-20">
+                                                <div className="bg-white dark:bg-stone-950 blur flex items-end justify-between min-h-12 h-12 w-[300%] p-2 px-4 absolute top-32 -left-10 z-20">
+
+                                                </div>
+
+                                                <div className="bg-white dark:bg-stone-950 min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-30">
                                                     <h1 className="text-ibm dark:text-stone-300 text-lg font-medium mt-2 truncate">{ad?.title}</h1>
                                                     <p className="overflow-hidden h-10 text-ibm dark:text-stone-400 text-sm mt-1">{ad?.description}</p>
 
