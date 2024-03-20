@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { get } from "../../utils/services";
 import Skeleton from "../../templates/skeleton";
+import { levels } from "../../utils/jsons";
 
 export default function Category(props) {
 
@@ -61,7 +62,7 @@ export default function Category(props) {
 
                             if (ad.category == id) {
                                 return (
-                                    <Link to={"/ad/" + ad?.id} className="hover:box-shadow-sm w-full sm:w-[calc(50%-16px)] md:w-[calc(33.3%-16px)] lg:w-[calc(25%-16px)] xl:w-[calc(20%-16px)] mr-4 mb-4 min-w-40 min-h-64 rounded-xl cursor-pointer"
+                                    <Link to={"/ad/" + ad?.id} className="hover:box-shadow-sm w-full sm:w-[calc(50%-16px)] md:w-[calc(33.3%-16px)] xl:w-[calc(25%-16px)] 2xl:w-[calc(20%-16px)] mr-4 mb-4 min-w-40 min-h-64 rounded-xl cursor-pointer"
                                         key={index}>
 
                                         <Skeleton loading={loading} className="w-full min-w-full min-h-64 rounded-xl overflow-hidden bg-white dark:bg-stone-900">
@@ -76,7 +77,7 @@ export default function Category(props) {
                                                         <div className="flex items-center justify-center">
                                                             <p className="font-ibm dark:text-stone-600 text-sm font-medium truncate">{ad?.user?.displayName}</p>
 
-                                                            <img className="w-4 h-4 rounded-full ml-2" src="/imgs/levels/titan_1.webp" alt="" />
+                                                            <img className="w-4 h-4 rounded-full ml-2" src={"/imgs/levels/" + (ad?.user?.level ? ad?.user?.level : "na") + ".webp"} alt="" />
                                                         </div>
 
                                                         <p className="font-ibm dark:text-stone-300 text-lg font-medium truncate">{ad?.price}</p>

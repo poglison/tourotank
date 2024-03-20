@@ -801,3 +801,31 @@ export const others = [
     { "label": "Doações", "value": "doacoes", "image": "" },
     { "label": "Outros", "value": "outros", "image": "" }
 ]
+
+export const levels = [
+    { "id": 0, "label": "N/A", "value": "na" },
+    { "id": 1, "label": "Bronze I", "value": "bronze_1" },
+    { "id": 2, "label": "Bronze II", "value": "bronze_2" },
+    { "id": 3, "label": "Bronze III", "value": "bronze_3" },
+    { "id": 4, "label": "Silver I", "value": "silver_1" },
+    { "id": 5, "label": "Silver II", "value": "silver_2" },
+    { "id": 6, "label": "Silver III", "value": "silver_3" },
+    { "id": 7, "label": "Gold I", "value": "gold_1" },
+    { "id": 8, "label": "Gold II", "value": "gold_2" },
+    { "id": 9, "label": "Gold III", "value": "gold_3" },
+    { "id": 10, "label": "Cristal I", "value": "cristal_1" },
+    { "id": 11, "label": "Cristal II", "value": "cristal_2" },
+    { "id": 12, "label": "Cristal III", "value": "cristal_3" },
+    { "id": 13, "label": "Master I", "value": "master_1" },
+    { "id": 14, "label": "Master II", "value": "master_2" },
+    { "id": 15, "label": "Master III", "value": "master_3" },
+    { "id": 16, "label": "Champion I", "value": "champion_1" },
+    { "id": 17, "label": "Champion II", "value": "champion_2" },
+    { "id": 18, "label": "Champion III", "value": "champion_3" },
+    { "id": 19, "label": "Titan I", "value": "titan_1" },
+    { "id": 20, "label": "Titan II", "value": "titan_2" },
+    { "id": 21, "label": "Titan III", "value": "titan_3" },
+    { "id": 22, "label": "Legend", "value": "legend" },
+
+
+]
