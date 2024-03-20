@@ -44,6 +44,7 @@ async function saveUser(req, res) {
         email: req.body.email,
         image: req.body.image,
         password: hash,
+        level: 0,
         created: new Date().toLocaleString(),
         updated: new Date().toLocaleString(),
         blocked: false,
