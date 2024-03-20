@@ -12,7 +12,7 @@ export default function Breadcrumbs(props) {
 
 
     return (
-        <div className='mt-10 h-10 flex items-center'>
+        <div className='mt-14 md:mt-10 h-10 flex items-center'>
 
 
             {
