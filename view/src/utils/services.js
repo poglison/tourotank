@@ -4,7 +4,7 @@ const url = 'https://tourotank-swuf.vercel.app/api/';
 //const url = 'http://localhost:8080/api/';
 
 
-export const auth = (data) => {
+export const auth = (data) => { 
     console.log(data);
     return axios.post(url + 'user/auth', data)
         .then(response => {
