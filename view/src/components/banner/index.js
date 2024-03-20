@@ -30,7 +30,7 @@ export default function Banner() {
 
 
     return (
-        <div className="w-full px-5 md:px-10 overflow-hidden h-96 pr-20 md:pr-10 pt-20 font-montserrat relative">
+        <div className="w-full px-5 md:px-10 overflow-hidden h-96 pr-20 md:pr-10 pt-20 font-montserrat relative select-none">
 
             <div className="w-3/4 h-full flex flex-col justify-center">
                 

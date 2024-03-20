@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../templates/button";
 
 
@@ -52,7 +53,10 @@ export default function Benefits() {
             </div>
 
             <div className="flex justify-center w-full mt-10">
-                <Button type="primary" className="w-36 mr-10">Anunciar</Button>
+                <Link to="/ad/new" className="mr-10">
+                    <Button type="primary" className="w-36 mr-10">Anunciar</Button>
+                </Link>
+                
                 <Button type="secondary" className="w-36">Saiba mais</Button>
             </div>
 
