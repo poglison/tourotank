@@ -69,11 +69,9 @@ export default function Category(props) {
                                             <div className="relative w-full min-w-full min-h-64 h-64 border dark:border-stone-700 rounded-xl overflow-hidden hover:shadow-stone-800">
                                                 <img src={ad?.image ? ad?.image[0] : null} className="relative w-full h-[calc(100%-112px)] object-cover" />
 
-                                                <div className="bg-white dark:bg-stone-950 blur flex items-end justify-between min-h-12 h-12 w-[300%] p-2 px-4 absolute top-32 -left-10 z-20">
+                                                <div className="bg-white dark:bg-stone-850 blur flex items-end justify-between min-h-12 h-12 w-[300%] p-2 px-4 absolute top-[7.8rem] -left-10 z-20"></div>
 
-                                                </div>
-
-                                                <div className="bg-white dark:bg-stone-950 min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-30">
+                                                <div className="bg-white dark:bg-stone-850 min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-30">
                                                     <h1 className="text-ibm dark:text-stone-300 text-lg font-medium mt-2 truncate">{ad?.title}</h1>
                                                     <p className="overflow-hidden h-10 text-ibm dark:text-stone-400 text-sm mt-1">{ad?.description}</p>
 

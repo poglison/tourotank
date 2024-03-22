@@ -22,9 +22,9 @@ export default function Hub() {
     const [ads, setAds] = useState([{}, {}, {}, {}, {}, {}]);
 
     return (
-        <div className="dark:bg-stone-950 h-screen relative">
+        <div className="dark:bg-stone-850 h-screen relative">
 
-            <Header className="top-0 bg-white dark:bg-stone-950 !fixed" search={true} />
+            <Header className="top-0 bg-white dark:bg-stone-850 !fixed" search={true} />
 
 
             <Container className="flex flex-col items-center justify-center mt-40 mb-5 text-stone-700 dark:text-stone-300">
@@ -68,11 +68,13 @@ export default function Hub() {
                             <Link to={"/ad/" + ad?.id} className="w-full lg:w-[calc(33%-29px)] rounded-xl m-4 cursor-pointer"
                                 key={index}>
 
-                                <Skeleton loading={loading} className="w-full min-w-full min-h-72 h-96 rounded-xl overflow-hidden bg-white dark:bg-stone-950">
+                                <Skeleton loading={loading} className="w-full min-w-full min-h-72 h-96 rounded-xl overflow-hidden bg-white dark:bg-stone-850">
                                     <div className="relative w-full min-w-full min-h-72 h-96   border dark:border-stone-700 rounded-xl overflow-hidden">
                                         <img src={ad?.image ? ad?.image[0] : null} className="relative w-full h-[calc(100%-112px)] object-cover" />
 
-                                        <div className="bg-white dark:bg-stone-950 min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-20">
+                                            <div className="bg-white dark:bg-stone-850 blur flex items-end justify-between min-h-12 h-12 w-[300%] p-2 px-4 absolute top-[15.6rem] -left-10 z-20"></div>
+
+                                        <div className="bg-white dark:bg-stone-850 min-h-28 h-28 w-full p-2 pb-4 px-4 absolute bottom-0 z-20">
                                             <h1 className="text-ibm dark:text-stone-300 text-lg font-medium mt-2 truncate">{ad?.title}</h1>
                                             <p className="overflow-hidden h-10 text-ibm dark:text-stone-400 text-sm mt-1">{ad?.description}</p>
                                         </div>

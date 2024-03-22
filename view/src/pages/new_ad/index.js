@@ -66,7 +66,7 @@ export default function NewAd(props) {
 
 
     return (
-        <div className="bg-white dark:bg-stone-950 overflow-x-hidden" onClick={() => { setIsOpen(false) }}>
+        <div className="bg-white dark:bg-stone-850 overflow-x-hidden" onClick={() => { setIsOpen(false) }}>
 
             <Header />
 
@@ -83,12 +83,12 @@ export default function NewAd(props) {
                     <div className="flex flex-col">
                         <span className="font-ibm text-xs text-stone-600">Titulo do anúncio</span>
 
-                        <input onChange={(e) => { setAd({ ...ad, title: e.target.value }) }} placeholder="Digite o titulo do anúncio" className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
+                        <input onChange={(e) => { setAd({ ...ad, title: e.target.value }) }} placeholder="Digite o titulo do anúncio" className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-850 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
                     </div>
 
                     <div className="flex flex-col mt-4 ">
                         <span className="font-ibm text-xs text-stone-600">Descrição</span>
-                        <textarea onChange={(e) => { setAd({ ...ad, description: e.target.value }) }} placeholder="Digite a descrição do anúncio" className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 xl:h-36 xl:overflow-auto font-ibm text-lg text-stone-700 dark:text-stone-400 outline-none resize-none dark:placeholder:text-stone-600" />
+                        <textarea onChange={(e) => { setAd({ ...ad, description: e.target.value }) }} placeholder="Digite a descrição do anúncio" className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-850 xl:h-36 xl:overflow-auto font-ibm text-lg text-stone-700 dark:text-stone-400 outline-none resize-none dark:placeholder:text-stone-600" />
 
                     </div>
 
@@ -126,7 +126,7 @@ export default function NewAd(props) {
 
 
                                     setAd({ ...ad, price: value, tanks: tanks })
-                                }} className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
+                                }} className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-850 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
                             </div>
                             :
                             null
@@ -136,7 +136,7 @@ export default function NewAd(props) {
                         <div className="flex flex-col mt-5">
                             <span className="font-ibm text-xs text-stone-600">Quantidade em estoque</span>
 
-                            <input onChange={(e) => { setAd({ ...ad, qtd: e.target.value }) }} className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-950 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
+                            <input onChange={(e) => { setAd({ ...ad, qtd: e.target.value }) }} className="border dark:border-stone-700 p-2 px-4 rounded-xl mt-1 dark:bg-stone-850 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600" />
                         </div>
                         <div className="mt-10 border dark:border-stone-700 h-36 object-cover rounded-xl flex items-center justify-center cursor-pointer hover:bg-stone-50 dark:hover:bg-stone-900 text-stone-500 text-lg relative">
                             <input id="file" type="file" multiple="multiple" className="absolute w-full h-full hidden" onChange={(e) => { convertBase64(e) }} />

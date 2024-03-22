@@ -66,3 +66,7 @@ body {
 .chat::-webkit-scrollbar-thumb {
   background: #FF4F00;
 }
+
+.gradient{
+  background: linear-gradient(180deg, rgba(0,0,0,0.8687850140056023) 9%, rgba(0,0,0,1) 56%);
+}

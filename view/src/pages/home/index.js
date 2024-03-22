@@ -8,7 +8,7 @@ import Container from '../../templates/container';
 
 export default function App() {
   return (
-    <div className='relative overflow-hidden bg-white dark:bg-stone-950'>
+    <div className='relative overflow-hidden bg-white dark:bg-stone-850'>
       <Header search={true} />
       <Banner />
       <Container>

@@ -41,7 +41,7 @@ export default function Ad() {
 
 
     return (
-        <div className="bg-white dark:bg-stone-950 overflow-x-hidden">
+        <div className="bg-white dark:bg-stone-850 overflow-x-hidden">
 
 
             <Header />

@@ -55,7 +55,7 @@ export default function InformationAd(props) {
 
             <div className="w-full h-full rounded-lg mb-2">
 
-                <div className="border dark:border-stone-700 bg-white dark:bg-stone-950 rounded-lg flex flex-col">
+                <div className="border dark:border-stone-700 bg-white dark:bg-stone-850 rounded-lg flex flex-col">
 
 
                     {props.type == "new" &&
@@ -91,7 +91,7 @@ export default function InformationAd(props) {
                     }
 
                     {props.type != "new" &&
-                        <div className="flex items-center justify-between border-t dark:border-t-stone-800 bg-white dark:bg-stone-950 dark:text-stone-300 p-2 rounded-b-lg">
+                        <div className="flex items-center justify-between border-t dark:border-t-stone-800 bg-white dark:bg-stone-850 dark:text-stone-300 p-2 rounded-b-lg">
 
                             <div className="text-[13px] ml-2">
                                 <Skeleton className="w-40 h-4" loading={props.loading}>
@@ -114,7 +114,7 @@ export default function InformationAd(props) {
                 </div>
             </div>
 
-            <div className="bg-white dark:bg-stone-950 border dark:border-stone-700  p-4 rounded-lg">
+            <div className="bg-white dark:bg-stone-850 border dark:border-stone-700  p-4 rounded-lg">
                 {/* {props.type != "new" ?
 
                     <div className="w-full h-4 bg-stone-200 dark:bg-stone-800 rounded-full mb-4">
@@ -143,7 +143,7 @@ export default function InformationAd(props) {
                         </Skeleton>
                         :
                         <input disabled onChange={(e) => setInfos({ ...infos, price: e.target.value })} value={infos.price ? infos.price : 0}
-                            className="bg-transparent dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
+                            className="bg-transparent dark:bg-stone-850 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
                     }
                 </div>
 
@@ -157,7 +157,7 @@ export default function InformationAd(props) {
                             </Skeleton>
                             :
                             <input disabled onChange={(e) => setInfos({ ...infos, qtd: e.target.value })} value={infos.qtd ? infos.qtd : 0}
-                                className="bg-transparent dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto já foi investido" />
+                                className="bg-transparent dark:bg-stone-850 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" placeholder="Digite o quanto já foi investido" />
                         }
                     </div>
 
@@ -191,7 +191,7 @@ export default function InformationAd(props) {
                         </Skeleton>
                         :
                         <input disabled onChange={(e) => setInfos({ ...infos, tanks: e.target.value })} value={infos.tanks ? infos.tanks : 0}
-                            className="bg-transparent dark:bg-stone-950 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
+                            className="bg-transparent dark:bg-stone-850 dark:placeholder:text-stone-600 text-2xl font-medium font-ibm text-primary outline-none placeholder:text-sm placeholder:font-normal" />
                     }
                 </div>
 

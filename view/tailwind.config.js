@@ -5,6 +5,8 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+
+
     extend: {
 
       rotate: {
@@ -14,6 +16,7 @@ module.exports = {
 
       colors: {
         'primary': '#FF4F00',
+        'stone-850': '#0A0A0A'
         // 'primary': '#444',
       },
 

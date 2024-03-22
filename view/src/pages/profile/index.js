@@ -14,6 +14,7 @@ export default function Profile() {
 
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(false);
+    const [selectOption, setSelectOption] = useState("Resumo");
     const id = useParams().id;
     const navigate = useNavigate();
 
@@ -25,12 +26,18 @@ export default function Profile() {
             if (response.status == 404) {
                 navigate('/404');
             } else {
+
+                response.created = formatDate(response.created);
+
                 setUser(response);
             }
         })
-    }, [])
+    }, []);
 
-
+    function formatDate(date) {
+        const d = new Date(date);
+        return d.toLocaleDateString();
+    }
 
     var items = [
         { title: "Resumo", icon: "M4.5 3.75a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V6.75a3 3 0 0 0-3-3h-15Zm4.125 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Zm-3.873 8.703a4.126 4.126 0 0 1 7.746 0 .75.75 0 0 1-.351.92 7.47 7.47 0 0 1-3.522.877 7.47 7.47 0 0 1-3.522-.877.75.75 0 0 1-.351-.92ZM15 8.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15ZM14.25 12a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H15a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15Z" },
@@ -43,11 +50,11 @@ export default function Profile() {
     ]
 
     return (
-        <div className='dark:bg-stone-950 overflow-x-hidden relative'>
+        <div className='dark:bg-stone-850 overflow-x-hidden relative'>
 
-            <Header className="!bg-transparent relative"/>
+            <Header className="!bg-transparent relative" />
 
-            <div className='w-full pt-20 absolute top-0 h-64 bg-stone-50 dark:bg-stone-900 border-b dark:border-stone-700'>
+            <div className='w-full pt-20 absolute top-0 h-64 bg-stone-50 dark:bg-stone-900 border-b border-stone-300 dark:border-stone-700'>
                 <div className='px-5 md:px-10 mt-10 flex items-center'>
 
                     <div className='flex items-center'>
@@ -101,9 +108,11 @@ export default function Profile() {
                                     </svg>
                                 )}
 
-                                {/* <div className='w-24 h-6 ml-4 border font-medium border-stone-400 rounded-full text-xs flex items-center justify-center cursor-pointer hover:bg-stone-600 text-stone-600 hover:text-white'>
-                                        Editar perfil
-                                    </div> */}
+                                {(loading == false) && (
+                                    <img className="h-7 rounded-full ml-3" src={"/imgs/levels/" + (user.level ? user.level : "na") + ".webp"} alt="" />
+                                )}
+
+
                             </div>
 
 
@@ -123,7 +132,7 @@ export default function Profile() {
                                 </svg>
 
                                 <Skeleton loading={loading} className='w-40 h-5 object-cover rounded-full'>
-                                    <span className='h-6 text-sm'>Membro desde  {user?.created?.split(",")[0]}</span>
+                                    <span className='h-6 text-sm'>Membro desde  {user?.created}</span>
                                 </Skeleton>
                             </div>
 
@@ -134,19 +143,19 @@ export default function Profile() {
 
             </div>
 
-            <Container className='mt-10 pt-0 dark:bg-stone-950'>
+            <Container className='mt-10 pt-0 dark:bg-stone-850'>
 
-                <div className='mt-52 flex flex-col md:flex-row'>
-                    <div className='flex flex-col w-full md:flex-col md:!w-60 border dark:border-stone-700  rounded-lg'>
+                <div className='mt-56 md:mt-32 flex flex-col md:flex-row'>
+                    <div className='flex flex-col w-full md:flex-col md:!w-60 border border-stone-300 dark:border-stone-700  rounded-lg'>
 
-                        <span className='block px-4 pt-4 pb-4 mb-0 font-medium text-stone-700 dark:text-stone-300 border-b dark:border-b-stone-800'>Menu</span>
+                        <span className='block px-4 pt-4 pb-4 mb-0 font-medium text-stone-700 dark:text-stone-300 border-b border-stone-300 dark:border-b-stone-800'>Menu</span>
 
                         <div>
                             {
                                 items?.map((item, index) => {
                                     if (items.length - 1 == index) {
                                         return (
-                                            <div key={index} className='w-full h-12 p-2 px-4 hover:bg-stone-50 dark:hover:bg-stone-800 rounded-b-lg flex items-center cursor-pointer'>
+                                            <div onClick={() => { setSelectOption(item.title); if (item.title == "Sair") { setUser({}); sessionStorage.clear(); navigate("/login") } }} key={index} className='w-full h-12 p-2 px-4 hover:bg-stone-50 dark:hover:bg-stone-800 rounded-b-lg flex items-center cursor-pointer'>
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-stone-600 dark:text-stone-400">
                                                     <path fillRule="evenodd" d={item.icon} />
                                                 </svg>
@@ -157,8 +166,8 @@ export default function Profile() {
                                         )
                                     } else {
                                         return (
-                                            <div key={index} className='w-full h-12 p-2 px-4 border-b dark:border-stone-700 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 flex items-center cursor-pointer'>
-                                                
+                                            <div onClick={() => {setSelectOption(item.title); if (item.title == "Sair") { setUser({}); sessionStorage.clear(); navigate("/login") } }} key={index} className='w-full h-12 p-2 px-4 border-b border-stone-300 dark:border-stone-700 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 flex items-center cursor-pointer'>
+
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-stone-600 dark:text-stone-400">
                                                     <path fillRule="evenodd" d={item.icon} />
                                                 </svg>
@@ -174,7 +183,7 @@ export default function Profile() {
 
                     </div>
 
-                    <Settings />
+                    <Settings user={user} option={selectOption} />
 
                 </div>
             </Container>

@@ -24,7 +24,7 @@ export default function Image(props) {
 
                 {(images?.length > 1) &&
                     <div onClick={() => { setIndex(index === 0 ? images.length - 1 : index - 1) }}
-                        className="flex items-center justify-center absolute bottom-0 left-0 w-10 h-10 bg-white dark:bg-stone-950 rounded-bl-xl rounded-tr-md hover:bg-stone-200 dark:hover:bg-stone-900 border dark:border-stone-700">
+                        className="flex items-center justify-center absolute bottom-0 left-0 w-10 h-10 bg-white dark:bg-stone-850 rounded-bl-xl rounded-tr-md hover:bg-stone-200 dark:hover:bg-stone-900 border dark:border-stone-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="text-stone-800 dark:text-white w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                         </svg>
@@ -47,7 +47,7 @@ export default function Image(props) {
 
                 {(images?.length > 1) &&
                     <div onClick={() => { setIndex(index === images.length - 1 ? 0 : index + 1) }}
-                        className="flex items-center justify-center absolute bottom-0 right-0 w-10 h-10 bg-white dark:bg-stone-950 rounded-br-xl rounded-tl-md hover:bg-stone-200 dark:hover:bg-stone-900 border dark:border-stone-700">
+                        className="flex items-center justify-center absolute bottom-0 right-0 w-10 h-10 bg-white dark:bg-stone-850 rounded-br-xl rounded-tl-md hover:bg-stone-200 dark:hover:bg-stone-900 border dark:border-stone-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="text-stone-800 dark:text-white w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                         </svg>

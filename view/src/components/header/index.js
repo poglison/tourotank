@@ -13,7 +13,7 @@ export default function Header(props) {
   const { user } = useContext(UserContext);
 
   return (
-    <div className={"w-full px-5 md:px-10 h-20 flex items-center justify-between z-20 fixed bg-white dark:bg-stone-950 " + props.className}>
+    <div className={"w-full px-5 md:px-10 h-20 flex items-center justify-between z-20 fixed bg-white dark:bg-stone-850 " + props.className}>
 
 
       <div className="flex items-center">
@@ -26,7 +26,7 @@ export default function Header(props) {
       <div className="flex items-center justify-between">
 
         {props.search &&
-          <div className="hidden md:flex items-center justify-between mr-4  rounded-full bg-white dark:bg-stone-950 border border-stone-300 dark:border-stone-700 h-11 px-4 pl-3">
+          <div className="hidden md:flex items-center justify-between mr-4  rounded-full bg-white dark:bg-stone-850 border border-stone-300 dark:border-stone-700 h-11 px-4 pl-3">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-stone-400 dark:text-stone-800 mr-3">
               <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
