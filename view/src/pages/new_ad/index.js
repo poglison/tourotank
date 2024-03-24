@@ -24,7 +24,7 @@ export default function NewAd(props) {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        document.scrollingElement.scrollTop = 0;
+        window.scrollTo(0, 0);
     }, [])
 
 

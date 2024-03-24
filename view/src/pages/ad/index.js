@@ -28,7 +28,7 @@ export default function Ad() {
     const { id } = useParams();
 
     useEffect(() => {
-        document.scrollingElement.scrollTop = 0;
+        window.scrollTo(0, 0);
 
         getByID("ad", id).then((response) => {
             setAd(response);

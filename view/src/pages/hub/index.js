@@ -12,6 +12,9 @@ import Skeleton from "../../templates/skeleton";
 export default function Hub() {
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+        
+
         get("ad").then((response) => {
             setLoading(false);
             setAds(response);

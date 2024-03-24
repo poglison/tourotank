@@ -7,14 +7,14 @@ export default function Settings(props) {
 
             <span className="font-ibm font-medium text-xl text-stone-700 dark:text-stone-300">{props.option ? props.option : ""}</span>
 
-            <div className="bg-stone-900 rounded-lg w-full h-full flex items-center justify-center mb-4">
+            {/* <div className="bg-stone-900 rounded-lg w-full h-full flex items-center justify-center mb-4">
 
             
 
 
                
 
-            </div>
+            </div> */}
 
 
         </div>
