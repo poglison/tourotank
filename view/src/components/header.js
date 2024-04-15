@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import Button from "../../templates/button";
-import Logo from "../../templates/logo";
-import Menu from "../../templates/menu";
+import Button from "../templates/button";
+import Logo from "../templates/logo";
+import Menu from "../templates/menu";
 
 import { useContext, useEffect } from "react";
-import UserContext from "../../utils/context";
-import Categories from "../../templates/categories";
+import UserContext from "../utils/context";
+import Categories from "../templates/categories";
 
 
 export default function Header(props) {

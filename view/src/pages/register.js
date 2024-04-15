@@ -1,16 +1,16 @@
-import Header from "../../components/header";
-import Button from "../../templates/button";
-import Input from "../../templates/input";
-import Google from "../../templates/google";
+import Header from "../components/header";
+import Button from "../templates/button";
+import Input from "../templates/input";
+import Google from "../templates/google";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { save } from "../../utils/services";
+import { save } from "../utils/services";
 
 import { toast } from "react-toastify";
 
 import { useContext } from "react";
-import UserContext from "../../utils/context";
+import UserContext from "../utils/context";
 
 
 export default function Login() {
@@ -113,7 +113,7 @@ export default function Login() {
 
                 <div className="hidden md:flex flex-col h-screen justify-between items-center w-1/2 bg-primary text-white font-ibm relative">
 
-                    <img className="h-2/3 hidden xl:flex absolute -bottom-40 -right-44 select-none -rotate-12" src="imgs/bull/bull.png" alt="" />
+                    <img className="h-2/3 hidden xl:flex absolute -bottom-40 -right-44 select-none -rotate-12" src="imgs/bull/bull.png" alt="Bull" />
 
 
                     <div className="h-full flex flex-col justify-center z-20">

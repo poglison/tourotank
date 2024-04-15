@@ -60,7 +60,7 @@ export default function Select(props) {
                             onClick={() => handleClick(option)}
                             className={"flex items-center cursor-pointer border-b dark:border-stone-700 p-3 px-4 hover:bg-stone-100 dark:hover:bg-stone-900 " + (index === 0 ? "rounded-t-md" : "") + (index === options.length - 1 ? "rounded-b-md !border-b-0" : "")}
                         >
-                            {option.image && <img src={option.image} className="w-8 h-8 mr-2 rounded-md" />}
+                            {option.image && <img src={option.image} alt='Imagem da categoria' className="w-8 h-8 mr-2 rounded-md" />}
                             {option.label}
                         </div>
                     ))}

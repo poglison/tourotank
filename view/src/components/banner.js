@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "../../templates/button";
+import Button from "../templates/button";
 
 export default function Banner() {
     const [select, setSelect] = useState("anunciar");

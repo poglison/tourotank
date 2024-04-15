@@ -1,14 +1,14 @@
-import Header from '../../components/header';
-import Footer from '../../components/footer';
-import Breadcrumbs from '../../templates/breadcrumbs';
-import Settings from '../../components/settings';
-import Skeleton from '../../templates/skeleton';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import Breadcrumbs from '../templates/breadcrumbs';
+import Settings from '../components/settings';
+import Skeleton from '../templates/skeleton';
 
 import { useState, useContext, useEffect } from 'react';
-import { getByID } from '../../utils/services';
+import { getByID } from '../utils/services';
 
 import { useNavigate, useParams } from 'react-router-dom';
-import Container from '../../templates/container';
+import Container from '../templates/container';
 
 export default function Profile() {
 
@@ -60,7 +60,7 @@ export default function Profile() {
                     <div className='flex items-center'>
                         <div className='w-24 h-24 rounded-full mr-5'>
                             {(!loading && user?.image) ?
-                                (<img src={user?.image} className='w-full h-full object-cover rounded-full' />)
+                                (<img src={user?.image} className='w-full h-full object-cover rounded-full' alt='Imagem do usuario' />)
                                 :
                                 (
                                     <Skeleton loading={loading} rounded={"rounded-full"} className='w-24 h-24 object-cover rounded-full'>
@@ -109,7 +109,7 @@ export default function Profile() {
                                 )}
 
                                 {(loading == false) && (
-                                    <img className="h-7 rounded-full ml-3" src={"/imgs/levels/" + (user.level ? user.level : "na") + ".webp"} alt="" />
+                                    <img className="h-7 rounded-full ml-3" src={"/imgs/levels/" + (user.level ? user.level : "na") + ".webp"} alt="Level" />
                                 )}
 
 

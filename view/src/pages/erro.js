@@ -1,6 +1,6 @@
-import Header from "../../components/header";
-import Button from "../../templates/button";
-import Container from "../../templates/container";
+import Header from "../components/header";
+import Button from "../templates/button";
+import Container from "../templates/container";
 
 
 export default function Erro() {

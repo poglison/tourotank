@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { categories } from "../../utils/jsons";
+import { categories } from "../utils/jsons";
 
 import { Link, useNavigate } from "react-router-dom";
-import Button from "../../templates/button";
-import { save } from "../../utils/services";
-import Skeleton from "../../templates/skeleton";
+import Button from "../templates/button";
+import { save } from "../utils/services";
+import Skeleton from "../templates/skeleton";
 
 
 
@@ -25,8 +25,6 @@ export default function InformationAd(props) {
 
         save("ad", { ...props.ad, user: props?.user }
         ).then((response) => {
-
-            console.log("response >>>  " + JSON.stringify(response));
 
             if (response.status == "404") {
                 return;
@@ -200,7 +198,7 @@ export default function InformationAd(props) {
                     (<div onClick={() => register()} className="mt-4">
                         <Button type="primary" className="w-full">Cadastrar</Button>
                     </div>) :
-                    <Link to="/login">
+                    <Link to={"/buy/" + props.id}>
                         <Button type="primary" className="w-full">Comprar</Button>
                     </Link>
                 }

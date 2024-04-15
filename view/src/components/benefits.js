@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "../../templates/button";
+import Button from "../templates/button";
 
 
 

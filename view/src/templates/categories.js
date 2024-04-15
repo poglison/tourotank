@@ -60,7 +60,7 @@ export default function Categories() {
                         {games.map((game, index) => {
                             return (
                                 <Link key={index} to={"/category/" + game.value} className="w-72 relative h-14 p-3 hover:bg-stone-50 border border-transparent dark:hover:border-stone-700 hover:border-stone-300 dark:hover:bg-stone-900 flex items-center px-4 cursor-pointer rounded-lg">
-                                    <img src={game.image} viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-stone-600 dark:text-stone-400 rounded-md object-cover">
+                                    <img src={game.image} alt="Imagem da categoria" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-stone-600 dark:text-stone-400 rounded-md object-cover">
                                     </img>
 
                                     <span className="text-sm ml-3 text-stone-600 dark:text-stone-400">{game.label}</span>

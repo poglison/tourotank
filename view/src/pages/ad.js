@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
-import Footer from "../../components/footer";
-import Header from "../../components/header";
-import InformationAd from "../../components/info_ad";
-import Ads from "../../components/ads";
-import Breadcrumbs from "../../templates/breadcrumbs";
-import Button from "../../templates/button";
-import Image from "../../templates/image";
+import Footer from "../components/footer";
+import Header from "../components/header";
+import InformationAd from "../components/info_ad";
+import Ads from "../components/ads";
+import Breadcrumbs from "../templates/breadcrumbs";
+import Button from "../templates/button";
+import Image from "../templates/image";
 
-import Timeline from "../../templates/timeline";
-import Buttons from "../../templates/buttons";
-import Team from "../../templates/team";
-import FAQ from "../../components/faq";
-import ButtonFAQ from "../../templates/button_faq";
+import Timeline from "../templates/timeline";
+import Buttons from "../templates/buttons";
+import Team from "../templates/team";
+import FAQ from "../components/faq";
+import ButtonFAQ from "../templates/button_faq";
 
-import { get, getByID } from "../../utils/services";
+import { get, getByID } from "../utils/services";
 import { useParams } from "react-router-dom";
-import Skeleton from "../../templates/skeleton";
-import Container from "../../templates/container";
+import Skeleton from "../templates/skeleton";
+import Container from "../templates/container";
 
 export default function Ad() {
 
@@ -79,7 +79,7 @@ export default function Ad() {
 
 
                         </div>
-                        <InformationAd ad={ad} loading={loading} />
+                        <InformationAd ad={ad} id={id} loading={loading} />
                     </div>
 
 

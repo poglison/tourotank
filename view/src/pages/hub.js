@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import Footer from "../../components/footer";
-import Header from "../../components/header";
+import Footer from "../components/footer";
+import Header from "../components/header";
 import { Link } from "react-router-dom";
-import Button from "../../templates/button";
-import FAQ from "../../components/faq";
-import Container from "../../templates/container";
+import Button from "../templates/button";
+import FAQ from "../components/faq";
+import Container from "../templates/container";
 
-import { get } from "../../utils/services";
-import Skeleton from "../../templates/skeleton";
+import { get } from "../utils/services";
+import Skeleton from "../templates/skeleton";
 
 export default function Hub() {
 
@@ -73,7 +73,7 @@ export default function Hub() {
 
                                 <Skeleton loading={loading} className="w-full min-w-full min-h-72 h-96 rounded-xl overflow-hidden bg-white dark:bg-stone-850">
                                     <div className="relative w-full min-w-full min-h-72 h-96   border dark:border-stone-700 rounded-xl overflow-hidden">
-                                        <img src={ad?.image ? ad?.image[0] : null} className="relative w-full h-[calc(100%-112px)] object-cover" />
+                                        <img src={ad?.image ? ad?.image[0] : null} alt="Imagem do anuncio" className="relative w-full h-[calc(100%-112px)] object-cover" />
 
                                             <div className="bg-white dark:bg-stone-850 blur flex items-end justify-between min-h-12 h-12 w-[300%] p-2 px-4 absolute top-[15.6rem] -left-10 z-20"></div>
 

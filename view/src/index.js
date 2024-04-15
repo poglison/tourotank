@@ -17,6 +17,7 @@ import UserContext from './utils/context';
 import NewAd from './pages/new_ad';
 import Hub from './pages/hub';
 import Category from './pages/category';
+import Buy from './pages/buy'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -79,6 +80,7 @@ function Content() {
         <Route path="/ad/new" element={<NewAd />} />
         <Route path="/hub" element={<Hub />} />
         <Route path="/category/:id" element={<Category />} />
+        <Route path="/buy/:id" element={<Buy />} />
       </Routes>
 
       <ToastContainer

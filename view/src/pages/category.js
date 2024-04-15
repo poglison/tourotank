@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import Header from "../../components/header";
-import Breadcrumbs from "../../templates/breadcrumbs";
-import Container from "../../templates/container";
-import { categories } from "../../utils/jsons";
+import Header from "../components/header";
+import Breadcrumbs from "../templates/breadcrumbs";
+import Container from "../templates/container";
+import { categories } from "../utils/jsons";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { get } from "../../utils/services";
-import Skeleton from "../../templates/skeleton";
-import { levels } from "../../utils/jsons";
+import { get } from "../utils/services";
+import Skeleton from "../templates/skeleton";
+import { levels } from "../utils/jsons";
 
 export default function Category(props) {
 
@@ -44,7 +44,7 @@ export default function Category(props) {
 
 
                 <div className="mt-4 flex items-center">
-                    <img className="w-10 h-10 rounded-lg mr-4" src={category.image}>
+                    <img className="w-10 h-10 rounded-lg mr-4" alt="Imagem da categoria" src={category.image}>
 
                     </img>
 
@@ -67,7 +67,7 @@ export default function Category(props) {
 
                                         <Skeleton loading={loading} className="w-full min-w-full min-h-64 rounded-xl overflow-hidden bg-white dark:bg-stone-900">
                                             <div className="relative w-full min-w-full min-h-64 h-64 border dark:border-stone-700 rounded-xl overflow-hidden hover:shadow-stone-800">
-                                                <img src={ad?.image ? ad?.image[0] : null} className="relative w-full h-[calc(100%-112px)] object-cover" />
+                                                <img src={ad?.image ? ad?.image[0] : null} alt="Imagem do anuncio" className="relative w-full h-[calc(100%-112px)] object-cover" />
 
                                                 <div className="bg-white dark:bg-stone-850 blur flex items-end justify-between min-h-12 h-12 w-[300%] p-2 px-4 absolute top-[7.8rem] -left-10 z-20"></div>
 
@@ -79,7 +79,7 @@ export default function Category(props) {
                                                         <div className="flex items-center justify-center">
                                                             <p className="font-ibm dark:text-stone-600 text-sm font-medium truncate">{ad?.user?.displayName}</p>
 
-                                                            <img className="w-4 h-4 rounded-full ml-2" src={"/imgs/levels/" + (ad?.user?.level ? ad?.user?.level : "na") + ".webp"} alt="" />
+                                                            <img className="w-4 h-4 rounded-full ml-2" src={"/imgs/levels/" + (ad?.user?.level ? ad?.user?.level : "na") + ".webp"} alt="Level" />
                                                         </div>
 
                                                         <p className="font-ibm dark:text-stone-300 text-lg font-medium truncate">{ad?.price}</p>

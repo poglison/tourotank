@@ -1,13 +1,13 @@
-import Header from "../../components/header";
-import Button from "../../templates/button";
-import Input from "../../templates/input";
+import Header from "../components/header";
+import Button from "../templates/button";
+import Input from "../templates/input";
 import { toast } from "react-toastify";
-import { auth } from "../../utils/services";
+import { auth } from "../utils/services";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import UserContext from "../../utils/context";
-import Google from "../../templates/google";
+import UserContext from "../utils/context";
+import Google from "../templates/google";
 
 
 export default function Login() {
@@ -127,7 +127,7 @@ export default function Login() {
 
                 <div className="hidden md:flex flex-col h-screen justify-between items-center w-1/2 bg-primary text-white font-ibm relative">
 
-                    <img className="max-h-[1000px] h-2/3 hidden xl:flex absolute -bottom-40 -right-44 select-none -rotate-12" src="imgs/bull/bull.png" alt="" />
+                    <img className="max-h-[1000px] h-2/3 hidden xl:flex absolute -bottom-40 -right-44 select-none -rotate-12" src="imgs/bull/bull.png" alt="Bull" />
 
 
                     <div className="h-full flex flex-col justify-center z-20">

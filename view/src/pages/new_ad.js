@@ -1,16 +1,16 @@
 import { useEffect, useState, useContext } from "react";
-import Footer from "../../components/footer";
-import Header from "../../components/header";
-import InformationAd from "../../components/info_ad";
-import Breadcrumbs from "../../templates/breadcrumbs";
-import Container from "../../templates/container";
+import Footer from "../components/footer";
+import Header from "../components/header";
+import InformationAd from "../components/info_ad";
+import Breadcrumbs from "../templates/breadcrumbs";
+import Container from "../templates/container";
 
 
-import UserContext from "../../utils/context";
-import Options from "../../templates/options";
-import Select from "../../templates/select";
+import UserContext from "../utils/context";
+import Options from "../templates/options";
+import Select from "../templates/select";
 
-import { categories } from "../../utils/jsons";
+import { categories } from "../utils/jsons";
 
 
 export default function NewAd(props) {
@@ -154,8 +154,8 @@ export default function NewAd(props) {
                                 files.map((file, i) => {
                                     return (
                                         <div key={i} className="w-20 h-20 bg-stone-900 rounded-xl mt-4 mr-4 relative">
-                                            <img src={file} alt
-                                                className="w-full h-full object-cover rounded-xl" />
+                                            <img src={file} alt="Arquivo anexado"
+                                                className="w-full h-full object-cover rounded-xl"/>
                                             <div onClick={() => { setFiles(files.filter((item, index) => index != i)) }}
                                                 className="absolute top-0 right-0 w-6 h-6 bg-stone-900 rounded-full flex items-center justify-center cursor-pointer hover:bg-stone-800">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="text-white w-4 h-4">
