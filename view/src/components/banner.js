@@ -39,7 +39,7 @@ export default function Banner() {
                 <div className="flex items-center flex-col md:flex-row">
                     <h1 className="hidden md:flex text-5xl md:text-8xl font-bold text-primary z-10 relative">cliques</h1>
 
-                    <h1 className={"hidden md:flex ml-4 text-5xl md:text-8xl font-bold text-primary z-10 relative transition-all " + (select == "comprar" ? "rotate-30" : "")}><img className="w-24 mr-5" src="/imgs/cursor/point.png"></img></h1>
+                    <h1 className={"hidden md:flex ml-4 text-5xl md:text-8xl font-bold text-primary z-10 relative transition-all " + (select == "comprar" ? "rotate-30" : "")}><img className="w-24 mr-5" src="/imgs/cursor/point.png" alt="Mao"></img></h1>
 
                     <div className="hidden md:flex flex-col mt-4 -ml-4">
                         <Link to="/ad/new" onMouseEnter={() => { setSelect("anunciar") }}>
