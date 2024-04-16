@@ -9,46 +9,47 @@ import Select from "../templates/select";
 export default function Buy(props) {
 
     const [price, setPrice] = useState(0);
+    const [coin, setCoin] = useState("BRL");
     const [isOpen, setIsOpen] = useState(false);
     const [options, setOptions] = useState(
         [{
             "label": "Real",
-            "value": "real",
+            "value": "BRL",
             "image": "https://img.icons8.com/color/48/brazil-circular.png"
         },
         {
             "label": "Dolar",
-            "value": "dolar",
+            "value": "USD",
             "image": "https://img.icons8.com/color/48/usa-circular.png"
         },
         {
             "label": "Euro",
-            "value": "euro",
+            "value": "EUR",
             "image": "https://img.icons8.com/color/48/spain2-circular.png"
         },
         {
             "label": "Yen",
-            "value": "yen",
+            "value": "JPY",
             "image": "https://img.icons8.com/color/48/japan-circular.png"
         },
         {
             "label": "Libra",
-            "value": "libra",
+            "value": "GBP",
             "image": "https://img.icons8.com/color/48/great-britain-circular.png"
         },
         {
             "label": "Yuan",
-            "value": "yuan",
+            "value": "CNY",
             "image": "https://img.icons8.com/color/48/china-circular.png"
         },
         {
             "label": "Rublo",
-            "value": "rublo",
+            "value": "RUB",
             "image": "https://img.icons8.com/color/48/russian-federation-circular.png"
         },
         {
             "label": "Bitcoin",
-            "value": "bitcoin",
+            "value": "BTC",
             "image": "https://th.bing.com/th/id/R.46afadddcc08be483a971581981f2b04?rik=5zZqzokQPvp5Ww&riu=http%3a%2f%2fstore-images.s-microsoft.com%2fimage%2fapps.17518.9007199266525906.711fe06b-31fe-48b3-85b2-9147c65d66ce.8e1c2c26-16e6-413b-926e-b785d38b915a&ehk=FJgCYuMHrIquhx9LbTCEvce5QbFloAQ8SsjBlH0T1ys%3d&risl=&pid=ImgRaw&r=0"
         }
         ]);
@@ -64,7 +65,7 @@ export default function Buy(props) {
         return maskCurrency(digitsFloat);
     }
 
-    const maskCurrency = (valor, locale = 'pt-BR', currency = 'BRL') => {
+    const maskCurrency = (valor, locale = 'pt-BR', currency = coin) => {
         return new Intl.NumberFormat(locale, {
             style: 'currency',
             currency
@@ -114,7 +115,7 @@ export default function Buy(props) {
                                         className="w-full dark:bg-stone-850 text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" />
                                 </div>
 
-                                <Select className="mt-0" isOpen={isOpen} setIsOpen={setIsOpen} onChange={(option) => { }} options={options} />
+                                <Select className="mt-0" isOpen={isOpen} setIsOpen={setIsOpen} onChange={(option) => { setCoin(option) }} options={options} disabled={true} selected={true} />
 
                             </div>
 
