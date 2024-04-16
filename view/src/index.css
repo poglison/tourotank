@@ -53,6 +53,7 @@ body {
 
 .dark ::-webkit-scrollbar-thumb {
   background: #2e2e2e;
+  border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
