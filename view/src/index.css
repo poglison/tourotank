@@ -41,14 +41,17 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 55px;
 }
 
 .dark ::-webkit-scrollbar-track {
   background: #0C0A09;
+  border-radius: 55px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #888;
+  border-radius: 50px;
 }
 
 .dark ::-webkit-scrollbar-thumb {

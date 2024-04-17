@@ -9,6 +9,14 @@ export default function Select(props) {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
+        setOptions(props.options);
+    }, [props.options]);
+
+    useEffect(() => {
+        handleClick(props.option);
+    }, []);
+
+    useEffect(() => {
         setIsOpen(props.isOpen);
     }, [props.isOpen]);
 
@@ -41,11 +49,12 @@ export default function Select(props) {
 
 
     return (
-        <div className="relative" onClick={() => setIsOpen(!isOpen)}
-        >
+        <div className="relative" onClick={() => setIsOpen(!isOpen)}>
+
+            <div onClick={() => setIsOpen(!isOpen)} className='absolute w-full h-full'></div>
             <input
-                placeholder="Não selecionado"
-                className="select-none flex w-full border dark:border-stone-700 p-2 px-4 rounded-xl dark:bg-stone-850 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600"
+                placeholder="N/A"
+                className="flex w-full border dark:border-stone-700 p-2 px-4 rounded-xl dark:bg-stone-850 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600"
                 onChange={(e) => handle(e)}
                 value={selectedLabel}
                 disabled={props.disabled}
@@ -63,7 +72,7 @@ export default function Select(props) {
 
 
             {(isOpen && options.length > 0) && (
-                <div className={"absolute overflow-auto z-10 w-full bg-white dark:text-stone-300 dark:bg-stone-850 border dark:border-stone-700 rounded-lg shadow-lg " + (options.length > 5 ? "h-56" : "h-auto")}>
+                <div className={"absolute overflow-auto z-10 mt-2 w-full bg-white dark:text-stone-300 dark:bg-stone-850 border dark:border-stone-700 rounded-lg rounded-tr-sm rounded-br-sm shadow-lg " + (options.length > 5 ? "h-56" : "h-auto")}>
                     {options.map((option, index) => (
 
                         <div
