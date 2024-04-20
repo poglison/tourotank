@@ -794,12 +794,12 @@ export const others = [
     { "label": "Discord", "value": "discord", "image": "https://static.vecteezy.com/system/resources/previews/006/892/625/non_2x/discord-logo-icon-editorial-free-vector.jpg" },
     { "label": "Gift Cards", "value": "gift_cards", "image": "https://static.vecteezy.com/system/resources/previews/022/484/501/original/google-play-store-icon-logo-symbol-free-png.png" },
     { "label": "Redes Sociais", "value": "redes_sociais", "image": "https://th.bing.com/th/id/R.cc86a3353385063cc55b2675261f87d8?rik=yktDKaDmO08LXg&pid=ImgRaw&r=0" },
-    { "label": "Serviços Digitais", "value": "servicos_digitais", "image": "" },
-    { "label": "Softwares e Licenças", "value": "softwares_e_licencas", "image": "https://th.bing.com/th/id/R.5d11a8c34d6896da7660200637fccc76?rik=OsrU52SK1JpTQg&pid=ImgRaw&r=0" },
+    // { "label": "Serviços Digitais", "value": "servicos_digitais", "image": "" },
+    // { "label": "Softwares e Licenças", "value": "softwares_e_licencas", "image": "" },
     { "label": "Apostas", "value": "apostas", "image": "https://th.bing.com/th/id/R.1766fe9dbd7d016d03bff30f8ffdd154?rik=1LD%2ftaV0C96w2g&pid=ImgRaw&r=0" },
-    { "label": "eBooks", "value": "ebooks", "image": "" },
-    { "label": "Doações", "value": "doacoes", "image": "" },
-    { "label": "Outros", "value": "outros", "image": "" }
+    // { "label": "eBooks", "value": "ebooks", "image": "" },
+    // { "label": "Doações", "value": "doacoes", "image": "" },
+    // { "label": "Outros", "value": "outros", "image": "" }
 ]
 
 export const levels = [

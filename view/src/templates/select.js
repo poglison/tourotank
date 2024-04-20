@@ -13,7 +13,9 @@ export default function Select(props) {
     }, [props.options]);
 
     useEffect(() => {
-        handleClick(props.option);
+        if (props.option?.label) {
+            handleClick(props.option);
+        }
     }, []);
 
     useEffect(() => {
@@ -51,10 +53,11 @@ export default function Select(props) {
     return (
         <div className="relative" onClick={() => setIsOpen(!isOpen)}>
 
-            <div onClick={() => setIsOpen(!isOpen)} className='absolute w-full h-full'></div>
+            {props.selected &&
+                <div onClick={() => setIsOpen(!isOpen)} className='absolute w-full h-full'></div>
+            }
             <input
-                placeholder="N/A"
-                className="flex w-full border dark:border-stone-700 p-2 px-4 rounded-xl dark:bg-stone-850 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600"
+                className="flex w-full border dark:border-stone-700 p-2 px-4 rounded-lg dark:bg-stone-900 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600"
                 onChange={(e) => handle(e)}
                 value={selectedLabel}
                 disabled={props.disabled}

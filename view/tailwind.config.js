@@ -17,7 +17,7 @@ module.exports = {
       colors: {
         'primary': '#FF4F00',
 
-        'stone-850': '#0A0A0A',
+        'stone-850': '#111111',
         'stone-900': '#1A1A1A',
 
         // 'primary': '#444',

@@ -89,14 +89,14 @@ export default function Buy(props) {
                             </div>
 
                             <div className="flex">
-                                <div className="flex w-full border dark:border-stone-700 p-2 px-4 rounded-xl dark:bg-stone-850 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600 mr-4">
+                                <div className="flex w-full border dark:border-stone-700 p-2 px-4 rounded-lg dark:bg-stone-900 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600 mr-4">
                                     <input type="text" value={price}
                                         onChange={(e) => {
                                             var value = maskCoin(e);
                                             setPrice(value);
                                             setValue(e);
                                         }}
-                                        className="w-full dark:bg-stone-850 text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" />
+                                        className="w-full bg-transparent text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" />
                                 </div>
 
                                 <Select className="mt-0" isOpen={isOpenCoin} setIsOpen={setIsOpenCoin} onChange={(option) => { setCoin(option) }} options={optionsCoin ? optionsCoin : []} disabled={true} option={coin} selected={true} />
