@@ -31,7 +31,7 @@ export default function Benefits() {
 
             <div className="flex justify-center w-full mt-10">
                 <Link to="/ad/new" className="mr-10">
-                    <Button type="primary" className="w-36 mr-10">Anunciar</Button>
+                    <Button type="primary" className="w-36">Anunciar</Button>
                 </Link>
                 
                 <Button type="secondary" className="w-36">Saiba mais</Button>

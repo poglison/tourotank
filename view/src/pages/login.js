@@ -58,9 +58,9 @@ export default function Login() {
 
                         <div className="mb-10 mt-2 flex items-center justify-center">
 
-                            <span className="font-ibm text-xl font-medium text-primary">Entre agora no </span>
+                            <span className="font-ibm text-lg font-medium text-primary">Entre agora no </span>
 
-                            <span className="ml-2 font-montserrat text-2xl font-bold text-primary">tourotank</span>
+                            <span className="ml-2 font-montserrat text-xl font-bold text-primary">tourotank</span>
                         </div>
                         <Input onChange={(e) => { setEmail(e.target.value) }} placeholder="Email" type="email" className="mb-4" />
 

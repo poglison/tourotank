@@ -41,8 +41,8 @@ export default function Header(props) {
             }
 
             {user?.email &&
-              <Link to="/ad/new">
-                <Button type="primary" className="w-36 h-full mr-4">Anunciar</Button>
+              <Link to="/ad/new" className="mr-4">
+                <Button type="primary" className="w-36 h-full">Anunciar</Button>
               </Link>
             }
 
