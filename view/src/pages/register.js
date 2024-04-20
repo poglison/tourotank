@@ -42,19 +42,19 @@ export default function Login() {
     var faqs = [
         {
             question: "Oque é o touratank?",
-            answer: "É uma plataforma que permite que você invista em ideias, empresas e tecnologias de forma simples e rápida."
+            answer: "É uma plataforma que permite que você compre e venda, produtos e tecnologias de forma simples e rápida."
         },
         {
             question: "Como funciona?",
-            answer: "Você se cadastra, escolhe um projeto e investe. Simples assim."
+            answer: "Você se cadastra, escolhe um produto e compra. Simples assim."
         },
         {
-            question: "Quanto posso investir?",
+            question: "Quanto posso comprar?",
             answer: "A partir de R$ 1,00."
         },
         {
-            question: "Eu posso investir e cadastrar meu projeto?",
-            answer: "Sim, você pode investir e cadastrar seu projeto."
+            question: "Eu posso comprar e vender?",
+            answer: "Sim, você pode comprar e vender produtos."
         }
     ]
 

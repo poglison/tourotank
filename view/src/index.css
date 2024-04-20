@@ -45,7 +45,7 @@ body {
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #0C0A09;
+  background: #111111;
   border-radius: 55px;
 }
 

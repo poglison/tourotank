@@ -76,6 +76,34 @@ export default function Buy(props) {
 
                 <div className="flex flex-row justify-between mt-10">
 
+
+                    <div className="p-10 w-full border dark:border-stone-700 bg-white dark:bg-stone-850 rounded-lg flex flex-col mr-5">
+
+
+                        <div className="flex flex-col">
+                            <div className="flex w-full mb-4">
+                                
+                            </div>
+
+                          
+
+
+                            <div className="flex w-full mb-4 mt-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-secondary dark:text-white">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+                                </svg>
+
+                                <span className="text-secondary dark:text-white ml-4">Metodo de pagamento</span>
+                            </div>
+                            <Select className="mt-0" isOpen={isOpenPayment} setIsOpen={setIsOpenPayment} onChange={(option) => { setCoin(option) }} options={optionsPayment ? optionsPayment : []} disabled={true} option={coin} selected={true} />
+
+
+                        </div>
+                    </div>
+
+
+
+
                     <div className="p-10 w-full border dark:border-stone-700 bg-white dark:bg-stone-850 rounded-lg flex flex-col">
 
 

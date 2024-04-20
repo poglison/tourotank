@@ -48,7 +48,7 @@ export default function Ad() {
 
             <Container>
                 <div className="w-full min-h-screen">
-                    <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Projeto', path: '/ad' }]} />
+                    <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Anúncio', path: '/ad' }]} />
 
                     <div className="w-full mt-4 flex flex-col md:flex-row justify-between">
 
@@ -60,7 +60,7 @@ export default function Ad() {
                             <div className="xl:w-[calc(100%-384px)] xl:overflow-hidden xl:h-80 h-full mt-4 xl:mt-0 xl:ml-4">
 
                                 <div className="flex flex-col">
-                                    <span className="font-ibm text-xs text-stone-600 dark:text-stone-400">Projeto</span>
+                                    <span className="font-ibm text-xs text-stone-600 dark:text-stone-400">Titulo</span>
                                     <Skeleton className="w-1/2 h-8" loading={loading}>
                                         <span className="font-ibm text-2xl font-medium text-stone-800 dark:text-stone-200">{ad?.title}</span>
                                     </Skeleton>

@@ -16,7 +16,7 @@ export default function ButtonFAQ() {
             </span>
 
             <span className="text-sm md:text-base text-stone-700 dark:text-stone-200  font-medium">
-                Verifique as perguntas frequentes do projeto
+                Verifique as perguntas frequentes do anúncio
             </span>
 
         </div>

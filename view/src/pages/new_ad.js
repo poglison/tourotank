@@ -72,7 +72,7 @@ export default function NewAd(props) {
 
             <Container className="w-full md:w-[calc(100%-326px)] min-h-screen">
 
-                <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Projeto', path: '/ad' }, { title: 'Novo Projeto', path: '/ad/new' }]} />
+                <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Anúncio', path: '/ad' }, { title: 'Novo Anúncio', path: '/ad/new' }]} />
                 <InformationAd type="new" ad={{...ad, image: files}} setAd={setAd} user={user} />
 
 

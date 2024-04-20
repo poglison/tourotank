@@ -23,7 +23,7 @@ export default function Chat() {
         },
         {
             id: 2,
-            content: 'Obrigado, qual é o nome do seu projeto?',
+            content: 'Obrigado, qual é o nome do seu anúncio?',
             user: {
                 name: 'tourotank',
                 avatar: 'https://www.tourotank.com.br/img/logo.png'
