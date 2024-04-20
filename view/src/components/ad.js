@@ -13,7 +13,7 @@ export default function Ad(props) {
                         <img src={props.image ? props.image[0] : null} alt={props.name} className="object-cover w-96 h-52 rounded-2xl select-none border-white dark:border-stone-700 border" />
                     </Skeleton>
                     <div className="mt-2">
-                        <Skeleton props={props} loading={props.loading} className="w-full h-14 font-ibm text-xl font-bold text-black !m-0">
+                        <Skeleton props={props} loading={props.loading} className="w-full h-7 font-ibm text-xl font-bold text-black !m-0">
 
                             <p className="font-ibm text-xl font-bold text-black dark:text-stone-300 !m-0 overflow-hidden overflow-ellipsis whitespace-nowrap">{props.name}</p>
 

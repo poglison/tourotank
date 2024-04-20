@@ -1,13 +1,17 @@
 import Header from "../components/header";
 import Button from "../templates/button";
 import Input from "../templates/input";
+import UserContext from "../utils/context";
+import Google from "../templates/google";
+
 import { toast } from "react-toastify";
 import { auth } from "../utils/services";
+import { faqs } from "../utils/jsons";
+
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import UserContext from "../utils/context";
-import Google from "../templates/google";
+
 
 
 export default function Login() {
@@ -41,26 +45,6 @@ export default function Login() {
 
         });
     }
-
-
-    var faqs = [
-        {
-            question: "Oque é o touratank?",
-            answer: "É uma plataforma que permite que você compre e venda, produtos e tecnologias de forma simples e rápida."
-        },
-        {
-            question: "Como funciona?",
-            answer: "Você se cadastra, escolhe um produto e compra. Simples assim."
-        },
-        {
-            question: "Quanto posso comprar?",
-            answer: "A partir de R$ 1,00."
-        },
-        {
-            question: "Eu posso comprar e vender?",
-            answer: "Sim, você pode comprar e vender produtos."
-        }
-    ]
 
 
     return (

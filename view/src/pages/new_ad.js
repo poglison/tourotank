@@ -29,8 +29,6 @@ export default function NewAd(props) {
 
 
     const convertBase64 = async (e) => {
-
-
         const filesArray = Array.from(e.target.files);
         var filesAux = [];
 

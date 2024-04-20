@@ -5,28 +5,6 @@ import Button from "../templates/button";
 export default function Banner() {
     const [select, setSelect] = useState("anunciar");
 
-    var texts = [
-        // "vender",
-        // "investir",
-        // "apresentar",
-        // "conectar",
-        // "empreender",
-        // "inovar",
-        // "crescer",
-        // "transformar",
-        // "construir",
-        // "sonhar",
-        // "criar",
-        // "desenvolver",
-        // "construir",
-        // "conquistar",
-        // "negociar",
-        // "startar",
-        // "investir em ideias",
-        ">> cliques 👉",
-    ];
-
-    var text = texts[Math.floor(Math.random() * texts.length)];
 
 
     return (

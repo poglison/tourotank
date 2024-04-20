@@ -8,6 +8,7 @@ import { useState } from "react";
 import { save } from "../utils/services";
 
 import { toast } from "react-toastify";
+import { faqs } from "../utils/jsons";
 
 import { useContext } from "react";
 import UserContext from "../utils/context";
@@ -37,27 +38,6 @@ export default function Login() {
             navigate("/");
         });
     }
-
-
-    var faqs = [
-        {
-            question: "Oque é o touratank?",
-            answer: "É uma plataforma que permite que você compre e venda, produtos e tecnologias de forma simples e rápida."
-        },
-        {
-            question: "Como funciona?",
-            answer: "Você se cadastra, escolhe um produto e compra. Simples assim."
-        },
-        {
-            question: "Quanto posso comprar?",
-            answer: "A partir de R$ 1,00."
-        },
-        {
-            question: "Eu posso comprar e vender?",
-            answer: "Sim, você pode comprar e vender produtos."
-        }
-    ]
-
 
     return (
         <div className="relative md:h-screen md:overflow-hidden">
