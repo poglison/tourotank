@@ -13,7 +13,7 @@ export default function Categories() {
 
     return (
         <div className="relative flex items-center justify-center mr-4">
-            <div onClick={() => { setOpen(!open) }} className="h-full flex items-center justify-center text-stone-500 dark:text-stone-400 hover:dark:text-stone-100 px-6 cursor-pointer">
+            <div onClick={() => { setOpen(!open) }} className="h-full flex items-center justify-center text-stone-500 dark:text-stone-400 hover:dark:text-stone-100 px-2 cursor-pointer">
 
                 <span className="hidden sm:flex">
                     Categorias
