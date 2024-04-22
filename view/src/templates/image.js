@@ -19,7 +19,7 @@ export default function Image(props) {
 
 
     return (
-        <div className="relative select-none">
+        <div className="relative select-none h-full">
             <Skeleton className={"relative cursor-pointer " + props.className} loading={props.loading}>
 
                 {(images?.length > 1) &&

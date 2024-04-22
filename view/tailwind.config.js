@@ -23,6 +23,10 @@ module.exports = {
         // 'primary': '#444',
       },
 
+      width: {
+        "30/61": "49.18033%",
+      },  
+
       fontFamily: {
         'montserrat': ['Montserrat Alternates', 'sans-serif'],
         'ibm': ['IBM Plex Sans', 'sans-serif'],

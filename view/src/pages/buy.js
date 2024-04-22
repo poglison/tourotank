@@ -9,6 +9,7 @@ import { coins, payments } from "../utils/jsons";
 import { useParams } from "react-router-dom";
 import { getByID } from "../utils/services";
 import Skeleton from "../templates/skeleton";
+import Button from "../templates/button";
 
 
 
@@ -101,17 +102,17 @@ export default function Buy(props) {
                 <Breadcrumbs history={[{ title: 'Início', path: '/' }, { title: 'Anuncio', path: '/ad' }, { title: 'Comprar', path: '/buy' }]} />
 
 
-                <div className="flex flex-col xl:flex-row justify-between mt-4">
+                <div className="flex flex-col lg:flex-row justify-between mt-4">
 
 
-                    <div className="xl:w-1/2 xl:min-w-1/2 p-8 border dark:border-stone-700 bg-white dark:bg-stone-850 rounded-lg flex flex-col xl:mr-5 mb-5 xl:mb-0">
+                    <div className="lg:w-30/61 lg:min-w-30/61 p-8 border dark:border-stone-700 bg-white dark:bg-stone-850 rounded-lg flex flex-col lg:mr-5 mb-5 lg:mb-0">
 
 
-                        <div className="flex flex-col">
+                        <div className="flex flex-col h-full">
 
-                            <div className="flex">
-                                <Skeleton className="w-44 h-28 min-w-44" loading={loading}>
-                                    <Image loading={loading} src={ad?.image} className="w-44 h-28 min-w-44 mr-4 object-cover" />
+                            <div className="flex h-full">
+                                <Skeleton className="w-1/2 min-w-1/2 h-full min-w-44" loading={loading}>
+                                    <Image loading={loading} src={ad?.image} className="h-full mr-4 object-cover" />
                                 </Skeleton>
 
 
@@ -139,34 +140,34 @@ export default function Buy(props) {
                                             </Skeleton>
                                         </div>
 
-                                        <div className="flex flex-col mr-5 min-w-max">
-                                            <span className="font-ibm mb-1 text-xs text-stone-600 dark:text-stone-400">Quantidade</span>
 
-                                            <div className="flex">
-                                                <div className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
-                                                    </svg>
-                                                </div>
+                                    </div>
 
-                                                <div className="flex border dark:border-stone-700 p-2 px-4 rounded-lg dark:bg-stone-900 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600 ml-2 mr-2">
-                                                    <input type="text"
-                                                        value={1}
-                                                        className="w-14 bg-transparent text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" />
-                                                </div>
+                                    <div className="flex flex-col mt-5 min-w-max">
+                                        <span className="font-ibm mb-1 text-xs text-stone-600 dark:text-stone-400">Quantidade</span>
+
+                                        <div className="flex">
+                                            <div className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
+                                                </svg>
+                                            </div>
+
+                                            <div className="flex border dark:border-stone-700 p-2 px-4 rounded-lg dark:bg-stone-900 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600 ml-2 mr-2">
+                                                <input type="text"
+                                                    value={1}
+                                                    className="w-14 bg-transparent text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" />
+                                            </div>
 
 
-                                                <div className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                    </svg>
+                                            <div className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                                </svg>
 
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
 
                             </div>
@@ -182,7 +183,7 @@ export default function Buy(props) {
 
 
 
-                    <div className="xl:w-1/2 xl:min-w-1/2 p-8 border dark:border-stone-700 bg-white dark:bg-stone-850 rounded-lg flex flex-col">
+                    <div className="lg:w-30/61 lg:min-w-30/61 p-8 border dark:border-stone-700 bg-white dark:bg-stone-850 rounded-lg flex flex-col">
 
 
                         <div className="flex flex-col">
@@ -221,7 +222,12 @@ export default function Buy(props) {
 
                         </div>
                     </div>
+                </div>
 
+
+                <div className="w-full flex flex-end justify-end mt-5">
+
+                    <Button type="primary" className="ml-0 p-8 w-30/61">Finalizar compra</Button>
                 </div>
 
 

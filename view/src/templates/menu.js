@@ -29,7 +29,7 @@ export default function Menu() {
                 </svg>
             </div> */}
 
-            <img onClick={() => { setOpen(!open) }} src={user?.image} alt="Imagem de perfil" className="w-10 h-10 rounded-full cursor-pointer" />
+            <img onClick={() => { setOpen(!open) }} src={user?.image} alt="Imagem de perfil" className="w-10 min-w-10 h-10 rounded-full cursor-pointer" />
 
 
             {open &&
