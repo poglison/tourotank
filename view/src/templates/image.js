@@ -19,8 +19,8 @@ export default function Image(props) {
 
 
     return (
-        <div className="relative h-80 select-none">
-            <Skeleton className={"relative min-h-80 rounded-xl cursor-pointer " + props.className} loading={props.loading}>
+        <div className="relative select-none">
+            <Skeleton className={"relative cursor-pointer " + props.className} loading={props.loading}>
 
                 {(images?.length > 1) &&
                     <div onClick={() => { setIndex(index === 0 ? images.length - 1 : index - 1) }}
@@ -31,7 +31,7 @@ export default function Image(props) {
                     </div>
                 }
 
-                <img onMouseEnter={() => setSerach(true)} onMouseLeave={() => setSerach(false)} onClick={() => { setIsModalVisible(true) }} src={images?.length > 1 ? images[index] : images} alt={props.alt} className={"h-80 border dark:border-stone-700 rounded-xl transition-all ease-in cursor-pointer " + props.className} />
+                <img onMouseEnter={() => setSerach(true)} onMouseLeave={() => setSerach(false)} onClick={() => { setIsModalVisible(true) }} src={images?.length > 1 ? images[index] : images} alt={props.alt} className={"border dark:border-stone-700 rounded-xl transition-all ease-in cursor-pointer " + props.className} />
 
                 {(images?.length > 1) &&
                     <div className="absolute bottom-0 w-full h-6 flex justify-center">
