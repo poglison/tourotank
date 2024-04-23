@@ -110,13 +110,13 @@ export default function Buy(props) {
 
                         <div className="flex flex-col h-full">
 
-                            <div className="flex h-full">
+                            <div className="flex flex-col md:flex-row h-full">
                                 <Skeleton className="w-1/2 min-w-1/2 h-full min-w-44" loading={loading}>
                                     <Image loading={loading} src={ad?.image} className="h-full mr-4 object-cover" />
                                 </Skeleton>
 
 
-                                <div className="w-full ml-4 overflow-hidden">
+                                <div className="w-full mt-4 md:ml-4 md:mt-0 overflow-hidden">
 
                                     <div className="w-full flex flex-col">
                                         <span className="font-ibm text-xs text-stone-600 dark:text-stone-400">Titulo</span>
@@ -125,46 +125,49 @@ export default function Buy(props) {
                                         </Skeleton>
                                     </div>
 
-                                    <div className="flex mt-4 item">
-                                        <div className="flex flex-col mr-8 min-w-max">
-                                            <span className="font-ibm mb-1 text-xs text-stone-600 dark:text-stone-400">Preço unidade</span>
-                                            <Skeleton className="w-full h-5" loading={loading}>
-                                                <span className="font-ibm text-xl font-medium text-stone-800 dark:text-stone-200">{ad?.price}</span>
-                                            </Skeleton>
-                                        </div>
 
-                                        <div className="flex flex-col mr-8 min-w-max">
-                                            <span className="font-ibm mb-1 text-xs text-stone-600 dark:text-stone-400">Tanks</span>
-                                            <Skeleton className="w-full h-5" loading={loading}>
-                                                <span className="font-ibm text-xl font-medium text-stone-800 dark:text-stone-200">{ad?.tanks}</span>
-                                            </Skeleton>
-                                        </div>
-
-
-                                    </div>
-
-                                    <div className="flex flex-col mt-5 min-w-max">
-                                        <span className="font-ibm mb-1 text-xs text-stone-600 dark:text-stone-400">Quantidade</span>
-
-                                        <div className="flex">
-                                            <div className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
-                                                </svg>
+                                    <div className="flex flex-col sm:flex-row md:flex-col">
+                                        <div className="flex mt-4 item">
+                                            <div className="flex flex-col mr-8 min-w-max">
+                                                <span className="font-ibm mb-1 text-xs text-stone-600 dark:text-stone-400">Preço unidade</span>
+                                                <Skeleton className="w-full h-5" loading={loading}>
+                                                    <span className="font-ibm text-xl font-medium text-stone-800 dark:text-stone-200">{ad?.price}</span>
+                                                </Skeleton>
                                             </div>
 
-                                            <div className="flex border dark:border-stone-700 p-2 px-4 rounded-lg dark:bg-stone-900 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600 ml-2 mr-2">
-                                                <input type="text"
-                                                    value={1}
-                                                    className="w-14 bg-transparent text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" />
+                                            <div className="flex flex-col mr-8 min-w-max">
+                                                <span className="font-ibm mb-1 text-xs text-stone-600 dark:text-stone-400">Tanks</span>
+                                                <Skeleton className="w-full h-5" loading={loading}>
+                                                    <span className="font-ibm text-xl font-medium text-stone-800 dark:text-stone-200">{ad?.tanks}</span>
+                                                </Skeleton>
                                             </div>
 
 
-                                            <div className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
+                                        </div>
 
+                                        <div className="flex flex-col mt-5 min-w-max">
+                                            <span className="font-ibm mb-1 text-xs text-stone-600 dark:text-stone-400">Quantidade</span>
+
+                                            <div className="flex">
+                                                <div className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
+                                                    </svg>
+                                                </div>
+
+                                                <div className="flex border dark:border-stone-700 p-2 px-4 rounded-lg dark:bg-stone-900 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600 ml-2 mr-2">
+                                                    <input type="text"
+                                                        value={1}
+                                                        className="w-14 bg-transparent text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" />
+                                                </div>
+
+
+                                                <div className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                                    </svg>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -227,7 +230,7 @@ export default function Buy(props) {
 
                 <div className="w-full flex flex-end justify-end mt-5">
 
-                    <Button type="primary" className="ml-0 p-8 w-30/61">Finalizar compra</Button>
+                    <Button type="primary" className="ml-0 p-8 w-full lg:w-30/61">Finalizar compra</Button>
                 </div>
 
 
