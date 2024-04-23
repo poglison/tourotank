@@ -7,7 +7,7 @@ export default function Erro() {
 
 
     return (
-        <div>
+        <div className="bg-white dark:bg-stone-850">
             <Header />
 
             <Container className="flex justify-center items-center h-[calc(100vh-150px)]">

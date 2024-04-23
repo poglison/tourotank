@@ -5,8 +5,8 @@ export default function Input(props) {
     const [visible, setVisible] = useState(false);
 
     return (
-        <div className={"select-none bg-white dark:bg-stone-850 border dark:border-stone-700 rounded-lg z-10 w-full flex items-center px-5 " + props.className}>
-            <input onChange={(e) => { props.onChange ? props.onChange(e) : null }} type={props.type == "password" && visible == true ? "text" : props.type} className="w-full dark:bg-stone-850 h-12 text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" placeholder={props.placeholder} />
+        <div className={"select-none bg-white dark:bg-stone-900 border dark:border-stone-700 rounded-lg z-10 w-full flex items-center px-5 " + props.className}>
+            <input onChange={(e) => { props.onChange ? props.onChange(e) : null }} type={props.type == "password" && visible == true ? "text" : props.type} className="w-full dark:bg-stone-900 h-12 text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" placeholder={props.placeholder} />
 
             {(props.type === "password" && !visible) ?
                 <svg onClick={() => setVisible(!visible)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="relative -mr-4 ml-4 text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 w-10 min-w-10 h-10 p-2.5 rounded-lg">

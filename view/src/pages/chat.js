@@ -102,7 +102,7 @@ export default function Chat() {
     }
 
     return (
-        <div>
+        <div className="bg-white dark:bg-stone-850">
             <Header className="!absolute" buttons={false} />
 
             <div className="w-full h-[calc(100vh-45px)] flex justify-center items-center pb-10">

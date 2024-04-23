@@ -39,7 +39,7 @@ export default function FAQ(props) {
                 </div>
             }
 
-            <div className="mt-5">
+            <div className="mt-5 select-none">
 
                 {faq?.map((item, index) => (
                     <div key={index} className="rounded-lg bg-stone-100 dark:bg-stone-850 dark:hover:bg-stone-900 dark:border-stone-700 dark:border  mb-3 hover:bg-stone-200 " onClick={() => { setFaq(faq.map((item, i) => { if (i == index) { item.click = !item.click } return item })) }}>

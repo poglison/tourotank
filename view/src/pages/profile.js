@@ -42,7 +42,7 @@ export default function Profile() {
 
 
     return (
-        <div className='dark:bg-stone-850 overflow-x-hidden relative'>
+        <div className='bg-white dark:bg-stone-850 overflow-x-hidden relative'>
 
             <Header className="!bg-transparent relative" />
 
