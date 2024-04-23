@@ -7,10 +7,10 @@ export default function Ad(props) {
     return (
         <div className="mr-4">
             <Link to={"/ad/" + props.id} className="w-full h-full bg-stone-800">
-                <div key={props.index} className="w-[calc(100vw-100px)] lg:w-96 min-w-96 transition-all ease-in-out delay-300 select-none">
+                <div key={props.index} className="w-[calc(100vw-50px)] sm:w-96 min-w-96 transition-all ease-in-out delay-300 select-none">
 
-                    <Skeleton props={props} loading={props.loading} className="w-96 h-52 rounded-2xl select-none border-transparent border hover: ">
-                        <img src={props.image ? props.image[0] : null} alt={props.name} className="object-cover w-96 h-52 rounded-2xl select-none border-white dark:border-stone-700 border" />
+                    <Skeleton props={props} loading={props.loading} className="w-[calc(100vw-50px)] sm:w-96 h-52 rounded-2xl select-none border-transparent border hover: ">
+                        <img src={props.image ? props.image[0] : null} alt={props.name} className="object-cover w-[calc(100vw-50px)] sm:w-96 h-52 rounded-2xl select-none border-white dark:border-stone-700 border" />
                     </Skeleton>
                     <div className="mt-2">
                         <Skeleton props={props} loading={props.loading} className="w-full h-7 font-ibm text-xl font-bold text-black !m-0">
