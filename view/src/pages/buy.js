@@ -16,6 +16,7 @@ import Button from "../templates/button";
 export default function Buy(props) {
 
     const [price, setPrice] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const [value, setValue] = useState({ target: { value: "0" } });
     const [coin, setCoin] = useState({
         "label": "Real",
@@ -55,9 +56,37 @@ export default function Buy(props) {
     }, []);
 
     useEffect(() => {
+
+        if (ad?.price) {
+            var unmask = unmaskCurrency(ad?.price);
+            var val = parseFloat(unmask);
+            val = val * quantity;
+            val = val.toFixed(2);
+            val = val.toString();
+
+            if (val.includes(".")) {
+                val = "R$" + val
+            } else {
+                val = "R$ " + val + ",00"
+            }
+
+            console.log(val, ad?.price);
+
+            if (quantity > 1) {
+                setPrice(maskCoin({ target: { value: val } }));
+            } else {
+                setPrice(maskCoin({ target: { value: ad?.price } }));
+            }
+        }
+    }, [quantity]);
+
+
+
+
+
+    useEffect(() => {
         setOptionsCoin(coins);
     }, [coins]);
-
 
     useEffect(() => {
         setOptionsPayment(payments);
@@ -72,6 +101,10 @@ export default function Buy(props) {
             setPrice(maskCoin({ target: { value: ad?.price } }));
         }
     }, [ad]);
+
+    const unmaskCurrency = (valor) => {
+        return parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".")).toFixed(2);
+    }
 
 
     const maskCoin = (event) => {
@@ -94,7 +127,7 @@ export default function Buy(props) {
 
 
     return (
-        <div className="bg-white dark:bg-stone-850 overflow-x-hidden min-h-screen">
+        <div className="bg-white dark:bg-stone-850 overflow-x-hidden min-h-screen select-none">
             <Header />
 
             <Container>
@@ -149,7 +182,7 @@ export default function Buy(props) {
                                             <span className="font-ibm mb-1 text-xs text-stone-600 dark:text-stone-400">Quantidade</span>
 
                                             <div className="flex">
-                                                <div className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
+                                                <div onClick={() => setQuantity(quantity != 1 ? quantity - 1 : 1)} className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
                                                     </svg>
@@ -157,12 +190,12 @@ export default function Buy(props) {
 
                                                 <div className="flex border dark:border-stone-700 p-2 px-4 rounded-lg dark:bg-stone-900 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600 ml-2 mr-2">
                                                     <input type="text"
-                                                        value={1}
+                                                        value={quantity}
                                                         className="w-14 bg-transparent text-sm outline-none dark:placeholder:text-stone-400 dark:text-stone-200" />
                                                 </div>
 
 
-                                                <div className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
+                                                <div onClick={() => setQuantity(quantity + 1)} className="w-10 min-w-10 h-10 border dark:border-stone-700 rounded-lg text-stone-400 text-xl flex items-center justify-center font-ibm font-bold">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                                     </svg>
@@ -174,21 +207,10 @@ export default function Buy(props) {
                                 </div>
 
                             </div>
-
-
-
-
-
-
                         </div>
                     </div>
 
-
-
-
                     <div className="lg:w-30/61 lg:min-w-30/61 p-8 border dark:border-stone-700 bg-white dark:bg-stone-850 rounded-lg flex flex-col">
-
-
                         <div className="flex flex-col">
                             <div className="flex w-full mb-2 items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 mr-2 text-secondary dark:text-stone-400">
