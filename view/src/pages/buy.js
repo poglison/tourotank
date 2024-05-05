@@ -70,8 +70,6 @@ export default function Buy(props) {
                 val = "R$ " + val + ",00"
             }
 
-            console.log(val, ad?.price);
-
             if (quantity > 1) {
                 setPrice(maskCoin({ target: { value: val } }));
             } else {
@@ -79,9 +77,6 @@ export default function Buy(props) {
             }
         }
     }, [quantity]);
-
-
-
 
 
     useEffect(() => {
@@ -124,6 +119,14 @@ export default function Buy(props) {
         }).format(valor)
     }
 
+    const finishBuy = () => {
+        console.log(payment);
+        if(payment.value == "PIX" || payment == "PIX"){
+            alert("Compra finalizada com sucesso!");
+        } else{
+            alert("Metodo de pagamento não disponivel!");
+        }
+    }
 
 
     return (
@@ -222,7 +225,7 @@ export default function Buy(props) {
 
                             <div className="flex">
                                 <div className="flex w-full border dark:border-stone-700 p-2 px-4 rounded-lg dark:bg-stone-900 outline-none font-ibm text-lg text-stone-800 dark:text-stone-300 dark:placeholder:text-stone-600 mr-4">
-                                    <input type="text" value={price}
+                                    <input type="text" value={price} disabled
                                         onChange={(e) => {
                                             var value = maskCoin(e);
                                             setPrice(value);
@@ -242,7 +245,7 @@ export default function Buy(props) {
                                 </svg>
                                 <span className="font-ibm text-xs text-stone-600 dark:text-stone-400">Metodo de pagamento</span>
                             </div>
-                            <Select className="mt-0" isOpen={isOpenPayment} setIsOpen={setIsOpenPayment} onChange={(option) => { setCoin(option) }} options={optionsPayment ? optionsPayment : []} disabled={true} selected={true} />
+                            <Select className="mt-0" isOpen={isOpenPayment} setIsOpen={setIsOpenPayment} onChange={(option) => { setPayment(option) }} options={optionsPayment ? optionsPayment : []} disabled={true} option={payment} selected={true} />
 
 
                         </div>
@@ -250,9 +253,9 @@ export default function Buy(props) {
                 </div>
 
 
-                <div className="w-full flex flex-end justify-end mt-5">
+                <div  className="w-full flex flex-end justify-end mt-5">
 
-                    <Button type="primary" className="ml-0 p-8 w-full lg:w-30/61">Finalizar compra</Button>
+                    <Button onClick={() => { finishBuy() }}  type="primary" className="ml-0 p-8 w-full lg:w-30/61">Finalizar compra</Button>
                 </div>
 
 
