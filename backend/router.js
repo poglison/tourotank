@@ -7,4 +7,7 @@ router.use("/user", user);
 const ad = require("./api/ad/ad.controller");
 router.use("/ad", ad);
 
+const mp = require("./api/mp/index");
+router.use("/mp", mp);
+
 module.exports = router;

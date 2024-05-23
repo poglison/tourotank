@@ -11,9 +11,44 @@ import { getByID } from "../utils/services";
 import Skeleton from "../templates/skeleton";
 import Button from "../templates/button";
 
+import { MercadoPagoConfig, Preference } from 'mercadopago';
+
+
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 
 
 export default function Buy(props) {
+
+
+
+    ///// PAYMENT //////
+    initMercadoPago('APP_USR-1c323e1f-4a01-49c9-8706-06b085e85ccc');
+    const client = new MercadoPagoConfig({ accessToken: 'APP_USR-4014227609351153-051822-b29f33697a57559cf2372a8f44334c84-292267754' });
+    const preference = new Preference(client);
+
+    preference.create({
+        body: {
+            items: [
+                {
+                    title: 'Meu produto',
+                    quantity: 1,
+                    unit_price: 25
+                }
+            ],
+        }
+    })
+        .then(console.log)
+        .catch(console.log);
+
+
+
+
+    ////////////////////
+
+
+
+
+
 
     const [price, setPrice] = useState(0);
     const [quantity, setQuantity] = useState(1);
@@ -121,9 +156,9 @@ export default function Buy(props) {
 
     const finishBuy = () => {
         console.log(payment);
-        if(payment.value == "PIX" || payment == "PIX"){
+        if (payment.value == "PIX" || payment == "PIX") {
             alert("Compra finalizada com sucesso!");
-        } else{
+        } else {
             alert("Metodo de pagamento não disponivel!");
         }
     }
@@ -253,9 +288,15 @@ export default function Buy(props) {
                 </div>
 
 
-                <div  className="w-full flex flex-end justify-end mt-5">
+                <div className="w-full flex flex-end justify-end mt-5">
 
-                    <Button onClick={() => { finishBuy() }}  type="primary" className="ml-0 p-8 w-full lg:w-30/61">Finalizar compra</Button>
+
+                    <div id="wallet_container">
+                        {/* <Button onClick={() => { finishBuy() }} type="primary" className="ml-0 p-8 w-full lg:w-30/61">Finalizar compra</Button> */}
+                    </div>
+
+                    <Wallet initialization={{ preferenceId: preference.id }} customization={{ texts: { valueProp: 'smart_option' } }} />
+
                 </div>
 
 
